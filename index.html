@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>David — Portfolio</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="logo" href="#">David</a>
+
+			<nav id="primary-nav" class="nav" aria-label="Primary">
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+
+			<div class="header-controls">
+				<button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+				<button id="nav-toggle" class="nav-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+			</div>
+		</div>
+	</header>
+
+	<main id="main">
+		<section class="hero">
+			<div class="container">
+				<h1 class="hero-title">Hi, I'm David.</h1>
+				<p class="lead">I design and build clean, modern web experiences. Front-end development & UI design.</p>
+				<div class="hero-cta">
+					<a class="btn" href="#projects">View projects</a>
+					<a class="btn btn-outline" href="#contact">Get in touch</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="about" class="about container">
+			<h2>About</h2>
+			<p>I'm a front-end developer focused on building accessible, performant interfaces. I like minimal design, thoughtful interactions, and small delightful details.</p>
+		</section>
+
+		<section id="projects" class="projects container">
+			<h2>Selected projects</h2>
+			<div class="grid">
+				<article class="card">
+					<h3>Project One</h3>
+					<p>Short description of the project — tech, role, and impact.</p>
+					<p class="muted">HTML · CSS · JS</p>
+				</article>
+
+				<article class="card">
+					<h3>Project Two</h3>
+					<p>Short description of the project — tech, role, and impact.</p>
+					<p class="muted">React · API</p>
+				</article>
+
+				<article class="card">
+					<h3>Project Three</h3>
+					<p>Short description of the project — tech, role, and impact.</p>
+					<p class="muted">Design · Prototype</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="contact" class="contact container">
+			<h2>Contact</h2>
+			<p>Interested in working together? Reach me at <a href="mailto:you@example.com">you@example.com</a> or send a message via LinkedIn.</p>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>© <span id="year"></span> David. Built with care.</p>
+		</div>
+	</footer>
+
+	<script src="scripts/main.js" defer></script>
+</body>
+</html>
