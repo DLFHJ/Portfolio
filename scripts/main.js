@@ -1,4 +1,12 @@
 // Lightweight interactions: mobile nav toggle, smooth scrolling, theme toggle
+// Font load checker: logs whether the Aspekta font has loaded. Useful for debugging.
+if (document.fonts) {
+	document.fonts.ready.then(() => {
+		const loadedAspekta = document.fonts.check('700 16px "Aspekta"');
+		const loadedIBM = document.fonts.check('16px "IBM Plex Sans"');
+		console.info('Font check:', { Aspekta: loadedAspekta, 'IBM Plex Sans': loadedIBM });
+	});
+}
 (function(){
 	const nav = document.getElementById('primary-nav');
 	const navToggle = document.getElementById('nav-toggle');
