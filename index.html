@@ -164,12 +164,12 @@
     <div id="custom-cursor"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-40 border-b border-gray-100 transition-all duration-300" id="navbar">
+    <nav class="fixed top-0 w-full bg-white/0 z-40 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-24">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="#" class="block font-bold text-sm tracking-tight uppercase hover-target p-2">
+                    <a href="#" class="block font-bold text-sm tracking-tight uppercase hover-target p-2 mix-blend-difference text-black md:text-black">
                         David Lasslberger
                     </a>
                 </div>
@@ -181,7 +181,7 @@
                     <a href="#contact" data-i18n="nav_contact" class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
 
                     <!-- Lang Toggle -->
-                    <button id="langToggle" onclick="toggleLanguage()" class="hover-target flex items-center space-x-2 text-xs uppercase tracking-widest border border-gray-200 px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                    <button id="langToggle" onclick="toggleLanguage()" class="hover-target flex items-center space-x-2 text-xs uppercase tracking-widest border border-gray-200 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all duration-300">
                         <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                         <span id="langLabel">EN</span>
                     </button>
@@ -199,37 +199,47 @@
 
     <main class="relative z-10 bg-white">
         
-        <!-- Hero Section -->
-        <header class="pt-32 pb-20 sm:pt-40 sm:pb-24 min-h-[90vh] flex flex-col justify-center">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-                <div class="reveal-on-scroll">
-                    <h1 data-i18n="hero_title" class="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] text-black">
-                        Interaction & <br> UX Designer
+        <!-- Hero Section (Redesigned) -->
+        <header class="relative h-screen flex flex-col justify-center items-center overflow-hidden bg-white">
+            
+            <!-- Full Screen Interactive Canvas Background -->
+            <canvas id="heroCanvas" class="absolute inset-0 w-full h-full z-0 cursor-crosshair"></canvas>
+            
+            <!-- Content Overlay -->
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 text-center pointer-events-none">
+                <div class="reveal-on-scroll flex flex-col items-center">
+                    
+                    <!-- Main Headline -->
+                    <h1 class="font-bold tracking-tighter leading-none text-black mb-6 mix-blend-darken">
+                        <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-2 sm:mb-4">INTERACTION</span>
+                        <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-gray-400">DESIGNER</span>
                     </h1>
                     
-                    <div class="flex items-center space-x-3 mb-12">
-                        <span class="relative flex h-3 w-3">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                        </span>
-                        <span data-i18n="hero_available" class="text-sm font-medium text-gray-500 tracking-wide">Available for freelance work</span>
-                    </div>
-                </div>
+                    <!-- Subtext -->
+                    <p class="text-sm md:text-base text-gray-500 max-w-lg mx-auto leading-relaxed mt-4 font-mono uppercase tracking-widest">
+                        Bridging the gap between <br class="hidden sm:block"> digital systems & physical spaces.
+                    </p>
 
-                <!-- Interactive Canvas -->
-                <div class="reveal-on-scroll delay-100 w-full h-[50vh] bg-gray-50 relative overflow-hidden border border-gray-100 group">
-                    <canvas id="heroCanvas" class="absolute inset-0 w-full h-full block"></canvas>
-                    <div class="absolute bottom-6 right-6 pointer-events-none">
-                        <span data-i18n="hero_reel" class="uppercase tracking-widest text-[10px] font-bold text-black bg-white/90 px-3 py-1 backdrop-blur-sm border border-gray-200">
-                            Interactive Canvas
+                    <!-- Status Pill (Moved Below) -->
+                    <div class="pointer-events-auto inline-flex items-center space-x-2 border border-gray-200 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full mt-12 shadow-sm hover:shadow-md transition-shadow">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                         </span>
+                        <span data-i18n="hero_available" class="text-[10px] font-bold tracking-widest uppercase text-gray-600">Available for work</span>
                     </div>
+
                 </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce pointer-events-none">
+                <i data-lucide="arrow-down" class="w-6 h-6 text-gray-300"></i>
             </div>
         </header>
 
         <!-- Projects Section -->
-        <section id="work" class="py-24 bg-white">
+        <section id="work" class="py-24 bg-white relative z-20">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-12 reveal-on-scroll">
                     <h2 data-i18n="projects_title" class="text-2xl font-bold tracking-tight">Selected Works</h2>
@@ -339,7 +349,8 @@
                     
                      <!-- Image (Moved to Left) -->
                      <div class="md:col-span-5 lg:col-span-5 reveal-on-scroll order-1">
-                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-200">
+                        <!-- Changed aspect-[3/4] to aspect-square -->
+                        <div class="relative aspect-square overflow-hidden bg-gray-200">
                              <img src="https://raw.githubusercontent.com/DLFHJ/Portfolio/refs/heads/main/assets/images/pb/pb_cut_mono.png" 
                                  alt="David Lasslberger" 
                                  class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
@@ -492,9 +503,7 @@
         const translations = {
             en: {
                 nav_work: "Work", nav_about: "About", nav_contact: "Contact",
-                hero_title: "Interaction & <br> UX Designer",
-                hero_available: "available for work",
-                hero_reel: "Interactive Canvas",
+                // Removed old hero keys as they are now hardcoded for style in the redesign
                 projects_title: "Selected Projects",
                 proj2_subtitle: "Interactive Installation",
                 proj3_subtitle: "Synesthesia",
@@ -514,9 +523,7 @@
             },
             de: {
                 nav_work: "Arbeiten", nav_about: "Über mich", nav_contact: "Kontakt",
-                hero_title: "Interaktions- & <br> UX Designer",
-                hero_available: "verfügbar für Projekte",
-                hero_reel: "Interaktiver Canvas",
+                // Removed old hero keys
                 projects_title: "Ausgewählte Projekte",
                 proj2_subtitle: "Interaktive Installation",
                 proj3_subtitle: "Synästhesie",
@@ -582,9 +589,21 @@
         let particles = [];
         let animationFrame;
 
+        // Sticky Navbar Logic
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'h-20');
+                navbar.classList.remove('bg-white/0', 'h-24');
+            } else {
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'h-20');
+                navbar.classList.add('bg-white/0', 'h-24');
+            }
+        });
+
         function resizeCanvas() {
-            width = canvas.width = canvas.parentElement.offsetWidth;
-            height = canvas.height = canvas.parentElement.offsetHeight;
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
             initParticles();
         }
         window.addEventListener('resize', resizeCanvas);
@@ -605,10 +624,10 @@
                 this.y += this.vy;
 
                 // Simple interaction: slight repulse
-                let dx = mouseX - (canvas.getBoundingClientRect().left + this.x);
-                let dy = mouseY - (canvas.getBoundingClientRect().top + this.y);
+                let dx = mouseX - this.x;
+                let dy = mouseY - this.y;
                 let distance = Math.sqrt(dx*dx + dy*dy);
-                let maxDistance = 100;
+                let maxDistance = 200; // Increased interaction radius for fullscreen
 
                 if (distance < maxDistance) {
                     const forceDirectionX = dx / distance;
@@ -618,6 +637,7 @@
                     this.y -= forceDirectionY * force * 1;
                 }
 
+                // Bounce off edges
                 if (this.x < 0 || this.x > width) this.vx = -this.vx;
                 if (this.y < 0 || this.y > height) this.vy = -this.vy;
             }
@@ -670,7 +690,7 @@
                 }
             });
         });
-        canvasObserver.observe(canvas.parentElement);
+        canvasObserver.observe(document.querySelector('header'));
 
 
         // --- 5. Language & Content Logic ---
