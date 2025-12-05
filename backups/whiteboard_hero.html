@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="David Lasslberger - Interaction & UX Designer Portfolio">
+    <title>David Lasslberger - Interaction & UX Designer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --cursor-size: 12px;
+            --cursor-hover-size: 60px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+            color: #1a1a1a;
+        }
+
+        /* ---------------------------------- */
+        /* Bullet Journal Styles              */
+        /* ---------------------------------- */
+        .bg-dot-grid {
+            background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+            opacity: 0.6;
+        }
+
+        /* ---------------------------------- */
+        /* Draggable Elements (Stickers)      */
+        /* ---------------------------------- */
+        .draggable-item {
+            position: absolute;
+            cursor: grab;
+            user-select: none;
+            transition: transform 0.1s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.2s ease;
+            will-change: transform, left, top;
+            touch-action: none; /* Prevent scrolling while dragging on touch */
+        }
+
+        .draggable-item:active {
+            cursor: grabbing;
+            transform: scale(1.05) rotate(0deg) !important; /* Straighten on grab */
+            z-index: 50;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* ---------------------------------- */
+        /* Magnetic Text                      */
+        /* ---------------------------------- */
+        .magnetic-char {
+            display: inline-block;
+            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+
+        /* ---------------------------------- */
+        /* Smart Custom Cursor Logic          */
+        /* ---------------------------------- */
+        @media (pointer: fine) {
+            body {
+                cursor: none;
+            }
+            
+            #custom-cursor {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: var(--cursor-size);
+                height: var(--cursor-size);
+                background-color: #1a1a1a;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transform: translate(-50%, -50%);
+                transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1), 
+                            height 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+                            transform 0.05s linear; /* Faster follow for interactivity */
+                mix-blend-mode: normal; 
+                opacity: 0.8;
+            }
+
+            body.hovering #custom-cursor {
+                width: var(--cursor-hover-size);
+                height: var(--cursor-hover-size);
+                background-color: rgba(0,0,0,0.05);
+                border: 1px solid rgba(0,0,0,0.1);
+            }
+            
+            /* Hide cursor when hovering dragging items to show grab cursor */
+            body.dragging #custom-cursor {
+                opacity: 0;
+            }
+        }
+
+        @media (pointer: coarse) {
+            #custom-cursor {
+                display: none;
+            }
+        }
+
+        /* Utility Animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .modal {
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        
+        .modal-content {
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .modal.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .modal.hidden .modal-content {
+            transform: scale(0.95) translateY(20px);
+        }
+
+        .modal:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .modal:not(.hidden) .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .highlight-word {
+            position: relative;
+            font-weight: 600;
+            color: #000;
+            display: inline-block;
+        }
+        
+        .highlight-word::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            opacity: 0.6;
+        }
+        
+        .highlight-word:hover::after {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+
+<body class="text-gray-900 antialiased selection:bg-black selection:text-white">
+
+    <!-- Custom Cursor Element -->
+    <div id="custom-cursor"></div>
+
+    <!-- BACKGROUND LAYERS -->
+    <div class="fixed inset-0 w-full h-full -z-50 bg-white"></div> 
+    <div class="fixed inset-0 w-full h-full -z-40 bg-dot-grid"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-40 transition-all duration-300 h-20" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-full">
+                <div class="flex-shrink-0">
+                    <a href="#" class="block font-bold text-sm tracking-tight uppercase hover-target p-2 text-black">
+                        David Lasslberger
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#work" data-i18n="nav_work" class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
+                    <a href="#about" data-i18n="nav_about" class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
+                    <a href="#contact" data-i18n="nav_contact" class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
+                    <button id="langToggle" onclick="toggleLanguage()" class="hover-target flex items-center space-x-2 text-xs uppercase tracking-widest border border-gray-300 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        <span id="langLabel">EN</span>
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button class="p-2 hover-target">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-20">
+        
+        <!-- HERO SECTION: Interactive Desk -->
+        <header id="hero-container" class="min-h-[85vh] flex flex-col justify-center relative overflow-hidden">
+            
+            <!-- Draggable Elements (Stickers/Cards) -->
+            <!-- Note: Inline styles for initial positions, logic handles the rest -->
+            
+            <!-- 1. The Post-it Note -->
+            <div class="draggable-item bg-yellow-100 p-4 shadow-md rotate-[-3deg] w-48 font-mono text-xs text-yellow-900 border border-yellow-200" style="top: 20%; right: 15%;">
+                <div class="flex justify-between items-center mb-2 opacity-50">
+                    <span>NOTE_01</span>
+                    <i data-lucide="pin" class="w-3 h-3"></i>
+                </div>
+                <p>Don't forget to check the prototypes!</p>
+            </div>
+
+            <!-- 2. The Color Swatch -->
+            <div class="draggable-item bg-white p-2 shadow-md rotate-[6deg] w-40 border border-gray-200" style="bottom: 25%; right: 20%;">
+                <div class="h-24 bg-gray-900 w-full mb-2"></div>
+                <div class="flex justify-between text-[10px] font-mono text-gray-500">
+                    <span>#111111</span>
+                    <span>Primary</span>
+                </div>
+            </div>
+
+            <!-- 3. The Tech Badge -->
+            <div class="draggable-item bg-white px-4 py-2 shadow-sm rounded-full border border-gray-300 rotate-[-12deg] flex items-center gap-2" style="top: 30%; left: 10%;">
+                <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                <span class="text-xs font-bold uppercase tracking-wider">Figma & Code</span>
+            </div>
+
+            <!-- 4. Photo Polaroid -->
+            <div class="draggable-item bg-white p-2 pb-8 shadow-lg rotate-[3deg] w-48 border border-gray-100 hidden lg:block" style="bottom: 15%; left: 15%;">
+                <div class="aspect-square bg-gray-100 overflow-hidden mb-2 grayscale hover:grayscale-0 transition-all">
+                     <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] font-mono text-gray-400 block text-center">Inspiration.jpg</span>
+            </div>
+
+
+            <div class="px-6 lg:px-8 max-w-7xl mx-auto w-full relative z-10 pointer-events-none">
+                <div class="reveal-on-scroll max-w-4xl pointer-events-auto">
+                    <!-- Status Pill (Draggable too!) -->
+                    <div class="draggable-item inline-flex items-center space-x-2 border border-gray-200 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full mb-8 cursor-grab" style="position: relative; transform: rotate(0deg);">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        <span data-i18n="hero_available" class="text-[10px] font-bold tracking-widest uppercase text-gray-500">Available for work</span>
+                    </div>
+
+                    <!-- Magnetic Title -->
+                    <h1 class="magnetic-title text-6xl sm:text-8xl md:text-9xl font-bold tracking-tighter text-black mb-8 leading-[0.9] cursor-default">
+                        Interaction <br>
+                        <span class="text-gray-300">Designer.</span>
+                    </h1>
+                    
+                    <p class="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-2xl">
+                        I craft digital products that feel natural, intuitive, and human. Bridging the gap between complex systems and physical spaces.
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Projects Section -->
+        <section id="work" class="py-24 relative z-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-12 reveal-on-scroll">
+                    <h2 data-i18n="projects_title" class="text-2xl font-bold tracking-tight">Selected Works</h2>
+                    <span class="text-xs text-gray-400 uppercase tracking-widest hidden md:block">2023 — Present</span>
+                </div>
+
+                <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+
+                    <!-- Project 1 -->
+                    <div class="reveal-on-scroll group cursor-pointer" onclick="openModal(1)">
+                        <div class="hover-target relative aspect-[4/3] bg-white border border-gray-200 shadow-sm overflow-hidden mb-4 transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+                            <img src="https://images.unsplash.com/photo-1516065532585-6184a44d34c0?q=80&w=1000&auto=format&fit=crop" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project 1">
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-semibold">Sanolux</h3>
+                                <p class="text-sm text-gray-500">Klanglicht Installation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="reveal-on-scroll group cursor-pointer delay-100" onclick="openModal(2)">
+                        <div class="hover-target relative aspect-[4/3] bg-white border border-gray-200 shadow-sm overflow-hidden mb-4 transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+                            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project 2">
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 data-i18n="proj2_subtitle" class="text-lg font-semibold">Interactive Installation</h3>
+                                <p class="text-sm text-gray-500">Physical Computing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="reveal-on-scroll group cursor-pointer delay-200" onclick="openModal(3)">
+                        <div class="hover-target relative aspect-[4/3] bg-white border border-gray-200 shadow-sm overflow-hidden mb-4 transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+                            <img src="https://images.unsplash.com/photo-1518175510007-a37a72382431?q=80&w=1000&auto=format&fit=crop" 
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project 3">
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 data-i18n="proj3_subtitle" class="text-lg font-semibold">Synesthesia</h3>
+                                <p class="text-sm text-gray-500">Light & Sound</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hidden Projects Container -->
+                    <div id="moreProjects" class="hidden contents">
+                        <!-- Project 4 -->
+                        <div class="group cursor-pointer" onclick="openModal(4)">
+                            <div class="hover-target relative aspect-[4/3] bg-white border border-dashed border-gray-300 overflow-hidden mb-4 flex items-center justify-center transition-all duration-300 group-hover:border-gray-400">
+                                <span data-i18n="proj_inprogress" class="text-xs uppercase tracking-widest text-gray-400">In Progress</span>
+                            </div>
+                            <h3 class="text-lg font-semibold">Fintech UX</h3>
+                            <p class="text-sm text-gray-500">User Research</p>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="group cursor-pointer" onclick="openModal(5)">
+                            <div class="hover-target relative aspect-[4/3] bg-white border border-dashed border-gray-300 overflow-hidden mb-4 flex items-center justify-center transition-all duration-300 group-hover:border-gray-400">
+                                <span data-i18n="proj_soon" class="text-xs uppercase tracking-widest text-gray-400">Coming Soon</span>
+                            </div>
+                            <h3 class="text-lg font-semibold">AI Craft</h3>
+                            <p class="text-sm text-gray-500">Concept</p>
+                        </div>
+
+                        <!-- Project 6 -->
+                        <div class="group cursor-pointer" onclick="openModal(6)">
+                            <div class="hover-target relative aspect-[4/3] bg-white border border-gray-200 shadow-sm overflow-hidden mb-4 transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+                                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop" 
+                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project 6">
+                            </div>
+                             <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Sanolux Docs</h3>
+                                    <p data-i18n="proj6_cat" class="text-sm text-gray-500">Technical Direction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Toggle Button -->
+                <div class="mt-20 flex justify-center reveal-on-scroll">
+                    <button id="toggleProjectsBtn" onclick="toggleProjects()" 
+                        class="hover-target group relative px-8 py-3 bg-gray-900 text-white overflow-hidden rounded-full transition-all duration-300 hover:bg-black hover:scale-105 shadow-lg">
+                        <div class="relative z-10 flex items-center space-x-2">
+                            <span data-i18n="btn_view_all" class="text-xs font-bold uppercase tracking-widest">View All Projects</span>
+                            <i data-lucide="plus" class="transform w-4 h-4 transition-transform duration-300 group-hover:rotate-90"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 items-start">
+                    
+                     <!-- Image -->
+                     <div class="md:col-span-5 lg:col-span-5 reveal-on-scroll order-1">
+                        <div class="relative aspect-square overflow-hidden bg-white shadow-xl border-4 border-white">
+                             <img src="https://raw.githubusercontent.com/DLFHJ/Portfolio/refs/heads/main/assets/images/pb/pb_cut_mono.png" 
+                                 alt="David Lasslberger" 
+                                 class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
+                        </div>
+                        <p class="text-[10px] text-gray-400 mt-4 text-center font-mono">Foto © Maximilian Cathan</p>
+                    </div>
+
+                    <!-- Text Content -->
+                    <div class="md:col-span-7 lg:col-span-6 lg:col-start-7 reveal-on-scroll order-2">
+                        <h2 data-i18n="about_title" class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-8">About Me</h2>
+                        
+                        <div class="prose prose-lg text-gray-900 mb-12">
+                            <p class="text-2xl md:text-3xl font-medium leading-tight mb-8">
+                                <span data-i18n="about_text_1">I specialize in <span class="highlight-word">Interaction Design</span> and bridging the gap between digital and physical spaces. My work often explores <span class="highlight-word">Generative Art</span>, focusing on immersive environments.</span>
+                            </p>
+                            <p data-i18n="about_text_2" class="text-gray-600 text-base leading-relaxed">
+                                With a background in User Research, I ensure that every visual spectacle is grounded in solid usability principles. Whether it's a large-scale Installation or a mobile app, the goal is always to reduce cognitive load and spark delight.
+                            </p>
+                        </div>
+
+                        <!-- Skills -->
+                        <div class="border-t border-gray-200 pt-8">
+                            <h3 data-i18n="skills_title" class="text-sm font-bold mb-6">Skills & Tools</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm">
+                                <div>
+                                    <span class="block text-gray-400 mb-2 font-mono text-xs">DESIGN</span>
+                                    <p class="text-gray-800 leading-relaxed">UX/UI, Interaction Design, Prototyping, Wireframing, Figma, Adobe Suite, Blender</p>
+                                </div>
+                                <div>
+                                    <span class="block text-gray-400 mb-2 font-mono text-xs">CODE</span>
+                                    <p class="text-gray-800 leading-relaxed">HTML/CSS/JS, Creative Coding (p5.js), Arduino, Unity, Python</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="flex flex-wrap gap-4 mt-12">
+                            <a href="#" class="hover-target inline-flex items-center space-x-2 border-b border-black pb-1 hover:opacity-60 transition-opacity">
+                                <span data-i18n="btn_cv" class="text-sm font-bold uppercase tracking-wide">Download CV</span>
+                                <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="hover-target inline-flex items-center space-x-2 border-b border-black pb-1 hover:opacity-60 transition-opacity">
+                                <span data-i18n="btn_linkedin" class="text-sm font-bold uppercase tracking-wide">LinkedIn</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="bg-black text-white pt-24 pb-0 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-32 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <div>
+                         <a href="mailto:david.lasslberger@gmail.com" class="hover-target group block">
+                            <h2 class="text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-4 group-hover:text-gray-400 transition-colors">
+                                <span data-i18n="footer_create">LET'S CREATE <br> TOGETHER</span>
+                                <!-- Moved Arrow Inline -->
+                                <span class="inline-flex w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/30 items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 ml-3 align-middle">
+                                    <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                                </span>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="flex flex-col justify-end items-start md:items-end text-right">
+                        <div class="text-lg text-gray-400 mb-8">
+                            <p class="hover:text-white transition-colors"><a href="mailto:david.lasslberger@gmail.com">david.lasslberger@gmail.com</a></p>
+                        </div>
+                        <div class="flex gap-6 text-sm font-bold uppercase tracking-widest">
+                            <a href="#" class="hover-target hover:text-gray-400 transition-colors">LinkedIn</a>
+                            <a href="#" class="hover-target hover:text-gray-400 transition-colors">Instagram</a>
+                            <a href="#" class="hover-target hover:text-gray-400 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ticker -->
+            <div class="border-t border-white/10 py-6 bg-black">
+                <div class="marquee-container">
+                    <div class="marquee-content text-xs text-gray-600 font-mono tracking-widest uppercase">
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; 
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
+                    </div>
+                    <div class="marquee-content text-xs text-gray-600 font-mono tracking-widest uppercase">
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; 
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal()"></div>
+        
+        <div class="modal-content relative bg-white w-full max-w-5xl h-[85vh] shadow-2xl flex flex-col md:flex-row overflow-hidden">
+            <!-- Close -->
+            <button onclick="closeModal()" class="absolute top-6 right-6 z-20 hover-target p-2 bg-white rounded-full mix-blend-exclusion text-black hover:scale-110 transition-transform">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Image Side -->
+            <div class="w-full md:w-3/5 h-1/2 md:h-full bg-gray-100 relative">
+                <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:hidden"></div>
+            </div>
+
+            <!-- Content Side -->
+            <div class="w-full md:w-2/5 h-1/2 md:h-full overflow-y-auto p-8 md:p-12 flex flex-col bg-white">
+                <div class="mb-auto">
+                    <span id="modalCategory" class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4 block">Installation</span>
+                    <h2 id="modalTitle" class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Project Title</h2>
+                    
+                    <p id="modalDescription" class="text-gray-600 leading-relaxed mb-8">
+                        Description...
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-y-8 gap-x-4 border-t border-gray-100 pt-8 text-sm">
+                    <div>
+                        <span data-i18n="modal_role" class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Role</span>
+                        <span id="modalRole" class="font-medium">Lead Designer</span>
+                    </div>
+                    <div>
+                        <span data-i18n="modal_year" class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Year</span>
+                        <span id="modalYear" class="font-medium">2023</span>
+                    </div>
+                    <div class="col-span-2">
+                        <span data-i18n="modal_tools" class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Tools</span>
+                        <span id="modalTools" class="font-medium">Figma, Blender</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Init Icons
+        lucide.createIcons();
+
+        // --- Draggable Physics & Interaction ---
+        const draggableItems = document.querySelectorAll('.draggable-item');
+        
+        draggableItems.forEach(item => {
+            let isDragging = false;
+            let startX, startY, initialLeft, initialTop;
+
+            item.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                item.style.zIndex = 100; // Bring to front
+                document.body.classList.add('dragging');
+                
+                // Get initial positions
+                const rect = item.getBoundingClientRect();
+                const parentRect = item.parentElement.getBoundingClientRect();
+                
+                // Calculate offset relative to parent container
+                initialLeft = item.offsetLeft;
+                initialTop = item.offsetTop;
+                startX = e.clientX;
+                startY = e.clientY;
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                
+                item.style.left = `${initialLeft + dx}px`;
+                item.style.top = `${initialTop + dy}px`;
+                
+                // Remove right/bottom constraints if set via inline styles, switch to left/top
+                item.style.right = 'auto';
+                item.style.bottom = 'auto';
+            });
+
+            window.addEventListener('mouseup', () => {
+                if(isDragging) {
+                    isDragging = false;
+                    item.style.zIndex = '';
+                    document.body.classList.remove('dragging');
+                }
+            });
+        });
+
+        // --- Magnetic Text Effect ---
+        // 1. Wrap each letter in a span
+        const magneticTitle = document.querySelector('.magnetic-title');
+        if(magneticTitle) {
+            // Keep the structure (words separate for spacing)
+            const words = magneticTitle.innerText.split(' ');
+            // Reconstruct HTML preserved span for color on 'Designer'
+            // Simplified approach for this demo:
+            // Just targeting the H1 text for magnetic effect
+            const textContent = magneticTitle.textContent;
+            magneticTitle.innerHTML = '';
+            
+            // Re-build: "Interaction" + BR + "Designer."
+            // NOTE: For simplicity in this demo, we are applying magnetic effect to the whole container relative to mouse
+            // Real letter-by-letter needs complex regex which might break nested spans.
+            // Let's implement a "Container Magnetic" effect instead for robustness.
+            
+            magneticTitle.addEventListener('mousemove', (e) => {
+                const rect = magneticTitle.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                // Move text slightly AWAY from mouse (Repel)
+                magneticTitle.style.transform = `translate(${-x * 0.05}px, ${-y * 0.05}px)`;
+            });
+            
+            magneticTitle.addEventListener('mouseleave', () => {
+                magneticTitle.style.transform = `translate(0px, 0px)`;
+            });
+        }
+
+
+        // --- Standard Logic (Lang, Modal, Scroll) ---
+        let currentLang = 'en';
+        const translations = {
+            en: {
+                nav_work: "Work", nav_about: "About", nav_contact: "Contact",
+                projects_title: "Selected Projects",
+                proj2_subtitle: "Interactive Installation",
+                proj3_subtitle: "Synesthesia",
+                proj_inprogress: "In Progress",
+                proj_soon: "Coming Soon",
+                proj6_cat: "Light Design",
+                btn_view_all: "View All Projects",
+                btn_show_less: "Show Less",
+                about_title: "About Me",
+                about_text_1: "I specialize in <span class='highlight-word'>Interaction Design</span> and bridging the gap between digital and physical spaces.",
+                about_text_2: "With a background in User Research, I ensure that every visual spectacle is grounded in solid usability principles.",
+                skills_title: "Skills & Tools",
+                btn_cv: "Download CV",
+                btn_linkedin: "View LinkedIn",
+                footer_create: "LET'S CREATE <br> TOGETHER",
+                modal_role: "Role", modal_year: "Year", modal_tools: "Tools"
+            },
+            de: {
+                nav_work: "Arbeiten", nav_about: "Über mich", nav_contact: "Kontakt",
+                projects_title: "Ausgewählte Projekte",
+                proj2_subtitle: "Interaktive Installation",
+                proj3_subtitle: "Synästhesie",
+                proj_inprogress: "In Arbeit",
+                proj_soon: "Demnächst",
+                proj6_cat: "Lichtdesign",
+                btn_view_all: "Alle Projekte",
+                btn_show_less: "Weniger anzeigen",
+                about_title: "Über mich",
+                about_text_1: "Ich spezialisiere mich auf <span class='highlight-word'>Interaktionsdesign</span> und schlage Brücken zwischen digitalen und physischen Räumen.",
+                about_text_2: "Mit einem Hintergrund in Nutzerforschung stelle ich sicher, dass jedes visuelle Spektakel auf soliden Usability-Prinzipien basiert.",
+                skills_title: "Fähigkeiten & Tools",
+                btn_cv: "CV Laden",
+                btn_linkedin: "LinkedIn Profil",
+                footer_create: "LASS UNS WAS <br> STARTEN",
+                modal_role: "Rolle", modal_year: "Jahr", modal_tools: "Tools"
+            }
+        };
+
+        const projects = {
+            1: { title: {en: "Sanolux", de: "Sanolux"}, category: {en: "Installation", de: "Installation"}, image: "https://images.unsplash.com/photo-1516065532585-6184a44d34c0?q=80&w=1000&auto=format&fit=crop", description: {en: "Immersive light and sound installation designed for the annual Klanglicht festival.", de: "Immersive Licht- und Klanginstallation für das Klanglicht Festival."}, role: {en: "Lead Designer", de: "Lead Designer"}, year: "2023", tools: "TouchDesigner, Ableton" },
+            2: { title: {en: "Reactive Space", de: "Reaktiver Raum"}, category: {en: "Interaction", de: "Interaktion"}, image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop", description: {en: "Physical computing project responding to human proximity.", de: "Physical Computing Projekt, das auf Nähe reagiert."}, role: {en: "Creative Coder", de: "Creative Coder"}, year: "2024", tools: "Arduino, C++" },
+            3: { title: {en: "Visual Audio", de: "Visuelles Audio"}, category: {en: "Exhibition", de: "Ausstellung"}, image: "https://images.unsplash.com/photo-1518175510007-a37a72382431?q=80&w=1000&auto=format&fit=crop", description: {en: "Translating musical notes into visual spectrums in real-time.", de: "Übersetzung von Musiknoten in visuelle Spektren."}, role: {en: "Visual Artist", de: "Visual Artist"}, year: "2022", tools: "Processing" },
+            4: { title: {en: "Fintech App", de: "Fintech App"}, category: {en: "Research", de: "Forschung"}, image: "", description: {en: "In progress.", de: "In Arbeit."}, role: {en: "UX Researcher", de: "UX Researcher"}, year: "2025", tools: "Figma" },
+            5: { title: {en: "Secret Project", de: "Geheimprojekt"}, category: {en: "Concept", de: "Konzept"}, image: "", description: {en: "Coming soon.", de: "Demnächst."}, role: {en: "Art Director", de: "Art Director"}, year: "2025", tools: "AI" },
+            6: { title: {en: "Documentation", de: "Dokumentation"}, category: {en: "Tech Lead", de: "Tech Lead"}, image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop", description: {en: "Technical docs for Sanolux.", de: "Technische Doku für Sanolux."}, role: {en: "Tech Lead", de: "Tech Lead"}, year: "2023", tools: "MadMapper" }
+        };
+
+        // --- 1. Custom Cursor & Interaction Logic ---
+        const cursor = document.getElementById('custom-cursor');
+        let mouseX = -100, mouseY = -100;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Move cursor directly via transform for performance
+            cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+        });
+
+        // Hover States (Enlarge cursor)
+        const hoverTargets = document.querySelectorAll('.hover-target');
+        hoverTargets.forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+        });
+
+        // --- 3. Scroll Reveal ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
+
+        // --- 5. Language & Content Logic ---
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'de' : 'en';
+            document.getElementById('langLabel').innerText = currentLang.toUpperCase();
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            // Update button text state
+            const btnSpan = document.querySelector('#toggleProjectsBtn span');
+            const hiddenDiv = document.getElementById('moreProjects');
+            const isVisible = !hiddenDiv.classList.contains('hidden');
+            if (btnSpan) {
+                btnSpan.innerText = isVisible 
+                    ? translations[currentLang].btn_show_less 
+                    : translations[currentLang].btn_view_all;
+            }
+        }
+
+        function toggleProjects() {
+            const container = document.getElementById('moreProjects');
+            const btnSpan = document.querySelector('#toggleProjectsBtn span');
+            // Lucide icons replace <i> with <svg>, so we try to find the svg first.
+            const icon = document.querySelector('#toggleProjectsBtn svg') || document.querySelector('#toggleProjectsBtn i');
+            
+            const isHidden = container.classList.contains('hidden');
+
+            if (isHidden) {
+                // Expanding
+                container.classList.remove('hidden');
+                // Trigger scroll reveal for new items
+                setTimeout(() => {
+                    container.querySelectorAll('div').forEach(el => el.classList.add('reveal-on-scroll', 'is-visible'));
+                }, 10);
+                
+                if (btnSpan) btnSpan.innerText = translations[currentLang].btn_show_less;
+                
+                if (icon) {
+                    // Use classes to handle rotation to preserve Tailwind's composable transforms
+                    icon.classList.add('rotate-45');
+                    // Remove default hover spin (0 -> 90)
+                    icon.classList.remove('group-hover:rotate-90');
+                    // Add X hover spin (45 -> 135)
+                    icon.classList.add('group-hover:rotate-[135deg]');
+                }
+            } else {
+                // Collapsing
+                container.classList.add('hidden');
+                if (btnSpan) btnSpan.innerText = translations[currentLang].btn_view_all;
+                
+                if (icon) {
+                    // Reset rotation
+                    icon.classList.remove('rotate-45');
+                    // Remove X hover spin
+                    icon.classList.remove('group-hover:rotate-[135deg]');
+                    // Restore default hover spin
+                    icon.classList.add('group-hover:rotate-90');
+                }
+                
+                // Smooth scroll back to top of section
+                document.getElementById('work').scrollIntoView({behavior: 'smooth'});
+            }
+        }
+
+        // --- 6. Modal Logic ---
+        function openModal(id) {
+            const data = projects[id];
+            if(!data) return;
+            
+            document.getElementById('modalImage').src = data.image || '';
+            document.getElementById('modalTitle').innerText = data.title[currentLang];
+            document.getElementById('modalCategory').innerText = data.category[currentLang];
+            document.getElementById('modalDescription').innerText = data.description[currentLang];
+            document.getElementById('modalRole').innerText = data.role[currentLang];
+            document.getElementById('modalYear').innerText = data.year;
+            document.getElementById('modalTools').innerText = data.tools;
+
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Lock scroll
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Unlock scroll
+        }
+        
+        document.addEventListener('keydown', (e) => { if(e.key === "Escape") closeModal(); });
+
+    </script>
+</body>
+</html>

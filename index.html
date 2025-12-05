@@ -35,24 +35,27 @@
         /* ---------------------------------- */
         @media (pointer: fine) {
             body {
-                cursor: none; /* Only hide default cursor on mouse devices */
+                cursor: none;
+                /* Only hide default cursor on mouse devices */
             }
-            
+
             #custom-cursor {
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: var(--cursor-size);
                 height: var(--cursor-size);
-                background-color: white; /* Changed to white for difference mode */
+                background-color: white;
+                /* Changed to white for difference mode */
                 border-radius: 50%;
                 pointer-events: none;
                 z-index: 9999;
                 transform: translate(-50%, -50%);
-                transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1), 
-                            height 0.3s cubic-bezier(0.19, 1, 0.22, 1),
-                            transform 0.1s linear;
-                mix-blend-mode: difference; /* Critical: Visible on black and white */
+                transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+                    height 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+                    transform 0.1s linear;
+                mix-blend-mode: difference;
+                /* Critical: Visible on black and white */
             }
 
             /* Enlarge state */
@@ -65,14 +68,15 @@
 
         @media (pointer: coarse) {
             #custom-cursor {
-                display: none; /* Hide custom cursor on touch devices */
+                display: none;
+                /* Hide custom cursor on touch devices */
             }
         }
 
         /* ---------------------------------- */
         /* Utility Animations                 */
         /* ---------------------------------- */
-        
+
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -97,15 +101,20 @@
         }
 
         @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         /* Modal Transitions */
         .modal {
             transition: opacity 0.4s ease, visibility 0.4s ease;
         }
-        
+
         .modal-content {
             transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
         }
@@ -137,7 +146,7 @@
             color: #000;
             display: inline-block;
         }
-        
+
         .highlight-word::after {
             content: '';
             position: absolute;
@@ -150,10 +159,22 @@
             transform-origin: right;
             transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
         }
-        
+
         .highlight-word:hover::after {
             transform: scaleX(1);
             transform-origin: left;
+        }
+
+        /* Footer Outline Text Interaction */
+        .footer-outline-text {
+            color: white;
+            -webkit-text-stroke: 0px transparent;
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .group:hover .footer-outline-text {
+            color: rgb(0, 0, 0);
+            text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, -1px -1px 0 #ffffff;
         }
     </style>
 </head>
@@ -169,20 +190,25 @@
             <div class="flex justify-between items-center h-24">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="#" class="block font-bold text-sm tracking-tight uppercase hover-target p-2 mix-blend-difference text-black md:text-black">
+                    <a href="#"
+                        class="block font-bold text-sm tracking-tight uppercase hover-target p-2 mix-blend-difference text-black md:text-black">
                         David Lasslberger
                     </a>
                 </div>
 
                 <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#work" data-i18n="nav_work" class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
-                    <a href="#about" data-i18n="nav_about" class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
-                    <a href="#contact" data-i18n="nav_contact" class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
+                    <a href="#work" data-i18n="nav_work"
+                        class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
+                    <a href="#about" data-i18n="nav_about"
+                        class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
+                    <a href="#contact" data-i18n="nav_contact"
+                        class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
 
                     <!-- Lang Toggle -->
-                    <button id="langToggle" onclick="toggleLanguage()" class="hover-target flex items-center space-x-2 text-xs uppercase tracking-widest border border-gray-200 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all duration-300">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <button id="langToggle" onclick="toggleLanguage()"
+                        class="hover-target flex items-center space-x-2 text-xs uppercase tracking-widest border border-gray-200 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                        <!-- Green dot removed here -->
                         <span id="langLabel">EN</span>
                     </button>
                 </div>
@@ -198,44 +224,51 @@
     </nav>
 
     <main class="relative z-10 bg-white">
-        
+
         <!-- Hero Section (Redesigned) -->
         <header class="relative h-screen flex flex-col justify-center items-center overflow-hidden bg-white">
-            
+
             <!-- Full Screen Interactive Canvas Background -->
             <canvas id="heroCanvas" class="absolute inset-0 w-full h-full z-0 cursor-crosshair"></canvas>
-            
+
             <!-- Content Overlay -->
             <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 text-center pointer-events-none">
                 <div class="reveal-on-scroll flex flex-col items-center">
-                    
+
                     <!-- Main Headline -->
                     <h1 class="font-bold tracking-tighter leading-none text-black mb-6 mix-blend-darken">
                         <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-2 sm:mb-4">INTERACTION</span>
-                        <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-gray-400">DESIGNER</span>
+                        <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-black">DESIGNER</span>
                     </h1>
-                    
+
                     <!-- Subtext -->
-                    <p class="text-sm md:text-base text-gray-500 max-w-lg mx-auto leading-relaxed mt-4 font-mono uppercase tracking-widest">
+                    <p
+                        class="text-sm md:text-base text-gray-500 max-w-lg mx-auto leading-relaxed mt-4 font-mono uppercase tracking-widest">
                         Bridging the gap between <br class="hidden sm:block"> digital systems & physical spaces.
                     </p>
 
                     <!-- Status Pill (Moved Below) -->
-                    <div class="pointer-events-auto inline-flex items-center space-x-2 border border-gray-200 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full mt-12 shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="pointer-events-auto inline-flex items-center space-x-2 border border-gray-200 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full mt-12 shadow-sm hover:shadow-md transition-shadow">
                         <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                         </span>
-                        <span data-i18n="hero_available" class="text-[10px] font-bold tracking-widest uppercase text-gray-600">Available for work</span>
+                        <span data-i18n="hero_available"
+                            class="text-[10px] font-bold tracking-widest uppercase text-gray-600">Available for
+                            work</span>
                     </div>
 
                 </div>
             </div>
 
             <!-- Scroll Indicator -->
-            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce pointer-events-none">
-                <i data-lucide="arrow-down" class="w-6 h-6 text-gray-300"></i>
-            </div>
+            <a href="#work"
+                class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer hover:opacity-70 transition-opacity z-20">
+                <i data-lucide="arrow-down" class="w-10 h-10 text-black"></i>
+            </a>
+
         </header>
 
         <!-- Projects Section -->
@@ -251,9 +284,12 @@
                     <!-- Project 1 -->
                     <div class="reveal-on-scroll group cursor-pointer" onclick="openModal(1)">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
-                            <img src="https://images.unsplash.com/photo-1516065532585-6184a44d34c0?q=80&w=1000&auto=format&fit=crop" 
-                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project 1">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                            <img src="https://images.unsplash.com/photo-1516065532585-6184a44d34c0?q=80&w=1000&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                alt="Project 1">
+                            <div
+                                class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300">
+                            </div>
                         </div>
                         <div class="flex justify-between items-start">
                             <div>
@@ -266,12 +302,14 @@
                     <!-- Project 2 -->
                     <div class="reveal-on-scroll group cursor-pointer delay-100" onclick="openModal(2)">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
-                            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop" 
-                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project 2">
+                            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                alt="Project 2">
                         </div>
                         <div class="flex justify-between items-start">
                             <div>
-                                <h3 data-i18n="proj2_subtitle" class="text-lg font-semibold">Interactive Installation</h3>
+                                <h3 data-i18n="proj2_subtitle" class="text-lg font-semibold">Interactive Installation
+                                </h3>
                                 <p class="text-sm text-gray-500">Physical Computing</p>
                             </div>
                         </div>
@@ -280,8 +318,9 @@
                     <!-- Project 3 -->
                     <div class="reveal-on-scroll group cursor-pointer delay-200" onclick="openModal(3)">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
-                            <img src="https://images.unsplash.com/photo-1518175510007-a37a72382431?q=80&w=1000&auto=format&fit=crop" 
-                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project 3">
+                            <img src="https://images.unsplash.com/photo-1518175510007-a37a72382431?q=80&w=1000&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                alt="Project 3">
                         </div>
                         <div class="flex justify-between items-start">
                             <div>
@@ -295,8 +334,10 @@
                     <div id="moreProjects" class="hidden contents">
                         <!-- Project 4 -->
                         <div class="group cursor-pointer" onclick="openModal(4)">
-                            <div class="hover-target relative aspect-[4/3] bg-gray-50 overflow-hidden mb-4 flex items-center justify-center border border-dashed border-gray-300">
-                                <span data-i18n="proj_inprogress" class="text-xs uppercase tracking-widest text-gray-400">In Progress</span>
+                            <div
+                                class="hover-target relative aspect-[4/3] bg-gray-50 overflow-hidden mb-4 flex items-center justify-center border border-dashed border-gray-300">
+                                <span data-i18n="proj_inprogress"
+                                    class="text-xs uppercase tracking-widest text-gray-400">In Progress</span>
                             </div>
                             <h3 class="text-lg font-semibold">Fintech UX</h3>
                             <p class="text-sm text-gray-500">User Research</p>
@@ -304,8 +345,10 @@
 
                         <!-- Project 5 -->
                         <div class="group cursor-pointer" onclick="openModal(5)">
-                            <div class="hover-target relative aspect-[4/3] bg-gray-50 overflow-hidden mb-4 flex items-center justify-center border border-dashed border-gray-300">
-                                <span data-i18n="proj_soon" class="text-xs uppercase tracking-widest text-gray-400">Coming Soon</span>
+                            <div
+                                class="hover-target relative aspect-[4/3] bg-gray-50 overflow-hidden mb-4 flex items-center justify-center border border-dashed border-gray-300">
+                                <span data-i18n="proj_soon"
+                                    class="text-xs uppercase tracking-widest text-gray-400">Coming Soon</span>
                             </div>
                             <h3 class="text-lg font-semibold">AI Craft</h3>
                             <p class="text-sm text-gray-500">Concept</p>
@@ -314,10 +357,11 @@
                         <!-- Project 6 -->
                         <div class="group cursor-pointer" onclick="openModal(6)">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
-                                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop" 
-                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project 6">
+                                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    alt="Project 6">
                             </div>
-                             <div class="flex justify-between items-start">
+                            <div class="flex justify-between items-start">
                                 <div>
                                     <h3 class="text-lg font-semibold">Sanolux Docs</h3>
                                     <p data-i18n="proj6_cat" class="text-sm text-gray-500">Technical Direction</p>
@@ -330,12 +374,14 @@
 
                 <!-- Toggle Button -->
                 <div class="mt-20 flex justify-center reveal-on-scroll">
-                    <button id="toggleProjectsBtn" onclick="toggleProjects()" 
+                    <button id="toggleProjectsBtn" onclick="toggleProjects()"
                         class="hover-target group relative px-8 py-3 bg-gray-900 text-white overflow-hidden rounded-full transition-all duration-300 hover:bg-black hover:scale-105">
                         <div class="relative z-10 flex items-center space-x-2">
-                            <span data-i18n="btn_view_all" class="text-xs font-bold uppercase tracking-widest">View All Projects</span>
+                            <span data-i18n="btn_view_all" class="text-xs font-bold uppercase tracking-widest">View All
+                                Projects</span>
                             <!-- Added transform class to ensure CSS variables work properly with rotate utilities -->
-                            <i data-lucide="plus" class="transform w-4 h-4 transition-transform duration-300 group-hover:rotate-90"></i>
+                            <i data-lucide="plus"
+                                class="transform w-4 h-4 transition-transform duration-300 group-hover:rotate-90"></i>
                         </div>
                     </button>
                 </div>
@@ -346,28 +392,34 @@
         <section id="about" class="py-24 bg-gray-50">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 items-start">
-                    
-                     <!-- Image (Moved to Left) -->
-                     <div class="md:col-span-5 lg:col-span-5 reveal-on-scroll order-1">
+
+                    <!-- Image (Moved to Left) -->
+                    <div class="md:col-span-5 lg:col-span-5 reveal-on-scroll order-1">
                         <!-- Changed aspect-[3/4] to aspect-square -->
                         <div class="relative aspect-square overflow-hidden bg-gray-200">
-                             <img src="https://raw.githubusercontent.com/DLFHJ/Portfolio/refs/heads/main/assets/images/pb/pb_cut_mono.png" 
-                                 alt="David Lasslberger" 
-                                 class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
+                            <img src="https://raw.githubusercontent.com/DLFHJ/Portfolio/refs/heads/main/assets/images/pb/pb_cut_mono.png"
+                                alt="David Lasslberger"
+                                class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
                         </div>
                         <p class="text-[10px] text-gray-400 mt-2 text-right">Foto © Maximilian Cathan</p>
                     </div>
 
                     <!-- Text Content (Moved to Right) -->
                     <div class="md:col-span-7 lg:col-span-6 lg:col-start-7 reveal-on-scroll order-2">
-                        <h2 data-i18n="about_title" class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-8">About Me</h2>
-                        
+                        <h2 data-i18n="about_title"
+                            class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-8">About Me</h2>
+
                         <div class="prose prose-lg text-gray-900 mb-12">
                             <p class="text-2xl md:text-3xl font-medium leading-tight mb-8">
-                                <span data-i18n="about_text_1">I specialize in <span class="highlight-word">Interaction Design</span> and bridging the gap between digital and physical spaces. My work often explores <span class="highlight-word">Generative Art</span>, focusing on immersive environments.</span>
+                                <span data-i18n="about_text_1">I specialize in <span class="highlight-word">Interaction
+                                        Design</span> and bridging the gap between digital and physical spaces. My work
+                                    often explores <span class="highlight-word">Generative Art</span>, focusing on
+                                    immersive environments.</span>
                             </p>
                             <p data-i18n="about_text_2" class="text-gray-600 text-base leading-relaxed">
-                                With a background in User Research, I ensure that every visual spectacle is grounded in solid usability principles. Whether it's a large-scale Installation or a mobile app, the goal is always to reduce cognitive load and spark delight.
+                                With a background in User Research, I ensure that every visual spectacle is grounded in
+                                solid usability principles. Whether it's a large-scale Installation or a mobile app, the
+                                goal is always to reduce cognitive load and spark delight.
                             </p>
                         </div>
 
@@ -377,23 +429,29 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm">
                                 <div>
                                     <span class="block text-gray-400 mb-2 font-mono text-xs">DESIGN</span>
-                                    <p class="text-gray-800 leading-relaxed">UX/UI, Interaction Design, Prototyping, Wireframing, Figma, Adobe Suite, Blender</p>
+                                    <p class="text-gray-800 leading-relaxed">UX/UI, Interaction Design, Prototyping,
+                                        Wireframing, Figma, Adobe Suite, Blender</p>
                                 </div>
                                 <div>
                                     <span class="block text-gray-400 mb-2 font-mono text-xs">CODE</span>
-                                    <p class="text-gray-800 leading-relaxed">HTML/CSS/JS, Creative Coding (p5.js), Arduino, Unity, Python</p>
+                                    <p class="text-gray-800 leading-relaxed">HTML/CSS/JS, Creative Coding (p5.js),
+                                        Arduino, Unity, Python</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Links -->
                         <div class="flex flex-wrap gap-4 mt-12">
-                            <a href="#" class="hover-target inline-flex items-center space-x-2 border-b border-black pb-1 hover:opacity-60 transition-opacity">
-                                <span data-i18n="btn_cv" class="text-sm font-bold uppercase tracking-wide">Download CV</span>
+                            <a href="assets\misc\CV Lebenslauf 2025.pdf" download="David_Lasslberger_CV.pdf"
+                                class="hover-target inline-flex items-center space-x-2 border-b border-black pb-1 hover:opacity-60 transition-opacity">
+                                <span data-i18n="btn_cv" class="text-sm font-bold uppercase tracking-wide">Download
+                                    CV</span>
                                 <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
                             </a>
-                            <a href="https://linkedin.com" target="_blank" class="hover-target inline-flex items-center space-x-2 border-b border-black pb-1 hover:opacity-60 transition-opacity">
-                                <span data-i18n="btn_linkedin" class="text-sm font-bold uppercase tracking-wide">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/david-la%C3%9Flberger-a5b39922b/" target="_blank"
+                                class="hover-target inline-flex items-center space-x-2 border-b border-black pb-1 hover:opacity-60 transition-opacity">
+                                <span data-i18n="btn_linkedin"
+                                    class="text-sm font-bold uppercase tracking-wide">LinkedIn</span>
                                 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </a>
                         </div>
@@ -408,24 +466,29 @@
             <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-32 relative z-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                     <div>
-                         <a href="mailto:david.lasslberger@gmail.com" class="hover-target group block">
-                            <h2 class="text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-4 group-hover:text-gray-400 transition-colors">
-                                <span data-i18n="footer_create">LET'S CREATE <br> TOGETHER</span>
+                        <a href="mailto:david.lasslberger@gmail.com" class="hover-target group block">
+                            <!-- Changed tracking-tighter to tracking-normal to fix the R and A overlap -->
+                            <h2 class="text-5xl md:text-7xl font-bold tracking-normal leading-none mb-4">
+                                <!-- Applied footer-outline-text class here -->
+                                <span data-i18n="footer_create" class="footer-outline-text">LET'S CREATE <br>
+                                    TOGETHER</span>
                                 <!-- Moved Arrow Inline -->
-                                <span class="inline-flex w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/30 items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 ml-3 align-middle">
+                                <span
+                                    class="inline-flex w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/30 items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all duration-300 ml-3 align-middle">
                                     <i data-lucide="arrow-right" class="w-6 h-6"></i>
                                 </span>
                             </h2>
                         </a>
                     </div>
                     <div class="flex flex-col justify-end items-start md:items-end text-right">
-                        <div class="text-lg text-gray-400 mb-8">
-                            <p class="hover:text-white transition-colors"><a href="mailto:david.lasslberger@gmail.com">david.lasslberger@gmail.com</a></p>
+                        <!-- Changed text-gray-400 to text-white -->
+                        <div class="text-lg text-white mb-8">
+                            <p class="hover:text-gray-300 transition-colors"><a
+                                    href="mailto:david.lasslberger@gmail.com">david.lasslberger@gmail.com</a></p>
                         </div>
                         <div class="flex gap-6 text-sm font-bold uppercase tracking-widest">
-                            <a href="#" class="hover-target hover:text-gray-400 transition-colors">LinkedIn</a>
-                            <a href="#" class="hover-target hover:text-gray-400 transition-colors">Instagram</a>
-                            <a href="#" class="hover-target hover:text-gray-400 transition-colors">GitHub</a>
+                            <a href="https://www.linkedin.com/in/david-la%C3%9Flberger-a5b39922b/" class="hover-target hover:text-gray-400 transition-colors">LinkedIn</a>
+                            <a href="https://github.com/DLFHJ" class="hover-target hover:text-gray-400 transition-colors">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -435,14 +498,20 @@
             <div class="border-t border-white/10 py-6 bg-black">
                 <div class="marquee-container">
                     <div class="marquee-content text-xs text-gray-600 font-mono tracking-widest uppercase">
-                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; 
-                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
-                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
                     </div>
                     <div class="marquee-content text-xs text-gray-600 font-mono tracking-widest uppercase">
-                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; 
-                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
-                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
                     </div>
                 </div>
             </div>
@@ -452,10 +521,12 @@
     <!-- Project Modal -->
     <div id="projectModal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal()"></div>
-        
-        <div class="modal-content relative bg-white w-full max-w-5xl h-[85vh] shadow-2xl flex flex-col md:flex-row overflow-hidden">
+
+        <div
+            class="modal-content relative bg-white w-full max-w-5xl h-[85vh] shadow-2xl flex flex-col md:flex-row overflow-hidden">
             <!-- Close -->
-            <button onclick="closeModal()" class="absolute top-6 right-6 z-20 hover-target p-2 bg-white rounded-full mix-blend-exclusion text-black hover:scale-110 transition-transform">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 z-20 hover-target p-2 bg-white rounded-full mix-blend-exclusion text-black hover:scale-110 transition-transform">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
 
@@ -468,9 +539,10 @@
             <!-- Content Side -->
             <div class="w-full md:w-2/5 h-1/2 md:h-full overflow-y-auto p-8 md:p-12 flex flex-col bg-white">
                 <div class="mb-auto">
-                    <span id="modalCategory" class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4 block">Installation</span>
+                    <span id="modalCategory"
+                        class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4 block">Installation</span>
                     <h2 id="modalTitle" class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Project Title</h2>
-                    
+
                     <p id="modalDescription" class="text-gray-600 leading-relaxed mb-8">
                         Description...
                     </p>
@@ -478,15 +550,18 @@
 
                 <div class="grid grid-cols-2 gap-y-8 gap-x-4 border-t border-gray-100 pt-8 text-sm">
                     <div>
-                        <span data-i18n="modal_role" class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Role</span>
+                        <span data-i18n="modal_role"
+                            class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Role</span>
                         <span id="modalRole" class="font-medium">Lead Designer</span>
                     </div>
                     <div>
-                        <span data-i18n="modal_year" class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Year</span>
+                        <span data-i18n="modal_year"
+                            class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Year</span>
                         <span id="modalYear" class="font-medium">2023</span>
                     </div>
                     <div class="col-span-2">
-                        <span data-i18n="modal_tools" class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Tools</span>
+                        <span data-i18n="modal_tools"
+                            class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Tools</span>
                         <span id="modalTools" class="font-medium">Figma, Blender</span>
                     </div>
                 </div>
@@ -544,12 +619,12 @@
         };
 
         const projects = {
-            1: { title: {en: "Sanolux", de: "Sanolux"}, category: {en: "Installation", de: "Installation"}, image: "https://images.unsplash.com/photo-1516065532585-6184a44d34c0?q=80&w=1000&auto=format&fit=crop", description: {en: "Immersive light and sound installation designed for the annual Klanglicht festival.", de: "Immersive Licht- und Klanginstallation für das Klanglicht Festival."}, role: {en: "Lead Designer", de: "Lead Designer"}, year: "2023", tools: "TouchDesigner, Ableton" },
-            2: { title: {en: "Reactive Space", de: "Reaktiver Raum"}, category: {en: "Interaction", de: "Interaktion"}, image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop", description: {en: "Physical computing project responding to human proximity.", de: "Physical Computing Projekt, das auf Nähe reagiert."}, role: {en: "Creative Coder", de: "Creative Coder"}, year: "2024", tools: "Arduino, C++" },
-            3: { title: {en: "Visual Audio", de: "Visuelles Audio"}, category: {en: "Exhibition", de: "Ausstellung"}, image: "https://images.unsplash.com/photo-1518175510007-a37a72382431?q=80&w=1000&auto=format&fit=crop", description: {en: "Translating musical notes into visual spectrums in real-time.", de: "Übersetzung von Musiknoten in visuelle Spektren."}, role: {en: "Visual Artist", de: "Visual Artist"}, year: "2022", tools: "Processing" },
-            4: { title: {en: "Fintech App", de: "Fintech App"}, category: {en: "Research", de: "Forschung"}, image: "", description: {en: "In progress.", de: "In Arbeit."}, role: {en: "UX Researcher", de: "UX Researcher"}, year: "2025", tools: "Figma" },
-            5: { title: {en: "Secret Project", de: "Geheimprojekt"}, category: {en: "Concept", de: "Konzept"}, image: "", description: {en: "Coming soon.", de: "Demnächst."}, role: {en: "Art Director", de: "Art Director"}, year: "2025", tools: "AI" },
-            6: { title: {en: "Documentation", de: "Dokumentation"}, category: {en: "Tech Lead", de: "Tech Lead"}, image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop", description: {en: "Technical docs for Sanolux.", de: "Technische Doku für Sanolux."}, role: {en: "Tech Lead", de: "Tech Lead"}, year: "2023", tools: "MadMapper" }
+            1: { title: { en: "Sanolux", de: "Sanolux" }, category: { en: "Installation", de: "Installation" }, image: "https://images.unsplash.com/photo-1516065532585-6184a44d34c0?q=80&w=1000&auto=format&fit=crop", description: { en: "Immersive light and sound installation designed for the annual Klanglicht festival.", de: "Immersive Licht- und Klanginstallation für das Klanglicht Festival." }, role: { en: "Lead Designer", de: "Lead Designer" }, year: "2023", tools: "TouchDesigner, Ableton" },
+            2: { title: { en: "Reactive Space", de: "Reaktiver Raum" }, category: { en: "Interaction", de: "Interaktion" }, image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop", description: { en: "Physical computing project responding to human proximity.", de: "Physical Computing Projekt, das auf Nähe reagiert." }, role: { en: "Creative Coder", de: "Creative Coder" }, year: "2024", tools: "Arduino, C++" },
+            3: { title: { en: "Visual Audio", de: "Visuelles Audio" }, category: { en: "Exhibition", de: "Ausstellung" }, image: "https://images.unsplash.com/photo-1518175510007-a37a72382431?q=80&w=1000&auto=format&fit=crop", description: { en: "Translating musical notes into visual spectrums in real-time.", de: "Übersetzung von Musiknoten in visuelle Spektren." }, role: { en: "Visual Artist", de: "Visual Artist" }, year: "2022", tools: "Processing" },
+            4: { title: { en: "Fintech App", de: "Fintech App" }, category: { en: "Research", de: "Forschung" }, image: "", description: { en: "In progress.", de: "In Arbeit." }, role: { en: "UX Researcher", de: "UX Researcher" }, year: "2025", tools: "Figma" },
+            5: { title: { en: "Secret Project", de: "Geheimprojekt" }, category: { en: "Concept", de: "Konzept" }, image: "", description: { en: "Coming soon.", de: "Demnächst." }, role: { en: "Art Director", de: "Art Director" }, year: "2025", tools: "AI" },
+            6: { title: { en: "Documentation", de: "Dokumentation" }, category: { en: "Tech Lead", de: "Tech Lead" }, image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop", description: { en: "Technical docs for Sanolux.", de: "Technische Doku für Sanolux." }, role: { en: "Tech Lead", de: "Tech Lead" }, year: "2023", tools: "MadMapper" }
         };
 
         // --- 1. Custom Cursor & Interaction Logic ---
@@ -559,7 +634,7 @@
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            
+
             // Move cursor directly via transform for performance
             cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
         });
@@ -626,14 +701,14 @@
                 // Simple interaction: slight repulse
                 let dx = mouseX - this.x;
                 let dy = mouseY - this.y;
-                let distance = Math.sqrt(dx*dx + dy*dy);
+                let distance = Math.sqrt(dx * dx + dy * dy);
                 let maxDistance = 200; // Increased interaction radius for fullscreen
 
                 if (distance < maxDistance) {
                     const forceDirectionX = dx / distance;
                     const forceDirectionY = dy / distance;
                     const force = (maxDistance - distance) / maxDistance;
-                    this.x -= forceDirectionX * force * 1; 
+                    this.x -= forceDirectionX * force * 1;
                     this.y -= forceDirectionY * force * 1;
                 }
 
@@ -668,7 +743,7 @@
                     const dist = Math.sqrt(dx * dx + dy * dy);
                     if (dist < 100) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0,0,0,${0.1 - dist/1000})`;
+                        ctx.strokeStyle = `rgba(0,0,0,${0.1 - dist / 1000})`;
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
@@ -697,7 +772,7 @@
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'de' : 'en';
             document.getElementById('langLabel').innerText = currentLang.toUpperCase();
-            
+
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[currentLang][key]) {
@@ -710,8 +785,8 @@
             const hiddenDiv = document.getElementById('moreProjects');
             const isVisible = !hiddenDiv.classList.contains('hidden');
             if (btnSpan) {
-                btnSpan.innerText = isVisible 
-                    ? translations[currentLang].btn_show_less 
+                btnSpan.innerText = isVisible
+                    ? translations[currentLang].btn_show_less
                     : translations[currentLang].btn_view_all;
             }
         }
@@ -721,7 +796,7 @@
             const btnSpan = document.querySelector('#toggleProjectsBtn span');
             // Lucide icons replace <i> with <svg>, so we try to find the svg first.
             const icon = document.querySelector('#toggleProjectsBtn svg') || document.querySelector('#toggleProjectsBtn i');
-            
+
             const isHidden = container.classList.contains('hidden');
 
             if (isHidden) {
@@ -731,9 +806,9 @@
                 setTimeout(() => {
                     container.querySelectorAll('div').forEach(el => el.classList.add('reveal-on-scroll', 'is-visible'));
                 }, 10);
-                
+
                 if (btnSpan) btnSpan.innerText = translations[currentLang].btn_show_less;
-                
+
                 if (icon) {
                     // Use classes to handle rotation to preserve Tailwind's composable transforms
                     icon.classList.add('rotate-45');
@@ -746,7 +821,7 @@
                 // Collapsing
                 container.classList.add('hidden');
                 if (btnSpan) btnSpan.innerText = translations[currentLang].btn_view_all;
-                
+
                 if (icon) {
                     // Reset rotation
                     icon.classList.remove('rotate-45');
@@ -755,17 +830,17 @@
                     // Restore default hover spin
                     icon.classList.add('group-hover:rotate-90');
                 }
-                
+
                 // Smooth scroll back to top of section
-                document.getElementById('work').scrollIntoView({behavior: 'smooth'});
+                document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
             }
         }
 
         // --- 6. Modal Logic ---
         function openModal(id) {
             const data = projects[id];
-            if(!data) return;
-            
+            if (!data) return;
+
             document.getElementById('modalImage').src = data.image || '';
             document.getElementById('modalTitle').innerText = data.title[currentLang];
             document.getElementById('modalCategory').innerText = data.category[currentLang];
@@ -784,9 +859,10 @@
             modal.classList.add('hidden');
             document.body.style.overflow = ''; // Unlock scroll
         }
-        
-        document.addEventListener('keydown', (e) => { if(e.key === "Escape") closeModal(); });
+
+        document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeModal(); });
 
     </script>
 </body>
+
 </html>
