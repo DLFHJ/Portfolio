@@ -176,6 +176,18 @@
             color: rgb(0, 0, 0);
             text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, -1px -1px 0 #ffffff;
         }
+
+        /* Hide Scrollbar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
     </style>
 </head>
 
@@ -284,7 +296,7 @@
                     <!-- Project 1 -->
                     <div class="reveal-on-scroll group cursor-pointer" onclick="openModal(1)">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
-                            <img src="https://images.unsplash.com/photo-1516065532585-6184a44d34c0?q=80&w=1000&auto=format&fit=crop"
+                            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 alt="Project 1">
                             <div
@@ -305,6 +317,7 @@
                             <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 alt="Project 2">
+
                         </div>
                         <div class="flex justify-between items-start">
                             <div>
@@ -487,8 +500,10 @@
                                     href="mailto:david.lasslberger@gmail.com">david.lasslberger@gmail.com</a></p>
                         </div>
                         <div class="flex gap-6 text-sm font-bold uppercase tracking-widest">
-                            <a href="https://www.linkedin.com/in/david-la%C3%9Flberger-a5b39922b/" class="hover-target hover:text-gray-400 transition-colors">LinkedIn</a>
-                            <a href="https://github.com/DLFHJ" class="hover-target hover:text-gray-400 transition-colors">GitHub</a>
+                            <a href="https://www.linkedin.com/in/david-la%C3%9Flberger-a5b39922b/"
+                                class="hover-target hover:text-gray-400 transition-colors">LinkedIn</a>
+                            <a href="https://github.com/DLFHJ"
+                                class="hover-target hover:text-gray-400 transition-colors">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -522,47 +537,52 @@
     <div id="projectModal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal()"></div>
 
-        <div
-            class="modal-content relative bg-white w-full max-w-5xl h-[85vh] shadow-2xl flex flex-col md:flex-row overflow-hidden">
+        <div class="modal-content relative bg-white w-full max-w-5xl h-[85vh] shadow-2xl flex flex-col overflow-hidden">
             <!-- Close -->
             <button onclick="closeModal()"
                 class="absolute top-6 right-6 z-20 hover-target p-2 bg-white rounded-full mix-blend-exclusion text-black hover:scale-110 transition-transform">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
 
-            <!-- Image Side -->
-            <div class="w-full md:w-3/5 h-1/2 md:h-full bg-gray-100 relative">
-                <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:hidden"></div>
-            </div>
-
-            <!-- Content Side -->
-            <div class="w-full md:w-2/5 h-1/2 md:h-full overflow-y-auto p-8 md:p-12 flex flex-col bg-white">
-                <div class="mb-auto">
-                    <span id="modalCategory"
-                        class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4 block">Installation</span>
-                    <h2 id="modalTitle" class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Project Title</h2>
-
-                    <p id="modalDescription" class="text-gray-600 leading-relaxed mb-8">
-                        Description...
-                    </p>
+            <!-- Scrollable Wrapper -->
+            <div class="flex-1 w-full overflow-y-auto flex flex-col md:flex-row relative">
+                <!-- Image Side -->
+                <div id="modalImagesContainer"
+                    class="w-full md:w-3/5 h-auto bg-gray-50 relative flex flex-col gap-8 p-8">
+                    <!-- Images will be injected here -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:hidden pointer-events-none sticky bottom-0 h-24 mt-auto">
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-y-8 gap-x-4 border-t border-gray-100 pt-8 text-sm">
-                    <div>
-                        <span data-i18n="modal_role"
-                            class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Role</span>
-                        <span id="modalRole" class="font-medium">Lead Designer</span>
+                <!-- Content Side -->
+                <div class="w-full md:w-2/5 h-fit md:sticky md:top-0 p-8 md:p-12 flex flex-col bg-white">
+                    <div class="mb-auto">
+                        <span id="modalCategory"
+                            class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4 block">Installation</span>
+                        <h2 id="modalTitle" class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Project Title</h2>
+
+                        <p id="modalDescription" class="text-gray-600 leading-relaxed mb-8">
+                            Description...
+                        </p>
                     </div>
-                    <div>
-                        <span data-i18n="modal_year"
-                            class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Year</span>
-                        <span id="modalYear" class="font-medium">2023</span>
-                    </div>
-                    <div class="col-span-2">
-                        <span data-i18n="modal_tools"
-                            class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Tools</span>
-                        <span id="modalTools" class="font-medium">Figma, Blender</span>
+
+                    <div class="grid grid-cols-2 gap-y-8 gap-x-4 border-t border-gray-100 pt-8 text-sm">
+                        <div>
+                            <span data-i18n="modal_role"
+                                class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Role</span>
+                            <span id="modalRole" class="font-medium">Lead Designer</span>
+                        </div>
+                        <div>
+                            <span data-i18n="modal_year"
+                                class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Year</span>
+                            <span id="modalYear" class="font-medium">2023</span>
+                        </div>
+                        <div class="col-span-2">
+                            <span data-i18n="modal_tools"
+                                class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Tools</span>
+                            <span id="modalTools" class="font-medium">Figma, Blender</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -619,7 +639,20 @@
         };
 
         const projects = {
-            1: { title: { en: "Sanolux", de: "Sanolux" }, category: { en: "Installation", de: "Installation" }, image: "https://images.unsplash.com/photo-1516065532585-6184a44d34c0?q=80&w=1000&auto=format&fit=crop", description: { en: "Immersive light and sound installation designed for the annual Klanglicht festival.", de: "Immersive Licht- und Klanginstallation für das Klanglicht Festival." }, role: { en: "Lead Designer", de: "Lead Designer" }, year: "2023", tools: "TouchDesigner, Ableton" },
+            1: {
+                title: { en: "Sanolux", de: "Sanolux" },
+                category: { en: "Installation", de: "Installation" },
+                // Added multiple images support
+                images: [
+                    "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop"
+                ],
+                description: { en: "Immersive light and sound installation designed for the annual Klanglicht festival. The installation explores the relationship between artificial light and natural growth.", de: "Immersive Licht- und Klanginstallation für das Klanglicht Festival. Die Installation erforscht die Beziehung zwischen künstlichem Licht und natürlichem Wachstum." },
+                role: { en: "Lead Designer", de: "Lead Designer" },
+                year: "2023",
+                tools: "TouchDesigner, Ableton"
+            },
             2: { title: { en: "Reactive Space", de: "Reaktiver Raum" }, category: { en: "Interaction", de: "Interaktion" }, image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop", description: { en: "Physical computing project responding to human proximity.", de: "Physical Computing Projekt, das auf Nähe reagiert." }, role: { en: "Creative Coder", de: "Creative Coder" }, year: "2024", tools: "Arduino, C++" },
             3: { title: { en: "Visual Audio", de: "Visuelles Audio" }, category: { en: "Exhibition", de: "Ausstellung" }, image: "https://images.unsplash.com/photo-1518175510007-a37a72382431?q=80&w=1000&auto=format&fit=crop", description: { en: "Translating musical notes into visual spectrums in real-time.", de: "Übersetzung von Musiknoten in visuelle Spektren." }, role: { en: "Visual Artist", de: "Visual Artist" }, year: "2022", tools: "Processing" },
             4: { title: { en: "Fintech App", de: "Fintech App" }, category: { en: "Research", de: "Forschung" }, image: "", description: { en: "In progress.", de: "In Arbeit." }, role: { en: "UX Researcher", de: "UX Researcher" }, year: "2025", tools: "Figma" },
@@ -797,6 +830,7 @@
             // Lucide icons replace <i> with <svg>, so we try to find the svg first.
             const icon = document.querySelector('#toggleProjectsBtn svg') || document.querySelector('#toggleProjectsBtn i');
 
+
             const isHidden = container.classList.contains('hidden');
 
             if (isHidden) {
@@ -841,7 +875,37 @@
             const data = projects[id];
             if (!data) return;
 
-            document.getElementById('modalImage').src = data.image || '';
+            // Handle Images
+            const imagesContainer = document.getElementById('modalImagesContainer');
+            // Remove all existing images but keep the gradient overlay if needed (or just re-add it)
+            // Actually the gradient is just a child div, so we should allow clearing everything and rebuilding.
+            // But we have a static gradient div in HTML. Let's just clear images only or easier: clear localHTML.
+
+            let imagesHtml = '';
+
+            // Check for 'images' array or fallback to single 'image'
+            let imageList = [];
+            if (data.images && data.images.length > 0) {
+                imageList = data.images;
+            } else if (data.image) {
+                imageList = [data.image];
+            }
+
+            if (imageList.length > 0) {
+                imageList.forEach(imgSrc => {
+                    imagesHtml += `<img src="${imgSrc}" class="w-full h-auto object-cover block shadow-md" alt="${data.title.en}">`;
+                });
+            } else {
+                // No image
+                imagesHtml = `<div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">No Image</div>`;
+            }
+
+            // Re-add the mobile gradient overlay
+            imagesHtml += `<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:hidden pointer-events-none sticky bottom-0 h-24 mt-auto"></div>`;
+
+            imagesContainer.innerHTML = imagesHtml;
+            imagesContainer.scrollTop = 0; // Reset scroll
+
             document.getElementById('modalTitle').innerText = data.title[currentLang];
             document.getElementById('modalCategory').innerText = data.category[currentLang];
             document.getElementById('modalDescription').innerText = data.description[currentLang];

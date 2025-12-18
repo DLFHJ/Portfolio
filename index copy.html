@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Lasslberger - Interaction & UX Designer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            cursor: none;
+            /* Hide default cursor */
+            background-color: #ffffff;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+            cursor: none;
+        }
+
+        /* ---------------------------------- */
+        /* Custom Cursor Style                */
+        /* ---------------------------------- */
+        #custom-cursor {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background-color: #111;
+            /* Default black */
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, background-color 0.2s ease;
+            mix-blend-mode: exclusion;
+        }
+
+        /* Enlarge cursor on interactive elements */
+        .cursor-enlarge {
+            width: 40px !important;
+            height: 40px !important;
+            opacity: 0.5;
+            background-color: #ccc !important;
+        }
+
+        /* ---------------------------------- */
+        /* Basic Text Highlight (No Interaction) */
+        /* ---------------------------------- */
+        .highlight-word {
+            font-weight: 600;
+            color: #111;
+        }
+
+        /* Marquee Animation */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Modal Transitions */
+        .modal {
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .modal-content {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .modal.hidden .modal-content {
+            transform: scale(0.95) translateY(10px);
+        }
+
+        .modal:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .modal:not(.hidden) .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Project Reveal Animation */
+        .project-item {
+            transition: all 0.5s ease-in-out;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-item.hidden-project {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .project-item.fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 antialiased selection:bg-gray-900 selection:text-white relative">
+
+    <!-- 1. Custom Cursor -->
+    <div id="custom-cursor"></div>
+
+    <!-- Main Content Wrapper -->
+    <div class="relative z-10 bg-white">
+
+        <!-- Navigation -->
+        <nav class="border-b border-gray-200 sticky top-0 bg-white/95 backdrop-blur-sm z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo / Name -->
+                    <div class="flex-shrink-0">
+                        <a href="#" class="font-bold text-sm tracking-tight uppercase hover-target">
+                            David Lasslberger, MA
+                        </a>
+                    </div>
+
+                    <!-- Nav Links -->
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="#work" data-i18n="nav_work"
+                            class="hover-target px-4 py-1 border border-gray-300 text-xs uppercase tracking-wider hover:bg-black hover:text-white hover:border-black transition-colors duration-200">Work</a>
+                        <a href="#about" data-i18n="nav_about"
+                            class="hover-target px-4 py-1 border border-gray-300 text-xs uppercase tracking-wider hover:bg-black hover:text-white hover:border-black transition-colors duration-200">About</a>
+                        <a href="#contact" data-i18n="nav_contact"
+                            class="hover-target px-4 py-1 border border-gray-300 text-xs uppercase tracking-wider hover:bg-black hover:text-white hover:border-black transition-colors duration-200">Contact</a>
+
+                        <div class="relative group">
+                            <button id="langToggle" onclick="toggleLanguage()"
+                                class="hover-target flex items-center px-3 py-1 border border-gray-300 text-xs uppercase tracking-wider hover:bg-black hover:text-white hover:border-black transition-colors duration-200">
+                                <span class="w-2 h-2 rounded-full bg-blue-600 mr-2"></span>
+                                <span id="langLabel">EN</span>
+                                <i data-lucide="arrow-left-right" class="w-3 h-3 ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden">
+                        <button class="p-2 hover-target">
+                            <i data-lucide="menu" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="pt-16 pb-12 sm:pt-24 sm:pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 data-i18n="hero_title"
+                    class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4 max-w-2xl leading-tight">
+                    Interaction & UX <br> Designer
+                </h1>
+
+                <div class="flex items-center space-x-2 mb-12">
+                    <span class="relative flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
+                    <span data-i18n="hero_available" class="text-sm font-medium text-gray-600">available for work</span>
+                </div>
+
+                <!-- Hero Placeholder/Image -->
+                <div class="w-full bg-gray-50 aspect-[21/9] overflow-hidden relative group border border-gray-100">
+                    <!-- Canvas for Interactive Animation -->
+                    <canvas id="heroCanvas" class="absolute inset-0 w-full h-full block"></canvas>
+
+                    <!-- Overlay Text -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span data-i18n="hero_reel"
+                            class="uppercase tracking-widest text-xs font-semibold text-gray-400 bg-white/80 px-4 py-2 backdrop-blur-sm rounded-full">Interactive
+                            Canvas</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Projects Section -->
+        <section id="work" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-8">
+                    <h2 data-i18n="projects_title" class="text-xl font-bold">Selected Projects</h2>
+                    <span class="text-xs text-gray-500 uppercase tracking-widest hidden md:block">2023 — 2025</span>
+                </div>
+
+                <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+                    <!-- Project 1 (Visible) -->
+                    <div class="project-item group cursor-pointer hover-target" onclick="openModal(1)">
+                        <div class="relative aspect-[4/3] bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1516065532585-6184a44d34c0?q=80&w=1000&auto=format&fit=crop"
+                                alt="Project 1"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <p class="font-medium text-sm">Sanolux Projekt Klanglicht</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 (Visible) -->
+                    <div class="project-item group cursor-pointer hover-target" onclick="openModal(2)">
+                        <div class="relative aspect-[4/3] bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop"
+                                alt="Project 2"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <p data-i18n="proj2_subtitle" class="font-medium text-sm">Interactive Installation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 (Visible) -->
+                    <div class="project-item group cursor-pointer hover-target" onclick="openModal(3)">
+                        <div class="relative aspect-[4/3] bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1518175510007-a37a72382431?q=80&w=1000&auto=format&fit=crop"
+                                alt="Project 3"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <p data-i18n="proj3_subtitle" class="font-medium text-sm">Light & Sound</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 (Hidden Initially) -->
+                    <div class="project-item hidden-project group cursor-pointer hover-target" onclick="openModal(4)">
+                        <div
+                            class="w-full h-full bg-gray-200 min-h-[250px] flex items-center justify-center text-gray-400 hover:bg-gray-300 transition-colors">
+                            <span data-i18n="proj_inprogress" class="text-xs uppercase tracking-widest">In
+                                Progress</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 (Hidden Initially) -->
+                    <div class="project-item hidden-project group cursor-pointer hover-target" onclick="openModal(5)">
+                        <div
+                            class="w-full h-full bg-gray-200 min-h-[250px] flex items-center justify-center text-gray-400 hover:bg-gray-300 transition-colors">
+                            <span data-i18n="proj_soon" class="text-xs uppercase tracking-widest">Coming Soon</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 (Hidden Initially) -->
+                    <div class="project-item hidden-project group cursor-pointer shadow-sm hover:shadow-md transition-shadow hover-target"
+                        onclick="openModal(6)">
+                        <div class="aspect-[4/3] bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop"
+                                alt="Project 6"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 bg-white border border-gray-100">
+                            <p data-i18n="proj6_cat" class="text-xs text-gray-500 mb-1">Light Design</p>
+                            <h3 class="font-medium text-sm">Sanolux: Project Klanglicht</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Toggle Button -->
+                <div class="mt-12 flex justify-center">
+                    <button id="toggleProjectsBtn" onclick="toggleProjects()"
+                        class="group flex items-center space-x-2 px-6 py-3 border border-gray-300 text-sm uppercase tracking-wider hover:bg-black hover:text-white hover:border-black transition-all duration-300 hover-target">
+                        <span data-i18n="btn_view_all">View All Projects</span>
+                        <i data-lucide="plus" class="w-4 h-4 group-hover:rotate-90 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="py-16 border-t border-gray-100 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 data-i18n="about_title" class="text-xl font-bold mb-12">About</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <!-- Image Column -->
+                    <div class="md:col-span-4 lg:col-span-4">
+                        <div class="aspect-[3/4] bg-gray-200 relative overflow-hidden">
+                            <!-- Placeholder Portrait -->
+                            <img src="https://raw.githubusercontent.com/DLFHJ/Portfolio/refs/heads/main/assets/images/pb/pb_cut_mono.png"
+                                alt="Portrait" class="w-full h-full object-cover grayscale">
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Foto © Maximilian Cathan</p>
+                    </div>
+
+                    <!-- Text Content Column -->
+                    <div class="md:col-span-8 lg:col-span-7 lg:col-start-6 flex flex-col justify-between">
+                        <div class="prose prose-lg text-gray-800">
+                            <p data-i18n="about_text_1" class="font-bold leading-relaxed mb-6">
+                                I specialize in <span class="highlight-word">Interaction Design</span> and bridging the
+                                gap between digital and physical spaces. My work often explores <span
+                                    class="highlight-word">Generative Art</span>, focusing on creating immersive
+                                environments that react to human presence.
+                            </p>
+                            <p data-i18n="about_text_2" class="text-base leading-relaxed text-gray-600 mb-6">
+                                With a background in <span class="highlight-word">User Research</span>, I ensure that
+                                every visual spectacle is grounded in solid usability principles. Whether it's a
+                                large-scale <span class="highlight-word">Installation</span> or a mobile app, the goal
+                                is always to reduce cognitive load and spark delight.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="py-16 mb-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <div class="md:col-span-12">
+                        <h2 data-i18n="skills_title" class="text-xl font-bold mb-8">Skills</h2>
+                    </div>
+
+                    <div class="md:col-span-8 md:col-start-1 lg:col-span-8">
+                        <p data-i18n="skills_intro" class="text-sm text-gray-600 mb-8 max-w-2xl">
+                            A mix of creative coding, classic design tools, and hardware prototyping allows me to build
+                            <span class="highlight-word">End-to-End</span> prototypes.
+                        </p>
+
+                        <div class="space-y-6 text-sm leading-relaxed">
+                            <div>
+                                <span data-i18n="skill_design_title" class="font-semibold block mb-1">Design &
+                                    Research:</span>
+                                <span data-i18n="skill_design_desc" class="text-gray-600"><span
+                                        class="highlight-word">UX Design</span> + Interaction Design + User Research +
+                                    <span class="highlight-word">Usability Testing</span> + A/B Testing + User Flows +
+                                    Wireframing + Konzeption + Design Thinking</span>
+                            </div>
+
+                            <div>
+                                <span data-i18n="skill_software_title" class="font-semibold block mb-1">Software &
+                                    Tools:</span>
+                                <span class="text-gray-600"><span class="highlight-word">Figma</span> + Sketch + Marvel
+                                    App + Adobe Creative Suite (Photoshop, Illustrator) + Maya + <span
+                                        class="highlight-word">Blender</span></span>
+                            </div>
+
+                            <div>
+                                <span data-i18n="skill_tech_title" class="font-semibold block mb-1">Technische
+                                    Fähigkeiten:</span>
+                                <span data-i18n="skill_tech_desc" class="text-gray-600">HTML + CSS + JavaScript + Java +
+                                    C# + C++ + Game Engines (z.B. <span class="highlight-word">Unity</span>) +
+                                    Hardware-Prototyping (z.B. <span class="highlight-word">Arduino</span>)</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 mt-12">
+                            <a href="assets\misc\CV Lebenslauf 2025.pdf" download="David_Lasslberger_CV.pdf"
+                                class="hover-target px-6 py-2 border border-gray-300 text-sm uppercase tracking-wider hover:bg-black hover:text-white hover:border-black transition-colors duration-200 inline-block text-center cursor-pointer">
+                                <span data-i18n="btn_cv">Download CV</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/david-la%C3%9Flberger-a5b39922b/" target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover-target px-6 py-2 border border-gray-300 text-sm uppercase tracking-wider hover:bg-black hover:text-white hover:border-black transition-colors duration-200 inline-block text-center decoration-none">
+                                <span data-i18n="btn_linkedin">View LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="bg-black text-white pt-20 pb-0 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
+                    <!-- Large CTA -->
+                    <div class="flex-1">
+                        <a href="mailto:david.lasslberger@gmail.com" class="group block hover-target">
+                            <h2
+                                class="text-4xl md:text-6xl font-bold tracking-tight mb-2 group-hover:text-gray-300 group-hover:translate-x-4 transition-all duration-300">
+                                <span data-i18n="footer_create">LET'S CREATE <br> TOGETHER</span>
+                                <i data-lucide="arrow-right" class="inline-block ml-2 w-8 h-8 md:w-12 md:h-12"></i>
+                            </h2>
+                        </a>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="text-right text-sm text-gray-400 leading-loose">
+                        <p class="hover:text-white transition-colors hover-target"><a
+                                href="mailto:david.lasslberger@gmail.com">david.lasslberger@gmail.com</a></p>
+                        <div class="flex justify-end gap-4 mt-2">
+                            <a href="https://www.linkedin.com/in/david-la%C3%9Flberger-a5b39922b/"
+                                class="hover:text-white transition-colors hover-target">LinkedIn</a>
+                            <span>,</span>
+                            <a href="https://linktr.ee/david_lasslberger"
+                                class="hover:text-white transition-colors hover-target">LinkTree</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animated Copyright Banner -->
+            <div class="border-t border-gray-800 py-4 bg-black">
+                <div class="marquee-container">
+                    <div class="marquee-content text-xs text-gray-500 font-mono tracking-wider">
+                        2025 © David Lasslberger &nbsp;•&nbsp; 2025 © David Lasslberger &nbsp;•&nbsp; 2025 © David
+                        Lasslberger &nbsp;•&nbsp; 2025 © David Lasslberger &nbsp;•&nbsp; 2025 © David Lasslberger
+                        &nbsp;•&nbsp; 2025 © David Lasslberger &nbsp;•&nbsp; 2025 © David Lasslberger &nbsp;•&nbsp; 2025
+                        © David Lasslberger &nbsp;•&nbsp;
+                    </div>
+                    <div class="marquee-content text-xs text-gray-500 font-mono tracking-wider">
+                        2025 © David Lasslberger &nbsp;•&nbsp; 2025 © David Lasslberger &nbsp;•&nbsp; 2025 © David
+                        Lasslberger &nbsp;•&nbsp; 2025 © David Lasslberger &nbsp;•&nbsp; 2025 © David Lasslberger
+                        &nbsp;•&nbsp; 2025 © David Lasslberger &nbsp;•&nbsp; 2025 © David Lasslberger &nbsp;•&nbsp; 2025
+                        © David Lasslberger &nbsp;•&nbsp;
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+
+        <!-- Modal Content -->
+        <div
+            class="modal-content relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col md:flex-row">
+
+            <!-- Close Button -->
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 z-10 p-2 bg-white rounded-full md:bg-transparent md:text-black hover:rotate-90 transition-transform hover-target">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Modal Image -->
+            <div class="w-full md:w-1/2 bg-gray-100 min-h-[300px] md:min-h-[500px]">
+                <img id="modalImage" src="" alt="Project Detail" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Modal Text -->
+            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-between">
+                <div>
+                    <span id="modalCategory"
+                        class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 block">Category</span>
+                    <h2 id="modalTitle" class="text-3xl font-bold mb-6">Project Title</h2>
+
+                    <div class="space-y-4 text-sm text-gray-600 leading-relaxed mb-8">
+                        <p id="modalDescription">Description goes here...</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <span data-i18n="modal_role" class="font-bold block text-black mb-1">Role</span>
+                            <span id="modalRole">Designer</span>
+                        </div>
+                        <div>
+                            <span data-i18n="modal_year" class="font-bold block text-black mb-1">Year</span>
+                            <span id="modalYear">2024</span>
+                        </div>
+                        <div class="col-span-2">
+                            <span data-i18n="modal_tools" class="font-bold block text-black mb-1">Tools</span>
+                            <span id="modalTools">Figma, Blender</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Icons
+        try {
+            lucide.createIcons();
+        } catch (e) {
+            console.log("Icons failed to load");
+        }
+
+        // ============================================
+        //  1. INTERACTIVE CANVAS (Hero Section)
+        // ============================================
+        const canvas = document.getElementById('heroCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        // Mouse interaction for BOTH Canvas and Custom Cursor
+        let mouse = { x: null, y: null, clientX: 0, clientY: 0, radius: 150 };
+
+        window.addEventListener('mousemove', (e) => {
+            // Update Canvas Mouse
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+
+            // Update Global Mouse for Cursor
+            mouse.clientX = e.clientX;
+            mouse.clientY = e.clientY;
+        });
+
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        // Resize
+        function resize() {
+            width = canvas.width = canvas.offsetWidth;
+            height = canvas.height = canvas.offsetHeight;
+            initParticles();
+        }
+        window.addEventListener('resize', resize);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2 + 1;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Bounce off edges
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+
+                // Mouse interaction
+                if (mouse.x != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < mouse.radius) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (mouse.radius - distance) / mouse.radius;
+                        const directionX = forceDirectionX * force * 3;
+                        const directionY = forceDirectionY * force * 3;
+
+                        this.x -= directionX;
+                        this.y -= directionY;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = '#000000';
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const numberOfParticles = (width * height) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(0, 0, 0, ${1 - distance / 100})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        resize();
+        animate();
+
+
+        // ============================================
+        //  2. CUSTOM CURSOR
+        // ============================================
+        const customCursor = document.getElementById('custom-cursor');
+        let cursorX = 0;
+        let cursorY = 0;
+        const cursorSpeed = 0.2;
+
+        // Animate Custom Cursor Lag
+        function animateCursor() {
+            cursorX += (mouse.clientX - cursorX) * cursorSpeed;
+            cursorY += (mouse.clientY - cursorY) * cursorSpeed;
+
+            // Fallback if mouse hasn't moved yet
+            if (!mouse.clientX) {
+                cursorX = -100;
+                cursorY = -100;
+            }
+
+            customCursor.style.left = cursorX + 'px';
+            customCursor.style.top = cursorY + 'px';
+
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Cursor Enlarge Interactions
+        const interactiveElements = document.querySelectorAll('.hover-target, a, button, .project-card');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                customCursor.classList.add('cursor-enlarge');
+            });
+            el.addEventListener('mouseleave', () => {
+                customCursor.classList.remove('cursor-enlarge');
+            });
+        });
+
+
+        // ============================================
+        //  3. LANGUAGE & SITE LOGIC
+        // ============================================
+        let currentLang = 'en';
+        const translations = {
+            en: {
+                nav_work: "Work",
+                nav_about: "About",
+                nav_contact: "Contact",
+                hero_title: "Interaction & UX <br> Designer",
+                hero_available: "available for work",
+                hero_reel: "Interactive Canvas",
+                projects_title: "Selected Projects",
+                proj2_subtitle: "Interactive Installation",
+                proj3_subtitle: "Light & Sound",
+                proj_inprogress: "In Progress",
+                proj_soon: "Coming Soon",
+                proj6_cat: "Light Design",
+                btn_view_all: "View All Projects",
+                btn_show_less: "Show Less",
+                cta_more: "WANT TO SEE MORE?",
+                about_title: "About",
+                skills_title: "Skills",
+                skills_intro: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
+                skill_design_title: "Design & Research:",
+                skill_design_desc: "User Experience Design (UX) + Interaction Design + User Research + Usability Testing + A/B Testing + User Flows + Wireframing + Konzeption + Design Thinking",
+                skill_software_title: "Software & Tools:",
+                skill_tech_title: "Technische Fähigkeiten:",
+                skill_tech_desc: "HTML + CSS + JavaScript + Java + C# + C++ + Game Engines (z.B. Unity) + Hardware-Prototyping (z.B. Arduino/MicroPython)",
+                btn_cv: "Download CV",
+                btn_linkedin: "View LinkedIn",
+                footer_create: "LET'S CREATE <br> TOGETHER",
+                modal_role: "Role",
+                modal_year: "Year",
+                modal_tools: "Tools",
+                modal_case: "View Case Study"
+            },
+            de: {
+                nav_work: "Arbeiten",
+                nav_about: "Über mich",
+                nav_contact: "Kontakt",
+                hero_title: "Interaktions- & UX- <br> Designer",
+                hero_available: "verfügbar für Projekte",
+                hero_reel: "Interaktiver Hintergrund",
+                projects_title: "Ausgewählte Projekte",
+                proj2_subtitle: "Interaktive Installation",
+                proj3_subtitle: "Licht & Ton",
+                proj_inprogress: "In Arbeit",
+                proj_soon: "Demnächst",
+                proj6_cat: "Lichtdesign",
+                btn_view_all: "Alle Projekte ansehen",
+                btn_show_less: "Weniger anzeigen",
+                cta_more: "MEHR SEHEN?",
+                about_title: "Über mich",
+                skills_title: "Fähigkeiten",
+                skills_intro: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
+                skill_design_title: "Design & Forschung:",
+                skill_design_desc: "User Experience Design (UX) + Interaktionsdesign + Nutzerforschung + Usability Testing + A/B Testing + User Flows + Wireframing + Konzeption + Design Thinking",
+                skill_software_title: "Software & Tools:",
+                skill_tech_title: "Technische Fähigkeiten:",
+                skill_tech_desc: "HTML + CSS + JavaScript + Java + C# + C++ + Game Engines (z.B. Unity) + Hardware-Prototyping (z.B. Arduino/MicroPython)",
+                btn_cv: "Lebenslauf laden",
+                btn_linkedin: "LinkedIn Profil",
+                footer_create: "LASS UNS WAS <br> STARTEN",
+                modal_role: "Rolle",
+                modal_year: "Jahr",
+                modal_tools: "Werkzeuge",
+                modal_case: "Case Study ansehen"
+            }
+        };
+
+        const projects = {
+            1: {
+                title: { en: "Sanolux Projekt Klanglicht", de: "Sanolux Projekt Klanglicht" },
+                category: { en: "Installation", de: "Installation" },
+                image: "https://images.unsplash.com/photo-1516065532585-6184a44d34c0?q=80&w=1000&auto=format&fit=crop",
+                description: {
+                    en: "An immersive light and sound installation designed for the annual Klanglicht festival. We utilized projection mapping and surround sound to create a meditative space for visitors.",
+                    de: "Eine immersive Licht- und Klanginstallation, die für das jährliche Klanglicht-Festival entworfen wurde. Wir nutzten Projection Mapping und Surround-Sound, um einen meditativen Raum für Besucher zu schaffen."
+                },
+                role: { en: "Lead Designer", de: "Lead Designer" },
+                year: "2023",
+                tools: "TouchDesigner, Ableton Live, Projectors"
+            },
+            2: {
+                title: { en: "Interactive Installation", de: "Interaktive Installation" },
+                category: { en: "Interaction Design", de: "Interaktionsdesign" },
+                image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
+                description: {
+                    en: "A physical computing project that responds to human proximity. The installation changes color and sound intensity as users approach the central monolith.",
+                    de: "Ein Physical-Computing-Projekt, das auf menschliche Nähe reagiert. Die Installation ändert Farbe und Klangintensität, wenn sich Nutzer dem zentralen Monolithen nähern."
+                },
+                role: { en: "Creative Coder", de: "Creative Coder" },
+                year: "2024",
+                tools: "Arduino, C++, LED Matrix"
+            },
+            3: {
+                title: { en: "Light & Sound", de: "Licht & Ton" },
+                category: { en: "Exhibition", de: "Ausstellung" },
+                image: "https://images.unsplash.com/photo-1518175510007-a37a72382431?q=80&w=1000&auto=format&fit=crop",
+                description: {
+                    en: "Exploration of synesthesia through digital mediums. This project translates musical notes into visual spectrums in real-time.",
+                    de: "Erforschung von Synästhesie durch digitale Medien. Dieses Projekt übersetzt musikalische Noten in Echtzeit in visuelle Spektren."
+                },
+                role: { en: "Visual Artist", de: "Visual Artist" },
+                year: "2022",
+                tools: "Processing, Java, MIDI"
+            },
+            4: {
+                title: { en: "Project in Progress", de: "Projekt in Arbeit" },
+                category: { en: "UX Research", de: "UX Forschung" },
+                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop",
+                description: {
+                    en: "Currently conducting user research for a fintech application focused on sustainable investing for Gen Z.",
+                    de: "Derzeitige Durchführung von Nutzerforschung für eine Fintech-Anwendung, die sich auf nachhaltiges Investieren für die Generation Z konzentriert."
+                },
+                role: { en: "UX Researcher", de: "UX Researcher" },
+                year: "2025",
+                tools: "Figma, UserTesting, Dovetail"
+            },
+            5: {
+                title: { en: "Coming Soon", de: "Demnächst" },
+                category: { en: "Concept", de: "Konzept" },
+                image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+                description: {
+                    en: "A secret project exploring the intersection of AI and traditional craftsmanship. Stay tuned for updates.",
+                    de: "Ein geheimes Projekt, das die Schnittstelle von KI und traditionellem Handwerk erforscht. Bleiben Sie dran für Updates."
+                },
+                role: { en: "Art Director", de: "Art Director" },
+                year: "2025",
+                tools: "Midjourney, Photoshop"
+            },
+            6: {
+                title: { en: "Sanolux: Project Klanglicht", de: "Sanolux: Projekt Klanglicht" },
+                category: { en: "Light Design", de: "Lichtdesign" },
+                image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop",
+                description: {
+                    en: "Detailed documentation of the Sanolux project, focusing on the technical setup and lighting challenges faced during the exhibition.",
+                    de: "Detaillierte Dokumentation des Sanolux-Projekts mit Schwerpunkt auf dem technischen Aufbau und den lichttechnischen Herausforderungen während der Ausstellung."
+                },
+                role: { en: "Technical Lead", de: "Technical Lead" },
+                year: "2023",
+                tools: "MadMapper, DMX Control"
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'de' : 'en';
+
+            const langLabel = document.getElementById('langLabel');
+            if (langLabel) {
+                langLabel.innerText = currentLang.toUpperCase();
+            }
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    if (translations[currentLang][key].includes('<br>')) {
+                        el.innerHTML = translations[currentLang][key];
+                    } else {
+                        // Avoid overwriting HTML spans in "About" section for this demo
+                        // Real implementation would need structured data for text segments
+                        if (!key.startsWith('about_text') && !key.startsWith('skill_')) {
+                            el.innerText = translations[currentLang][key];
+                        }
+                    }
+                }
+            });
+
+            const hiddenProjects = document.querySelectorAll('.hidden-project');
+            const isExpanded = hiddenProjects.length > 0 && hiddenProjects[0].style.display === 'block';
+
+            const btn = document.getElementById('toggleProjectsBtn');
+            if (btn) {
+                const btnSpan = btn.querySelector('span');
+                if (btnSpan) {
+                    if (isExpanded) {
+                        btnSpan.innerText = translations[currentLang].btn_show_less;
+                    } else {
+                        btnSpan.innerText = translations[currentLang].btn_view_all;
+                    }
+                }
+            }
+        }
+
+        function openModal(id) {
+            const modal = document.getElementById('projectModal');
+            const data = projects[id];
+
+            if (!data) return;
+
+            document.getElementById('modalImage').src = data.image;
+            document.getElementById('modalTitle').innerText = data.title[currentLang];
+            document.getElementById('modalCategory').innerText = data.category[currentLang];
+            document.getElementById('modalDescription').innerText = data.description[currentLang];
+            document.getElementById('modalRole').innerText = data.role[currentLang];
+            document.getElementById('modalYear').innerText = data.year;
+            document.getElementById('modalTools').innerText = data.tools;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        function toggleProjects() {
+            const hiddenProjects = document.querySelectorAll('.hidden-project');
+            const btn = document.getElementById('toggleProjectsBtn');
+            const btnText = btn.querySelector('span');
+            const btnIcon = btn.querySelector('svg') || btn.querySelector('i');
+
+            const isExpanded = hiddenProjects.length > 0 && hiddenProjects[0].style.display === 'block';
+
+            hiddenProjects.forEach(project => {
+                if (isExpanded) {
+                    project.style.display = 'none';
+                    project.classList.remove('fade-in');
+                } else {
+                    project.style.display = 'block';
+                    void project.offsetWidth;
+                    project.classList.add('fade-in');
+                }
+            });
+
+            if (isExpanded) {
+                if (btnText) btnText.innerText = translations[currentLang].btn_view_all;
+                if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
+            } else {
+                if (btnText) btnText.innerText = translations[currentLang].btn_show_less;
+                if (btnIcon) btnIcon.style.transform = 'rotate(45deg)';
+            }
+        }
+    </script>
+</body>
+
+</html>
