@@ -534,57 +534,69 @@
     </main>
 
     <!-- Project Modal -->
-    <div id="projectModal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div id="projectModal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-0 md:p-4">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal()"></div>
 
-        <div class="modal-content relative bg-white w-full max-w-5xl h-[85vh] shadow-2xl flex flex-col overflow-hidden">
+        <div
+            class="modal-content relative bg-white w-full max-w-7xl h-full md:h-[90vh] shadow-2xl flex flex-col overflow-hidden">
             <!-- Close -->
             <button onclick="closeModal()"
-                class="absolute top-6 right-6 z-20 hover-target p-2 bg-white rounded-full mix-blend-exclusion text-black hover:scale-110 transition-transform">
+                class="absolute top-6 right-6 z-50 hover-target p-2 bg-white rounded-full mix-blend-difference text-white hover:scale-110 transition-transform">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
 
-            <!-- Scrollable Wrapper -->
-            <div class="flex-1 w-full overflow-y-auto flex flex-col md:flex-row relative">
-                <!-- Image Side -->
-                <div id="modalImagesContainer"
-                    class="w-full md:w-3/5 h-auto bg-gray-50 relative flex flex-col gap-8 p-8">
-                    <!-- Images will be injected here -->
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:hidden pointer-events-none sticky bottom-0 h-24 mt-auto">
-                    </div>
-                </div>
+            <!-- Scrollable Content -->
+            <div class="flex-1 w-full overflow-y-auto bg-white no-scrollbar">
 
-                <!-- Content Side -->
-                <div class="w-full md:w-2/5 h-fit md:sticky md:top-0 p-8 md:p-12 flex flex-col bg-white">
-                    <div class="mb-auto">
+                <!-- 1. Header Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 min-h-[60vh]">
+
+                    <!-- Left: Text Header -->
+                    <div class="p-8 md:p-16 flex flex-col justify-center bg-white order-2 md:order-1">
                         <span id="modalCategory"
-                            class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4 block">Installation</span>
-                        <h2 id="modalTitle" class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Project Title</h2>
+                            class="text-xs font-bold uppercase tracking-widest text-black mb-6 block">Interaction
+                            Design</span>
 
-                        <p id="modalDescription" class="text-gray-600 leading-relaxed mb-8">
-                            Description...
+                        <h2 id="modalTitle" class="text-4xl md:text-6xl font-bold mb-12 leading-tight tracking-tight">
+                            Interactive Installation</h2>
+
+                        <p id="modalDescription"
+                            class="text-lg md:text-xl text-gray-600 leading-relaxed mb-16 max-w-lg">
+                            A physical computing project that responds to human proximity. The installation changes
+                            color and sound intensity as users approach the central monolith.
                         </p>
+
+                        <!-- Metadata Grid -->
+                        <div class="grid grid-cols-2 gap-y-8 gap-x-12 border-t border-gray-100 pt-8">
+                            <div>
+                                <span data-i18n="modal_role" class="block text-black font-bold text-sm mb-1">Role</span>
+                                <span id="modalRole" class="text-gray-500 font-normal">Lead Designer</span>
+                            </div>
+                            <div>
+                                <span data-i18n="modal_year" class="block text-black font-bold text-sm mb-1">Year</span>
+                                <span id="modalYear" class="text-gray-500 font-normal">2025</span>
+                            </div>
+                            <div class="col-span-2">
+                                <span data-i18n="modal_tools"
+                                    class="block text-black font-bold text-sm mb-1">Tools</span>
+                                <span id="modalTools" class="text-gray-500 font-normal">Lorem ipsum, Lorem</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-y-8 gap-x-4 border-t border-gray-100 pt-8 text-sm">
-                        <div>
-                            <span data-i18n="modal_role"
-                                class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Role</span>
-                            <span id="modalRole" class="font-medium">Lead Designer</span>
-                        </div>
-                        <div>
-                            <span data-i18n="modal_year"
-                                class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Year</span>
-                            <span id="modalYear" class="font-medium">2023</span>
-                        </div>
-                        <div class="col-span-2">
-                            <span data-i18n="modal_tools"
-                                class="block text-gray-400 text-xs uppercase tracking-wider mb-1">Tools</span>
-                            <span id="modalTools" class="font-medium">Figma, Blender</span>
-                        </div>
+                    <!-- Right: Hero Image -->
+                    <div class="relative h-[40vh] md:h-auto bg-gray-100 order-1 md:order-2">
+                        <img id="modalHeroImage" src="" class="absolute inset-0 w-full h-full object-cover" alt="Hero">
                     </div>
                 </div>
+
+                <!-- 2. Content Blocks (Injected via JS) -->
+                <div id="modalBody" class="w-full bg-gray-50">
+                    <!-- Blocks will be injected here -->
+                </div>
+
+                <!-- Footer / Next Project (Optional placeholder) -->
+                <div class="h-24 bg-white"></div>
             </div>
         </div>
     </div>
@@ -642,22 +654,53 @@
             1: {
                 title: { en: "Sanolux", de: "Sanolux" },
                 category: { en: "Installation", de: "Installation" },
-                // Added multiple images support
-                images: [
-                    "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
-                    "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
-                    "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop"
-                ],
-                description: { en: "Immersive light and sound installation designed for the annual Klanglicht festival. The installation explores the relationship between artificial light and natural growth.", de: "Immersive Licht- und Klanginstallation für das Klanglicht Festival. Die Installation erforscht die Beziehung zwischen künstlichem Licht und natürlichem Wachstum." },
+                // New Data Structure
+                heroImage: "https://picsum.photos/seed/sanolux_hero/1200/800",
+                description: { en: "Immersive light and sound installation designed for the annual Klanglicht festival. The installation explores the relationship between artificial light and natural growth.", de: "Immersive Licht- und Klanginstallation für das Klanglicht Festival." },
                 role: { en: "Lead Designer", de: "Lead Designer" },
                 year: "2023",
-                tools: "TouchDesigner, Ableton"
+                tools: "TouchDesigner, Ableton",
+                blocks: [
+                    {
+                        type: 'image-text',
+                        image: "https://picsum.photos/seed/sanolux_1/800/600",
+                        text: {
+                            en: "The core concept revolves around bio-luminescence. We used 400 custom LED nodes to mimic organic breathing patterns.",
+                            de: "Das Kernkonzept dreht sich um Biolumineszenz. Wir verwendeten 400 benutzerdefinierte LED-Knoten."
+                        }
+                    },
+                    {
+                        type: 'image-text',
+                        image: "https://picsum.photos/seed/sanolux_2/800/600",
+                        text: {
+                            en: "Interaction is key. Sensors detect visitor movement, causing the organism to 'shy away' or 'bloom' depending on proximity.",
+                            de: "Interaktion ist der Schlüssel. Sensoren erkennen Besucherbewegungen."
+                        }
+                    },
+                    {
+                        type: 'full-image',
+                        image: "https://picsum.photos/seed/sanolux_3/1600/900",
+                        caption: {
+                            en: "A detailed view of the central monolith and its interaction with the surrounding environment.",
+                            de: "Eine detaillierte Ansicht des zentralen Monolithen und seiner Interaktion mit der Umgebung."
+                        }
+                    }
+                ]
             },
-            2: { title: { en: "Reactive Space", de: "Reaktiver Raum" }, category: { en: "Interaction", de: "Interaktion" }, image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop", description: { en: "Physical computing project responding to human proximity.", de: "Physical Computing Projekt, das auf Nähe reagiert." }, role: { en: "Creative Coder", de: "Creative Coder" }, year: "2024", tools: "Arduino, C++" },
-            3: { title: { en: "Visual Audio", de: "Visuelles Audio" }, category: { en: "Exhibition", de: "Ausstellung" }, image: "https://images.unsplash.com/photo-1518175510007-a37a72382431?q=80&w=1000&auto=format&fit=crop", description: { en: "Translating musical notes into visual spectrums in real-time.", de: "Übersetzung von Musiknoten in visuelle Spektren." }, role: { en: "Visual Artist", de: "Visual Artist" }, year: "2022", tools: "Processing" },
-            4: { title: { en: "Fintech App", de: "Fintech App" }, category: { en: "Research", de: "Forschung" }, image: "", description: { en: "In progress.", de: "In Arbeit." }, role: { en: "UX Researcher", de: "UX Researcher" }, year: "2025", tools: "Figma" },
-            5: { title: { en: "Secret Project", de: "Geheimprojekt" }, category: { en: "Concept", de: "Konzept" }, image: "", description: { en: "Coming soon.", de: "Demnächst." }, role: { en: "Art Director", de: "Art Director" }, year: "2025", tools: "AI" },
-            6: { title: { en: "Documentation", de: "Dokumentation" }, category: { en: "Tech Lead", de: "Tech Lead" }, image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop", description: { en: "Technical docs for Sanolux.", de: "Technische Doku für Sanolux." }, role: { en: "Tech Lead", de: "Tech Lead" }, year: "2023", tools: "MadMapper" }
+            2: {
+                title: { en: "Reactive Space", de: "Reaktiver Raum" },
+                category: { en: "Interaction", de: "Interaktion" },
+                heroImage: "https://via.placeholder.com/1200x800/f3f4f6/374151?text=Reactive+Space",
+                description: { en: "Physical computing project responding to human proximity.", de: "Physical Computing Projekt." },
+                role: { en: "Creative Coder", de: "Creative Coder" },
+                year: "2024",
+                tools: "Arduino, C++",
+                blocks: []
+            },
+            3: { title: { en: "Visual Audio", de: "Visuelles Audio" }, category: { en: "Exhibition", de: "Ausstellung" }, heroImage: "https://via.placeholder.com/1200x800/f3f4f6/374151?text=Visual+Audio", description: { en: "Translating musical notes.", de: "Übersetzung von Musiknoten." }, role: { en: "Visual Artist", de: "Visual Artist" }, year: "2022", tools: "Processing", blocks: [] },
+            4: { title: { en: "Fintech App", de: "Fintech App" }, category: { en: "Research", de: "Forschung" }, heroImage: "https://via.placeholder.com/800", description: { en: "In progress.", de: "In Arbeit." }, role: { en: "UX Researcher", de: "UX Researcher" }, year: "2025", tools: "Figma", blocks: [] },
+            5: { title: { en: "Secret Project", de: "Geheimprojekt" }, category: { en: "Concept", de: "Konzept" }, heroImage: "https://via.placeholder.com/800", description: { en: "Coming soon.", de: "Demnächst." }, role: { en: "Art Director", de: "Art Director" }, year: "2025", tools: "AI", blocks: [] },
+            6: { title: { en: "Documentation", de: "Dokumentation" }, category: { en: "Tech Lead", de: "Tech Lead" }, heroImage: "https://via.placeholder.com/1200x800/f3f4f6/374151?text=Documentation", description: { en: "Docs for Sanolux.", de: "Technische Doku." }, role: { en: "Tech Lead", de: "Tech Lead" }, year: "2023", tools: "MadMapper", blocks: [] }
         };
 
         // --- 1. Custom Cursor & Interaction Logic ---
@@ -875,37 +918,7 @@
             const data = projects[id];
             if (!data) return;
 
-            // Handle Images
-            const imagesContainer = document.getElementById('modalImagesContainer');
-            // Remove all existing images but keep the gradient overlay if needed (or just re-add it)
-            // Actually the gradient is just a child div, so we should allow clearing everything and rebuilding.
-            // But we have a static gradient div in HTML. Let's just clear images only or easier: clear localHTML.
-
-            let imagesHtml = '';
-
-            // Check for 'images' array or fallback to single 'image'
-            let imageList = [];
-            if (data.images && data.images.length > 0) {
-                imageList = data.images;
-            } else if (data.image) {
-                imageList = [data.image];
-            }
-
-            if (imageList.length > 0) {
-                imageList.forEach(imgSrc => {
-                    imagesHtml += `<img src="${imgSrc}" class="w-full h-auto object-cover block shadow-md" alt="${data.title.en}">`;
-                });
-            } else {
-                // No image
-                imagesHtml = `<div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">No Image</div>`;
-            }
-
-            // Re-add the mobile gradient overlay
-            imagesHtml += `<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:hidden pointer-events-none sticky bottom-0 h-24 mt-auto"></div>`;
-
-            imagesContainer.innerHTML = imagesHtml;
-            imagesContainer.scrollTop = 0; // Reset scroll
-
+            // 1. Setup Header
             document.getElementById('modalTitle').innerText = data.title[currentLang];
             document.getElementById('modalCategory').innerText = data.category[currentLang];
             document.getElementById('modalDescription').innerText = data.description[currentLang];
@@ -913,6 +926,86 @@
             document.getElementById('modalYear').innerText = data.year;
             document.getElementById('modalTools').innerText = data.tools;
 
+            // Hero Image
+            const heroImg = document.getElementById('modalHeroImage');
+            if (data.heroImage) {
+                heroImg.src = data.heroImage;
+                heroImg.style.display = 'block';
+                // Add robust fallback
+                heroImg.onerror = function () {
+                    this.parentElement.innerHTML = '<div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-400 font-mono text-xs uppercase tracking-widest">Image Unavailable</div>';
+                };
+            } else {
+                heroImg.style.display = 'none';
+            }
+
+            // 2. Build Blocks (Body)
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = ''; // Clear previous
+
+            if (data.blocks && data.blocks.length > 0) {
+                data.blocks.forEach(block => {
+                    let blockHtml = '';
+
+                    if (block.type === 'image-text') {
+                        // Standard Layout: Image Left, Text Right
+                        // Using grid for side-by-side on desktop, stacked on mobile
+                        const textContent = block.text ? (block.text[currentLang] || block.text) : '';
+
+                        blockHtml = `
+                            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 p-8 md:p-16 items-end">
+                                <div class="relative overflow-hidden group order-1 bg-gray-100 aspect-[4/3]">
+                                    <img src="${block.image}" 
+                                         class="w-full h-full object-cover shadow-lg transition-transform duration-700 hover:scale-105" 
+                                         alt="Detail"
+                                         onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br', 'from-gray-200', 'to-gray-300'); this.parentElement.innerHTML += '<div class=\\'absolute inset-0 flex items-center justify-center text-gray-400 font-mono text-xs uppercase tracking-widest\\'>Image Unavailable</div>';">
+                                </div>
+                                <div class="order-2">
+                                    <p class="text-sm text-gray-500 leading-relaxed max-w-lg">
+                                        ${textContent}
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                    } else if (block.type === 'full-image') {
+                        // Full Width Image with Optional Caption
+                        const captionHtml = block.caption ? `
+                            <div class="mt-4 md:absolute md:top-1/2 md:right-16 md:translate-x-[120%] w-full md:w-64 text-sm text-gray-500 leading-relaxed md:translate-y-[-50%]">
+                                ${block.caption[currentLang] || block.caption}
+                            </div>
+                        ` : '';
+
+                        // Layout: On desktop, we want the caption to be to the right of the image if possible, or just below
+                        // Based on the Figma design (inferred), it looks like a clean stack or side note.
+                        // Let's stick to a clean stack below for now, matching the typical flow, or improve layout.
+                        // The user said "small description to the large image".
+                        // Let's put it simply below for now, aligned nicely.
+
+                        blockHtml = `
+                            <div class="w-full p-8 md:p-16">
+                                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_250px] gap-4 items-end">
+                                    <div class="w-full h-auto bg-gray-100 overflow-hidden min-h-[400px] relative shadow-xl">
+                                        <img src="${block.image}" 
+                                            class="w-full h-auto max-h-[80vh] object-cover" 
+                                            alt="Full View"
+                                            onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br', 'from-gray-200', 'to-gray-300'); this.parentElement.innerHTML += '<div class=\\'absolute inset-0 flex items-center justify-center text-gray-400 font-mono text-xs uppercase tracking-widest\\'>Image Unavailable</div>';">
+                                    </div>
+                                    <div class="text-sm text-gray-500 leading-relaxed">
+                                        ${block.caption ? (block.caption[currentLang] || block.caption) : ''}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    modalBody.innerHTML += blockHtml;
+                });
+            } else {
+                // Fallback if no blocks (just to show something)
+                modalBody.innerHTML = `<div class="p-16 text-center text-gray-400">More details coming soon.</div>`;
+            }
+
+            // Show Modal
             const modal = document.getElementById('projectModal');
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden'; // Lock scroll
