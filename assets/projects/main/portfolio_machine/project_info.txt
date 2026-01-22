@@ -1,0 +1,8 @@
+﻿Project Name: Portfolio Machine
+ID: 
+Category: 
+Status: 
+Description: 
+Key Dates: 
+Technologies: 
+Important Notes: 
