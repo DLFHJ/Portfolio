@@ -1,8 +1,8 @@
-﻿Project Name: Hackathon Schweiz
+﻿Project Name: Hackathon Switzerland
 ID: 
-Category: 
-Status: 
-Description: 
-Key Dates: 
-Technologies: 
+Category: Hackathon
+Status: Completed
+Description: Project developed during the Swiss Hackathon event.
+Key Dates: 2023
+Technologies: Rapid Prototyping
 Important Notes: 

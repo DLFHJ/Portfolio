@@ -1,8 +1,8 @@
-﻿Project Name: Games
+﻿Project Name: Game Design Portfolio
 ID: 
-Category: 
-Status: 
-Description: 
-Key Dates: 
-Technologies: 
+Category: Game Design
+Status:  various
+Description: Collection of game prototypes and design concepts.
+Key Dates: various
+Technologies: Unity, C#, Blender
 Important Notes: 

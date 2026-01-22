@@ -1,8 +1,8 @@
-﻿Project Name: Sonolux
+﻿Project Name: Sanolux
 ID: 
-Category: 
-Status: 
-Description: 
-Key Dates: 
-Technologies: 
-Important Notes: 
+Category: Installation
+Status: Completed
+Description: Immersive light and sound installation designed for the annual Klanglicht festival. The installation explores the relationship between artificial light and natural growth.
+Key Dates: 2023
+Technologies: TouchDesigner, Ableton
+Important Notes: Won an award? (Check details)

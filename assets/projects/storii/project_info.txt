@@ -1,8 +1,8 @@
 ﻿Project Name: Storii
 ID: 
-Category: 
-Status: 
-Description: 
+Category: Storytelling Platform
+Status: Concept
+Description: Interactive storytelling application.
 Key Dates: 
 Technologies: 
 Important Notes: 

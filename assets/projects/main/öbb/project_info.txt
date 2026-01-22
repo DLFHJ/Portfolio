@@ -1,8 +1,8 @@
-﻿Project Name: Öbb
+﻿Project Name: ÖBB Ticketshop Redesign
 ID: 
-Category: 
-Status: 
-Description: 
-Key Dates: 
-Technologies: 
-Important Notes: 
+Category: UX/UI Design
+Status: Prototype
+Description: A comprehensive redesign of the Austrian Federal Railways (ÖBB) ticket shop mobile application, focusing on user flow optimization and modern UI aesthetics.
+Key Dates: 2024
+Technologies: Figma, Prototyping
+Important Notes: Focus on mobile-first approach.

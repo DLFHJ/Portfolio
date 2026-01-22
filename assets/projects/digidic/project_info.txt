@@ -1,8 +1,8 @@
 ﻿Project Name: Digidic
 ID: 
-Category: 
-Status: 
-Description: 
+Category: Digital Product
+Status: Concept
+Description: Digital dictionary or directory application concept.
 Key Dates: 
-Technologies: 
+Technologies: Web Tech
 Important Notes: 
