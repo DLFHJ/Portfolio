@@ -1,0 +1,8 @@
+﻿Project Name: Master Thesis
+ID: 
+Category: Academic Research
+Status: Completed
+Description: Research and practical application in the field of Interaction Design.
+Key Dates: 2024
+Technologies: Mixed Media
+Important Notes: See PDF in folder for full text.
