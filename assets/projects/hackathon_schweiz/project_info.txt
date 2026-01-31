@@ -1,8 +1,10 @@
 ﻿Project Name: Hackathon Switzerland
-ID: 
-Category: Hackathon
+ID: 4
+Category: conception, user experience design, presenting, Rapid Prototyping
 Status: Completed
-Description: Project developed during the Swiss Hackathon event.
-Key Dates: 2023
-Technologies: Rapid Prototyping
+Key Dates: 2025
+Technologies: Visual Studio Code, Figma
 Important Notes: 
+Description: During the START Hack in St. Gallen, our team took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult.
+
+Our solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I also led our final presentation, where we successfully pitched a working prototype that we built from scratch during the hackathon.
