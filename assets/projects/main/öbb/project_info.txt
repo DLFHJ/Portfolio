@@ -5,6 +5,7 @@ Status:
 Key Dates: 2022
 Technologies: Sketch, Marvel App, Adobe Creative Suite
 Important Notes: 
+Short Description:
 Description: During my Bachelor’s studies, I completed a six-month internship at ÖV Ticketshop GmbH (ÖBB). This experience was pivotal in solidifying my passion for UX, as it allowed me to contribute to a wide array of high-impact projects within a multidisciplinary team.
 
 My responsibilities spanned the entire design lifecycle, including conceptualization, web design, and information architecture. A significant part of my role involved hands-on research, where I conducted user interviews and live usability tests at Vienna Central Station.

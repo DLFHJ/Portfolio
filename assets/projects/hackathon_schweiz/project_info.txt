@@ -5,6 +5,7 @@ Status: Completed
 Key Dates: 2025
 Technologies: Visual Studio Code, Figma
 Important Notes: 
+Short Description:
 Description: During the START Hack in St. Gallen, our team took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult.
 
 Our solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I also led our final presentation, where we successfully pitched a working prototype that we built from scratch during the hackathon.

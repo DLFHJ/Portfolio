@@ -5,6 +5,7 @@ Status:
 Key Dates: 2025
 Technologies: Visual Studio, Figma
 Important Notes: See PDF in folder for full text.
+Short Description:
 Description: My Master’s thesis explored how modern technology can bridge the gap between clinical physiotherapy and at-home recovery. Following a rigorous Design Thinking process, I developed a dual-sided ecosystem designed to support both patients and therapists through a continuous feedback loop.
 
 The Research: > To truly understand the needs of my users, I moved beyond theory and stepped into their shoes. I conducted expert interviews and synthesized my findings using Empathy Maps, Personas, and Interaction Storyboards. This iterative research phase was crucial in uncovering the real-world frustrations of physical recovery.

@@ -5,6 +5,7 @@ Status: Completed
 Key Dates: 2024
 Technologies: Adobe Suite, Touchdesigner
 Important Notes: 
+Short Description:
 Description: Sonolux is an immersive audio-visual installation showcased at Klanglicht (Graz) and the LUNA Festival (Eindhoven). As part of a five-person team, I collaborated with sound designers to explore how technology shapes our environment, using the Hilmteich in Graz as our conceptual subject.
 
 My role focused on the visual architecture and generative design. Using TouchDesigner, I developed audio-reactive visuals based on my own photography and film of the site. These visuals morphed in real-time to reflect three distinct sonic states: the present, a utopia, and a dystopia. For the physical installation, we projected onto moving fabric animated by fans—creating a kinetic projection mapping experience that turned over four hours of field recordings into a dynamic, atmospheric spectacle.

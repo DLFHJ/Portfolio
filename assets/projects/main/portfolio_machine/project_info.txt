@@ -5,6 +5,7 @@ Status:
 Key Dates: 2025
 Technologies: Visual Studio
 Important Notes: 
+Short Description:
 Description: For our final Master’s exhibition, our class developed an Interactive Portfolio Installation—a custom-built station designed to showcase all of our collective work. This project was a massive collaborative effort that required seamless integration between physical hardware and digital software.
 
 As the Frontend Developer, I built the interface using HTML and CSS. The installation featured a unique physical interface: a sphere that users could roll to navigate the work. I implemented parallax scrolling to create an immersive effect where users 'scrolled into' the projects, creating a 3D sense of depth. Beyond the visuals, I tackled the technical challenges of resolution mapping, synchronized video autoplay, and performance optimization, resulting in a one-of-a-kind physical-digital showcase.

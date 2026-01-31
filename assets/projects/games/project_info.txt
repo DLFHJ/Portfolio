@@ -5,6 +5,7 @@ Status:
 Key Dates: 2020 - 2025
 Technologies: Unity, Visual Studio, Kinect Suite, Miro
 Important Notes: 
+Short Description:
 Description: Throughout my studies, I’ve developed several games—some as solo projects, others in groups or during fast-paced Game Jams. These projects were a great way to experiment with user experience in a playful context. I particularly enjoy tinkering with non-traditional interactions, such as gesture and motion detection via camera or exploring immersive environments in Virtual Reality.
 
 While I’m not looking to pursue a career specifically in the gaming industry, these projects are a great showcase of my broader technical skillset. They represent my experience across the entire pipeline, from initial concept and UI design to 3D art and programming.I find that the constraints and 'juice' of game design often inform my approach to making traditional interfaces more engaging.
