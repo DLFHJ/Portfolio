@@ -1356,14 +1356,14 @@
 
                     if (block.type === 'image-text') {
                         // Standard Layout: Image Left, Text Right
-                        // Using grid for side-by-side on desktop, stacked on mobile
+                        // Changed: Removed fixed aspect ratio and object-cover to prevent cropping
                         const textContent = block.text ? (block.text[currentLang] || block.text) : '';
 
                         blockHtml = `
                             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 p-8 md:p-16 items-end">
-                                <div class="relative overflow-hidden group order-1 bg-gray-100 aspect-[4/3]">
+                                <div class="relative overflow-hidden group order-1 bg-gray-100 rounded-lg shadow-sm">
                                     <img src="${block.image}" 
-                                         class="w-full h-full object-cover shadow-lg transition-transform duration-700 hover:scale-105" 
+                                         class="w-full h-auto object-contain transition-transform duration-700 hover:scale-105" 
                                          alt="Detail"
                                          onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br', 'from-gray-200', 'to-gray-300'); this.parentElement.innerHTML += '<div class=\\'absolute inset-0 flex items-center justify-center text-gray-400 font-mono text-xs uppercase tracking-widest\\'>Image Unavailable</div>';">
                                 </div>
@@ -1382,18 +1382,12 @@
                             </div>
                         ` : '';
 
-                        // Layout: On desktop, we want the caption to be to the right of the image if possible, or just below
-                        // Based on the Figma design (inferred), it looks like a clean stack or side note.
-                        // Let's stick to a clean stack below for now, matching the typical flow, or improve layout.
-                        // The user said "small description to the large image".
-                        // Let's put it simply below for now, aligned nicely.
-
                         blockHtml = `
                             <div class="w-full p-8 md:p-16">
                                 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_250px] gap-4 items-end">
-                                    <div class="w-full h-auto bg-gray-100 overflow-hidden min-h-[400px] relative shadow-xl">
+                                    <div class="w-full h-auto bg-gray-100 overflow-hidden shadow-xl rounded-lg relative">
                                         <img src="${block.image}" 
-                                            class="w-full h-auto max-h-[80vh] object-cover" 
+                                            class="w-full h-auto object-contain" 
                                             alt="Full View"
                                             onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br', 'from-gray-200', 'to-gray-300'); this.parentElement.innerHTML += '<div class=\\'absolute inset-0 flex items-center justify-center text-gray-400 font-mono text-xs uppercase tracking-widest\\'>Image Unavailable</div>';">
                                     </div>
