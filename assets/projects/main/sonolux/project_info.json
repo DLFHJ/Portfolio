@@ -1,0 +1,78 @@
+{
+  "id": 3,
+  "projectName": "Sonolux",
+  "title": {
+    "en": "Sonolux",
+    "de": "Sonolux"
+  },
+  "category": {
+    "en": "Visual Concept & Design",
+    "de": "Visual Concept & Design"
+  },
+  "status": "Completed",
+  "year": "2024",
+  "technologies": "Adobe Suite, Touchdesigner",
+  "heroImage": "0.jpg",
+  "description": {
+    "en": "Sonolux is an immersive audio-visual installation showcased at Klanglicht (Graz) and the LUNA Festival (Eindhoven). As part of a five-person team, I collaborated with sound designers to explore how technology shapes our environment, using the Hilmteich in Graz as our conceptual subject.",
+    "de": "Sonolux is an immersive audio-visual installation showcased at Klanglicht (Graz) and the LUNA Festival (Eindhoven). As part of a five-person team, I collaborated with sound designers to explore how technology shapes our environment, using the Hilmteich in Graz as our conceptual subject."
+  },
+  "blocks": [
+    {
+      "type": "image-text",
+      "image": "1.jpg",
+      "text": {
+        "en": "My role focused on the visual architecture and generative design. Using TouchDesigner, I developed audio-reactive visuals based on my own photography and film of the site. These visuals morphed in real-time to reflect three distinct sonic states: the present, a utopia, and a dystopia. For the physical installation, we projected onto moving fabric animated by fans—creating a kinetic projection mapping experience that turned over four hours of field recordings into a dynamic, atmospheric spectacle.",
+        "de": "My role focused on the visual architecture and generative design. Using TouchDesigner, I developed audio-reactive visuals based on my own photography and film of the site. These visuals morphed in real-time to reflect three distinct sonic states: the present, a utopia, and a dystopia. For the physical installation, we projected onto moving fabric animated by fans—creating a kinetic projection mapping experience that turned over four hours of field recordings into a dynamic, atmospheric spectacle."
+      }
+    },
+    {
+      "type": "image-text",
+      "image": "2.jpg",
+      "text": {
+        "en": "Situated within the historic Grazer Schlossberg, the installation benefited from a truly unique atmosphere, allowing the visuals to interact with the cavernous, one-of-a-kind location.",
+        "de": "Situated within the historic Grazer Schlossberg, the installation benefited from a truly unique atmosphere, allowing the visuals to interact with the cavernous, one-of-a-kind location."
+      }
+    },
+    {
+      "type": "image-text",
+      "image": "3.jpg",
+      "text": {
+        "en": "Following its debut in Graz, the project was also selected for the LUNA Festival in Eindhoven, allowing us to adapt the installation for an international audience and a new architectural context.",
+        "de": "Following its debut in Graz, the project was also selected for the LUNA Festival in Eindhoven, allowing us to adapt the installation for an international audience and a new architectural context."
+      }
+    },
+    {
+      "type": "image-text",
+      "image": "4.jpg",
+      "text": {
+        "en": "",
+        "de": ""
+      }
+    },
+    {
+      "type": "image-text",
+      "image": "5.jpg",
+      "text": {
+        "en": "",
+        "de": ""
+      }
+    },
+    {
+      "type": "image-text",
+      "image": "6.jpg",
+      "text": {
+        "en": "",
+        "de": ""
+      }
+    },
+    {
+      "type": "image-text",
+      "image": "7.png",
+      "text": {
+        "en": "",
+        "de": ""
+      }
+    }
+  ]
+}
