@@ -1,0 +1,38 @@
+{
+  "id": 4,
+  "projectName": "Hackathon Switzerland",
+  "title": {
+    "en": "Hackathon Switzerland",
+    "de": "Hackathon Switzerland"
+  },
+  "category": {
+    "en": "conception, user experience design, presenting, Rapid Prototyping",
+    "de": "conception, user experience design, presenting, Rapid Prototyping"
+  },
+  "status": "Completed",
+  "year": "2025",
+  "technologies": "Visual Studio Code, Figma",
+  "heroImage": "0.png",
+  "description": {
+    "en": "During the START Hack in St. Gallen, our team took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult.\n\nOur solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I also led our final presentation, where we successfully pitched a working prototype that we built from scratch during the hackathon.",
+    "de": "During the START Hack in St. Gallen, our team took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult.\n\nOur solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I also led our final presentation, where we successfully pitched a working prototype that we built from scratch during the hackathon."
+  },
+  "blocks": [
+    {
+      "type": "image-text",
+      "image": "1.png",
+      "text": {
+        "en": "asd",
+        "de": "asd"
+      }
+    },
+    {
+      "type": "image-text",
+      "image": "2.png",
+      "text": {
+        "en": "",
+        "de": ""
+      }
+    }
+  ]
+}
