@@ -854,10 +854,10 @@
 
                     const sectionEl = document.createElement('div');
 
-                    sectionEl.className = 'w-full max-w-7xl mx-auto px-6 py-10 md:grid md:grid-cols-12 gap-x-6 gap-y-4 items-stretch';
+                    sectionEl.className = 'w-full max-w-7xl mx-auto px-6 py-6 md:grid md:grid-cols-12 gap-x-6 gap-y-4 items-stretch';
 
                     if (section.layout === 'full-bleed') {
-                        sectionEl.className = 'w-full mb-10';
+                        sectionEl.className = 'w-full mb-6';
                     }
                     if (section.type === 'gallery') {
                         // sectionEl.classList.add('gap-y-6'); // Removed to respect global tight spacing
@@ -908,10 +908,10 @@
                             img.src = imgSrc;
                             // Use h-full and object-cover to match heights in grid
                             if (section.layout === 'grid') {
-                                img.className = 'w-full h-full object-cover block shadow-sm rounded-lg';
+                                img.className = 'w-full h-full object-cover block shadow-sm';
                             } else {
                                 img.className = 'w-full h-auto object-cover block shadow-sm';
-                                if (section.layout !== 'full-bleed') img.classList.add('rounded-lg');
+                                // if (section.layout !== 'full-bleed') img.classList.add('rounded-lg'); // Removed rounded corners
                             }
 
                             itemWrapper.appendChild(img);
