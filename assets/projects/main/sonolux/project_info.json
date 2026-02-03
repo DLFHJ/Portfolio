@@ -35,21 +35,6 @@
     },
     {
       "type": "content",
-      "layout": "centered",
-      "items": [
-        {
-          "role": "text",
-          "width": "medium",
-          "align": "center",
-          "content": {
-            "en": "Sonolux is an immersive audio-visual installation showcased at Klanglicht (Graz) and the LUNA Festival (Eindhoven). As part of a five-person team, I collaborated with sound designers to explore how technology shapes our environment, using the Hilmteich in Graz as our conceptual subject.",
-            "de": "Sonolux ist eine immersive audio-visuelle Installation, die beim Klanglicht (Graz) und beim LUNA Festival (Eindhoven) gezeigt wurde. Als Teil eines fünfköpfigen Teams arbeitete ich mit Sounddesignern zusammen, um zu erforschen, wie Technologie unsere Umgebung formt, wobei der Hilmteich in Graz als unser konzeptionelles Subjekt diente."
-          }
-        }
-      ]
-    },
-    {
-      "type": "content",
       "layout": "editorial-split",
       "items": [
         {

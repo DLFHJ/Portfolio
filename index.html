@@ -489,10 +489,6 @@
                         <!-- Metadata Grid -->
                         <div class="grid grid-cols-2 gap-y-8 gap-x-12 border-t border-gray-100 pt-8">
                             <div>
-                                <span data-i18n="modal_role" class="block text-black font-bold text-sm mb-1">Role</span>
-                                <span id="modalRole" class="text-gray-500 font-normal">Lead Designer</span>
-                            </div>
-                            <div>
                                 <span data-i18n="modal_year" class="block text-black font-bold text-sm mb-1">Year</span>
                                 <span id="modalYear" class="text-gray-500 font-normal">2025</span>
                             </div>
@@ -829,15 +825,22 @@
 
             document.getElementById('modalTitle').innerText = title || '';
             document.getElementById('modalCategory').innerText = category || '';
-            document.getElementById('modalRole').innerText = role || '';
+            const roleEl = document.getElementById('modalRole');
+            if (roleEl) roleEl.innerText = role || '';
             document.getElementById('modalYear').innerText = data.year || '';
             document.getElementById('modalTools').innerText = Array.isArray(data.tools) ? data.tools.join(', ') : data.tools;
 
             const modalDescEl = document.getElementById('modalDescription');
-            if (modalDescEl) modalDescEl.style.display = 'none';
+            // if(modalDescEl) modalDescEl.style.display = 'none'; // Unhidden per user request
 
+            // Restore Hero Image in Header
             const heroImg = document.getElementById('modalHeroImage');
-            if (heroImg) heroImg.style.display = 'none';
+            if (data.heroImage) {
+                heroImg.src = data.heroImage;
+                heroImg.style.display = 'block';
+            } else {
+                if (heroImg) heroImg.style.display = 'none';
+            }
 
             // 2. Build Sections (Body)
             const modalBody = document.getElementById('modalBody');
@@ -845,6 +848,9 @@
 
             if (data.sections) {
                 data.sections.forEach(section => {
+                    // Skip 'hero' type sections as they are now handled in the header
+                    if (section.type === 'hero') return;
+
                     const sectionEl = document.createElement('div');
 
                     sectionEl.className = 'w-full max-w-7xl mx-auto px-6 py-12 md:grid md:grid-cols-12 gap-x-6 gap-y-12 items-start';
