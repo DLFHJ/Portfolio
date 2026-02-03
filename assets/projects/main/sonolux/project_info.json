@@ -68,13 +68,7 @@
         },
         {
           "src": "assets/projects/main/sonolux/6.jpg"
-        }
-      ]
-    },
-    {
-      "type": "content",
-      "layout": "content",
-      "items": [
+        },
         {
           "role": "text",
           "width": "full",
