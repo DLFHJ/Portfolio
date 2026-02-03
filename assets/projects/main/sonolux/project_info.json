@@ -41,7 +41,7 @@
     },
     {
       "type": "content",
-      "layout": "full-bleed",
+      "layout": "centered",
       "items": [
         {
           "role": "image",
