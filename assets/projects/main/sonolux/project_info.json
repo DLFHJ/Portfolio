@@ -1,78 +1,134 @@
 {
-  "id": 3,
-  "projectName": "Sonolux",
+  "id": "sonolux",
   "title": {
     "en": "Sonolux",
     "de": "Sonolux"
   },
+  "year": 2024,
+  "role": {
+    "en": "Visual Concept & Design",
+    "de": "Visuelles Konzept & Design"
+  },
+  "tools": [
+    "Adobe Suite",
+    "Touchdesigner"
+  ],
   "category": {
     "en": "Visual Concept & Design",
     "de": "Visual Concept & Design"
   },
-  "status": "Completed",
-  "year": "2024",
-  "technologies": "Adobe Suite, Touchdesigner",
-  "heroImage": "0.jpg",
+  "heroImage": "assets/projects/main/sonolux/0.jpg",
   "description": {
     "en": "Sonolux is an immersive audio-visual installation showcased at Klanglicht (Graz) and the LUNA Festival (Eindhoven). As part of a five-person team, I collaborated with sound designers to explore how technology shapes our environment, using the Hilmteich in Graz as our conceptual subject.",
-    "de": "Sonolux is an immersive audio-visual installation showcased at Klanglicht (Graz) and the LUNA Festival (Eindhoven). As part of a five-person team, I collaborated with sound designers to explore how technology shapes our environment, using the Hilmteich in Graz as our conceptual subject."
+    "de": "Sonolux ist eine immersive audio-visuelle Installation, die beim Klanglicht (Graz) und beim LUNA Festival (Eindhoven) gezeigt wurde. Als Teil eines fünfköpfigen Teams arbeitete ich mit Sounddesignern zusammen, um zu erforschen, wie Technologie unsere Umgebung formt, wobei der Hilmteich in Graz als unser konzeptionelles Subjekt diente."
   },
-  "blocks": [
+  "sections": [
     {
-      "type": "image-text",
-      "image": "1.jpg",
-      "text": {
-        "en": "My role focused on the visual architecture and generative design. Using TouchDesigner, I developed audio-reactive visuals based on my own photography and film of the site. These visuals morphed in real-time to reflect three distinct sonic states: the present, a utopia, and a dystopia. For the physical installation, we projected onto moving fabric animated by fans—creating a kinetic projection mapping experience that turned over four hours of field recordings into a dynamic, atmospheric spectacle.",
-        "de": "My role focused on the visual architecture and generative design. Using TouchDesigner, I developed audio-reactive visuals based on my own photography and film of the site. These visuals morphed in real-time to reflect three distinct sonic states: the present, a utopia, and a dystopia. For the physical installation, we projected onto moving fabric animated by fans—creating a kinetic projection mapping experience that turned over four hours of field recordings into a dynamic, atmospheric spectacle."
-      }
+      "type": "hero",
+      "layout": "full-bleed",
+      "items": [
+        {
+          "role": "image",
+          "src": "assets/projects/main/sonolux/0.jpg"
+        }
+      ]
     },
     {
-      "type": "image-text",
-      "image": "2.jpg",
-      "text": {
-        "en": "Situated within the historic Grazer Schlossberg, the installation benefited from a truly unique atmosphere, allowing the visuals to interact with the cavernous, one-of-a-kind location.",
-        "de": "Situated within the historic Grazer Schlossberg, the installation benefited from a truly unique atmosphere, allowing the visuals to interact with the cavernous, one-of-a-kind location."
-      }
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "medium",
+          "align": "center",
+          "content": {
+            "en": "Sonolux is an immersive audio-visual installation showcased at Klanglicht (Graz) and the LUNA Festival (Eindhoven). As part of a five-person team, I collaborated with sound designers to explore how technology shapes our environment, using the Hilmteich in Graz as our conceptual subject.",
+            "de": "Sonolux ist eine immersive audio-visuelle Installation, die beim Klanglicht (Graz) und beim LUNA Festival (Eindhoven) gezeigt wurde. Als Teil eines fünfköpfigen Teams arbeitete ich mit Sounddesignern zusammen, um zu erforschen, wie Technologie unsere Umgebung formt, wobei der Hilmteich in Graz als unser konzeptionelles Subjekt diente."
+          }
+        }
+      ]
     },
     {
-      "type": "image-text",
-      "image": "3.jpg",
-      "text": {
-        "en": "Following its debut in Graz, the project was also selected for the LUNA Festival in Eindhoven, allowing us to adapt the installation for an international audience and a new architectural context.",
-        "de": "Following its debut in Graz, the project was also selected for the LUNA Festival in Eindhoven, allowing us to adapt the installation for an international audience and a new architectural context."
-      }
+      "type": "content",
+      "layout": "editorial-split",
+      "items": [
+        {
+          "role": "text",
+          "width": "medium",
+          "align": "left",
+          "content": {
+            "en": "My role focused on the visual architecture and generative design. Using TouchDesigner, I developed audio-reactive visuals based on my own photography and film of the site. These visuals morphed in real-time to reflect three distinct sonic states: the present, a utopia, and a dystopia. For the physical installation, we projected onto moving fabric animated by fans—creating a kinetic projection mapping experience that turned over four hours of field recordings into a dynamic, atmospheric spectacle.",
+            "de": "Meine Rolle konzentrierte sich auf die visuelle Architektur und das generative Design. Mit TouchDesigner entwickelte ich audioreaktive Visuals, basierend auf meinen eigenen Fotografien und Filmaufnahmen des Ortes. Diese Visuals veränderten sich in Echtzeit, um drei verschiedene Klangzustände widerzuspiegeln: die Gegenwart, eine Utopie und eine Dystopie. Für die physische Installation projizierten wir auf beweglichen Stoff, der von Ventilatoren animiert wurde – so entstand ein kinetisches Projection-Mapping-Erlebnis, das über vier Stunden Feldaufnahmen in ein dynamisches, atmosphärisches Spektakel verwandelte."
+          }
+        },
+        {
+          "role": "image",
+          "width": "large",
+          "align": "right",
+          "src": "assets/projects/main/sonolux/1.jpg"
+        }
+      ]
     },
     {
-      "type": "image-text",
-      "image": "4.jpg",
-      "text": {
-        "en": "",
-        "de": ""
-      }
+      "type": "content",
+      "layout": "offset",
+      "items": [
+        {
+          "role": "image",
+          "width": "medium",
+          "align": "left",
+          "src": "assets/projects/main/sonolux/2.jpg"
+        },
+        {
+          "role": "text",
+          "width": "medium",
+          "align": "right",
+          "content": {
+            "en": "Situated within the historic Grazer Schlossberg, the installation benefited from a truly unique atmosphere, allowing the visuals to interact with the cavernous, one-of-a-kind location.",
+            "de": "Gelegen im historischen Grazer Schlossberg profitierte die Installation von einer wirklich einzigartigen Atmosphäre, die es den Visuals ermöglichte, mit der höhlenartigen, einzigartigen Location zu interagieren."
+          }
+        }
+      ]
     },
     {
-      "type": "image-text",
-      "image": "5.jpg",
-      "text": {
-        "en": "",
-        "de": ""
-      }
+      "type": "content",
+      "layout": "editorial-split",
+      "items": [
+        {
+          "role": "image",
+          "width": "large",
+          "align": "left",
+          "src": "assets/projects/main/sonolux/3.jpg"
+        },
+        {
+          "role": "text",
+          "width": "medium",
+          "align": "right",
+          "content": {
+            "en": "Following its debut in Graz, the project was also selected for the LUNA Festival in Eindhoven, allowing us to adapt the installation for an international audience and a new architectural context.",
+            "de": "Nach dem Debüt in Graz wurde das Projekt auch für das LUNA Festival in Eindhoven ausgewählt, was es uns ermöglichte, die Installation für ein internationales Publikum und einen neuen architektonischen Kontext anzupassen."
+          }
+        }
+      ]
     },
     {
-      "type": "image-text",
-      "image": "6.jpg",
-      "text": {
-        "en": "",
-        "de": ""
-      }
-    },
-    {
-      "type": "image-text",
-      "image": "7.png",
-      "text": {
-        "en": "",
-        "de": ""
-      }
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 2,
+      "items": [
+        {
+          "src": "assets/projects/main/sonolux/4.jpg"
+        },
+        {
+          "src": "assets/projects/main/sonolux/5.jpg"
+        },
+        {
+          "src": "assets/projects/main/sonolux/6.jpg"
+        },
+        {
+          "src": "assets/projects/main/sonolux/7.png"
+        }
+      ]
     }
   ]
 }

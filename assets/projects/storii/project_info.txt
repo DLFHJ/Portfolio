@@ -1,9 +1,0 @@
-﻿Project Name: Storii
-ID: 2
-Category: Concept Design, Art
-Status: Concept
-Key Dates: 2024
-Technologies: Figma, Photoshop, StoryTribe 
-Important Notes: 
-Short Description:
-Description: During my Master’s studies, our team developed a smart bookshelf ecosystem designed to bridge physical and digital reading experiences. As the Lead UX and Concept Designer, I was responsible for the UX strategy and mapping the user journey through detailed interaction storyboards. By integrating 'StoryTribe' characters with custom hand-drawn elements, I created a unique visual narrative that allowed for rapid iteration. This hybrid storytelling approach proved essential for aligning the team's vision and effectively communicating the concept during peer presentations.
