@@ -73,11 +73,11 @@
     },
     {
       "type": "content",
-      "layout": "full-bleed",
+      "layout": "content",
       "items": [
         {
           "role": "text",
-          "width": "medium",
+          "width": "full",
           "align": "left",
           "content": {
             "en": "As mentioned before the project was also exhibited at LUNA Festival in Eindhoven",

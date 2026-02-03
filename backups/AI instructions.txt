@@ -1,0 +1,127 @@
+There is one global CSS grid defined in the app for the MODALS (Project details).
+JSON never contains raw grid columns or CSS values.
+JSON only expresses layout intent, not implementation.
+
+
+Project JSON template (authoritative)
+{
+  "id": "master-thesis-ux",
+  "title": "User Experience Design for a Digital Physiotherapy Application",
+  "year": 2025,
+  "role": "UX Designer",
+  "tools": ["Figma", "Visual Studio Code"],
+  "sections": [
+    {
+      "type": "hero",
+      "layout": "full-bleed",
+      "items": [
+        {
+          "role": "image",
+          "src": "/images/thesis/cover.jpg"
+        }
+      ]
+    },
+
+    {
+      "type": "content",
+      "layout": "editorial-split",
+      "items": [
+        {
+          "role": "text",
+          "width": "medium",
+          "align": "left",
+          "content": "User Experience Design for a Digital Physiotherapy Application was the title of my master’s thesis..."
+        },
+        {
+          "role": "image",
+          "width": "large",
+          "align": "right",
+          "src": "/images/thesis/intro-visual.jpg"
+        }
+      ]
+    },
+
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "image",
+          "width": "large",
+          "align": "center",
+          "src": "/images/thesis/post-its.jpg"
+        }
+      ]
+    },
+
+    {
+      "type": "content",
+      "layout": "offset",
+      "items": [
+        {
+          "role": "image",
+          "width": "medium",
+          "align": "left",
+          "src": "/images/thesis/sketches.jpg"
+        },
+        {
+          "role": "image",
+          "width": "medium",
+          "align": "right",
+          "src": "/images/thesis/wireframes.jpg"
+        }
+      ]
+    },
+
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 3,
+      "items": [
+        { "src": "/images/thesis/ui-1.jpg" },
+        { "src": "/images/thesis/ui-2.jpg" },
+        { "src": "/images/thesis/ui-3.jpg" }
+      ]
+    }
+  ]
+}
+
+
+Allowed layout vocabulary (only These should be valid)
+
+Section-level layouts
+full-bleed        → spans entire viewport width
+editorial-split  → text + image pulled to opposite grid edges
+centered         → content centered within grid
+offset           → asymmetric placement for visual tension
+grid             → repetitive content (galleries only)
+
+Item roles
+text
+image
+video
+embed
+
+Width tokens (semantic, not numeric)
+small
+medium
+large
+full
+
+Alignment tokens
+left
+center
+Right
+
+
+The app defines a single global grid (12 columns) for the MODALS (Project details).
+
+Section layout decides how items map to the grid.
+
+Item width maps to predefined column spans.
+
+Item align maps to left/center/right grid alignment.
+
+JSON must never contain raw CSS values or grid column numbers.
+
+Galleries are the only sections allowed to define columns.

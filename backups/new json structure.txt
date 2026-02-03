@@ -1,0 +1,144 @@
+{
+  "id": "sonolux",
+  "projectName": "Sonolux",
+  "title": {
+    "en": "Sonolux",
+    "de": "Sonolux"
+  },
+  "category": {
+    "en": "Visual Concept & Design",
+    "de": "Visual Concept & Design"
+  },
+  "status": "Completed",
+  "year": 2024,
+  "technologies": ["Adobe Suite", "TouchDesigner"],
+
+  "hero": {
+    "type": "hero",
+    "layout": "full-bleed",
+    "items": [
+      {
+        "role": "image",
+        "src": "0.jpg"
+      }
+    ]
+  },
+
+  "description": {
+    "en": "Sonolux is an immersive audio-visual installation showcased at Klanglicht (Graz) and the LUNA Festival (Eindhoven). As part of a five-person team, I collaborated with sound designers to explore how technology shapes our environment, using the Hilmteich in Graz as our conceptual subject.",
+    "de": "Sonolux is an immersive audio-visual installation showcased at Klanglicht (Graz) and the LUNA Festival (Eindhoven). As part of a five-person team, I collaborated with sound designers to explore how technology shapes our environment, using the Hilmteich in Graz as our conceptual subject."
+  },
+
+  "sections": [
+    {
+      "type": "content",
+      "layout": "editorial-split",
+      "items": [
+        {
+          "role": "text",
+          "width": "medium",
+          "align": "left",
+          "content": {
+            "en": "My role focused on the visual architecture and generative design. Using TouchDesigner, I developed audio-reactive visuals based on my own photography and film of the site. These visuals morphed in real-time to reflect three distinct sonic states: the present, a utopia, and a dystopia. For the physical installation, we projected onto moving fabric animated by fans—creating a kinetic projection mapping experience that turned over four hours of field recordings into a dynamic, atmospheric spectacle.",
+            "de": "My role focused on the visual architecture and generative design. Using TouchDesigner, I developed audio-reactive visuals based on my own photography and film of the site. These visuals morphed in real-time to reflect three distinct sonic states: the present, a utopia, and a dystopia. For the physical installation, we projected onto moving fabric animated by fans—creating a kinetic projection mapping experience that turned over four hours of field recordings into a dynamic, atmospheric spectacle."
+          }
+        },
+        {
+          "role": "image",
+          "width": "large",
+          "align": "right",
+          "src": "1.jpg"
+        }
+      ]
+    },
+
+    {
+      "type": "content",
+      "layout": "editorial-split",
+      "items": [
+        {
+          "role": "image",
+          "width": "large",
+          "align": "left",
+          "src": "2.jpg"
+        },
+        {
+          "role": "text",
+          "width": "medium",
+          "align": "right",
+          "content": {
+            "en": "Situated within the historic Grazer Schlossberg, the installation benefited from a truly unique atmosphere, allowing the visuals to interact with the cavernous, one-of-a-kind location.",
+            "de": "Situated within the historic Grazer Schlossberg, the installation benefited from a truly unique atmosphere, allowing the visuals to interact with the cavernous, one-of-a-kind location."
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "content",
+      "layout": "editorial-split",
+      "items": [
+        {
+          "role": "text",
+          "width": "medium",
+          "align": "left",
+          "content": {
+            "en": "Following its debut in Graz, the project was also selected for the LUNA Festival in Eindhoven, allowing us to adapt the installation for an international audience and a new architectural context.",
+            "de": "Following its debut in Graz, the project was also selected for the LUNA Festival in Eindhoven, allowing us to adapt the installation for an international audience and a new architectural context."
+          }
+        },
+        {
+          "role": "image",
+          "width": "large",
+          "align": "right",
+          "src": "3.jpg"
+        }
+      ]
+    },
+
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "image",
+          "width": "large",
+          "align": "center",
+          "src": "4.jpg"
+        }
+      ]
+    },
+
+    {
+      "type": "content",
+      "layout": "offset",
+      "items": [
+        {
+          "role": "image",
+          "width": "medium",
+          "align": "left",
+          "src": "5.jpg"
+        },
+        {
+          "role": "image",
+          "width": "medium",
+          "align": "right",
+          "src": "6.jpg"
+        }
+      ]
+    },
+
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "image",
+          "width": "medium",
+          "align": "center",
+          "src": "7.png"
+        }
+      ]
+    }
+  ]
+}

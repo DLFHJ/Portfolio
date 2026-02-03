@@ -854,10 +854,10 @@
 
                     const sectionEl = document.createElement('div');
 
-                    sectionEl.className = 'w-full max-w-7xl mx-auto px-6 py-12 md:grid md:grid-cols-12 gap-x-6 gap-y-12 items-stretch';
+                    sectionEl.className = 'w-full max-w-7xl mx-auto px-6 py-10 md:grid md:grid-cols-12 gap-x-6 gap-y-4 items-stretch';
 
                     if (section.layout === 'full-bleed') {
-                        sectionEl.className = 'w-full mb-12';
+                        sectionEl.className = 'w-full mb-10';
                     }
                     if (section.type === 'gallery') {
                         sectionEl.classList.add('gap-y-6');
@@ -916,7 +916,7 @@
                             const p = document.createElement('div');
                             const content = typeof item.content === 'object' ? item.content[currentLang] : item.content;
                             p.innerHTML = content || '';
-                            p.className = 'text-gray-600 leading-relaxed text-lg';
+                            p.className = 'text-gray-600 leading-relaxed text-lg border-l-2 border-gray-200 pl-6 ml-1';
                             itemWrapper.appendChild(p);
                         }
 
