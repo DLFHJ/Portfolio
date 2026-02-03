@@ -578,7 +578,8 @@
 
             for (const src of sources) {
                 try {
-                    const response = await fetch(src);
+                    // Add timestamp to prevent caching during development
+                    const response = await fetch(`${src}?t=${new Date().getTime()}`);
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     const data = await response.json();
                     if (data.id) {

@@ -19,79 +19,41 @@
   },
   "heroImage": "assets/projects/main/sonolux/0.jpg",
   "description": {
-    "en": "Sonolux is an immersive audio-visual installation showcased at Klanglicht (Graz) and the LUNA Festival (Eindhoven). As part of a five-person team, I collaborated with sound designers to explore how technology shapes our environment, using the Hilmteich in Graz as our conceptual subject.",
-    "de": "Sonolux ist eine immersive audio-visuelle Installation, die beim Klanglicht (Graz) und beim LUNA Festival (Eindhoven) gezeigt wurde. Als Teil eines fünfköpfigen Teams arbeitete ich mit Sounddesignern zusammen, um zu erforschen, wie Technologie unsere Umgebung formt, wobei der Hilmteich in Graz als unser konzeptionelles Subjekt diente."
+    "en": "Sonolux is the name of the auditive projection-mapping project we, as a team of five, showcased as part of the Young Masters Programme in Grazers Klanglicht and LUNA Festival in Eindhoven.\n\nThe team consisted of three sound designers and two interaction designers - my colleague and me were responsible for the visual part of the installation for which we decided to focus on generative images using TouchDesigner.\n\nThe project was about how Technology shapes our Present and Future with the example of the Hilmteich in Graz. Sound recordings were taken and edited to show the present, an utopian version and a dystopian version. Similarly, I took photos and videos of Hilmteich which later on served as a basis for the visuals. The video is audio reactive and morphs and changes in accordance with the music.\n\nFor the actual setup part we decided to do a projection mapping expierience where we projected the video on several pieces of fabric which were in constant motion being animated by a fan.\n\nUsing relatively simple methods we were able to work with a lot of audio (around four hours of footage) and turn that into an exciting visual spectacle.",
+    "de": "Sonolux ist der Name des auditiven Projektions-Mapping-Projekts, das wir als fünfköpfiges Team im Rahmen des Young Masters Programms bei Grazers Klanglicht und beim LUNA Festival in Eindhoven präsentiert haben.\n\nDas Team bestand aus drei Sounddesignern und zwei Interaktionsdesignern - mein Kollege und ich waren für den visuellen Teil der Installation verantwortlich, für den wir uns auf generative Bilder unter Verwendung von TouchDesigner konzentrierten.\n\nDas Projekt handelte davon, wie Technologie unsere Gegenwart und Zukunft prägt, am Beispiel des Hilmteichs in Graz. Tonaufnahmen wurden gemacht und bearbeitet, um die Gegenwart, eine utopische Version und eine dystopische Version zu zeigen. Ähnlich machte ich Fotos und Videos vom Hilmteich, die später als Grundlage für die Visuals dienten. Das Video ist audioreaktiv und morpht und verändert sich in Übereinstimmung mit der Musik.\n\nFür den eigentlichen Aufbau entschieden wir uns für ein Projektions-Mapping-Erlebnis, bei dem wir das Video auf mehrere Stoffstücke projizierten, die durch einen Ventilator in ständiger Bewegung waren.\n\nMit relativ einfachen Methoden konnten wir mit viel Audio (rund vier Stunden Material) arbeiten und dies in ein aufregendes visuelles Spektakel verwandeln."
   },
   "sections": [
     {
-      "type": "hero",
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 3,
+      "items": [
+        {
+          "src": "assets/projects/main/sonolux/2.jpg"
+        },
+        {
+          "src": "assets/projects/main/sonolux/3.jpg"
+        },
+        {
+          "src": "assets/projects/main/sonolux/4.jpg"
+        }
+      ]
+    },
+    {
+      "type": "content",
       "layout": "full-bleed",
       "items": [
         {
           "role": "image",
-          "src": "assets/projects/main/sonolux/0.jpg"
-        }
-      ]
-    },
-    {
-      "type": "content",
-      "layout": "editorial-split",
-      "items": [
-        {
-          "role": "text",
-          "width": "medium",
-          "align": "left",
-          "content": {
-            "en": "My role focused on the visual architecture and generative design. Using TouchDesigner, I developed audio-reactive visuals based on my own photography and film of the site. These visuals morphed in real-time to reflect three distinct sonic states: the present, a utopia, and a dystopia. For the physical installation, we projected onto moving fabric animated by fans—creating a kinetic projection mapping experience that turned over four hours of field recordings into a dynamic, atmospheric spectacle.",
-            "de": "Meine Rolle konzentrierte sich auf die visuelle Architektur und das generative Design. Mit TouchDesigner entwickelte ich audioreaktive Visuals, basierend auf meinen eigenen Fotografien und Filmaufnahmen des Ortes. Diese Visuals veränderten sich in Echtzeit, um drei verschiedene Klangzustände widerzuspiegeln: die Gegenwart, eine Utopie und eine Dystopie. Für die physische Installation projizierten wir auf beweglichen Stoff, der von Ventilatoren animiert wurde – so entstand ein kinetisches Projection-Mapping-Erlebnis, das über vier Stunden Feldaufnahmen in ein dynamisches, atmosphärisches Spektakel verwandelte."
-          }
-        },
-        {
-          "role": "image",
-          "width": "large",
-          "align": "right",
           "src": "assets/projects/main/sonolux/1.jpg"
-        }
-      ]
-    },
-    {
-      "type": "content",
-      "layout": "offset",
-      "items": [
-        {
-          "role": "image",
-          "width": "medium",
-          "align": "left",
-          "src": "assets/projects/main/sonolux/2.jpg"
         },
         {
           "role": "text",
           "width": "medium",
-          "align": "right",
-          "content": {
-            "en": "Situated within the historic Grazer Schlossberg, the installation benefited from a truly unique atmosphere, allowing the visuals to interact with the cavernous, one-of-a-kind location.",
-            "de": "Gelegen im historischen Grazer Schlossberg profitierte die Installation von einer wirklich einzigartigen Atmosphäre, die es den Visuals ermöglichte, mit der höhlenartigen, einzigartigen Location zu interagieren."
-          }
-        }
-      ]
-    },
-    {
-      "type": "content",
-      "layout": "editorial-split",
-      "items": [
-        {
-          "role": "image",
-          "width": "large",
           "align": "left",
-          "src": "assets/projects/main/sonolux/3.jpg"
-        },
-        {
-          "role": "text",
-          "width": "medium",
-          "align": "right",
           "content": {
-            "en": "Following its debut in Graz, the project was also selected for the LUNA Festival in Eindhoven, allowing us to adapt the installation for an international audience and a new architectural context.",
-            "de": "Nach dem Debüt in Graz wurde das Projekt auch für das LUNA Festival in Eindhoven ausgewählt, was es uns ermöglichte, die Installation für ein internationales Publikum und einen neuen architektonischen Kontext anzupassen."
+            "en": "Situated in the Grazer Schlossberg, the project had a unique, one of a kind location and atmosphere.",
+            "de": "Gelegen im Grazer Schlossberg hatte das Projekt eine einzigartige Location und Atmosphäre."
           }
         }
       ]
@@ -102,16 +64,25 @@
       "columns": 2,
       "items": [
         {
-          "src": "assets/projects/main/sonolux/4.jpg"
-        },
-        {
           "src": "assets/projects/main/sonolux/5.jpg"
         },
         {
           "src": "assets/projects/main/sonolux/6.jpg"
-        },
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "full-bleed",
+      "items": [
         {
-          "src": "assets/projects/main/sonolux/7.png"
+          "role": "text",
+          "width": "medium",
+          "align": "left",
+          "content": {
+            "en": "As mentioned before the project was also exhibited at LUNA Festival in Eindhoven",
+            "de": "Wie bereits erwähnt, wurde das Projekt auch beim LUNA Festival in Eindhoven ausgestellt"
+          }
         }
       ]
     }
