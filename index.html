@@ -468,41 +468,71 @@
             <!-- Scrollable Content -->
             <div class="flex-1 w-full overflow-y-auto bg-white no-scrollbar">
 
-                <!-- 1. Header Section -->
-                <div class="grid grid-cols-1 md:grid-cols-2 min-h-[60vh]">
+                <!-- 1. Header Section (Blurred Background) -->
+                <div class="relative w-full min-h-[85vh] md:min-h-[80vh] flex items-center overflow-hidden bg-black">
 
-                    <!-- Left: Text Header -->
-                    <div class="p-8 md:p-16 flex flex-col justify-center bg-white order-2 md:order-1">
-                        <span id="modalCategory"
-                            class="text-xs font-bold uppercase tracking-widest text-black mb-6 block">Interaction
-                            Design</span>
-
-                        <h2 id="modalTitle" class="text-4xl md:text-6xl font-bold mb-12 leading-tight tracking-tight">
-                            Interactive Installation</h2>
-
-                        <p id="modalDescription"
-                            class="text-lg md:text-xl text-gray-600 leading-relaxed mb-16 max-w-lg">
-                            A physical computing project that responds to human proximity. The installation changes
-                            color and sound intensity as users approach the central monolith.
-                        </p>
-
-                        <!-- Metadata Grid -->
-                        <div class="grid grid-cols-2 gap-y-8 gap-x-12 border-t border-gray-100 pt-8">
-                            <div>
-                                <span data-i18n="modal_tools"
-                                    class="block text-black font-bold text-sm mb-1">Tools</span>
-                                <span id="modalTools" class="text-gray-500 font-normal">Lorem ipsum, Lorem</span>
-                            </div>
-                            <div>
-                                <span data-i18n="modal_year" class="block text-black font-bold text-sm mb-1">Year</span>
-                                <span id="modalYear" class="text-gray-500 font-normal">2025</span>
-                            </div>
-                        </div>
+                    <!-- Background Image (Blurred) -->
+                    <img id="modalHeroBg" src=""
+                        class="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60 transition-opacity duration-700"
+                        alt="Background">
+                    <div class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black/80 via-black/20 to-black/60">
                     </div>
 
-                    <!-- Right: Hero Image -->
-                    <div class="relative h-[40vh] md:h-auto bg-gray-100 order-1 md:order-2">
-                        <img id="modalHeroImage" src="" class="absolute inset-0 w-full h-full object-cover" alt="Hero">
+                    <!-- Content Grid -->
+                    <div
+                        class="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 md:p-16 lg:px-24 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+
+                        <!-- Left: Text Header -->
+                        <div class="col-span-1 md:col-span-7 flex flex-col justify-center text-white">
+
+                            <!-- Category Pill -->
+                            <div class="mb-8">
+                                <span id="modalCategory"
+                                    class="inline-block text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/80 border border-white/20 px-3 py-1 rounded-full backdrop-blur-md">
+                                    Interaction Design
+                                </span>
+                            </div>
+
+                            <!-- Title -->
+                            <h2 id="modalTitle"
+                                class="text-5xl sm:text-6xl md:text-8xl font-bold mb-8 leading-[0.9] tracking-tight text-white drop-shadow-sm">
+                                Interactive Installation
+                            </h2>
+
+                            <!-- Description -->
+                            <p id="modalDescription"
+                                class="text-lg md:text-xl text-white/80 leading-relaxed font-light mb-12 max-w-2xl drop-shadow-sm">
+                                A physical computing project that responds to human proximity. The installation changes
+                                color and sound intensity as users approach the central monolith.
+                            </p>
+
+                            <!-- Metadata Grid -->
+                            <div class="grid grid-cols-2 gap-12 border-t border-white/10 pt-8 mt-4">
+                                <div>
+                                    <span data-i18n="modal_tools"
+                                        class="block text-white/50 text-[10px] uppercase tracking-widest mb-2 font-medium">Tools</span>
+                                    <span id="modalTools"
+                                        class="block text-sm md:text-base font-medium text-white">Lorem ipsum,
+                                        Lorem</span>
+                                </div>
+                                <div>
+                                    <span data-i18n="modal_year"
+                                        class="block text-white/50 text-[10px] uppercase tracking-widest mb-2 font-medium">Year</span>
+                                    <span id="modalYear"
+                                        class="block text-sm md:text-base font-medium text-white">2025</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Featured Image (Card) -->
+                        <div class="col-span-1 md:col-span-5 relative group perspective-1000">
+                            <div
+                                class="relative rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-700 hover:scale-[1.02] border border-white/10 ring-1 ring-white/5">
+                                <img id="modalHeroImage" src=""
+                                    class="w-full h-auto object-cover aspect-[4/3] md:aspect-square lg:aspect-[4/3] bg-gray-800"
+                                    alt="Hero Featured">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -836,11 +866,21 @@
 
             // Restore Hero Image in Header
             const heroImg = document.getElementById('modalHeroImage');
+            const heroBg = document.getElementById('modalHeroBg');
+
             if (data.heroImage) {
+                // Set main image
                 heroImg.src = data.heroImage;
                 heroImg.style.display = 'block';
+
+                // Set background image (same source)
+                if (heroBg) {
+                    heroBg.src = data.heroImage;
+                    heroBg.style.display = 'block';
+                }
             } else {
                 if (heroImg) heroImg.style.display = 'none';
+                if (heroBg) heroBg.style.display = 'none';
             }
 
             // 2. Build Sections (Body)
