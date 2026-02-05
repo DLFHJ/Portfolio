@@ -540,13 +540,13 @@
                             </div>
                         </div>
 
-                        <!-- Right: Featured Image (Card) -->
+                        <!-- Right: Featured Image (Card) NOTE maybe get rid of the transform scale? -->
                         <div class="col-span-1 md:col-span-5 relative group perspective-1000">
                             <div class="relative overflow-hidden shadow-2xl border border-white/10 ring-1 ring-white/5 cursor-zoom-in"
-                                style="transform: scale(1.10);"
+                                style="transform: scale(1.05);"
                                 onclick="openLightbox(document.getElementById('modalHeroImage').src)">
                                 <img id="modalHeroImage" src=""
-                                    class="w-full h-auto object-cover aspect-[4/3] md:aspect-square lg:aspect-[4/3] bg-gray-800 transform transition-transform duration-700 group-hover:scale-105"
+                                    class="w-full h-auto object-cover aspect-[4/3] md:aspect-square lg:aspect-[4/3] bg-gray-800 transform"
                                     alt="Hero Featured">
                             </div>
                         </div>
@@ -970,9 +970,9 @@
 
                             // Use h-full and object-cover to match heights in grid
                             if (section.layout === 'grid') {
-                                img.className = 'w-full h-full object-cover block shadow-sm cursor-zoom-in hover:opacity-90 transition-opacity';
+                                img.className = 'w-full h-full object-cover block shadow-sm cursor-zoom-in';
                             } else {
-                                img.className = 'w-full h-auto object-cover block shadow-sm cursor-zoom-in hover:opacity-90 transition-opacity';
+                                img.className = 'w-full h-auto object-cover block shadow-sm cursor-zoom-in';
                                 // if (section.layout !== 'full-bleed') img.classList.add('rounded-lg'); // Removed rounded corners
                             }
 
