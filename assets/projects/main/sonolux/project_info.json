@@ -19,8 +19,8 @@
   },
   "heroImage": "assets/projects/main/sonolux/0.jpg",
   "description": {
-    "en": "Sonolux is the name of the auditive projection-mapping project we, as a team of five, showcased as part of the Young Masters Programme in Grazers Klanglicht and LUNA Festival in Eindhoven.\n\nThe team consisted of three sound designers and two interaction designers - my colleague and me were responsible for the visual part of the installation for which we decided to focus on generative images using TouchDesigner.\n\nThe project was about how Technology shapes our Present and Future with the example of the Hilmteich in Graz. Sound recordings were taken and edited to show the present, an utopian version and a dystopian version. Similarly, I took photos and videos of Hilmteich which later on served as a basis for the visuals. The video is audio reactive and morphs and changes in accordance with the music.\n\nFor the actual setup part we decided to do a projection mapping expierience where we projected the video on several pieces of fabric which were in constant motion being animated by a fan.\n\nUsing relatively simple methods we were able to work with a lot of audio (around four hours of footage) and turn that into an exciting visual spectacle.",
-    "de": "Sonolux ist der Name des auditiven Projektions-Mapping-Projekts, das wir als fünfköpfiges Team im Rahmen des Young Masters Programms bei Grazers Klanglicht und beim LUNA Festival in Eindhoven präsentiert haben.\n\nDas Team bestand aus drei Sounddesignern und zwei Interaktionsdesignern - mein Kollege und ich waren für den visuellen Teil der Installation verantwortlich, für den wir uns auf generative Bilder unter Verwendung von TouchDesigner konzentrierten.\n\nDas Projekt handelte davon, wie Technologie unsere Gegenwart und Zukunft prägt, am Beispiel des Hilmteichs in Graz. Tonaufnahmen wurden gemacht und bearbeitet, um die Gegenwart, eine utopische Version und eine dystopische Version zu zeigen. Ähnlich machte ich Fotos und Videos vom Hilmteich, die später als Grundlage für die Visuals dienten. Das Video ist audioreaktiv und morpht und verändert sich in Übereinstimmung mit der Musik.\n\nFür den eigentlichen Aufbau entschieden wir uns für ein Projektions-Mapping-Erlebnis, bei dem wir das Video auf mehrere Stoffstücke projizierten, die durch einen Ventilator in ständiger Bewegung waren.\n\nMit relativ einfachen Methoden konnten wir mit viel Audio (rund vier Stunden Material) arbeiten und dies in ein aufregendes visuelles Spektakel verwandeln."
+    "en": "Sonolux is an audio-reactive installation showcased at Klanglicht and the LUNA Festival. I used TouchDesigner to create generative visuals that were projected onto moving fabrics via kinetic mapping. The project explores the intersection of technology and nature through an immersive audiovisual journey of Graz's Hilmteich.",
+    "de": "Sonolux ist eine audioreaktive Installation, die bei Klanglicht und dem LUNA Festival ausgestellt wurde. Mit TouchDesigner entwickelte ich generative Visuals, die mittels kinetischem Projektions-Mapping auf bewegte Stoffe übertragen wurden. Das Projekt visualisiert das Spannungsfeld zwischen Technologie und Natur anhand einer audiovisuellen Reise durch den Grazer Hilmteich."
   },
   "sections": [
     {
@@ -36,6 +36,21 @@
         },
         {
           "src": "assets/projects/main/sonolux/1.jpg"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "center",
+          "content": {
+            "en": "Sonolux is the name of the auditive projection-mapping project we, as a team of five, showcased as part of the Young Masters Programme in Grazers Klanglicht and LUNA Festival in Eindhoven.\n\nThe team consisted of three sound designers and two interaction designers - my colleague and me were responsible for the visual part of the installation for which we decided to focus on generative images using TouchDesigner.\n\nThe project was about how Technology shapes our Present and Future with the example of the Hilmteich in Graz. Sound recordings were taken and edited to show the present, an utopian version and a dystopian version. Similarly, I took photos and videos of Hilmteich which later on served as a basis for the visuals. The video is audio reactive and morphs and changes in accordance with the music.\n\nFor the actual setup part we decided to do a projection mapping expierience where we projected the video on several pieces of fabric which were in constant motion being animated by a fan.\n\nUsing relatively simple methods we were able to work with a lot of audio (around four hours of footage) and turn that into an exciting visual spectacle.",
+            "de": "Sonolux ist der Name des auditiven Projektions-Mapping-Projekts, das wir als fünfköpfiges Team im Rahmen des Young Masters Programms bei Grazers Klanglicht und beim LUNA Festival in Eindhoven präsentiert haben.\n\nDas Team bestand aus drei Sounddesignern und zwei Interaktionsdesignern - mein Kollege und ich waren für den visuellen Teil der Installation verantwortlich, für den wir uns auf generative Bilder unter Verwendung von TouchDesigner konzentrierten.\n\nDas Projekt handelte davon, wie Technologie unsere Gegenwart und Zukunft prägt, am Beispiel des Hilmteichs in Graz. Tonaufnahmen wurden gemacht und bearbeitet, um die Gegenwart, eine utopische Version und eine dystopische Version zu zeigen. Ähnlich machte ich Fotos und Videos vom Hilmteich, die später als Grundlage für die Visuals dienten. Das Video ist audioreaktiv und morpht und verändert sich in Übereinstimmung mit der Musik.\n\nFür den eigentlichen Aufbau entschieden wir uns für ein Projektions-Mapping-Erlebnis, bei dem wir das Video auf mehrere Stoffstücke projizierten, die durch einen Ventilator in ständiger Bewegung waren.\n\nMit relativ einfachen Methoden konnten wir mit viel Audio (rund vier Stunden Material) arbeiten und dies in ein aufregendes visuelles Spektakel verwandeln."
+          }
         }
       ]
     },
