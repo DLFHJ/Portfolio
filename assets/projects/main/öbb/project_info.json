@@ -1,0 +1,132 @@
+{
+  "id": "obb",
+  "title": {
+    "en": "ÖBB Internship",
+    "de": "ÖBB Praktikum"
+  },
+  "year": 2023,
+  "role": {
+    "en": "User Experience Design",
+    "de": "User Experience Design"
+  },
+  "tools": [
+    "Sketch, Marvel App, Adobe Creative Suite"
+  ],
+  "category": {
+    "en": "asdasd",
+    "de": "asdasd"
+  },
+  "heroImage": "assets/projects/main/öbb/0.png",
+  "description": {
+    "en": "asd",
+    "de": "asd"
+  },
+  "sections": [
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "center",
+          "content": {
+            "en": "One of my primary responsibilities was designing and developing a corporate website for ÖV Ticketshop to establish their external brand presence. I began the process with a competitive analysis and hand-drawn wireframes to ensure a logical information architecture.\n\nWhile the visual language stayed true to the established ÖBB design system, I intentionally integrated a modern, minimalist aesthetic. After the design phase, I developed the site using HTML and CSS, which served as the technical foundation for the final product. Much of the current live site still retains my original layout and copy. This project was a significant learning experience, strengthening both my technical development skills and my ability to communicate design decisions within a professional team.",
+            "de": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 2,
+      "items": [
+        {
+          "src": "assets/projects/main/öbb/1.png"
+        },
+        {
+          "src": "assets/projects/main/öbb/2.png"
+        },
+        {
+          "role": "text",
+          "width": "full",
+          "align": "left",
+          "content": {
+            "en": "asd",
+            "de": "asd"
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 3,
+      "items": [
+        {
+          "src": "assets/projects/main/öbb/3.png"
+        },
+        {
+          "src": "assets/projects/main/öbb/4.png"
+        },
+        {
+          "src": "assets/projects/main/öbb/5.png"
+        },
+        {
+          "role": "text",
+          "width": "full",
+          "align": "left",
+          "content": {
+            "en": "asd",
+            "de": "asd"
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 2,
+      "items": [
+        {
+          "src": "assets/projects/main/öbb/6.png"
+        },
+        {
+          "src": "assets/projects/main/öbb/7.png"
+        },
+        {
+          "role": "text",
+          "width": "full",
+          "align": "left",
+          "content": {
+            "en": "asd",
+            "de": "asd"
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 2,
+      "items": [
+        {
+          "src": "assets/projects/main/öbb/8.gif"
+        },
+        {
+          "src": "assets/projects/main/öbb/9.gif"
+        },
+        {
+          "role": "text",
+          "width": "full",
+          "align": "left",
+          "content": {
+            "en": "asd",
+            "de": "asd"
+          }
+        }
+      ]
+    }
+  ]
+}

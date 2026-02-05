@@ -1,0 +1,158 @@
+{
+  "id": "master_thesis",
+  "title": {
+    "en": "Master Thesis",
+    "de": "Master Thesis"
+  },
+  "year": 2025,
+  "role": {
+    "en": "User Experience Design",
+    "de": "User Experience Design"
+  },
+  "tools": [
+    "Visual Studio",
+    "Figma",
+    "Google MediaPipe"
+  ],
+  "category": {
+    "en": "User Experience Design, Academic Research",
+    "de": "User Experience Design, Academic Research"
+  },
+  "heroImage": "assets/projects/main/master_thesis/0.png",
+  "description": {
+    "en": "My Master’s thesis explored how modern technology can bridge the gap between clinical physiotherapy and at-home recovery. Following a rigorous Design Thinking process, I developed a dual-sided ecosystem designed to support both patients and therapists through a continuous feedback loop.\n\nThe Research: > To truly understand the needs of my users, I moved beyond theory and stepped into their shoes. I conducted expert interviews and synthesized my findings using Empathy Maps, Personas, and Interaction Storyboards. This iterative research phase was crucial in uncovering the real-world frustrations of physical recovery.\n\nThe Solution: > The final concept consists of a mobile app for patients and a web dashboard for therapists. The mobile application utilizes AI-driven body tracking to monitor exercises and provide real-time postural feedback. These data points are then synced to the web application, allowing therapists to monitor progress remotely and adjust treatment plans accordingly.\n\nThe Outcome: > By creating a functional technical prototype, I was able to demonstrate how a data-driven approach can increase patient motivation and provide therapists with more accurate insights between in-person sessions.",
+    "de": "My Master’s thesis explored how modern technology can bridge the gap between clinical physiotherapy and at-home recovery. Following a rigorous Design Thinking process, I developed a dual-sided ecosystem designed to support both patients and therapists through a continuous feedback loop.\n\nThe Research: > To truly understand the needs of my users, I moved beyond theory and stepped into their shoes. I conducted expert interviews and synthesized my findings using Empathy Maps, Personas, and Interaction Storyboards. This iterative research phase was crucial in uncovering the real-world frustrations of physical recovery.\n\nThe Solution: > The final concept consists of a mobile app for patients and a web dashboard for therapists. The mobile application utilizes AI-driven body tracking to monitor exercises and provide real-time postural feedback. These data points are then synced to the web application, allowing therapists to monitor progress remotely and adjust treatment plans accordingly.\n\nThe Outcome: > By creating a functional technical prototype, I was able to demonstrate how a data-driven approach can increase patient motivation and provide therapists with more accurate insights between in-person sessions."
+  },
+  "sections": [
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "left",
+          "content": {
+            "en": "Based on these insights, I architected comprehensive user flows and interaction diagrams to ensure a seamless logic across the entire experience.",
+            "de": "Based on these insights, I architected comprehensive user flows and interaction diagrams to ensure a seamless logic across the entire experience."
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 2,
+      "items": [
+        {
+          "src": "assets/projects/main/master_thesis/1.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/2.png"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "image",
+          "width": "full",
+          "src": "assets/projects/main/master_thesis/3.png"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "image",
+          "width": "full",
+          "src": "assets/projects/main/master_thesis/interaction flow diagram.png"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "left",
+          "content": {
+            "en": "The UI for both the web and mobile applications was designed in Figma, with a focus on creating a modern, cohesive visual identity across the entire ecosystem.",
+            "de": "The UI for both the web and mobile applications was designed in Figma, with a focus on creating a modern, cohesive visual identity across the entire ecosystem."
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 2,
+      "items": [
+        {
+          "src": "assets/projects/main/master_thesis/4.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/5.png"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "left",
+          "content": {
+            "en": "The technical prototype was developed primarily to demonstrate feasibility. By integrating Google MediaPipe, I was able to use a standard smartphone camera to track various exercises and calculate the quality of a user's movements in real-time. To provide this instant feedback, I developed the application as a web app using Visual Studio Code.",
+            "de": "The technical prototype was developed primarily to demonstrate feasibility. By integrating Google MediaPipe, I was able to use a standard smartphone camera to track various exercises and calculate the quality of a user's movements in real-time. To provide this instant feedback, I developed the application as a web app using Visual Studio Code."
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 3,
+      "items": [
+        {
+          "src": "assets/projects/main/master_thesis/6.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/7.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/8.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/9.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/10.png"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "center",
+          "content": {
+            "en": "Reflecting on this journey, I found immense value in deep-diving into a complex, real-world challenge. Engaging directly with experts and users not only refined the project’s direction but also reinforced my passion for research-driven design. This experience taught me how to translate specialized professional needs into intuitive digital tools, and I truly enjoyed the process of turning expert insights into a meaningful, technical solution.",
+            "de": "Reflecting on this journey, I found immense value in deep-diving into a complex, real-world challenge. Engaging directly with experts and users not only refined the project’s direction but also reinforced my passion for research-driven design. This experience taught me how to translate specialized professional needs into intuitive digital tools, and I truly enjoyed the process of turning expert insights into a meaningful, technical solution."
+          }
+        }
+      ]
+    }
+  ]
+}
