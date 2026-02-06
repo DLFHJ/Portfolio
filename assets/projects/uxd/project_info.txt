@@ -1,0 +1,9 @@
+﻿Project Name: UXD
+ID: 1
+Category: concept and packaging design
+Status: 
+Key Dates: 2023
+Technologies: Figma, Miro, Blender
+Important Notes: 
+Short Description:
+Description: Developed as a conceptual study during my Master’s in UX Design, this project challenged us to envision a sustainable smartphone ecosystem—spanning UI/UX, marketing strategy, and physical touchpoints. I led the general concept development and headed the packaging experience. My goal was to translate our core brand philosophy into a tactile reality, using Blender to create high-fidelity 3D renders that highlight a minimalist, eco-conscious aesthetic.
