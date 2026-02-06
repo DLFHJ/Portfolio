@@ -1,0 +1,41 @@
+{
+    "id": "storii",
+    "title": {
+        "en": "Storii",
+        "de": "Storii"
+    },
+    "year": 2024,
+    "role": {
+        "en": "UX & Concept Design",
+        "de": "UX & Konzeption"
+    },
+    "tools": [
+        "Figma",
+        "Photoshop",
+        "StoryTribe"
+    ],
+    "category": {
+        "en": "Concept Design, Art",
+        "de": "Konzeptdesign, Kunst"
+    },
+    "heroImage": "assets/projects/storii/0.png",
+    "description": {
+        "en": "During my Master’s studies, our team developed a smart bookshelf ecosystem designed to bridge physical and digital reading experiences. As the Lead UX and Concept Designer, I was responsible for the UX strategy and mapping the user journey through detailed interaction storyboards. By integrating 'StoryTribe' characters with custom hand-drawn elements, I created a unique visual narrative that allowed for rapid iteration. This hybrid storytelling approach proved essential for aligning the team's vision and effectively communicating the concept during peer presentations.",
+        "de": "During my Master’s studies, our team developed a smart bookshelf ecosystem designed to bridge physical and digital reading experiences. As the Lead UX and Concept Designer, I was responsible for the UX strategy and mapping the user journey through detailed interaction storyboards. By integrating 'StoryTribe' characters with custom hand-drawn elements, I created a unique visual narrative that allowed for rapid iteration. This hybrid storytelling approach proved essential for aligning the team's vision and effectively communicating the concept during peer presentations."
+    },
+    "sections": [
+        {
+            "type": "gallery",
+            "layout": "grid",
+            "columns": 2,
+            "items": [
+                {
+                    "src": "assets/projects/storii/1.jpg"
+                },
+                {
+                    "src": "assets/projects/storii/2.jpg"
+                }
+            ]
+        }
+    ]
+}
