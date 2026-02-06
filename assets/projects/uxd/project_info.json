@@ -1,38 +1,41 @@
 {
-  "id": 1,
-  "projectName": "UXD",
-  "title": {
-    "en": "UXD",
-    "de": "UXD"
-  },
-  "category": {
-    "en": "concept and packaging design",
-    "de": "concept and packaging design"
-  },
-  "status": "",
-  "year": "2023",
-  "technologies": "Figma, Miro, Blender",
-  "heroImage": "0.png",
-  "description": {
-    "en": "Developed as a conceptual study during my Master’s in UX Design, this project challenged us to envision a sustainable smartphone ecosystem—spanning UI/UX, marketing strategy, and physical touchpoints. I led the general concept development and headed the packaging experience. My goal was to translate our core brand philosophy into a tactile reality, using Blender to create high-fidelity 3D renders that highlight a minimalist, eco-conscious aesthetic.",
-    "de": "Developed as a conceptual study during my Master’s in UX Design, this project challenged us to envision a sustainable smartphone ecosystem—spanning UI/UX, marketing strategy, and physical touchpoints. I led the general concept development and headed the packaging experience. My goal was to translate our core brand philosophy into a tactile reality, using Blender to create high-fidelity 3D renders that highlight a minimalist, eco-conscious aesthetic."
-  },
-  "blocks": [
-    {
-      "type": "image-text",
-      "image": "1.png",
-      "text": {
-        "en": "",
-        "de": ""
-      }
+    "id": "uxd",
+    "title": {
+        "en": "UXD",
+        "de": "UXD"
     },
-    {
-      "type": "image-text",
-      "image": "2.png",
-      "text": {
-        "en": "",
-        "de": ""
-      }
-    }
-  ]
+    "year": 2023,
+    "role": {
+        "en": "Concept & Packaging Design",
+        "de": "Concept & Packaging Design"
+    },
+    "tools": [
+        "Figma",
+        "Miro",
+        "Blender"
+    ],
+    "category": {
+        "en": "Concept and Packaging Design",
+        "de": "Concept and Packaging Design"
+    },
+    "heroImage": "assets/projects/uxd/0.png",
+    "description": {
+        "en": "Developed as a conceptual study during my Master’s in UX Design, this project challenged us to envision a sustainable smartphone ecosystem—spanning UI/UX, marketing strategy, and physical touchpoints. I led the general concept development and headed the packaging experience. My goal was to translate our core brand philosophy into a tactile reality, using Blender to create high-fidelity 3D renders that highlight a minimalist, eco-conscious aesthetic.",
+        "de": "Developed as a conceptual study during my Master’s in UX Design, this project challenged us to envision a sustainable smartphone ecosystem—spanning UI/UX, marketing strategy, and physical touchpoints. I led the general concept development and headed the packaging experience. My goal was to translate our core brand philosophy into a tactile reality, using Blender to create high-fidelity 3D renders that highlight a minimalist, eco-conscious aesthetic."
+    },
+    "sections": [
+        {
+            "type": "gallery",
+            "layout": "grid",
+            "columns": 2,
+            "items": [
+                {
+                    "src": "assets/projects/uxd/1.png"
+                },
+                {
+                    "src": "assets/projects/uxd/2.png"
+                }
+            ]
+        }
+    ]
 }
