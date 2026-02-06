@@ -1,0 +1,47 @@
+{
+    "id": "hackathon_schweiz",
+    "title": {
+        "en": "Hackathon Switzerland",
+        "de": "Hackathon Switzerland"
+    },
+    "year": 2025,
+    "role": {
+        "en": "Visual Concept & Elaboration",
+        "de": "Visuelle Konzeption und Ausarbeitung"
+    },
+    "tools": [
+        "Visual Studio Code",
+        "Figma"
+    ],
+    "category": {
+        "en": "Frontend Programming, Webdesign",
+        "de": "Frontend Programming, Webdesign"
+    },
+    "heroImage": "assets/projects/hackathon_schweiz/0.png",
+    "description": {
+        "en": "During the START Hack in St. Gallen, our team took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult. Our solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I also led our final presentation, where we successfully pitched a working prototype that we built from scratch during the hackathon.",
+        "de": "During the START Hack in St. Gallen, our team took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult. Our solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I also led our final presentation, where we successfully pitched a working prototype that we built from scratch during the hackathon."
+    },
+    "sections": [
+        {
+            "type": "gallery",
+            "layout": "grid",
+            "columns": 2,
+            "items": [
+                {
+                    "src": "assets/projects/hackathon_schweiz/1.png"
+                },
+                {
+                    "src": "assets/projects/hackathon_schweiz/2.png"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "content": {
+                "en": "Though we didn't have much time we were able to develop a fully functional prototype with a working front- and backend.",
+                "de": "Obwohl wir nicht viel Zeit hatten, konnten wir einen voll funktionsfähigen Prototyp mit funktionierendem Front- und Backend entwickeln."
+            }
+        }
+    ]
+}

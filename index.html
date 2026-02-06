@@ -449,6 +449,25 @@
                             </div>
                         </div>
 
+                        <!-- Project 8: Hackathon Schweiz -->
+                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('hackathon_schweiz')">
+                            <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
+                                <img src="assets/projects/hackathon_schweiz/0.png"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    alt="Hackathon Schweiz"
+                                    onerror="this.src='https://via.placeholder.com/800x600?text=Image+Unavailable'">
+                                <div
+                                    class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300">
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Hackathon Schweiz</h3>
+                                    <p class="text-sm text-gray-500">Frontend Programming, Webdesign</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -790,10 +809,13 @@
                 'assets/projects/main/öbb/project_info.json',
                 'assets/projects/uxd/project_info.json',
                 'assets/projects/storii/project_info.json',
-                'assets/projects/projection_mapping/project_info.json'
+                'assets/projects/projection_mapping/project_info.json',
+                'assets/projects/hackathon_schweiz/project_info.json'
             ];
 
-            for (const src of sources) {
+            console.log("Starting to load " + sources.length + " projects...");
+
+            const promises = sources.map(async src => {
                 try {
                     // Add timestamp to prevent caching during development
                     const response = await fetch(`${src}?t=${new Date().getTime()}`);
@@ -801,11 +823,18 @@
                     const data = await response.json();
                     if (data.id) {
                         projects[data.id] = data;
+                        console.log(`Loaded: ${data.id}`);
+                    } else {
+                        console.warn(`File ${src} parsed but missed 'id' field.`);
                     }
                 } catch (e) {
                     console.error("Failed to load project data from " + src, e);
                 }
-            }
+            });
+
+            await Promise.allSettled(promises);
+            console.log("All project data loading attempts finished.");
+            console.log("Loaded IDs:", Object.keys(projects));
         }
 
         // Initialize loading
@@ -1026,11 +1055,13 @@
             const data = projects[id];
             if (!data) {
                 console.error(`Project data for ID "${id}" not found.`);
+                console.log("Currently loaded projects:", Object.keys(projects));
+
                 // Check if likely CORS issue
                 if (window.location.protocol === 'file:') {
                     alert(`Project data for "${id}" cannot be loaded because you are opening the HTML file directly. detailed JSON data cannot be fetched via file:// protocol due to browser security.\n\nPlease run this project using a local web server (e.g., "Live Server" extension in VS Code).`);
                 } else {
-                    alert(`Project data for "${id}" is missing or failed to load. Check console for details.`);
+                    alert(`Project data for "${id}" failed to load.\n\nCheck the console (F12) for error details.\n\nLoaded projects: ${Object.keys(projects).join(', ')}`);
                 }
                 return;
             }
@@ -1090,76 +1121,90 @@
                         // sectionEl.classList.add('gap-y-6'); // Removed to respect global tight spacing
                     }
 
+                    // Normalize legacy/simplified 'text' type sections that lack 'items'
+                    if (section.type === 'text' && !section.items && section.content) {
+                        section.items = [{
+                            role: 'text',
+                            content: section.content,
+                            width: 'xlarge', // Consistent with other text blocks
+                            align: 'left'
+                        }];
+                        // Override layout to ensure it renders nicely
+                        section.layout = 'centered';
+                    }
+
                     // Process Items
-                    section.items.forEach(item => {
-                        const itemWrapper = document.createElement('div');
-                        let colClasses = 'col-span-12'; // Mobile default
+                    if (section.items) {
+                        section.items.forEach(item => {
+                            const itemWrapper = document.createElement('div');
+                            let colClasses = 'col-span-12'; // Mobile default
 
-                        // Check for explicit width override first
-                        if (item.width === 'full') {
-                            colClasses = 'md:col-span-12';
-                        } else if (section.layout === 'full-bleed') {
-                            colClasses = 'w-full';
-                        } else if (section.layout === 'grid') {
-                            const cols = section.columns || 3;
-                            if (cols === 2) colClasses = 'md:col-span-6';
-                            else if (cols === 3) colClasses = 'md:col-span-4';
-                            else colClasses = 'md:col-span-3';
-                        } else {
-                            if (item.width === 'small') colClasses = 'md:col-span-4';
-                            else if (item.width === 'medium') colClasses = 'md:col-span-6';
-                            else if (item.width === 'large') colClasses = 'md:col-span-8';
-                            else if (item.width === 'xlarge') colClasses = 'md:col-span-10';
-                            else if (item.width === 'full') colClasses = 'md:col-span-12';
-
-                            if (section.layout === 'centered' && item.align === 'center') {
-                                if (item.width === 'large') colClasses += ' md:col-start-3';
-                                else if (item.width === 'xlarge') colClasses += ' md:col-start-2';
-                                else if (item.width === 'medium') colClasses += ' md:col-start-4';
-                            } else if (section.layout === 'editorial-split') {
-                                if (item.align === 'right') {
-                                    colClasses += ' md:justify-self-end md:ml-auto md:col-end-13';
-                                    itemWrapper.classList.add('flex', 'flex-col', 'items-end'); // Align content right
-                                }
-                            } else if (section.layout === 'offset') {
-                                if (item.align === 'right') {
-                                    colClasses += ' md:col-end-13';
-                                }
-                            }
-                        }
-
-                        itemWrapper.className = `relative ${colClasses}`;
-
-                        // Render Content based on Role
-                        if (item.role === 'image' || (!item.role && item.src)) {
-                            const imgSrc = item.src;
-                            const img = document.createElement('img');
-                            img.src = imgSrc;
-                            // Add click to lightbox
-                            img.onclick = () => openLightbox(imgSrc);
-
-                            // Use h-full and object-cover to match heights in grid
-                            if (section.layout === 'grid') {
-                                img.className = 'w-full h-full object-cover block shadow-sm cursor-zoom-in';
+                            // Check for explicit width override first
+                            if (item.width === 'full') {
+                                colClasses = 'md:col-span-12';
+                            } else if (section.layout === 'full-bleed') {
+                                colClasses = 'w-full';
+                            } else if (section.layout === 'grid') {
+                                const cols = section.columns || 3;
+                                if (cols === 2) colClasses = 'md:col-span-6';
+                                else if (cols === 3) colClasses = 'md:col-span-4';
+                                else colClasses = 'md:col-span-3';
                             } else {
-                                img.className = 'w-full h-auto object-cover block shadow-sm cursor-zoom-in';
-                                // if (section.layout !== 'full-bleed') img.classList.add('rounded-lg'); // Removed rounded corners
+                                if (item.width === 'small') colClasses = 'md:col-span-4';
+                                else if (item.width === 'medium') colClasses = 'md:col-span-6';
+                                else if (item.width === 'large') colClasses = 'md:col-span-8';
+                                else if (item.width === 'xlarge') colClasses = 'md:col-span-10';
+                                else if (item.width === 'full') colClasses = 'md:col-span-12';
+
+                                if (section.layout === 'centered' && item.align === 'center') {
+                                    if (item.width === 'large') colClasses += ' md:col-start-3';
+                                    else if (item.width === 'xlarge') colClasses += ' md:col-start-2';
+                                    else if (item.width === 'medium') colClasses += ' md:col-start-4';
+                                } else if (section.layout === 'editorial-split') {
+                                    if (item.align === 'right') {
+                                        colClasses += ' md:justify-self-end md:ml-auto md:col-end-13';
+                                        itemWrapper.classList.add('flex', 'flex-col', 'items-end'); // Align content right
+                                    }
+                                } else if (section.layout === 'offset') {
+                                    if (item.align === 'right') {
+                                        colClasses += ' md:col-end-13';
+                                    }
+                                }
                             }
 
-                            itemWrapper.appendChild(img);
-                        } else if (item.role === 'text') {
-                            const p = document.createElement('div');
-                            const content = typeof item.content === 'object' ? item.content[currentLang] : item.content;
-                            p.innerHTML = content || '';
-                            p.className = 'text-gray-600 leading-relaxed text-lg';
-                            if (item.align !== 'center') {
-                                p.className += ' border-l-2 border-gray-200 pl-6 ml-1';
-                            }
-                            itemWrapper.appendChild(p);
-                        }
+                            itemWrapper.className = `relative ${colClasses}`;
 
-                        sectionEl.appendChild(itemWrapper);
-                    });
+                            // Render Content based on Role
+                            if (item.role === 'image' || (!item.role && item.src)) {
+                                const imgSrc = item.src;
+                                const img = document.createElement('img');
+                                img.src = imgSrc;
+                                // Add click to lightbox
+                                img.onclick = () => openLightbox(imgSrc);
+
+                                // Use h-full and object-cover to match heights in grid
+                                if (section.layout === 'grid') {
+                                    img.className = 'w-full h-full object-cover block shadow-sm cursor-zoom-in';
+                                } else {
+                                    img.className = 'w-full h-auto object-cover block shadow-sm cursor-zoom-in';
+                                    // if (section.layout !== 'full-bleed') img.classList.add('rounded-lg'); // Removed rounded corners
+                                }
+
+                                itemWrapper.appendChild(img);
+                            } else if (item.role === 'text') {
+                                const p = document.createElement('div');
+                                const content = typeof item.content === 'object' ? item.content[currentLang] : item.content;
+                                p.innerHTML = content || '';
+                                p.className = 'text-gray-600 leading-relaxed text-lg';
+                                if (item.align !== 'center') {
+                                    p.className += ' border-l-2 border-gray-200 pl-6 ml-1';
+                                }
+                                itemWrapper.appendChild(p);
+                            }
+
+                            sectionEl.appendChild(itemWrapper);
+                        });
+                    }
 
                     modalBody.appendChild(sectionEl);
                 });
