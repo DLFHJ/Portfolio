@@ -430,6 +430,25 @@
                             </div>
                         </div>
 
+                        <!-- Project 7: Projection Mapping -->
+                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('projection_mapping')">
+                            <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
+                                <img src="assets/projects/projection_mapping/0.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    alt="Projection Mapping"
+                                    onerror="this.src='https://via.placeholder.com/800x600?text=Image+Unavailable'">
+                                <div
+                                    class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300">
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Projection Mapping</h3>
+                                    <p class="text-sm text-gray-500">Conception, Technical Implementation</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -770,7 +789,8 @@
                 'assets/projects/main/sonolux/project_info.json',
                 'assets/projects/main/öbb/project_info.json',
                 'assets/projects/uxd/project_info.json',
-                'assets/projects/storii/project_info.json'
+                'assets/projects/storii/project_info.json',
+                'assets/projects/projection_mapping/project_info.json'
             ];
 
             for (const src of sources) {
