@@ -36,6 +36,21 @@
                     "src": "assets/projects/storii/2.jpg"
                 }
             ]
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "align": "left",
+                    "content": {
+                        "en": "asd",
+                        "de": "asd"
+                    }
+                }
+            ]
         }
     ]
 }

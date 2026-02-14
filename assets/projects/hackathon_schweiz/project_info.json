@@ -42,6 +42,24 @@
                 "en": "Though we didn't have much time we were able to develop a fully functional prototype with a working front- and backend.",
                 "de": "Obwohl wir nicht viel Zeit hatten, konnten wir einen voll funktionsfähigen Prototyp mit funktionierendem Front- und Backend entwickeln."
             }
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "image",
+                    "width": "full",
+                    "src": "assets/projects/hackathon_schweiz/3.png"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "content": {
+                "en": "rewarded with",
+                "de": "rewarded with"
+            }
         }
     ]
 }

@@ -36,6 +36,21 @@
                     "src": "assets/projects/uxd/2.png"
                 }
             ]
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "align": "left",
+                    "content": {
+                        "en": "asd",
+                        "de": "asd"
+                    }
+                }
+            ]
         }
     ]
 }

@@ -23,5 +23,13 @@
         "en": "As part of the Grazer Springfestival—a renowned festival for electronic art and music—our team of three developed an interactive projection mapping installation at the Helmut List Halle. We designed an immersive 'Digital Graffiti' experience where users could interact with a physical spray can to 'paint' the building’s facade.\n\nMy role focused on the technical architecture and creative AI integration. I engineered a wireless system using Arduino to trigger real-time audio-visual responses; when a user pressed the spray can, a sound effect was triggered and a new layer of AI-generated, animated graffiti was projected onto the architecture. This project allowed me to bridge the gap between physical interaction and generative digital art.",
         "de": "As part of the Grazer Springfestival—a renowned festival for electronic art and music—our team of three developed an interactive projection mapping installation at the Helmut List Halle. We designed an immersive 'Digital Graffiti' experience where users could interact with a physical spray can to 'paint' the building’s facade.\n\nMy role focused on the technical architecture and creative AI integration. I engineered a wireless system using Arduino to trigger real-time audio-visual responses; when a user pressed the spray can, a sound effect was triggered and a new layer of AI-generated, animated graffiti was projected onto the architecture. This project allowed me to bridge the gap between physical interaction and generative digital art."
     },
-    "sections": []
+    "sections": [
+        {
+            "type": "text",
+            "content": {
+                "en": "asd",
+                "de": "asd"
+            }
+        }
+    ]
 }

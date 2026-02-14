@@ -94,6 +94,21 @@
           }
         }
       ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "center",
+          "content": {
+            "en": "asd",
+            "de": "asd"
+          }
+        }
+      ]
     }
   ]
 }
