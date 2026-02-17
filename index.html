@@ -317,7 +317,7 @@
                     <!-- Portfolio Machine -->
                     <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('portfolio_machine')">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
-                            <img src="assets/projects/portfolio_machine/0.jpg"
+                            <img src="assets/projects/portfolio_machine/0.png"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 alt="Portfolio Machine"
                                 onerror="this.src='https://via.placeholder.com/800x600?text=Image+Unavailable'">
@@ -377,7 +377,7 @@
                         <!-- Project 4: Sonolux -->
                         <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('sonolux')">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
-                                <img src="assets/projects/main/sonolux/0.jpg"
+                                <img src="assets/projects/main/sonolux/0.png"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                     alt="Sonolux"
                                     onerror="this.src='https://via.placeholder.com/800x600?text=Image+Unavailable'">
@@ -1159,41 +1159,65 @@
 
                     // Process Items
                     if (section.items) {
+                        let targetContainer = sectionEl;
+
+
+                        // Special handling for Gallery Grid to align with xlarge text
+                        if (section.layout === 'grid') {
+                            const gridWrapper = document.createElement('div');
+
+                            // Check for width overrides at the section level
+                            if (section.width === 'full') {
+                                gridWrapper.className = 'col-span-12 grid gap-6';
+                            } else {
+                                // Default to xlarge (centered 10 cols) if not full width
+                                gridWrapper.className = 'col-span-12 md:col-start-2 md:col-span-10 grid gap-6';
+                            }
+
+                            // Set columns for the inner grid based on config
+                            const cols = section.columns || 3;
+                            if (cols === 2) gridWrapper.classList.add('grid-cols-1', 'md:grid-cols-2');
+                            else if (cols === 3) gridWrapper.classList.add('grid-cols-1', 'md:grid-cols-3');
+                            else gridWrapper.classList.add('grid-cols-1', 'md:grid-cols-3');
+
+                            sectionEl.appendChild(gridWrapper);
+                            targetContainer = gridWrapper;
+                        }
+
                         section.items.forEach(item => {
                             const itemWrapper = document.createElement('div');
                             let colClasses = 'col-span-12'; // Mobile default
 
-                            // Check for explicit width override first
-                            if (item.width === 'full') {
-                                colClasses = 'md:col-span-12';
-                            } else if (section.layout === 'full-bleed') {
-                                colClasses = 'w-full';
-                            } else if (section.layout === 'grid') {
-                                const cols = section.columns || 3;
-                                if (cols === 2) colClasses = 'md:col-span-6';
-                                else if (cols === 3) colClasses = 'md:col-span-4';
-                                else colClasses = 'md:col-span-3';
-                            } else {
-                                if (item.width === 'small') colClasses = 'md:col-span-4';
-                                else if (item.width === 'medium') colClasses = 'md:col-span-6';
-                                else if (item.width === 'large') colClasses = 'md:col-span-8';
-                                else if (item.width === 'xlarge') colClasses = 'md:col-span-10 md:col-start-2';
-                                else if (item.width === 'full') colClasses = 'md:col-span-12';
+                            // If we are NOT in a grid layout, calculate standard responsive widths
+                            if (section.layout !== 'grid') {
+                                if (item.width === 'full') {
+                                    colClasses = 'md:col-span-12';
+                                } else if (section.layout === 'full-bleed') {
+                                    colClasses = 'w-full';
+                                } else {
+                                    if (item.width === 'small') colClasses = 'md:col-span-4';
+                                    else if (item.width === 'medium') colClasses = 'md:col-span-6';
+                                    else if (item.width === 'large') colClasses = 'md:col-span-8';
+                                    else if (item.width === 'xlarge') colClasses = 'md:col-span-10 md:col-start-2';
+                                    else if (item.width === 'full') colClasses = 'md:col-span-12';
 
-                                if (section.layout === 'centered' && item.align === 'center') {
-                                    if (item.width === 'large') colClasses += ' md:col-start-3';
-                                    else if (item.width === 'xlarge') { /* Already centered */ }
-                                    else if (item.width === 'medium') colClasses += ' md:col-start-4';
-                                } else if (section.layout === 'editorial-split') {
-                                    if (item.align === 'right') {
-                                        colClasses += ' md:justify-self-end md:ml-auto md:col-end-13';
-                                        itemWrapper.classList.add('flex', 'flex-col', 'items-end'); // Align content right
-                                    }
-                                } else if (section.layout === 'offset') {
-                                    if (item.align === 'right') {
-                                        colClasses += ' md:col-end-13';
+                                    if (section.layout === 'centered' && item.align === 'center') {
+                                        if (item.width === 'large') colClasses += ' md:col-start-3';
+                                        else if (item.width === 'xlarge') { /* Already centered */ }
+                                        else if (item.width === 'medium') colClasses += ' md:col-start-4';
+                                    } else if (section.layout === 'editorial-split') {
+                                        if (item.align === 'right') {
+                                            colClasses += ' md:col-end-13';
+                                        }
+                                    } else if (section.layout === 'offset') {
+                                        if (item.align === 'right') {
+                                            colClasses += ' md:col-end-13';
+                                        }
                                     }
                                 }
+                            } else {
+                                // Inside grid wrapper, items just fill their cell
+                                colClasses = 'w-full';
                             }
 
                             itemWrapper.className = `relative ${colClasses}`;
@@ -1253,7 +1277,7 @@
                                 itemWrapper.appendChild(spacer);
                             }
 
-                            sectionEl.appendChild(itemWrapper);
+                            targetContainer.appendChild(itemWrapper);
                         });
                     }
 

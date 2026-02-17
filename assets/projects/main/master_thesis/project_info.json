@@ -57,9 +57,69 @@
       "layout": "centered",
       "items": [
         {
-          "role": "image",
-          "width": "full",
-          "src": "assets/projects/main/master_thesis/3.png"
+          "role": "text",
+          "width": "xlarge",
+          "align": "center",
+          "content": {
+            "en": "For our final Master’s exhibition, our class developed an Interactive Portfolio Installation—a custom-built station designed to showcase all of our collective work. This project was a massive collaborative effort that required seamless integration between physical hardware and digital software.\n\nAs the Frontend Developer, I built the interface using HTML and CSS. The installation featured a unique physical interface: a sphere that users could roll to navigate the work. I implemented parallax scrolling to create an immersive effect where users 'scrolled into' the projects, creating a 3D sense of depth. Beyond the visuals, I tackled the technical challenges of resolution mapping, synchronized video autoplay, and performance optimization, resulting in a one-of-a-kind physical-digital showcase.",
+            "de": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 2,
+      "items": [
+        {
+          "src": "assets/projects/main/master_thesis/1.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/2.png"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "center",
+          "content": {
+            "en": "For our final Master’s exhibition, our class developed an Interactive Portfolio Installation—a custom-built station designed to showcase all of our collective work. This project was a massive collaborative effort that required seamless integration between physical hardware and digital software.\n\nAs the Frontend Developer, I built the interface using HTML and CSS. The installation featured a unique physical interface: a sphere that users could roll to navigate the work. I implemented parallax scrolling to create an immersive effect where users 'scrolled into' the projects, creating a 3D sense of depth. Beyond the visuals, I tackled the technical challenges of resolution mapping, synchronized video autoplay, and performance optimization, resulting in a one-of-a-kind physical-digital showcase.",
+            "de": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 2,
+      "items": [
+        {
+          "src": "assets/projects/main/master_thesis/1.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/2.png"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "center",
+          "content": {
+            "en": "For our final Master’s exhibition, our class developed an Interactive Portfolio Installation—a custom-built station designed to showcase all of our collective work. This project was a massive collaborative effort that required seamless integration between physical hardware and digital software.\n\nAs the Frontend Developer, I built the interface using HTML and CSS. The installation featured a unique physical interface: a sphere that users could roll to navigate the work. I implemented parallax scrolling to create an immersive effect where users 'scrolled into' the projects, creating a 3D sense of depth. Beyond the visuals, I tackled the technical challenges of resolution mapping, synchronized video autoplay, and performance optimization, resulting in a one-of-a-kind physical-digital showcase.",
+            "de": ""
+          }
         }
       ]
     },
@@ -69,8 +129,19 @@
       "items": [
         {
           "role": "image",
-          "width": "full",
-          "src": "assets/projects/main/master_thesis/interaction flow diagram.png"
+          "width": "xlarge",
+          "src": "assets/projects/portfolio_machine/1.jpg"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "image",
+          "width": "xlarge",
+          "src": "assets/projects/portfolio_machine/1.jpg"
         }
       ]
     },
@@ -86,19 +157,23 @@
             "en": "The UI for both the web and mobile applications was designed in Figma, with a focus on creating a modern, cohesive visual identity across the entire ecosystem.",
             "de": "The UI for both the web and mobile applications was designed in Figma, with a focus on creating a modern, cohesive visual identity across the entire ecosystem."
           }
+        },
+        {
+          "role": "spacer",
+          "height": "default"
         }
       ]
     },
     {
       "type": "gallery",
       "layout": "grid",
-      "columns": 2,
+      "columns": 3,
       "items": [
         {
-          "src": "assets/projects/main/master_thesis/4.png"
+          "src": "assets/projects/main/master_thesis/1.png"
         },
         {
-          "src": "assets/projects/main/master_thesis/5.png"
+          "src": "assets/projects/main/master_thesis/2.png"
         }
       ]
     },
@@ -109,33 +184,11 @@
         {
           "role": "text",
           "width": "xlarge",
-          "align": "left",
+          "align": "center",
           "content": {
             "en": "The technical prototype was developed primarily to demonstrate feasibility. By integrating Google MediaPipe, I was able to use a standard smartphone camera to track various exercises and calculate the quality of a user's movements in real-time. To provide this instant feedback, I developed the application as a web app using Visual Studio Code.",
             "de": "The technical prototype was developed primarily to demonstrate feasibility. By integrating Google MediaPipe, I was able to use a standard smartphone camera to track various exercises and calculate the quality of a user's movements in real-time. To provide this instant feedback, I developed the application as a web app using Visual Studio Code."
           }
-        }
-      ]
-    },
-    {
-      "type": "gallery",
-      "layout": "grid",
-      "columns": 3,
-      "items": [
-        {
-          "src": "assets/projects/main/master_thesis/6.png"
-        },
-        {
-          "src": "assets/projects/main/master_thesis/7.png"
-        },
-        {
-          "src": "assets/projects/main/master_thesis/8.png"
-        },
-        {
-          "src": "assets/projects/main/master_thesis/9.png"
-        },
-        {
-          "src": "assets/projects/main/master_thesis/10.png"
         }
       ]
     },
