@@ -28,25 +28,13 @@
         {
             "type": "gallery",
             "layout": "grid",
-            "columns": 3,
+            "columns": 2,
             "items": [
                 {
                     "src": "assets/projects/games/1.jpg"
                 },
                 {
                     "src": "assets/projects/games/2.png"
-                },
-                {
-                    "src": "assets/projects/games/3.png"
-                },
-                {
-                    "src": "assets/projects/games/4.png"
-                },
-                {
-                    "src": "assets/projects/games/5.png"
-                },
-                {
-                    "src": "assets/projects/games/6.png"
                 }
             ]
         },
@@ -62,6 +50,56 @@
                         "en": "<strong class='text-black'>Lupos</strong><br>Lupos is a cooperative, two-player obstacle course designed during my Master’s program. In this game, players must work together to maneuver a character through a challenging world by using their bodies: leaning left or right to steer and raising their arms to jump. For the movements to register, both players have to sync their actions perfectly.<br><br>Developed in a team of four, this project was a significant technical challenge. We used Microsoft Kinect for motion and gesture tracking, integrated with Unity. My role focused on the general game design and leading the technical implementation.",
                         "de": "<strong class='text-black'>Lupos</strong><br>Lupos is a cooperative, two-player obstacle course designed during my Master’s program. In this game, players must work together to maneuver a character through a challenging world by using their bodies: leaning left or right to steer and raising their arms to jump. For the movements to register, both players have to sync their actions perfectly.<br><br>Developed in a team of four, this project was a significant technical challenge. We used Microsoft Kinect for motion and gesture tracking, integrated with Unity. My role focused on the general game design and leading the technical implementation."
                     }
+                },
+                {
+                    "role": "spacer",
+                    "height": "default"
+                }
+            ]
+        },
+        {
+            "type": "gallery",
+            "layout": "grid",
+            "columns": 3,
+            "items": [
+                {
+                    "src": "assets/projects/games/3.png"
+                },
+                {
+                    "src": "assets/projects/games/4.png"
+                },
+                {
+                    "src": "assets/projects/games/5.png"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "align": "left",
+                    "content": {
+                        "en": "<strong class='text-black'>Lupos</strong><br>Lupos is a cooperative, two-player obstacle course designed during my Master’s program. In this game, players must work together to maneuver a character through a challenging world by using their bodies: leaning left or right to steer and raising their arms to jump. For the movements to register, both players have to sync their actions perfectly.<br><br>Developed in a team of four, this project was a significant technical challenge. We used Microsoft Kinect for motion and gesture tracking, integrated with Unity. My role focused on the general game design and leading the technical implementation.",
+                        "de": "<strong class='text-black'>Lupos</strong><br>Lupos is a cooperative, two-player obstacle course designed during my Master’s program. In this game, players must work together to maneuver a character through a challenging world by using their bodies: leaning left or right to steer and raising their arms to jump. For the movements to register, both players have to sync their actions perfectly.<br><br>Developed in a team of four, this project was a significant technical challenge. We used Microsoft Kinect for motion and gesture tracking, integrated with Unity. My role focused on the general game design and leading the technical implementation."
+                    }
+                },
+                {
+                    "role": "spacer",
+                    "height": "default"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "image",
+                    "width": "xlarge",
+                    "src": "assets/projects/games/6.png"
                 }
             ]
         },
@@ -77,6 +115,53 @@
                         "en": "<strong class='text-black'>NecroQuest</strong><br>NecroQuest is a fast-paced typing game where players summon skeletons to defend against an approaching knight. The core mechanic relies on typing accuracy and speed, turning a simple input method into a survival challenge.<br><br>For this project, I wanted to explore the intersection of game art and generative AI. I used AI tools to generate the initial character and environment assets, then performed extensive refinements and touch-ups in Photoshop to ensure a cohesive visual style.",
                         "de": "<strong class='text-black'>NecroQuest</strong><br>NecroQuest is a fast-paced typing game where players summon skeletons to defend against an approaching knight. The core mechanic relies on typing accuracy and speed, turning a simple input method into a survival challenge.<br><br>For this project, I wanted to explore the intersection of game art and generative AI. I used AI tools to generate the initial character and environment assets, then performed extensive refinements and touch-ups in Photoshop to ensure a cohesive visual style."
                     }
+                },
+                {
+                    "role": "spacer",
+                    "height": "default"
+                }
+            ]
+        },
+        {
+            "type": "gallery",
+            "layout": "grid",
+            "columns": 2,
+            "items": [
+                {
+                    "src": "assets/projects/games/7.png"
+                },
+                {
+                    "src": "assets/projects/games/8.png"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "image",
+                    "width": "xlarge",
+                    "src": "assets/projects/games/9.png"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "align": "left",
+                    "content": {
+                        "en": "<strong class='text-black'>Dogma Hypnos</strong><br>Dogma Hypnos is a high-fidelity UI prototype for a sci-fi space exploration game. The goal of this project was to design and build a fully functional main menu and settings system, moving beyond static layouts to create a reactive, animated experience.",
+                        "de": "<strong class='text-black'>Dogma Hypnos</strong><br>Dogma Hypnos is a high-fidelity UI prototype for a sci-fi space exploration game. The goal of this project was to design and build a fully functional main menu and settings system, moving beyond static layouts to create a reactive, animated experience."
+                    }
+                },
+                {
+                    "role": "spacer",
+                    "height": "default"
                 }
             ]
         },
@@ -106,21 +191,6 @@
                     "content": {
                         "en": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of spatial UI and 3D interaction.",
                         "de": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of spatial UI and 3D interaction."
-                    }
-                }
-            ]
-        },
-        {
-            "type": "content",
-            "layout": "centered",
-            "items": [
-                {
-                    "role": "text",
-                    "width": "xlarge",
-                    "align": "left",
-                    "content": {
-                        "en": "<strong class='text-black'>Dogma Hypnos</strong><br>Dogma Hypnos is a high-fidelity UI prototype for a sci-fi space exploration game. The goal of this project was to design and build a fully functional main menu and settings system, moving beyond static layouts to create a reactive, animated experience.",
-                        "de": "<strong class='text-black'>Dogma Hypnos</strong><br>Dogma Hypnos is a high-fidelity UI prototype for a sci-fi space exploration game. The goal of this project was to design and build a fully functional main menu and settings system, moving beyond static layouts to create a reactive, animated experience."
                     }
                 }
             ]
