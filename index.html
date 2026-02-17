@@ -240,7 +240,7 @@
 
                     <!-- Lang Toggle -->
                     <button id="langToggle" onclick="toggleLanguage()"
-                        class="hover-target flex items-center space-x-2 text-xs uppercase tracking-widest border border-gray-200 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                        class="hover-target flex items-center space-x-2 text-xs uppercase tracking-widest border border-gray-400 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all duration-300">
                         <!-- Green dot removed here -->
                         <span id="langLabel">EN</span>
                     </button>
@@ -1175,12 +1175,12 @@
                                 if (item.width === 'small') colClasses = 'md:col-span-4';
                                 else if (item.width === 'medium') colClasses = 'md:col-span-6';
                                 else if (item.width === 'large') colClasses = 'md:col-span-8';
-                                else if (item.width === 'xlarge') colClasses = 'md:col-span-10';
+                                else if (item.width === 'xlarge') colClasses = 'md:col-span-10 md:col-start-2';
                                 else if (item.width === 'full') colClasses = 'md:col-span-12';
 
                                 if (section.layout === 'centered' && item.align === 'center') {
                                     if (item.width === 'large') colClasses += ' md:col-start-3';
-                                    else if (item.width === 'xlarge') colClasses += ' md:col-start-2';
+                                    else if (item.width === 'xlarge') { /* Already centered */ }
                                     else if (item.width === 'medium') colClasses += ' md:col-start-4';
                                 } else if (section.layout === 'editorial-split') {
                                     if (item.align === 'right') {

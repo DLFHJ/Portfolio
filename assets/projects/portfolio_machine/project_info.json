@@ -18,7 +18,7 @@
     },
     "heroImage": "assets/projects/portfolio_machine/0.jpg",
     "description": {
-        "en": "asd",
+        "en": "Kaleidoscope was an interactive showcase that uses NFC-embedded spheres as physical controllers to navigate a digital archive. Visitors place a student’s illuminated sphere on a central console to identify the creator and load their specific work. The interface features parallax scrolling, allowing users to physically scroll into the projects through a seamless blend of tactile hardware and custom software.",
         "de": "asd"
     },
     "sections": [
@@ -43,7 +43,7 @@
             "items": [
                 {
                     "role": "image",
-                    "width": "full",
+                    "width": "xlarge",
                     "src": "assets/projects/portfolio_machine/2.jpg"
                 }
             ]
@@ -69,7 +69,7 @@
             "items": [
                 {
                     "role": "image",
-                    "width": "full",
+                    "width": "xlarge",
                     "src": "assets/projects/portfolio_machine/1.jpg"
                 }
             ]
@@ -95,7 +95,7 @@
             "items": [
                 {
                     "role": "image",
-                    "width": "full",
+                    "width": "xlarge",
                     "src": "assets/projects/portfolio_machine/3.jpg"
                 }
             ]
