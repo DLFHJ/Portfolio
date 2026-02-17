@@ -60,6 +60,10 @@
                         "en": "Visitors placed a student's sphere onto a dedicated console to identify them and trigger their specific portfolio on the screen.",
                         "de": "Visitors placed a student's sphere onto a dedicated console to identify them and trigger their specific portfolio on the screen."
                     }
+                },
+                {
+                    "role": "spacer",
+                    "height": "default"
                 }
             ]
         },
@@ -86,6 +90,10 @@
                         "en": "Each student had a colorful, illuminated sphere embedded with an NFC chip. These acted as both a personal ID and a tactile controller; placing a sphere on the console identified the student and loaded their specific portfolio.",
                         "de": "Each student had a colorful, illuminated sphere embedded with an NFC chip. These acted as both a personal ID and a tactile controller; placing a sphere on the console identified the student and loaded their specific portfolio."
                     }
+                },
+                {
+                    "role": "spacer",
+                    "height": "default"
                 }
             ]
         },

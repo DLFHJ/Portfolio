@@ -1224,6 +1224,16 @@
                                     p.className += ' border-l-2 border-gray-200 pl-6 ml-1';
                                 }
                                 itemWrapper.appendChild(p);
+                            } else if (item.role === 'spacer') {
+                                const spacer = document.createElement('div');
+                                const heightMap = {
+                                    'small': 'h-4',
+                                    'medium': 'h-12',
+                                    'large': 'h-24',
+                                    'xlarge': 'h-32'
+                                };
+                                spacer.className = `w-full ${heightMap[item.height || 'medium']}`;
+                                itemWrapper.appendChild(spacer);
                             }
 
                             sectionEl.appendChild(itemWrapper);
