@@ -1229,7 +1229,7 @@
                                     const capDiv = document.createElement('div');
                                     const content = typeof captionText === 'object' ? captionText[currentLang] : captionText;
                                     capDiv.innerHTML = content || '';
-                                    capDiv.className = 'text-sm text-gray-600 leading-relaxed';
+                                    capDiv.className = 'text-gray-600 leading-relaxed text-lg mt-2'; // Updated to match standard text size
                                     itemWrapper.appendChild(capDiv);
                                 }
                             } else if (item.role === 'text') {
