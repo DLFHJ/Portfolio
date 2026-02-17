@@ -128,10 +128,18 @@
             "columns": 2,
             "items": [
                 {
-                    "src": "assets/projects/games/7.png"
+                    "src": "assets/projects/games/7.png",
+                    "caption": {
+                        "en": "<strong class='text-black'>Uhrturm Climber</strong><br>Uhrturm Climber was developed for a course assignment focused on the theme of 'Invisibility.' I designed a 2D platformer featuring a unique mirrored-level mechanic: the platforms on the player's side are invisible, forcing them to navigate by looking at the visible reflection on the opposite side of the screen. This project was an exercise in spatial awareness and unconventional navigation.",
+                        "de": "<strong class='text-black'>Uhrturm Climber</strong><br>Uhrturm Climber was developed for a course assignment focused on the theme of 'Invisibility.' I designed a 2D platformer featuring a unique mirrored-level mechanic: the platforms on the player's side are invisible, forcing them to navigate by looking at the visible reflection on the opposite side of the screen. This project was an exercise in spatial awareness and unconventional navigation."
+                    }
                 },
                 {
-                    "src": "assets/projects/games/8.png"
+                    "src": "assets/projects/games/8.png",
+                    "caption": {
+                        "en": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of spatial UI and 3D interaction.",
+                        "de": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of spatial UI and 3D interaction."
+                    }
                 }
             ]
         },
@@ -162,36 +170,6 @@
                 {
                     "role": "spacer",
                     "height": "default"
-                }
-            ]
-        },
-        {
-            "type": "content",
-            "layout": "centered",
-            "items": [
-                {
-                    "role": "text",
-                    "width": "xlarge",
-                    "align": "left",
-                    "content": {
-                        "en": "<strong class='text-black'>Uhrturm Climber</strong><br>Uhrturm Climber was developed for a course assignment focused on the theme of 'Invisibility.' I designed a 2D platformer featuring a unique mirrored-level mechanic: the platforms on the player's side are invisible, forcing them to navigate by looking at the visible reflection on the opposite side of the screen. This project was an exercise in spatial awareness and unconventional navigation.",
-                        "de": "<strong class='text-black'>Uhrturm Climber</strong><br>Uhrturm Climber was developed for a course assignment focused on the theme of 'Invisibility.' I designed a 2D platformer featuring a unique mirrored-level mechanic: the platforms on the player's side are invisible, forcing them to navigate by looking at the visible reflection on the opposite side of the screen. This project was an exercise in spatial awareness and unconventional navigation."
-                    }
-                }
-            ]
-        },
-        {
-            "type": "content",
-            "layout": "centered",
-            "items": [
-                {
-                    "role": "text",
-                    "width": "xlarge",
-                    "align": "left",
-                    "content": {
-                        "en": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of spatial UI and 3D interaction.",
-                        "de": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of spatial UI and 3D interaction."
-                    }
                 }
             ]
         }

@@ -1208,13 +1208,30 @@
 
                                 // Use h-full and object-cover to match heights in grid
                                 if (section.layout === 'grid') {
-                                    img.className = 'w-full h-full object-cover block shadow-sm cursor-zoom-in';
+                                    // If caption is present, use h-auto to avoid stretching image over caption space
+                                    // Otherwise use h-full to fill grid cell
+                                    const hasCaption = item.caption || item.text;
+                                    if (hasCaption) {
+                                        img.className = 'w-full h-auto object-cover block shadow-sm cursor-zoom-in mb-3';
+                                    } else {
+                                        img.className = 'w-full h-full object-cover block shadow-sm cursor-zoom-in';
+                                    }
                                 } else {
                                     img.className = 'w-full h-auto object-cover block shadow-sm cursor-zoom-in';
                                     // if (section.layout !== 'full-bleed') img.classList.add('rounded-lg'); // Removed rounded corners
                                 }
 
                                 itemWrapper.appendChild(img);
+
+                                // Append Caption if present
+                                const captionText = item.caption || item.text;
+                                if (captionText) {
+                                    const capDiv = document.createElement('div');
+                                    const content = typeof captionText === 'object' ? captionText[currentLang] : captionText;
+                                    capDiv.innerHTML = content || '';
+                                    capDiv.className = 'text-sm text-gray-600 leading-relaxed';
+                                    itemWrapper.appendChild(capDiv);
+                                }
                             } else if (item.role === 'text') {
                                 const p = document.createElement('div');
                                 const content = typeof item.content === 'object' ? item.content[currentLang] : item.content;
