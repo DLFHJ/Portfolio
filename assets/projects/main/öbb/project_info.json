@@ -34,6 +34,10 @@
             "en": "One of my primary responsibilities was designing and developing a corporate website for ÖV Ticketshop to establish their external brand presence. I began the process with a competitive analysis and hand-drawn wireframes to ensure a logical information architecture.\n\nWhile the visual language stayed true to the established ÖBB design system, I intentionally integrated a modern, minimalist aesthetic. After the design phase, I developed the site using HTML and CSS, which served as the technical foundation for the final product. Much of the current live site still retains my original layout and copy. This project was a significant learning experience, strengthening both my technical development skills and my ability to communicate design decisions within a professional team.",
             "de": ""
           }
+        },
+        {
+          "role": "spacer",
+          "height": "default"
         }
       ]
     },
@@ -56,6 +60,10 @@
             "en": "asd",
             "de": "asd"
           }
+        },
+        {
+          "role": "spacer",
+          "height": "default"
         }
       ]
     },
@@ -81,6 +89,10 @@
             "en": "asd",
             "de": "asd"
           }
+        },
+        {
+          "role": "spacer",
+          "height": "default"
         }
       ]
     },
@@ -103,6 +115,10 @@
             "en": "asd",
             "de": "asd"
           }
+        },
+        {
+          "role": "spacer",
+          "height": "default"
         }
       ]
     },
