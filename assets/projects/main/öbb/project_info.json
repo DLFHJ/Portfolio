@@ -14,12 +14,12 @@
   ],
   "category": {
     "en": "asdasd",
-    "de": "asdasd"
+    "de": ""
   },
   "heroImage": "assets/projects/main/öbb/0.png",
   "description": {
-    "en": "asd",
-    "de": "asd"
+    "en": "During my Bachelor’s degree, I completed a UX design internship at ÖV Ticketshop GmbH, a subsidiary of ÖBB. Working within a multidisciplinary team, I contributed to large-scale infrastructure projects, gaining hands-on experience in the full design lifecycle - from initial research and field testing to prototyping and frontend development.",
+    "de": ""
   },
   "sections": [
     {
@@ -57,9 +57,24 @@
           "width": "full",
           "align": "left",
           "content": {
-            "en": "asd",
+            "en": "Some screenshots from the website I designed for the ÖV Ticketshop GmbH. I tried to follow the ÖBB's design language while keeping the design modern and clean.",
             "de": "asd"
           }
+        }
+      ]
+    },
+    {
+      "role": "spacer",
+      "height": "default"
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "image",
+          "width": "xlarge",
+          "src": "assets/projects/main/öbb/X.png"
         },
         {
           "role": "spacer",
@@ -68,31 +83,17 @@
       ]
     },
     {
-      "type": "gallery",
-      "layout": "grid",
-      "columns": 3,
+      "type": "content",
+      "layout": "centered",
       "items": [
         {
-          "src": "assets/projects/main/öbb/3.png"
-        },
-        {
-          "src": "assets/projects/main/öbb/4.png"
-        },
-        {
-          "src": "assets/projects/main/öbb/5.png"
-        },
-        {
           "role": "text",
-          "width": "full",
-          "align": "left",
+          "width": "xlarge",
+          "align": "center",
           "content": {
-            "en": "asd",
-            "de": "asd"
+            "en": "In addition to digital interfaces, I contributed to the visual design of the ÖBB Nightjet Premium Tickets. Being involved in such a high-profile, physical touchpoint allowed me to apply brand guidelines to a premium user experience, ensuring that the luxury of the service was reflected in the ticket design itself.",
+            "de": ""
           }
-        },
-        {
-          "role": "spacer",
-          "height": "default"
         }
       ]
     },
@@ -106,15 +107,6 @@
         },
         {
           "src": "assets/projects/main/öbb/7.png"
-        },
-        {
-          "role": "text",
-          "width": "full",
-          "align": "left",
-          "content": {
-            "en": "asd",
-            "de": "asd"
-          }
         },
         {
           "role": "spacer",
@@ -132,14 +124,20 @@
         },
         {
           "src": "assets/projects/main/öbb/9.gif"
-        },
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
         {
           "role": "text",
-          "width": "full",
-          "align": "left",
+          "width": "xlarge",
+          "align": "center",
           "content": {
-            "en": "asd",
-            "de": "asd"
+            "en": "Reflection\n\"My internship was a defining experience that provided a holistic view of the UX lifecycle. Working across conceptualization, testing, and development within such a collaborative team sharpened my technical skills and professional communication. I truly enjoyed the versatility of the projects and the opportunity to contribute to complex, real-world systems alongside a great team.",
+            "de": ""
           }
         }
       ]
