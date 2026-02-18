@@ -21,10 +21,19 @@
     },
     "heroImage": "assets/projects/games/0.png",
     "description": {
-        "en": "Throughout my studies, I’ve developed several games—some as solo projects, others in groups or during fast-paced Game Jams. These projects were a great way to experiment with user experience in a playful context. I particularly enjoy tinkering with non-traditional interactions, such as gesture and motion detection via camera or exploring immersive environments in Virtual Reality.\n\nWhile I’m not looking to pursue a career specifically in the gaming industry, these projects are a great showcase of my broader technical skillset. They represent my experience across the entire pipeline, from initial concept and UI design to 3D art and programming.",
-        "de": "Throughout my studies, I’ve developed several games—some as solo projects, others in groups or during fast-paced Game Jams. These projects were a great way to experiment with user experience in a playful context. I particularly enjoy tinkering with non-traditional interactions, such as gesture and motion detection via camera or exploring immersive environments in Virtual Reality.\n\nWhile I’m not looking to pursue a career specifically in the gaming industry, these projects are a great showcase of my broader technical skillset. They represent my experience across the entire pipeline, from initial concept and UI design to 3D art and programming."
+        "en": "An overview over some of the games I've created during my studies - both during the bachelor and master program.",
+        "de": ""
     },
     "sections": [
+        {
+            "role": "text",
+            "width": "xlarge",
+            "align": "left",
+            "content": {
+                "en": "Throughout my studies, I’ve developed several games—some as solo projects, others in groups or during fast-paced Game Jams. These projects were a great way to experiment with user experience in a playful context. I particularly enjoy tinkering with non-traditional interactions, such as gesture and motion detection via camera or exploring immersive environments in Virtual Reality.\n\nWhile I’m not looking to pursue a career specifically in the gaming industry, these projects are a great showcase of my broader technical skillset. They represent my experience across the entire pipeline, from initial concept and UI design to 3D art and programming.",
+                "de": ""
+            }
+        },
         {
             "type": "gallery",
             "layout": "grid",
@@ -82,8 +91,8 @@
                     "width": "xlarge",
                     "align": "left",
                     "content": {
-                        "en": "<strong class='text-black'>Lupos</strong><br>Lupos is a cooperative, two-player obstacle course designed during my Master’s program. In this game, players must work together to maneuver a character through a challenging world by using their bodies: leaning left or right to steer and raising their arms to jump. For the movements to register, both players have to sync their actions perfectly.<br><br>Developed in a team of four, this project was a significant technical challenge. We used Microsoft Kinect for motion and gesture tracking, integrated with Unity. My role focused on the general game design and leading the technical implementation.",
-                        "de": "<strong class='text-black'>Lupos</strong><br>Lupos is a cooperative, two-player obstacle course designed during my Master’s program. In this game, players must work together to maneuver a character through a challenging world by using their bodies: leaning left or right to steer and raising their arms to jump. For the movements to register, both players have to sync their actions perfectly.<br><br>Developed in a team of four, this project was a significant technical challenge. We used Microsoft Kinect for motion and gesture tracking, integrated with Unity. My role focused on the general game design and leading the technical implementation."
+                        "en": "This two-person project was created as part of the elective subject Virtual Reality during my bachelor program. The aim of the game is to guide a turtle through an obstacle course and labyrinth by defeating enemies and clearing obstacles so the turtle can pass freely. I worked on the technical implementation using Unity and the HTC Vive headset. The finished work was exhibited at the “Mixed Reality Day” at FH Hagenberg.",
+                        "de": ""
                     }
                 },
                 {
@@ -130,18 +139,22 @@
                 {
                     "src": "assets/projects/games/7.png",
                     "caption": {
-                        "en": "<strong class='text-black'>Uhrturm Climber</strong><br>Uhrturm Climber was developed for a course assignment focused on the theme of 'Invisibility.' I designed a 2D platformer featuring a unique mirrored-level mechanic: the platforms on the player's side are invisible, forcing them to navigate by looking at the visible reflection on the opposite side of the screen. This project was an exercise in spatial awareness and unconventional navigation.",
-                        "de": "<strong class='text-black'>Uhrturm Climber</strong><br>Uhrturm Climber was developed for a course assignment focused on the theme of 'Invisibility.' I designed a 2D platformer featuring a unique mirrored-level mechanic: the platforms on the player's side are invisible, forcing them to navigate by looking at the visible reflection on the opposite side of the screen. This project was an exercise in spatial awareness and unconventional navigation."
+                        "en": "<strong class='text-black'>Uhrturm Climber</strong><br>Uhrturm Climber was developed for a course assignment focused on the theme of \"Invisibility\". I designed a 2D platformer featuring a unique mirrored-level mechanic: the platforms on the player's side are invisible, forcing them to navigate by looking at the visible reflection on the mirrored side. I enjoyed this short project because the theme made me think out of the box and proved to be an interesting challenge.",
+                        "de": ""
                     }
                 },
                 {
                     "src": "assets/projects/games/8.png",
                     "caption": {
-                        "en": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of spatial UI and 3D interaction.",
-                        "de": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of spatial UI and 3D interaction."
+                        "en": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of interaction in virtual reality.",
+                        "de": ""
                     }
                 }
             ]
+        },
+        {
+            "role": "spacer",
+            "height": "default"
         },
         {
             "type": "content",

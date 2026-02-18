@@ -20,14 +20,14 @@
     },
     "heroImage": "assets/projects/projection_mapping/0.jpg",
     "description": {
-        "en": "As part of the Grazer Springfestival—a renowned festival for electronic art and music—our team of three developed an interactive projection mapping installation at the Helmut List Halle. We designed an immersive 'Digital Graffiti' experience where users could interact with a physical spray can to 'paint' the building’s facade.\n\nMy role focused on the technical architecture and creative AI integration. I engineered a wireless system using Arduino to trigger real-time audio-visual responses; when a user pressed the spray can, a sound effect was triggered and a new layer of AI-generated, animated graffiti was projected onto the architecture. This project allowed me to bridge the gap between physical interaction and generative digital art.",
-        "de": "As part of the Grazer Springfestival—a renowned festival for electronic art and music—our team of three developed an interactive projection mapping installation at the Helmut List Halle. We designed an immersive 'Digital Graffiti' experience where users could interact with a physical spray can to 'paint' the building’s facade.\n\nMy role focused on the technical architecture and creative AI integration. I engineered a wireless system using Arduino to trigger real-time audio-visual responses; when a user pressed the spray can, a sound effect was triggered and a new layer of AI-generated, animated graffiti was projected onto the architecture. This project allowed me to bridge the gap between physical interaction and generative digital art."
+        "en": "An interactive projection mapping installation for the Grazer Springfestival using Arduino and generative AI.",
+        "de": ""
     },
     "sections": [
         {
             "type": "text",
             "content": {
-                "en": "asd",
+                "en": "As part of the Grazer Springfestival - a festival for electronic art and music - our team of three developed an interactive projection mapping installation at the Helmut List Halle. We designed an immersive \"Digital Graffiti\" experience where users could interact with a physical spray can to \"paint\" the buildings facade. My role focused on the technical implementation and creation of animated visuals using AI. I engineered a wireless system using Arduino to trigger real-time audio-visual responses, in other words, when a user pressed the spray can, a sound effect was triggered, and a new layer of AI-generated, animated graffiti was projected onto the architecture. This project was insofar interesting as it allowed me to bridge the gap between physical interaction and generative digital art. Additionally, I really enjoyed working as a team and coming up with the initial project idea together.",
                 "de": "asd"
             }
         }

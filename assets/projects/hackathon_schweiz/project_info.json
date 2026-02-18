@@ -19,13 +19,25 @@
     },
     "heroImage": "assets/projects/hackathon_schweiz/0.png",
     "description": {
-        "en": "During the START Hack in St. Gallen, our team took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult. Our solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I also led our final presentation, where we successfully pitched a working prototype that we built from scratch during the hackathon.",
-        "de": "During the START Hack in St. Gallen, our team took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult. Our solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I also led our final presentation, where we successfully pitched a working prototype that we built from scratch during the hackathon."
+        "en": "A hackathon project for the United Nations G20 Global Land Initiative featuring a live dashboard with satellite data from the Sahel region in Africa.",
+        "de": ""
     },
     "sections": [
         {
+            "type": "text",
+            "content": {
+                "en": "During the START Hack in St. Gallen, our team of four took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult. Our solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I then worked on coding the frontend and I also led our final presentation, where we were able to pitch a working prototype that we built from scratch during the hackathon.",
+                "de": "DESC"
+            }
+        },
+        {
+            "role": "spacer",
+            "height": "default"
+        },
+        {
             "type": "gallery",
             "layout": "grid",
+            "width": "full",
             "columns": 2,
             "items": [
                 {
@@ -39,9 +51,13 @@
         {
             "type": "text",
             "content": {
-                "en": "Though we didn't have much time we were able to develop a fully functional prototype with a working front- and backend.",
-                "de": "Obwohl wir nicht viel Zeit hatten, konnten wir einen voll funktionsfähigen Prototyp mit funktionierendem Front- und Backend entwickeln."
+                "en": "Though the time was limited, we were able to develop a fully functional prototype with a fully working front- and backend.",
+                "de": ""
             }
+        },
+        {
+            "role": "spacer",
+            "height": "default"
         },
         {
             "type": "content",
@@ -49,7 +65,7 @@
             "items": [
                 {
                     "role": "image",
-                    "width": "full",
+                    "width": "xlarge",
                     "src": "assets/projects/hackathon_schweiz/3.png"
                 }
             ]
@@ -57,8 +73,8 @@
         {
             "type": "text",
             "content": {
-                "en": "rewarded with",
-                "de": "rewarded with"
+                "en": "For our efforts in this project we were rewarded with a G20 Global Land Initiative certificate.",
+                "de": ""
             }
         }
     ]
