@@ -1245,6 +1245,15 @@
                                     // if (section.layout !== 'full-bleed') img.classList.add('rounded-lg'); // Removed rounded corners
                                 }
 
+                                // Allow overrides from JSON
+                                if (item.className) {
+                                    // Append custom classes
+                                    img.className += ` ${item.className}`;
+                                }
+                                if (item.style) {
+                                    Object.assign(img.style, item.style);
+                                }
+
                                 itemWrapper.appendChild(img);
 
                                 // Append Caption if present

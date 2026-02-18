@@ -13,7 +13,7 @@
     "Sketch, Marvel App, Adobe Creative Suite"
   ],
   "category": {
-    "en": "asdasd",
+    "en": "User Experience Design",
     "de": ""
   },
   "heroImage": "assets/projects/main/öbb/0.png",
@@ -120,10 +120,20 @@
       "columns": 2,
       "items": [
         {
-          "src": "assets/projects/main/öbb/8.gif"
+          "src": "assets/projects/main/öbb/8.gif",
+          "style": {
+            "height": "auto",
+            "maxHeight": "60vh",
+            "objectFit": "contain"
+          }
         },
         {
-          "src": "assets/projects/main/öbb/9.gif"
+          "src": "assets/projects/main/öbb/9.gif",
+          "style": {
+            "height": "auto",
+            "maxHeight": "60vh",
+            "objectFit": "contain"
+          }
         }
       ]
     },
