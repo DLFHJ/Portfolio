@@ -20,8 +20,8 @@
     },
     "heroImage": "assets/projects/storii/0.png",
     "description": {
-        "en": "During my Master’s studies, our team developed a smart bookshelf ecosystem designed to bridge physical and digital reading experiences. As the Lead UX and Concept Designer, I was responsible for the UX strategy and mapping the user journey through detailed interaction storyboards. By integrating 'StoryTribe' characters with custom hand-drawn elements, I created a unique visual narrative that allowed for rapid iteration. This hybrid storytelling approach proved essential for aligning the team's vision and effectively communicating the concept during peer presentations.",
-        "de": "During my Master’s studies, our team developed a smart bookshelf ecosystem designed to bridge physical and digital reading experiences. As the Lead UX and Concept Designer, I was responsible for the UX strategy and mapping the user journey through detailed interaction storyboards. By integrating 'StoryTribe' characters with custom hand-drawn elements, I created a unique visual narrative that allowed for rapid iteration. This hybrid storytelling approach proved essential for aligning the team's vision and effectively communicating the concept during peer presentations."
+        "en": "As part of an assignment during my Master’s studies, our team of three developed a smart bookshelf ecosystem designed to bridge physical and digital reading experiences. My role in this project was to map the user journey through detailed interaction storyboards. By combining characters from the service 'StoryTribe' with custom hand-drawn elements, I created a unique visual narrative that facilitated rapid iteration. This storytelling approach proved invaluable for aligning the team's vision and effectively communicating the concept during peer presentations. The drawings were created using a Huion graphics tablet.",
+        "de": ""
     },
     "sections": [
         {
@@ -46,8 +46,8 @@
                     "width": "xlarge",
                     "align": "left",
                     "content": {
-                        "en": "asd",
-                        "de": "asd"
+                        "en": "The interaction storyboards were efficient to ideate and create, providing significant value for unifying the team’s perspective and effectively communicating the concept.",
+                        "de": ""
                     }
                 }
             ]
