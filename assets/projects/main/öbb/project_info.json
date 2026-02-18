@@ -34,10 +34,6 @@
             "en": "One of my primary responsibilities was designing and developing a corporate website for ÖV Ticketshop to establish their external brand presence. I began the process with a competitive analysis and hand-drawn wireframes to ensure a logical information architecture.\n\nWhile the visual language stayed true to the established ÖBB design system, I intentionally integrated a modern, minimalist aesthetic. After the design phase, I developed the site using HTML and CSS, which served as the technical foundation for the final product. Much of the current live site still retains my original layout and copy. This project was a significant learning experience, strengthening both my technical development skills and my ability to communicate design decisions within a professional team.",
             "de": ""
           }
-        },
-        {
-          "role": "spacer",
-          "height": "default"
         }
       ]
     },
@@ -51,15 +47,6 @@
         },
         {
           "src": "assets/projects/main/öbb/2.png"
-        },
-        {
-          "role": "text",
-          "width": "full",
-          "align": "left",
-          "content": {
-            "en": "Some screenshots from the website I designed for the ÖV Ticketshop GmbH. I tried to follow the ÖBB's design language while keeping the design modern and clean.",
-            "de": "asd"
-          }
         }
       ]
     },
@@ -72,15 +59,34 @@
       "layout": "centered",
       "items": [
         {
+          "role": "text",
+          "width": "xlarge",
+          "align": "center",
+          "content": {
+            "en": "Some screenshots from the website I designed for the ÖV Ticketshop GmbH. I tried to follow the ÖBB's design language while keeping the design modern and clean.",
+            "de": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
           "role": "image",
           "width": "xlarge",
           "src": "assets/projects/main/öbb/X.png"
-        },
-        {
-          "role": "spacer",
-          "height": "default"
         }
       ]
+    },
+    {
+      "role": "spacer",
+      "height": "default"
+    },
+    {
+      "role": "spacer",
+      "height": "default"
     },
     {
       "type": "content",
@@ -115,6 +121,21 @@
       ]
     },
     {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "center",
+          "content": {
+            "en": "X",
+            "de": ""
+          }
+        }
+      ]
+    },
+    {
       "type": "gallery",
       "layout": "grid",
       "columns": 2,
@@ -136,6 +157,10 @@
           }
         }
       ]
+    },
+    {
+      "role": "spacer",
+      "height": "default"
     },
     {
       "type": "content",
