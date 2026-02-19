@@ -7,7 +7,7 @@
     "year": 2024,
     "role": {
         "en": "UX & Concept Design",
-        "de": "UX & Konzeption"
+        "de": "UX & Konzeptionsdesign"
     },
     "tools": [
         "Figma",
@@ -21,7 +21,7 @@
     "heroImage": "assets/projects/storii/0.png",
     "description": {
         "en": "As part of an assignment during my Master’s studies, our team of three developed a smart bookshelf ecosystem designed to bridge physical and digital reading experiences. My role in this project was to map the user journey through detailed interaction storyboards. By combining characters from the service 'StoryTribe' with custom hand-drawn elements, I created a unique visual narrative that facilitated rapid iteration. This storytelling approach proved invaluable for aligning the team's vision and effectively communicating the concept during peer presentations. The drawings were created using a Huion graphics tablet.",
-        "de": ""
+        "de": "Im Rahmen einer Projektarbeit während meines Masterstudiums entwickelte unser dreiköpfiges Team ein intelligentes Bücherregal-Ökosystem, das physische und digitale Leseerlebnisse verbinden soll. Meine Rolle in diesem Projekt bestand darin, die User Journey durch detaillierte Interaktions-Storyboards abzubilden. Durch die Kombination von Charakteren, die ich mittels 'StoryTribe' erstellt habe, mit eigenen handgezeichneten Elementen schuf ich eine visuelle Erzählung, die schnelle Iterationen ermöglichte. Dieser Storytelling-Ansatz erwies sich als unschätzbar wertvoll, um die Vision des Teams aufeinander abzustimmen und das Konzept bei Präsentationen effektiv zu kommunizieren. Die Zeichnungen wurden mit einem Huion-Grafiktablett gezeichnet."
     },
     "sections": [
         {
@@ -46,8 +46,8 @@
                     "width": "xlarge",
                     "align": "left",
                     "content": {
-                        "en": "The interaction storyboards were efficient to ideate and create, providing significant value for unifying the team’s perspective and effectively communicating the concept.",
-                        "de": ""
+                        "en": "The interaction storyboards were efficient to ideate and create, providing significant value for unifying the team’s perspective and effectively communicating the concept. I learned how important it is to visualize things, as everyone has different ideas.",
+                        "de": "Die Interaktions-Storyboards waren sehr effizient und ließen sich schnell zeichnen. Sie leisteten einen wesentlichen Beitrag dazu, die Perspektive des Teams zu vereinen und das Konzept effektiv zu kommunizieren. Ich habe dadurch gelernt, wie wichtig es ist, die Dinge aufzuzeichnen und zu visualisieren, da jeder andere Vorstellungen hat."
                     }
                 }
             ]
