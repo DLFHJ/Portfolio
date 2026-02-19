@@ -18,7 +18,7 @@
     },
     "heroImage": "assets/projects/portfolio_machine/0.png",
     "description": {
-        "en": "Kaleidoscope was an interactive showcase that uses NFC-embedded spheres as physical controllers to navigate a digital archive. Visitors place a student’s illuminated sphere on a central console to identify the creator and load their specific work. The interface features parallax scrolling, allowing users to physically scroll into the projects through a seamless blend of tactile hardware and custom software.",
+        "en": "The portfolio machine was part of our final Master's exhibition. It is an interactive showcase that uses NFC-embedded spheres as physical controllers to navigate a digital archive. Visitors place a student’s illuminated sphere on a central console to identify the creator and load their specific work. The interface features parallax scrolling, allowing users to physically scroll into the projects through a seamless blend of tactile hardware and custom software.",
         "de": "asd"
     },
     "sections": [
@@ -31,7 +31,7 @@
                     "width": "xlarge",
                     "align": "center",
                     "content": {
-                        "en": "For our final Master’s exhibition, our class developed an Interactive Portfolio Installation—a custom-built station designed to showcase all of our collective work. This project was a massive collaborative effort that required seamless integration between physical hardware and digital software.\n\nAs the Frontend Developer, I built the interface using HTML and CSS. The installation featured a unique physical interface: a sphere that users could roll to navigate the work. I implemented parallax scrolling to create an immersive effect where users 'scrolled into' the projects, creating a 3D sense of depth. Beyond the visuals, I tackled the technical challenges of resolution mapping, synchronized video autoplay, and performance optimization, resulting in a one-of-a-kind physical-digital showcase.",
+                        "en": "For our final Master’s exhibition, our class developed an interactive portfolio installation - a custom-built station designed to showcase all of our collective work. This project was a massive collaborative effort that required seamless integration between physical hardware and digital software.\n\nAs the Frontend Developer, I built the interface using HTML and CSS. The installation featured a unique physical interface: a sphere that users could roll to navigate the work. I implemented parallax scrolling to create an immersive effect where users \"scrolled into\" the projects, creating a 3D sense of depth. Beyond the visuals, I tackled the technical challenges of resolution mapping, synchronized video autoplay and performance optimization, resulting in a one-of-a-kind physical-digital showcase.",
                         "de": ""
                     }
                 }
@@ -57,8 +57,8 @@
                     "width": "xlarge",
                     "align": "left",
                     "content": {
-                        "en": "Visitors placed a student's sphere onto a dedicated console to identify them and trigger their specific portfolio on the screen.",
-                        "de": "Visitors placed a student's sphere onto a dedicated console to identify them and trigger their specific portfolio on the screen."
+                        "en": "The physical installation of the Portfolio Machine as showcased during the final exhibition.",
+                        "de": ""
                     }
                 },
                 {
@@ -105,6 +105,21 @@
                     "role": "image",
                     "width": "xlarge",
                     "src": "assets/projects/portfolio_machine/3.jpg"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "align": "left",
+                    "content": {
+                        "en": "The portfolio machine was part of a larger exhibition of our stuying programme.",
+                        "de": ""
+                    }
                 }
             ]
         }

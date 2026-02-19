@@ -20,8 +20,8 @@
   },
   "heroImage": "assets/projects/main/master_thesis/0.png",
   "description": {
-    "en": "asd",
-    "de": "asd"
+    "en": "'User Experience Design for a Physical Therapy Application' - that was the title of  my masters thesis. During my thesis I delved deep into the uses of modern technology for physiotherapy through the lens of an UX deisgner.",
+    "de": ""
   },
   "sections": [
     {
@@ -33,7 +33,7 @@
           "width": "xlarge",
           "align": "left",
           "content": {
-            "en": "My Master’s thesis explored how modern technology can bridge the gap between clinical physiotherapy and at-home recovery. Following a rigorous Design Thinking process, I developed a dual-sided ecosystem designed to support both patients and therapists through a continuous feedback loop.\n\nThe Research: > To truly understand the needs of my users, I moved beyond theory and stepped into their shoes. I conducted expert interviews and synthesized my findings using Empathy Maps, Personas, and Interaction Storyboards. This iterative research phase was crucial in uncovering the real-world frustrations of physical recovery.\n\nThe Solution: > The final concept consists of a mobile app for patients and a web dashboard for therapists. The mobile application utilizes AI-driven body tracking to monitor exercises and provide real-time postural feedback. These data points are then synced to the web application, allowing therapists to monitor progress remotely and adjust treatment plans accordingly.\n\nThe Outcome: > By creating a functional technical prototype, I was able to demonstrate how a data-driven approach can increase patient motivation and provide therapists with more accurate insights between in-person sessions.",
+            "en": "Following extensive research and iterative prototyping, I developed a comprehensive ecosystem designed to enhance physical rehabilitation. The system bridges the gap between patients and therapists: patients use a mobile app that utilizes AI body tracking to provide real-time feedback on exercises, while therapists monitor progress and adjust treatments via a dedicated web dashboard. To ensure the solution met real-world needs, I fully immersed myself in the user experience. Following a Design Thinking methodology, I utilized expert interviews, empathy maps, personas, and interaction storyboards to guide the development. This iterative process allowed me to transform complex clinical requirements into a seamless, user-centered exchange between patient and practitioner.",
             "de": ""
           }
         },
@@ -65,7 +65,7 @@
           "width": "xlarge",
           "align": "center",
           "content": {
-            "en": "lorme ismpu",
+            "en": "I started off creating empathy maps and personas to better empathize with the users and get a feel for their needs and pain points. Additonally, at this stage I also conducted expert interviews with physiotherapists and HCI experts",
             "de": ""
           }
         },
@@ -97,7 +97,7 @@
           "width": "xlarge",
           "align": "center",
           "content": {
-            "en": "Based on these insights, I architected comprehensive user flows and interaction diagrams to ensure a seamless logic across the entire experience.",
+            "en": "Based on this inital research I sketched interaction storyboards and created a user flow to outline the core functionality of the system and how patients and physiotherapists would interact with it.",
             "de": ""
           }
         },
