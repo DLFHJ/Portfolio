@@ -74,8 +74,13 @@
       ]
     },
     {
+      "role": "spacer",
+      "height": "default"
+    },
+    {
       "type": "gallery",
       "layout": "grid",
+      "width": "full",
       "columns": 2,
       "items": [
         {
