@@ -170,7 +170,7 @@
           "width": "xlarge",
           "align": "left",
           "content": {
-            "en": "bla bla add something about the mobiel version here",
+            "en": "Some screenshots of the designs for the mobile application. I focused on a clear and intuitive user experience, with a focus on accessibility and ease of use while still maintaining a modern and cohesive visual design.",
             "de": ""
           }
         },
@@ -205,8 +205,8 @@
           "width": "xlarge",
           "align": "center",
           "content": {
-            "en": "The technical prototype was developed primarily to demonstrate feasibility. By integrating Google MediaPipe, I was able to use a standard smartphone camera to track various exercises and calculate the quality of a user's movements in real-time. To provide this instant feedback, I developed the application as a web app using Visual Studio Code.",
-            "de": "The technical prototype was developed primarily to demonstrate feasibility. By integrating Google MediaPipe, I was able to use a standard smartphone camera to track various exercises and calculate the quality of a user's movements in real-time. To provide this instant feedback, I developed the application as a web app using Visual Studio Code."
+            "en": "The technical prototype was developed primarily to demonstrate feasibility. By integrating Google MediaPipe, I was able to use a standard smartphone camera to track various exercises and calculate the quality of a user's movements in real-time via AI. To provide this instant feedback, I developed the application as a web app using Visual Studio Code.",
+            "de": ""
           }
         },
         {
@@ -224,8 +224,8 @@
           "width": "xlarge",
           "align": "center",
           "content": {
-            "en": "Reflecting on this journey, I found immense value in deep-diving into a complex, real-world challenge. Engaging directly with experts and users not only refined the project’s direction but also reinforced my passion for research-driven design. This experience taught me how to translate specialized professional needs into intuitive digital tools, and I truly enjoyed the process of turning expert insights into a meaningful, technical solution.",
-            "de": "Reflecting on this journey, I found immense value in deep-diving into a complex, real-world challenge. Engaging directly with experts and users not only refined the project’s direction but also reinforced my passion for research-driven design. This experience taught me how to translate specialized professional needs into intuitive digital tools, and I truly enjoyed the process of turning expert insights into a meaningful, technical solution."
+            "en": "Reflecting on this journey, I found immense value in deep-diving into a complex, real-world challenge. Engaging directly with experts and immersing myself in the perspective of the users not only refined the project’s direction but also reinforced my passion for research-driven design. This experience taught me how to translate specialized professional needs into intuitive digital tools, and I truly enjoyed the process of turning an intial problem into a meaningful, technical solution.",
+            "de": ""
           }
         }
       ]
