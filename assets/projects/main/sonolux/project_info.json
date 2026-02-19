@@ -106,15 +106,11 @@
       "items": [
         {
           "role": "image",
-          "src": "assets/projects/main/sonolux/7.jpg"
-        },
-        {
-          "role": "text",
-          "width": "large",
-          "align": "left",
-          "content": {
-            "en": "",
-            "de": ""
+          "width": "small",
+          "src": "assets/projects/main/sonolux/7.jpg",
+          "caption": {
+            "en": "Photo taken during the presentation of our project at a artist meet & greet event.",
+            "de": "Foto von der Präsentation unserer Projektion an einem Artist Meet & Greet Event."
           }
         }
       ]
