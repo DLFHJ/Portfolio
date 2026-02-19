@@ -129,7 +129,7 @@
           "width": "xlarge",
           "align": "center",
           "content": {
-            "en": "The UI designs for both the web and mobile applications were created in Figma, with a strong focus on maintaining a modern and cohesive visual identity.",
+            "en": "The UI designs for both the desktop and mobile applications were created in Figma, with a strong focus on maintaining a modern and cohesive visual identity. The desktop version is primarily used by physiotherapists to monitor patient progress and adjust treatments.",
             "de": ""
           }
         },
