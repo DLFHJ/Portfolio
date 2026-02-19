@@ -315,7 +315,8 @@
 
                 <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Portfolio Machine -->
-                    <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('portfolio_machine')">
+                    <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('portfolio_machine')"
+                        data-project-id="portfolio_machine">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                             <img src="assets/projects/portfolio_machine/0.png"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -328,13 +329,14 @@
                         <div class="flex justify-between items-start">
                             <div>
                                 <h3 class="text-lg font-semibold">Portfolio Machine</h3>
-                                <p class="text-sm text-gray-500">Frontend Programming, Webdesign</p>
+                                <p class="text-sm text-gray-500 project-role"></p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Master Thesis -->
-                    <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('master_thesis')">
+                    <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('master_thesis')"
+                        data-project-id="master_thesis">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                             <img src="assets/projects/main/master_thesis/0.png"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -347,13 +349,13 @@
                         <div class="flex justify-between items-start">
                             <div>
                                 <h3 class="text-lg font-semibold">Master Thesis</h3>
-                                <p class="text-sm text-gray-500">User Experience Design</p>
+                                <p class="text-sm text-gray-500 project-role"></p>
                             </div>
                         </div>
                     </div>
 
                     <!-- ÖBB Internship -->
-                    <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('obb')">
+                    <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('obb')" data-project-id="obb">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                             <img src="assets/projects/main/öbb/0.png"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -366,7 +368,7 @@
                         <div class="flex justify-between items-start">
                             <div>
                                 <h3 class="text-lg font-semibold">ÖBB Internship</h3>
-                                <p class="text-sm text-gray-500">User Experience Design</p>
+                                <p class="text-sm text-gray-500 project-role"></p>
                             </div>
                         </div>
                     </div>
@@ -375,7 +377,8 @@
                     <div id="moreProjects" class="hidden contents">
 
                         <!-- Project 4: Sonolux -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('sonolux')">
+                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('sonolux')"
+                            data-project-id="sonolux">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/main/sonolux/0.png"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -388,13 +391,14 @@
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h3 class="text-lg font-semibold">Sonolux</h3>
-                                    <p class="text-sm text-gray-500">Visual Concept & Design</p>
+                                    <p class="text-sm text-gray-500 project-role"></p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Project 5: UXD -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('uxd')">
+                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('uxd')"
+                            data-project-id="uxd">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/uxd/0.png"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -407,13 +411,14 @@
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h3 class="text-lg font-semibold">UXD</h3>
-                                    <p class="text-sm text-gray-500">Concept & Packaging Design</p>
+                                    <p class="text-sm text-gray-500 project-role"></p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Project 6: Storii -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('storii')">
+                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('storii')"
+                            data-project-id="storii">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/storii/0.png"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -426,13 +431,14 @@
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h3 class="text-lg font-semibold">Storii</h3>
-                                    <p class="text-sm text-gray-500">Concept Design, Art</p>
+                                    <p class="text-sm text-gray-500 project-role"></p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Project 7: Projection Mapping -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('projection_mapping')">
+                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('projection_mapping')"
+                            data-project-id="projection_mapping">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/projection_mapping/0.jpg"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -445,13 +451,14 @@
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h3 class="text-lg font-semibold">Projection Mapping</h3>
-                                    <p class="text-sm text-gray-500">Conception, Technical Implementation</p>
+                                    <p class="text-sm text-gray-500 project-role"></p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Project 8: Games -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('games')">
+                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('games')"
+                            data-project-id="games">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/games/0.png"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -464,13 +471,14 @@
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h3 class="text-lg font-semibold">Game Design Portfolio</h3>
-                                    <p class="text-sm text-gray-500">Game Design, 3D Art</p>
+                                    <p class="text-sm text-gray-500 project-role"></p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Project 9: Hackathon Schweiz -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('hackathon_schweiz')">
+                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('hackathon_schweiz')"
+                            data-project-id="hackathon_schweiz">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/hackathon_schweiz/0.png"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -483,7 +491,7 @@
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h3 class="text-lg font-semibold">Hackathon Schweiz</h3>
-                                    <p class="text-sm text-gray-500">Frontend Programming, Webdesign</p>
+                                    <p class="text-sm text-gray-500 project-role"></p>
                                 </div>
                             </div>
                         </div>
@@ -861,6 +869,19 @@
             await Promise.allSettled(promises);
             console.log("All project data loading attempts finished.");
             console.log("Loaded IDs:", Object.keys(projects));
+            updateProjectGrid();
+        }
+
+        function updateProjectGrid() {
+            document.querySelectorAll('[data-project-id]').forEach(el => {
+                const id = el.getAttribute('data-project-id');
+                const project = projects[id];
+                if (project && project.role) {
+                    const role = typeof project.role === 'object' ? project.role[currentLang] : project.role;
+                    const roleEl = el.querySelector('.project-role');
+                    if (roleEl) roleEl.innerText = role;
+                }
+            });
         }
 
         // Initialize loading
@@ -1018,6 +1039,7 @@
                     el.innerHTML = translations[currentLang][key];
                 }
             });
+            updateProjectGrid();
 
             // Update button text state
             const btnSpan = document.querySelector('#toggleProjectsBtn span');
