@@ -1197,7 +1197,9 @@
                                 } else {
                                     if (item.width === 'small') colClasses = 'md:col-span-4';
                                     else if (item.width === 'medium') colClasses = 'md:col-span-6';
-                                    else if (item.width === 'large') colClasses = 'md:col-span-8';
+                                    else if (item.width === 'large') {
+                                        colClasses = (section.layout === 'centered' && item.align === 'center') ? 'md:col-span-8' : 'md:col-span-9';
+                                    }
                                     else if (item.width === 'xlarge') colClasses = 'md:col-span-10 md:col-start-2';
                                     else if (item.width === 'full') colClasses = 'md:col-span-12';
 
@@ -1216,8 +1218,12 @@
                                     }
                                 }
                             } else {
-                                // Inside grid wrapper, items just fill their cell
-                                colClasses = 'w-full';
+                                // Inside grid wrapper, items just fill their cell unless specified
+                                if (['large', 'xlarge', 'full'].includes(item.width)) {
+                                    colClasses = 'w-full col-span-full';
+                                } else {
+                                    colClasses = 'w-full';
+                                }
                             }
 
                             itemWrapper.className = `relative ${colClasses}`;

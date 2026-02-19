@@ -64,7 +64,7 @@
         },
         {
           "role": "text",
-          "width": "medium",
+          "width": "large",
           "align": "left",
           "content": {
             "en": "Situated in the Grazer Schlossberg, the project had a unique, one of a kind location and atmosphere.",
@@ -91,11 +91,11 @@
         },
         {
           "role": "text",
-          "width": "full",
+          "width": "large",
           "align": "left",
           "content": {
-            "en": "As mentioned before the project was also exhibited at LUNA Festival in Eindhoven",
-            "de": "Wie bereits erwähnt, wurde das Projekt auch beim LUNA Festival in Eindhoven ausgestellt"
+            "en": "As mentioned before the project was also exhibited at LUNA Festival in Eindhoven.",
+            "de": "Wie bereits erwähnt, wurde das Projekt auch beim LUNA Festival in Eindhoven ausgestellt."
           }
         }
       ]
