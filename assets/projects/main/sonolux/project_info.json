@@ -105,12 +105,16 @@
       "layout": "centered",
       "items": [
         {
+          "role": "image",
+          "src": "assets/projects/main/sonolux/7.jpg"
+        },
+        {
           "role": "text",
-          "width": "xlarge",
-          "align": "center",
+          "width": "large",
+          "align": "left",
           "content": {
-            "en": "asd",
-            "de": "asd"
+            "en": "",
+            "de": ""
           }
         }
       ]
