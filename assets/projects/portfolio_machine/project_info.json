@@ -18,8 +18,8 @@
     },
     "heroImage": "assets/projects/portfolio_machine/0.png",
     "description": {
-        "en": "The portfolio machine was part of our final Master's exhibition. It is an interactive showcase that uses NFC-embedded spheres as physical controllers to navigate a digital archive. Visitors place a student’s illuminated sphere on a central console to identify the creator and load their specific work. The interface features parallax scrolling, allowing users to physically scroll into the projects through a seamless blend of tactile hardware and custom software.",
-        "de": "asd"
+        "en": "The portfolio machine was part of our final Master's exhibition. It is an interactive showcase that uses NFC-embedded spheres as physical controllers to navigate a digital archive of student projects. Visitors place a student’s illuminated sphere on a central console to identify the creator and load their specific work. The interface features parallax scrolling, allowing users to physically scroll into the projects through a seamless blend of tactile hardware and custom software.",
+        "de": "Die Portfolio Machine war Teil unserer Master-Abschlussausstellung. Es handelt sich um ein interaktives Showcase, das NFC-eingebettete Sphären als physische Controller nutzt, um durch ein digitales Archiv von Studentenprojekten zu navigieren. Besucher platzieren die leuchtende Sphäre eines Studierenden auf einer zentralen Konsole, um den Urheber zu identifizieren und dessen spezifische Arbeiten zu laden. Die Benutzeroberfläche verfügt über Parallax-Scrolling, sodass Benutzer physisch in die Projekte „hineinscrollen“ können – eine nahtlose Verschmelzung von taktiler Hardware und maßgeschneiderter Software."
     },
     "sections": [
         {
@@ -32,7 +32,7 @@
                     "align": "center",
                     "content": {
                         "en": "For our final Master’s exhibition, our class developed an interactive portfolio installation - a custom-built station designed to showcase all of our collective work. This project was a massive collaborative effort that required seamless integration between physical hardware and digital software.\n\nAs the Frontend Developer, I built the interface using HTML and CSS. The installation featured a unique physical interface: a sphere that users could roll to navigate the work. I implemented parallax scrolling to create an immersive effect where users \"scrolled into\" the projects, creating a 3D sense of depth. Beyond the visuals, I tackled the technical challenges of resolution mapping, synchronized video autoplay and performance optimization, resulting in a one-of-a-kind physical-digital showcase.",
-                        "de": ""
+                        "de": "Für unsere Master-Abschlussausstellung entwickelte unser Jahrgang eine interaktive Portfolio-Installation – eine speziell angefertigte Station, um all unsere gesammelten Werke zu präsentieren. Dieses Projekt war eine enorme Gemeinschaftsleistung, die eine nahtlose Integration zwischen physischer Hardware und digitaler Software erforderte.\n\nAls Frontend-Entwickler baute ich die Benutzeroberfläche mit HTML und CSS. Die Installation verfügte über ein einzigartiges physisches Interface: eine Sphäre, die Benutzer rollen konnten, um durch die Arbeiten zu navigieren. Ich implementierte Parallax-Scrolling, um einen immersiven Effekt zu erzeugen, bei dem die Benutzer in die Projekte „hineinscrollten“ und so ein räumliches Tiefengefühl entstand. Neben der Optik bewältigte ich technische Herausforderungen wie Resolution Mapping, synchronisiertes Video-Autoplay und Performance-Optimierung, was zu einem einzigartigen physisch-digitalen Schaufenster führte."
                     }
                 }
             ]
@@ -58,7 +58,7 @@
                     "align": "left",
                     "content": {
                         "en": "The physical installation of the Portfolio Machine as showcased during the final exhibition.",
-                        "de": ""
+                        "de": "Die physische Installation der Portfolio Machine, wie sie während der Abschlussausstellung präsentiert wurde."
                     }
                 },
                 {
@@ -88,7 +88,7 @@
                     "align": "left",
                     "content": {
                         "en": "Each student had a colorful, illuminated sphere embedded with an NFC chip. These acted as both a personal ID and a tactile controller; placing a sphere on the console identified the student and loaded their specific portfolio.",
-                        "de": "Each student had a colorful, illuminated sphere embedded with an NFC chip. These acted as both a personal ID and a tactile controller; placing a sphere on the console identified the student and loaded their specific portfolio."
+                        "de": "Jeder Studierende hatte eine bunte, leuchtende Sphäre mit eingebettetem NFC-Chip. Diese fungierten sowohl als persönliche ID als auch als taktiler Controller; das Platzieren einer Sphäre auf der Konsole identifizierte den Studierenden und lud dessen spezifisches Portfolio."
                     }
                 },
                 {
@@ -118,7 +118,7 @@
                     "align": "left",
                     "content": {
                         "en": "The portfolio machine was part of a larger exhibition of our stuying programme.",
-                        "de": ""
+                        "de": "Die Portfolio Machine war Teil einer größeren Ausstellung unseres Studiengangs."
                     }
                 }
             ]
