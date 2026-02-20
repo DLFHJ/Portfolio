@@ -47,8 +47,8 @@
         {
             "type": "text",
             "content": {
-                "en": "Though the time was limited, we were able to develop a fully functional prototype with a fully working front- and backend.",
-                "de": "Trotz der begrenzten Zeit gelang es uns, einen voll funktionsfähigen Prototypen mit funktionierendem Front- und Backend zu entwickeln."
+                "en": "Though the time was limited, we were able to develop a fully functional prototype with a fully working front- and backend. Our tech-stack consisted of JS React for the Frontend, Python FastAPI for the backend, Miro and GitHub for collaboration and Postman for testing. ",
+                "de": "Trotz der begrenzten Zeit gelang es uns, einen voll funktionsfähigen Prototypen mit funktionierendem Front- und Backend zu entwickeln. Unser Tech-Stack bestand aus JS React für das Frontend, Python FastAPI für das Backend, Miro und GitHub für die Zusammenarbeit und Postman für das Testen."
             }
         },
         {
