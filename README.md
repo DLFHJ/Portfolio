@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Hello, my name is David Lasslberger and I am a Interaction & UX Designer.
+Hello, my name is David Lasslberger and I am an Interaction & UX Designer.
 
 This README contains technical information about the portfolio website's structure and configuration.
 
