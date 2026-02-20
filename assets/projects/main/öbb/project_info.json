@@ -18,8 +18,8 @@
   },
   "heroImage": "assets/projects/main/öbb/0.png",
   "description": {
-    "en": "During my Bachelor’s degree, I completed a UX design internship at ÖV Ticketshop GmbH, a subsidiary of ÖBB. Working within a multidisciplinary team, I contributed to large-scale infrastructure projects, gaining hands-on experience in the full design lifecycle - from initial research and field testing to prototyping and frontend development.",
-    "de": ""
+    "en": "During my Bachelor’s degree, I completed a UX design internship at ÖV Ticketshop GmbH, a subsidiary of ÖBB. Working within a multidisciplinary team, I contributed to large-scale infrastructure projects, gaining hands-on experience in the full design lifecycle - from user research and testing to design and frontend development.",
+    "de": "Im Rahmen meines Bachelorstudiums absolvierte ich ein UX-Design-Praktikum bei der ÖV Ticketshop GmbH, einem Tochterunternehmen der ÖBB. In einem multidisziplinären Team arbeitete ich an groß angelegten Infrastrukturprojekten und sammelte praktische Erfahrungen im gesamten Designzyklus - von Nutzerbefragungen und Testing bis hin zu Design und Frontend-Entwicklung."
   },
   "sections": [
     {
@@ -32,7 +32,7 @@
           "align": "center",
           "content": {
             "en": "One of my primary responsibilities was designing and developing a corporate website for ÖV Ticketshop to establish their external brand presence. I began the process with a competitive analysis and hand-drawn wireframes to ensure a logical information architecture.\n\nWhile the visual language stayed true to the established ÖBB design system, I intentionally integrated a modern, minimalist aesthetic. After the design phase, I developed the site using HTML and CSS, which served as the technical foundation for the final product. Much of the current live site still retains my original layout and copy. This project was a significant learning experience, strengthening both my technical development skills and my ability to communicate design decisions within a professional team.",
-            "de": ""
+            "de": "Zu meinen Hauptaufgaben gehörte die Gestaltung und Entwicklung einer Unternehmenswebsite für den ÖV Ticketshop, um deren externe Markenpräsenz aufzubauen. Ich begann den Prozess mit einer Wettbewerbsanalyse und handgezeichneten Wireframes, um eine logische Informationsarchitektur sicherzustellen.\n\nWährend die visuelle Sprache dem etablierten ÖBB-Designsystem treu blieb, integrierte ich bewusst eine moderne, minimalistische Ästhetik. Nach der Designphase entwickelte ich die Website mit HTML und CSS, was die technische Grundlage für das Endprodukt bildete. Ein Großteil der aktuellen Live-Website behält immer noch mein ursprüngliches Layout und Text bei. Dieses Projekt war eine bedeutende Lernerfahrung, die sowohl meine technischen Entwicklungsfähigkeiten als auch meine Fähigkeit, Designentscheidungen innerhalb eines professionellen Teams zu kommunizieren, stärkte."
           }
         }
       ]
@@ -63,8 +63,8 @@
           "width": "xlarge",
           "align": "center",
           "content": {
-            "en": "Some screenshots from the website I designed for the ÖV Ticketshop GmbH. I tried to follow the ÖBB's design language while keeping the design modern and clean.",
-            "de": ""
+            "en": "Some screenshots from the website I designed for the ÖV Ticketshop. I tried to follow the ÖBB's design language while keeping the design modern and clean.",
+            "de": "Einige Screenshots von der Website, die ich für den ÖV Ticketshop entworfen habe. Ich habe versucht, mich an die Designsprache der ÖBB zu halten und gleichzeitig ein modernes und sauberes Design zu schaffen."
           }
         }
       ]
@@ -97,8 +97,8 @@
           "width": "xlarge",
           "align": "center",
           "content": {
-            "en": "In addition to digital interfaces, I contributed to the visual design of the ÖBB Nightjet Premium Tickets. Being involved in such a high-profile, physical touchpoint allowed me to apply brand guidelines to a premium user experience, ensuring that the luxury of the service was reflected in the ticket design itself.",
-            "de": ""
+            "en": "Another project where I was able to contribute was the visual design of the ÖBB Nightjet Premium Tickets. When coming up with the design I made sure that the service itself was reflected in the design and I am glad that I got to work on such a high-profile touchpoint.",
+            "de": "Ein weiteres Projekt, bei dem ich mitwirken durfte, war das visuelle Design des ÖBB Nightjet Premium Tickets. Bei der Entwicklung des Designs habe ich darauf geachtet, dass der Service selbst darin widerspiegelt wird. Es hat mich sehr gefreut, an einem so sichtbaren und wichtigen Touchpoint mitarbeiten zu dürfen."
           }
         }
       ]
@@ -130,7 +130,7 @@
           "align": "center",
           "content": {
             "en": "Another project I was heavily involved with was the redesign for the ticket animation in the ÖBB Tickets app. Though outside the realm of UX and more about animation, I also really enjoyed getting to work on this project and coming up with different ideas. The current loading animation in the live app is vaguely resembles the train animation I made.",
-            "de": ""
+            "de": "Ein weiteres Projekt, an dem ich stark beteiligt war, war die Neugestaltung der Ticket-Animation in der ÖBB Tickets App. Obwohl es außerhalb des Bereichs UX und mehr ein Animationsprojekt war, hat es mir auch sehr viel Spaß gemacht, an diesem Projekt zu arbeiten und verschiedene Ideen auszuprobieren. Die aktuelle Ladeanimation in der Live-App ähnelt vage der Zuganimation, die ich gemacht habe."
           }
         }
       ]
@@ -171,8 +171,8 @@
           "width": "xlarge",
           "align": "center",
           "content": {
-            "en": "Reflection\n\"My internship was a defining experience that provided a holistic view of the UX lifecycle. Working across conceptualization, testing, and development within such a collaborative team sharpened my technical skills and professional communication. I truly enjoyed the versatility of the projects and the opportunity to contribute to complex, real-world systems alongside a great team.",
-            "de": ""
+            "en": "My internship was a defining experience that provided a holistic view of the UX lifecycle. Working across conceptualization, testing, and development within such a collaborative team sharpened my technical skills and professional communication. I truly enjoyed the versatility of the projects and the opportunity to contribute to complex, real-world systems alongside a great team.",
+            "de": "Mein Praktikum war eine prägende Erfahrung, die mir einen umfassenden Einblick in den gesamten UX-Prozess gegeben hat. Durch die Mitarbeit an Konzeption, Testing und Entwicklung in einem so kollaborativen Team konnte ich sowohl meine fachlichen Fähigkeiten als auch meine professionelle Kommunikation weiterentwickeln. Besonders gefallen haben mir die Vielseitigkeit der Projekte und die Möglichkeit, gemeinsam mit einem tollen Team an komplexen, realen Systemen mitzuwirken."
           }
         }
       ]
