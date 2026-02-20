@@ -11,8 +11,8 @@
         "Arduino IDE"
     ],
     "category": {
-        "en": "Conception, Technical Implementation",
-        "de": "Konzeption, Technische Umsetzung"
+        "en": "Concept Design, Technical Implementation",
+        "de": "Konzeptdesign, Technische Umsetzung"
     },
     "heroImage": "assets/projects/projection_mapping/0.jpg",
     "description": {

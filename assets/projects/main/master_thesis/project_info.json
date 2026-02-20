@@ -2,7 +2,7 @@
   "id": "master_thesis",
   "title": {
     "en": "Master Thesis",
-    "de": "Master Thesis"
+    "de": "Masterarbeit"
   },
   "year": 2025,
   "tools": [
@@ -12,7 +12,7 @@
   ],
   "category": {
     "en": "User Experience Design, Academic Research",
-    "de": "User Experience Design, Academic Research"
+    "de": "User Experience Design, Wissenschaftliche Forschung"
   },
   "heroImage": "assets/projects/main/master_thesis/0.png",
   "description": {
