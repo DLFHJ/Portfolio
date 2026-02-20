@@ -5,10 +5,6 @@
         "de": "Hackathon Switzerland"
     },
     "year": 2025,
-    "role": {
-        "en": "Visual Concept & Elaboration",
-        "de": "Visuelle Konzeption und Ausarbeitung"
-    },
     "tools": [
         "Visual Studio Code",
         "Figma"

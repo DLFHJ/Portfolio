@@ -5,10 +5,6 @@
         "de": "Game Design Portfolio"
     },
     "year": 2025,
-    "role": {
-        "en": "Game Design, 3D Art, Programming",
-        "de": "Game Design, 3D Art, Programmierung"
-    },
     "tools": [
         "Unity",
         "Visual Studio",
@@ -16,7 +12,7 @@
         "Miro"
     ],
     "category": {
-        "en": "Game Design, Programming",
+        "en": "Game Design, Programming, SASD",
         "de": "Game Design, Programmierung"
     },
     "heroImage": "assets/projects/games/0.png",

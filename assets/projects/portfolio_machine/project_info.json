@@ -5,10 +5,6 @@
         "de": "Portfolio Machine"
     },
     "year": 2025,
-    "role": {
-        "en": "Frontend Programming, Webdesign",
-        "de": "Frontend Programming, Webdesign"
-    },
     "tools": [
         "Visual Studio Code"
     ],

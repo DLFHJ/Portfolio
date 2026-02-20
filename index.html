@@ -876,10 +876,10 @@
             document.querySelectorAll('[data-project-id]').forEach(el => {
                 const id = el.getAttribute('data-project-id');
                 const project = projects[id];
-                if (project && project.role) {
-                    const role = typeof project.role === 'object' ? project.role[currentLang] : project.role;
+                if (project && project.category) {
+                    const category = typeof project.category === 'object' ? project.category[currentLang] : project.category;
                     const roleEl = el.querySelector('.project-role');
-                    if (roleEl) roleEl.innerText = role;
+                    if (roleEl) roleEl.innerText = category;
                 }
             });
         }
@@ -1117,13 +1117,14 @@
             // 1. Setup Header
             const title = typeof data.title === 'object' ? data.title[currentLang] : data.title;
             const category = typeof data.category === 'object' ? data.category[currentLang] : data.category;
-            const role = typeof data.role === 'object' ? data.role[currentLang] : data.role;
+            // Role is now merged into category, so we don't display it separately or we use category in its place if needed.
+            // const role = typeof data.role === 'object' ? data.role[currentLang] : data.role; // Removed
             const description = typeof data.description === 'object' ? data.description[currentLang] : data.description;
 
             document.getElementById('modalTitle').innerText = title || '';
             document.getElementById('modalCategory').innerText = category || '';
-            const roleEl = document.getElementById('modalRole');
-            if (roleEl) roleEl.innerText = role || '';
+            // const roleEl = document.getElementById('modalRole'); // Removed
+            // if (roleEl) roleEl.innerText = role || ''; // Removed
             document.getElementById('modalYear').innerText = data.year || '';
             document.getElementById('modalTools').innerText = Array.isArray(data.tools) ? data.tools.join(', ') : data.tools;
 
