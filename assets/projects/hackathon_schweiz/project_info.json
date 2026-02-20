@@ -1,8 +1,8 @@
 {
     "id": "hackathon_schweiz",
     "title": {
-        "en": "Hackathon Switzerland",
-        "de": "Hackathon Switzerland"
+        "en": "START Hack Switzerland",
+        "de": "START Hack Schweiz"
     },
     "year": 2025,
     "tools": [
@@ -10,8 +10,8 @@
         "Figma"
     ],
     "category": {
-        "en": "Frontend Programming, Webdesign",
-        "de": "Frontend Programming, Webdesign"
+        "en": "Frontend Programming, Webdesign, Hackathon",
+        "de": "Frontend Programming, Webdesign, Hackathon"
     },
     "heroImage": "assets/projects/hackathon_schweiz/0.png",
     "description": {

@@ -881,6 +881,11 @@
                     const roleEl = el.querySelector('.project-role');
                     if (roleEl) roleEl.innerText = category;
                 }
+                if (project && project.title) {
+                    const title = typeof project.title === 'object' ? project.title[currentLang] : project.title;
+                    const titleEl = el.querySelector('h3');
+                    if (titleEl) titleEl.innerText = title;
+                }
             });
         }
 
