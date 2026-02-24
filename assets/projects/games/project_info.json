@@ -22,18 +22,32 @@
     },
     "sections": [
         {
-            "role": "text",
-            "width": "xlarge",
-            "align": "left",
-            "content": {
-                "en": "Throughout my studies, I’ve developed several games—some as solo projects, others in groups or during fast-paced Game Jams. These projects were a great way to experiment with user experience in a playful context. I particularly enjoy tinkering with non-traditional interactions, such as gesture and motion detection via camera or exploring immersive environments in Virtual Reality.\n\nWhile I’m not looking to pursue a career specifically in the gaming industry, these projects are a great showcase of my broader technical and design skills. They represent my experience across the entire pipeline, from initial concept and UI design to 3D art and programming.",
-                "de": "Im Laufe meines Studiums habe ich mehrere Spiele entwickelt – teils als Einzelprojekte, teils in Gruppen oder während Game Jam Events. Diese Projekte waren eine großartige Möglichkeit, mit User Experience in einem spielerischen Kontext zu experimentieren. Besonders gerne tüftle ich an untypischen Interaktionen, wie Gesten- und Bewegungserkennung via Kamera, oder erkunde immersive Umgebungen in Virtual Reality.\n\nObwohl ich keine Karriere speziell in der Spielebranche anstrebe, zeigen diese Projekte mein breites technisches und gestalterisches Können. Sie repräsentieren meine Erfahrung über die gesamte Entwicklungspipeline hinweg, vom ersten Konzept und UI-Design bis hin zu 3D-Art und Programmierung."
-            }
+            "type": "text",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "full",
+                    "align": "",
+                    "content": {
+                        "en": "Throughout my studies, I’ve developed several games—some as solo projects, others in groups or during fast-paced Game Jams. These projects were a great way to experiment with user experience in a playful context. I particularly enjoy tinkering with non-traditional interactions, such as gesture and motion detection via camera or exploring immersive environments in Virtual Reality.\n\nWhile I’m not looking to pursue a career specifically in the gaming industry, these projects are a great showcase of my broader technical and design skills. They represent my experience across the entire pipeline, from initial concept and UI design to 3D art and programming.",
+                        "de": "Im Laufe meines Studiums habe ich mehrere Spiele entwickelt – teils als Einzelprojekte, teils in Gruppen oder während Game Jam Events. Diese Projekte waren eine großartige Möglichkeit, mit User Experience in einem spielerischen Kontext zu experimentieren. Besonders gerne tüftle ich an untypischen Interaktionen, wie Gesten- und Bewegungserkennung via Kamera, oder erkunde immersive Umgebungen in Virtual Reality.\n\nObwohl ich keine Karriere speziell in der Spielebranche anstrebe, zeigen diese Projekte mein breites technisches und gestalterisches Können. Sie repräsentieren meine Erfahrung über die gesamte Entwicklungspipeline hinweg, vom ersten Konzept und UI-Design bis hin zu 3D-Art und Programmierung."
+                    }
+                }
+            ]
+        },
+        {
+            "type": "spacer",
+            "height": "default"
         },
         {
             "type": "gallery",
             "layout": "grid",
             "columns": 2,
+            "caption": {
+                "en": "<strong class='text-black'>Lupos</strong> is a cooperative, two-player obstacle course designed during my Master’s program. In this game, players must work together to maneuver a character through a challenging world by using their bodies: leaning left or right to steer and raising their arms to jump. For the movements to register, both players have to sync their actions perfectly.<br><br>Developed in a team of four, this project was a significant technical challenge. We used Microsoft Kinect for motion and gesture tracking, integrated with Unity. My role focused on the general game design and leading the technical implementation.",
+                "de": "<strong class='text-black'>Lupos</strong> ist ein kooperativer Hindernisparcours für zwei Spieler, der im Rahmen meines Masterstudiums entwickelt wurde. Die Spieler müssen gemeinsam eine Spielfigur durch eine herausfordernde Welt steuern, indem sie ihren Körper einsetzen: Sie lehnen sich nach links oder rechts, um zu lenken, und heben die Arme, um zu springen. Damit die Bewegungen registriert werden, müssen beide Spieler ihre Aktionen perfekt synchronisieren.<br><br>Das Projekt wurde in einem vierköpfigen Team entwickelt und stellte eine erhebliche technische Herausforderung dar. Wir nutzten Microsoft Kinect für die Bewegungs- und Gestenerkennung, integriert mit Unity. Meine Rolle konzentrierte sich auf das allgemeine Game Design und die Leitung der technischen Umsetzung."
+            },
             "items": [
                 {
                     "src": "assets/projects/games/1.jpg"
@@ -44,28 +58,17 @@
             ]
         },
         {
-            "type": "content",
-            "layout": "centered",
-            "items": [
-                {
-                    "role": "text",
-                    "width": "xlarge",
-                    "align": "left",
-                    "content": {
-                        "en": "<strong class='text-black'>Lupos</strong><br>Lupos is a cooperative, two-player obstacle course designed during my Master’s program. In this game, players must work together to maneuver a character through a challenging world by using their bodies: leaning left or right to steer and raising their arms to jump. For the movements to register, both players have to sync their actions perfectly.<br><br>Developed in a team of four, this project was a significant technical challenge. We used Microsoft Kinect for motion and gesture tracking, integrated with Unity. My role focused on the general game design and leading the technical implementation.",
-                        "de": "<strong class='text-black'>Lupos</strong><br>Lupos ist ein kooperativer Hindernisparcours für zwei Spieler, der im Rahmen meines Masterstudiums entwickelt wurde. Die Spieler müssen gemeinsam eine Spielfigur durch eine herausfordernde Welt steuern, indem sie ihren Körper einsetzen: Sie lehnen sich nach links oder rechts, um zu lenken, und heben die Arme, um zu springen. Damit die Bewegungen registriert werden, müssen beide Spieler ihre Aktionen perfekt synchronisieren.<br><br>Das Projekt wurde in einem vierköpfigen Team entwickelt und stellte eine erhebliche technische Herausforderung dar. Wir nutzten Microsoft Kinect für die Bewegungs- und Gestenerkennung, integriert mit Unity. Meine Rolle konzentrierte sich auf das allgemeine Game Design und die Leitung der technischen Umsetzung."
-                    }
-                },
-                {
-                    "role": "spacer",
-                    "height": "default"
-                }
-            ]
+            "type": "spacer",
+            "height": "default"
         },
         {
             "type": "gallery",
             "layout": "grid",
             "columns": 3,
+            "caption": {
+                "en": "This two-person project called <strong class='text-black'>Turtle Trouble</strong> was created as part of the elective subject Virtual Reality during my bachelor program. The aim of the game is to guide a turtle through an obstacle course and labyrinth by defeating enemies and clearing obstacles so the turtle can pass freely. I worked on the technical implementation using Unity and the HTC Vive headset. The finished game was exhibited at the “Mixed Reality Day” at FH Hagenberg.",
+                "de": "Dieses Zweipersonen-Projekt namens <strong class='text-black'>Turtle Trouble</strong> entstand im Rahmen des Wahlfachs Virtual Reality während meines Bachelorstudiums. Ziel des Spiels ist es, eine Schildkröte durch einen Hindernisparcours und ein Labyrinth zu führen, indem man Gegner besiegt und Hindernisse aus dem Weg räumt. Ich kümmerte mich um die technische Umsetzung mit Unity und dem HTC Vive Headset. Das fertige Spiel wurde am „Mixed Reality Day“ an der FH Hagenberg ausgestellt."
+            },
             "items": [
                 {
                     "src": "assets/projects/games/3.png"
@@ -79,23 +82,8 @@
             ]
         },
         {
-            "type": "content",
-            "layout": "centered",
-            "items": [
-                {
-                    "role": "text",
-                    "width": "xlarge",
-                    "align": "left",
-                    "content": {
-                        "en": "This two-person project was created as part of the elective subject Virtual Reality during my bachelor program. The aim of the game is to guide a turtle through an obstacle course and labyrinth by defeating enemies and clearing obstacles so the turtle can pass freely. I worked on the technical implementation using Unity and the HTC Vive headset. The finished game was exhibited at the “Mixed Reality Day” at FH Hagenberg.",
-                        "de": "Dieses Zweipersonen-Projekt entstand im Rahmen des Wahlfachs Virtual Reality während meines Bachelorstudiums. Ziel des Spiels ist es, eine Schildkröte durch einen Hindernisparcours und ein Labyrinth zu führen, indem man Gegner besiegt und Hindernisse aus dem Weg räumt. Ich kümmerte mich um die technische Umsetzung mit Unity und dem HTC Vive Headset. Das fertige Spiel wurde am „Mixed Reality Day“ an der FH Hagenberg ausgestellt."
-                    }
-                },
-                {
-                    "role": "spacer",
-                    "height": "default"
-                }
-            ]
+            "type": "spacer",
+            "height": "default"
         },
         {
             "type": "content",
@@ -103,29 +91,18 @@
             "items": [
                 {
                     "role": "image",
-                    "width": "xlarge",
-                    "src": "assets/projects/games/6.png"
+                    "width": "full",
+                    "src": "assets/projects/games/6.png",
+                    "caption": {
+                        "en": "<strong class='text-black'>NecroQuest</strong> is a fast-paced typing game where players summon skeletons to defend against an approaching knight. The core mechanic relies on typing accuracy and speed, turning a simple input method into a survival challenge.<br><br>For this project, I wanted to explore the intersection of game art and generative AI. I used AI tools to generate the initial character and environment assets, then performed extensive refinements and touch-ups in Photoshop to ensure a cohesive visual style.",
+                        "de": "<strong class='text-black'>NecroQuest</strong> ist ein temporeiches Tippspiel, bei dem die Spieler Skelette beschwören, um sich gegen einen herannahenden Ritter zu verteidigen. Die Kernmechanik basiert auf Tippgenauigkeit und -geschwindigkeit und verwandelt eine einfache Eingabemethode in ein Spiel ums Überleben.<br><br>In diesem Projekt wollte ich die Schnittstelle zwischen Game Art und generativer KI erforschen. Ich nutzte KI-Tools, um die anfänglichen Charakter- und Umgebungsassets zu generieren, und führte dann umfangreiche Verfeinerungen und Nachbesserungen in Photoshop durch, um einen einheitlichen visuellen Stil zu kreieren."
+                    }
                 }
             ]
         },
         {
-            "type": "content",
-            "layout": "centered",
-            "items": [
-                {
-                    "role": "text",
-                    "width": "xlarge",
-                    "align": "left",
-                    "content": {
-                        "en": "<strong class='text-black'>NecroQuest</strong><br>NecroQuest is a fast-paced typing game where players summon skeletons to defend against an approaching knight. The core mechanic relies on typing accuracy and speed, turning a simple input method into a survival challenge.<br><br>For this project, I wanted to explore the intersection of game art and generative AI. I used AI tools to generate the initial character and environment assets, then performed extensive refinements and touch-ups in Photoshop to ensure a cohesive visual style.",
-                        "de": "<strong class='text-black'>NecroQuest</strong><br>NecroQuest ist ein temporeiches Tippspiel, bei dem die Spieler Skelette beschwören, um sich gegen einen herannahenden Ritter zu verteidigen. Die Kernmechanik basiert auf Tippgenauigkeit und -geschwindigkeit und verwandelt eine einfache Eingabemethode in ein Spiel ums Überleben.<br><br>In diesem Projekt wollte ich die Schnittstelle zwischen Game Art und generativer KI erforschen. Ich nutzte KI-Tools, um die anfänglichen Charakter- und Umgebungsassets zu generieren, und führte dann umfangreiche Verfeinerungen und Nachbesserungen in Photoshop durch, um einen einheitlichen visuellen Stil zu kreieren."
-                    }
-                },
-                {
-                    "role": "spacer",
-                    "height": "default"
-                }
-            ]
+            "type": "spacer",
+            "height": "1rem"
         },
         {
             "type": "gallery",
@@ -135,15 +112,15 @@
                 {
                     "src": "assets/projects/games/7.png",
                     "caption": {
-                        "en": "<strong class='text-black'>Uhrturm Climber</strong><br>Uhrturm Climber was developed for a course assignment focused on the theme of \"Invisibility\". I designed a 2D platformer featuring a unique mirrored-level mechanic: the platforms on the player's side are invisible, forcing them to navigate by looking at the visible reflection on the mirrored side. I enjoyed this short project because the theme made me think out of the box and proved to be an interesting challenge.",
-                        "de": "<strong class='text-black'>Uhrturm Climber</strong><br>Uhrturm Climber wurde für eine Kursarbeit zum Thema „Unsichtbarkeit“ entwickelt. Ich entwarf einen 2D-Platformer mit einer einzigartigen Spiegel-Mechanik: Die Plattformen auf der Seite des Spielers sind unsichtbar, was ihn zwingt, sich anhand des sichtbaren Spiegelbilds auf der anderen Seite zu orientieren. Mir hat dieses kurze Projekt gefallen, weil das Thema mich dazu brachte, out of the box zu denken, und eine interessante Herausforderung darstellte."
+                        "en": "<strong class='text-black'>Uhrturm Climber</strong> was developed for a course assignment focused on the theme of \"Invisibility\". I designed a 2D platformer featuring a unique mirrored-level mechanic: the platforms on the player's side are invisible, forcing them to navigate by looking at the visible reflection on the mirrored side. I enjoyed this short project because the theme made me think out of the box and proved to be an interesting challenge.",
+                        "de": "<strong class='text-black'>Uhrturm Climber</strong> wurde für eine Kursarbeit zum Thema „Unsichtbarkeit“ entwickelt. Ich entwarf einen 2D-Platformer mit einer einzigartigen Spiegel-Mechanik: Die Plattformen auf der Seite des Spielers sind unsichtbar, was ihn zwingt, sich anhand des sichtbaren Spiegelbilds auf der anderen Seite zu orientieren. Mir hat dieses kurze Projekt gefallen, weil das Thema mich dazu brachte, out of the box zu denken, und eine interessante Herausforderung darstellte."
                     }
                 },
                 {
                     "src": "assets/projects/games/8.png",
                     "caption": {
-                        "en": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of interaction in virtual reality.",
-                        "de": "<strong class='text-black'>Anubis Escape Room</strong><br>Anubis Escape Room war eine VR-Experience, die ich während meines Bachelorstudiums entwickelt habe. Das Projekt versetzt die Spieler in einen ägyptischen Tempel und fordert sie heraus, sich in der Umgebung zurechtzufinden und Rätsel zu lösen, um wieder hinauszufinden - also ein klassischer Escape Room. Dieses Projekt ermöglichte es mir, die Einschränkungen und Möglichkeiten der Interaktion in der virtuellen Realität auszuprobieren."
+                        "en": "<strong class='text-black'>Anubis Escape Room</strong> was a VR experience developed during my Bachelor’s studies. The project places players inside an ancient Egyptian temple, challenging them to navigate the environment and solve puzzles to find their way out. This project allowed me to explore the unique constraints of interaction in virtual reality.",
+                        "de": "<strong class='text-black'>Anubis Escape Room</strong> war eine VR-Experience, die ich während meines Bachelorstudiums entwickelt habe. Das Projekt versetzt die Spieler in einen ägyptischen Tempel und fordert sie heraus, sich in der Umgebung zurechtzufinden und Rätsel zu lösen, um wieder hinauszufinden - also ein klassischer Escape Room. Dieses Projekt ermöglichte es mir, die Einschränkungen und Möglichkeiten der Interaktion in der virtuellen Realität auszuprobieren."
                     }
                 }
             ]
@@ -158,27 +135,12 @@
             "items": [
                 {
                     "role": "image",
-                    "width": "xlarge",
-                    "src": "assets/projects/games/9.png"
-                }
-            ]
-        },
-        {
-            "type": "content",
-            "layout": "centered",
-            "items": [
-                {
-                    "role": "text",
-                    "width": "xlarge",
-                    "align": "left",
-                    "content": {
-                        "en": "<strong class='text-black'>Dogma Hypnos</strong><br>Dogma Hypnos is a high-fidelity UI prototype for a sci-fi space exploration game. The goal of this project was to design and build a fully functional main menu and settings system, moving beyond static layouts to create a reactive, animated experience.",
-                        "de": "<strong class='text-black'>Dogma Hypnos</strong><br>Dogma Hypnos is a high-fidelity UI prototype for a sci-fi space exploration game. The goal of this project was to design and build a fully functional main menu and settings system, moving beyond static layouts to create a reactive, animated experience."
+                    "width": "full",
+                    "src": "assets/projects/games/9.png",
+                    "caption": {
+                        "en": "<strong class='text-black'>Dogma Hypnos</strong> is a high-fidelity UI prototype for a sci-fi space exploration game. The goal of this project was to design and build a fully functional main menu and settings system, moving beyond static layouts to create a reactive, animated experience.",
+                        "de": "<strong class='text-black'>Dogma Hypnos</strong> ist ein high-fidelity UI-Prototyp für ein science-fiction Raumexplorationsspiel. Das Ziel dieses Projekts war es, ein voll funktionsfähiges Hauptmenü und Einstellungs-System zu gestalten, indem man sich von statischen Layouts befreien und eine reaktive, animierte Erfahrung schaffen wollte."
                     }
-                },
-                {
-                    "role": "spacer",
-                    "height": "default"
                 }
             ]
         }

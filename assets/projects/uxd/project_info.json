@@ -31,15 +31,7 @@
                 },
                 {
                     "src": "assets/projects/uxd/2.png"
-                }
-            ]
-        },
-        {
-            "type": "gallery",
-            "layout": "grid",
-            "width": "full",
-            "columns": 2,
-            "items": [
+                },
                 {
                     "src": "assets/projects/uxd/0.png",
                     "caption": {

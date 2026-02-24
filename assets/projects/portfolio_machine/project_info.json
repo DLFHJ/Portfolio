@@ -39,7 +39,7 @@
             "items": [
                 {
                     "role": "image",
-                    "width": "xlarge",
+                    "width": "full",
                     "src": "assets/projects/portfolio_machine/1.jpg"
                 }
             ]
@@ -51,7 +51,7 @@
                 {
                     "role": "text",
                     "width": "xlarge",
-                    "align": "left",
+                    "align": "center",
                     "content": {
                         "en": "The physical installation of the Portfolio Machine as showcased during the final exhibition.",
                         "de": "Die physische Installation der Portfolio Machine, wie sie während der Abschlussausstellung präsentiert wurde."
@@ -69,7 +69,7 @@
             "items": [
                 {
                     "role": "image",
-                    "width": "xlarge",
+                    "width": "full",
                     "src": "assets/projects/portfolio_machine/2.jpg"
                 }
             ]
@@ -81,7 +81,7 @@
                 {
                     "role": "text",
                     "width": "xlarge",
-                    "align": "left",
+                    "align": "center",
                     "content": {
                         "en": "Each student had a colorful, illuminated sphere embedded with an NFC chip. These acted as both a personal ID and a tactile controller; placing a sphere on the console identified the student and loaded their specific portfolio.",
                         "de": "Jeder Studierende hatte eine bunte, leuchtende Sphäre mit eingebettetem NFC-Chip. Diese fungierten sowohl als persönliche ID als auch als taktiler Controller; das Platzieren einer Sphäre auf der Konsole identifizierte den Studierenden und lud dessen spezifisches Portfolio."
@@ -99,7 +99,7 @@
             "items": [
                 {
                     "role": "image",
-                    "width": "xlarge",
+                    "width": "full",
                     "src": "assets/projects/portfolio_machine/3.jpg"
                 }
             ]
@@ -111,7 +111,7 @@
                 {
                     "role": "text",
                     "width": "xlarge",
-                    "align": "left",
+                    "align": "center",
                     "content": {
                         "en": "The portfolio machine was part of a larger exhibition of our stuying programme.",
                         "de": "Die Portfolio Machine war Teil einer größeren Ausstellung unseres Studiengangs."

@@ -22,10 +22,18 @@
     "sections": [
         {
             "type": "text",
-            "content": {
-                "en": "As part of the Grazer Springfestival - a festival for electronic art and music - our team of three developed an interactive projection mapping installation at the Helmut List Halle. We designed an immersive \"Digital Graffiti\" experience where users could interact with a physical spray can to \"paint\" the buildings facade. My role focused on the technical implementation and creation of animated visuals using AI. I engineered a wireless system using Arduino to trigger real-time audio-visual responses, in other words, when a user pressed the spray can, a sound effect was triggered, and a new layer of AI-generated, animated graffiti was projected onto the architecture. This project was insofar interesting as it allowed me to bridge the gap between physical interaction and generative digital art. Additionally, I really enjoyed working as a team and coming up with the initial project idea together.",
-                "de": "Im Rahmen des Grazer Springfestivals – einem Festival für elektronische Kunst und Musik – entwickelte unser dreiköpfiges Team eine interaktive Projection Mapping Installation in der Helmut List Halle. Wir entwarfen ein immersives „Digital Graffiti“-Erlebnis, bei dem die Nutzer mit einer physischen Sprühdose interagieren konnten, um die Gebäudefassade zu „bemalen“. Meine Rolle konzentrierte sich auf die technische Umsetzung und die Erstellung animierter Visuals mittels KI. Ich entwickelte ein drahtloses System mit Arduino, um in Echtzeit Audio-Visuelle Reaktionen auszulösen: Wenn ein Nutzer die Sprühdose betätigte, wurde ein Soundeffekt ausgelöst und eine neue Ebene von KI-generiertem, animiertem Graffiti auf die Architektur projiziert. Dieses Projekt war insofern interessant, als es mir ermöglichte, die Brücke zwischen physischer Interaktion und generativer digitaler Kunst zu schlagen. Zudem hat mir die Zusammenarbeit im Team und die gemeinsame Entwicklung der ursprünglichen Projektidee viel Spaß gemacht."
-            }
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "full",
+                    "align": "",
+                    "content": {
+                        "en": "As part of the Grazer Springfestival - a festival for electronic art and music - our team of three developed an interactive projection mapping installation at the Helmut List Halle. We designed an immersive \"Digital Graffiti\" experience where users could interact with a physical spray can to \"paint\" the buildings facade. My role focused on the technical implementation and creation of animated visuals using AI. I engineered a wireless system using Arduino to trigger real-time audio-visual responses, in other words, when a user pressed the spray can, a sound effect was triggered, and a new layer of AI-generated, animated graffiti was projected onto the architecture. This project was insofar interesting as it allowed me to bridge the gap between physical interaction and generative digital art. Additionally, I really enjoyed working as a team and coming up with the initial project idea together.",
+                        "de": "Im Rahmen des Grazer Springfestivals – einem Festival für elektronische Kunst und Musik – entwickelte unser dreiköpfiges Team eine interaktive Projection Mapping Installation in der Helmut List Halle. Wir entwarfen ein immersives „Digital Graffiti“-Erlebnis, bei dem die Nutzer mit einer physischen Sprühdose interagieren konnten, um die Gebäudefassade zu „bemalen“. Meine Rolle konzentrierte sich auf die technische Umsetzung und die Erstellung animierter Visuals mittels KI. Ich entwickelte ein drahtloses System mit Arduino, um in Echtzeit Audio-Visuelle Reaktionen auszulösen: Wenn ein Nutzer die Sprühdose betätigte, wurde ein Soundeffekt ausgelöst und eine neue Ebene von KI-generiertem, animiertem Graffiti auf die Architektur projiziert. Dieses Projekt war insofern interessant, als es mir ermöglichte, die Brücke zwischen physischer Interaktion und generativer digitaler Kunst zu schlagen. Zudem hat mir die Zusammenarbeit im Team und die gemeinsame Entwicklung der ursprünglichen Projektidee viel Spaß gemacht."
+                    }
+                }
+            ]
         }
     ]
 }

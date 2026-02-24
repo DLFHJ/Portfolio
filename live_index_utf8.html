@@ -209,57 +209,17 @@
             scrollbar-width: none;
             /* Firefox */
         }
-
-        /* Debug 10-column Grid */
-        .debug-grid>* {
-            outline: 1px solid rgba(255, 0, 0, 0.4);
-            background: rgba(255, 0, 0, 0.05);
-            /* very light red fill to see box boundaries clearly */
-        }
-
-        /* Debug Global Element Outlines */
-        .show-element-grid-outlines * {
-            outline: 1px solid rgb(89, 117, 209) !important;
-            /* Orange outline for all DOM elements */
-        }
     </style>
 </head>
 
 <body class="text-gray-900 antialiased selection:bg-black selection:text-white">
-
-    <!-- Visual Grid Overlay (Hidden by Default) -->
-    <div id="visualGridOverlay" class="fixed inset-0 z-[9990] pointer-events-none hidden">
-        <!-- We use the exact same max-w, padding, and gap properties as the modal content grid -->
-        <div
-            class="h-full w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 grid grid-cols-1 md:grid-cols-12 gap-x-4 md:gap-x-6 lg:gap-x-8">
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-            <div class="w-full h-full bg-red-500/10 ring-1 ring-red-500/30 hidden md:block"></div>
-        </div>
-    </div>
-
-    <!-- Grid Toggle Button -->
-    <button id="gridToggleButton"
-        onclick="document.getElementById('visualGridOverlay').classList.toggle('hidden'); document.body.classList.toggle('show-element-grid-outlines');"
-        class="fixed bottom-6 left-6 z-[9999] px-3 py-1.5 bg-gray-900 border border-gray-700 text-white text-[10px] font-mono uppercase tracking-[0.2em] rounded-full shadow-2xl hover:bg-black hover:scale-105 transition-all focus:outline-none hover-target hidden">
-        Grid View
-    </button>
 
     <!-- Custom Cursor Element -->
     <div id="custom-cursor"></div>
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/0 z-40 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
@@ -269,50 +229,32 @@
                     </a>
                 </div>
 
-                <!-- Navigation Container (Links + Toggles) -->
-                <div class="flex items-center">
-                    <!-- Desktop Nav -->
-                    <div class="hidden md:flex items-center space-x-8 mr-8">
-                        <a href="#work" data-i18n="nav_work"
-                            class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
-                        <a href="#about" data-i18n="nav_about"
-                            class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
-                        <a href="#contact" data-i18n="nav_contact"
-                            class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
-                    </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#work" data-i18n="nav_work"
+                        class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
+                    <a href="#about" data-i18n="nav_about"
+                        class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
+                    <a href="#contact" data-i18n="nav_contact"
+                        class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
 
-                    <!-- Right Actions (Lang & Mobile Menu) -->
-                    <div class="flex items-center space-x-3 md:space-x-8">
-                        <!-- Lang Toggle -->
-                        <button id="langToggle" onclick="toggleLanguage()"
-                            class="hover-target flex items-center space-x-2 text-xs uppercase tracking-widest border border-gray-400 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full lg:hover:bg-black lg:hover:text-white active:scale-95 transition-all duration-300 relative z-50">
-                            <!-- Green dot removed here -->
-                            <span id="langLabel">EN</span>
-                        </button>
+                    <!-- Lang Toggle -->
+                    <button id="langToggle" onclick="toggleLanguage()"
+                        class="hover-target flex items-center space-x-2 text-xs uppercase tracking-widest border border-gray-400 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                        <!-- Green dot removed here -->
+                        <span id="langLabel">EN</span>
+                    </button>
+                </div>
 
-                        <!-- Mobile Menu Icon -->
-                        <div class="md:hidden relative z-50">
-                            <button class="p-2 hover-target -mr-2" onclick="toggleMobileMenu()">
-                                <i id="menuIconOpen" data-lucide="menu" class="w-6 h-6"></i>
-                                <i id="menuIconClose" data-lucide="x" class="w-6 h-6 hidden"></i>
-                            </button>
-                        </div>
-                    </div>
+                <!-- Mobile Menu Icon -->
+                <div class="md:hidden">
+                    <button class="p-2 hover-target">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobileMenu"
-        class="fixed inset-0 bg-white z-[39] flex flex-col justify-center items-center space-y-8 pt-20 transition-opacity duration-300 opacity-0 pointer-events-none md:hidden">
-        <a href="#work" data-i18n="nav_work" onclick="toggleMobileMenu()"
-            class="hover-target text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Work</a>
-        <a href="#about" data-i18n="nav_about" onclick="toggleMobileMenu()"
-            class="hover-target text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">About</a>
-        <a href="#contact" data-i18n="nav_contact" onclick="toggleMobileMenu()"
-            class="hover-target text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Contact</a>
-    </div>
 
     <main class="relative z-10 bg-white">
 
@@ -356,12 +298,10 @@
             </div>
 
             <!-- Scroll Indicator -->
-            <div class="absolute bottom-12 left-0 right-0 flex justify-center z-20">
-                <a href="#work"
-                    class="animate-bounce cursor-pointer hover:opacity-70 transition-opacity [animation-duration:2s]">
-                    <span class="material-symbols-outlined text-gray-500 text-4xl leading-none">arrow_downward</span>
-                </a>
-            </div>
+            <a href="#work"
+                class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer hover:opacity-70 transition-opacity z-20">
+                <span class="material-symbols-outlined text-gray-500 text-4xl">arrow_downward</span>
+            </a>
 
         </header>
 
@@ -557,27 +497,6 @@
                             </div>
                         </div>
 
-                        <!-- Project 10: Layout Grid Demo -->
-                        <div id="demoProjectBlock" class="reveal-on-scroll group cursor-pointer hidden"
-                            onclick="openModal('grid_demo')" data-project-id="grid_demo">
-                            <div
-                                class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4 outline outline-2 outline-green-500/50">
-                                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&h=600"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                    alt="Grid Demo"
-                                    onerror="this.src='https://via.placeholder.com/800x600?text=Image+Unavailable'">
-                                <div
-                                    class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300">
-                                </div>
-                            </div>
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-green-600">Layout Grid Demo</h3>
-                                    <p class="text-sm text-gray-500 project-role"></p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
@@ -632,18 +551,16 @@
                         </div>
 
                         <!-- Skills -->
-                        <div class="border border-gray-200 p-6 md:p-8">
-                            <h3 data-i18n="skills_title" class="text-xl md:text-2xl font-bold tracking-tight mb-6">
-                                Skills & Tools</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm md:text-base">
+                        <div class="border-t border-gray-200 pt-8">
+                            <h3 data-i18n="skills_title" class="text-sm font-bold mb-6">Skills & Tools</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm">
                                 <div>
-                                    <span
-                                        class="block text-gray-400 mb-3 font-mono text-xs tracking-wider">DESIGN</span>
+                                    <span class="block text-gray-400 mb-2 font-mono text-xs">DESIGN</span>
                                     <p class="text-gray-800 leading-relaxed">UX/UI, Interaction Design, Prototyping,
                                         Wireframing, User Research, Figma, Adobe Suite, Blender</p>
                                 </div>
                                 <div>
-                                    <span class="block text-gray-400 mb-3 font-mono text-xs tracking-wider">CODE</span>
+                                    <span class="block text-gray-400 mb-2 font-mono text-xs">CODE</span>
                                     <p class="text-gray-800 leading-relaxed">HTML/CSS/JS, Arduino, Unity, C++, C#, Java,
                                         Python</p>
                                 </div>
@@ -701,8 +618,6 @@
                                 class="hover-target hover:text-gray-400 transition-colors">LinkedIn</a>
                             <a href="https://github.com/DLFHJ"
                                 class="hover-target hover:text-gray-400 transition-colors">GitHub</a>
-                            <a href="https://linktr.ee/david_lasslberger"
-                                class="hover-target hover:text-gray-400 transition-colors">Linktree</a>
                         </div>
                         <div class="absolute top-full pt-2 left-0 md:left-auto md:right-0 text-[10px] text-gray-500 font-mono tracking-widest uppercase whitespace-nowrap"
                             data-i18n="footer_hosted">
@@ -715,20 +630,20 @@
             <!-- Ticker -->
             <div class="border-t border-white/10 py-6 bg-black">
                 <div class="marquee-container">
-                    <div class="marquee-content text-xs text-gray-500 font-mono tracking-widest uppercase">
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                    <div class="marquee-content text-xs text-gray-600 font-mono tracking-widest uppercase">
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
                         &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
                         &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
                         &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
                     </div>
-                    <div class="marquee-content text-xs text-gray-500 font-mono tracking-widest uppercase">
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                    <div class="marquee-content text-xs text-gray-600 font-mono tracking-widest uppercase">
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
                         &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
                         &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                        2025 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
                         &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp;
                     </div>
                 </div>
@@ -737,24 +652,19 @@
     </main>
 
     <!-- Project Modal -->
-    <div id="projectModal" class="modal hidden fixed inset-0 z-40 flex items-center justify-center p-0">
-        <div class="absolute inset-0 bg-white/100" onclick="closeModal()"></div>
+    <div id="projectModal" class="modal hidden fixed inset-0 z-40 flex items-center justify-center p-0 md:p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal()"></div>
 
-        <div class="modal-content relative bg-white w-full max-w-full h-full flex flex-col overflow-hidden">
-
-            <!-- Close Button Grid Aligned -->
-            <div class="absolute top-6 inset-x-0 z-50 pointer-events-none flex justify-center w-full">
-                <!-- Matches the body content grid bounds -->
-                <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex justify-end">
-                    <button onclick="closeModal()"
-                        class="pointer-events-auto hover-target w-10 h-10 flex items-center justify-center p-0 bg-white backdrop-blur-md border border-gray-400 rounded-full text-black hover:bg-gray-100 hover:scale-110 transition-all shadow-sm">
-                        <i data-lucide="x" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
+        <div
+            class="modal-content relative bg-white w-full max-w-7xl h-full md:h-[90vh] shadow-2xl flex flex-col overflow-hidden">
+            <!-- Close -->
+            <button onclick="closeModal()"
+                class="absolute top-8 right-8 z-50 hover-target p-2 bg-white rounded-full text-black hover:scale-110 transition-transform shadow-lg">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
 
             <!-- Scrollable Content -->
-            <div class="flex-1 w-full overflow-y-auto bg-gray-50 no-scrollbar">
+            <div class="flex-1 w-full overflow-y-auto bg-white no-scrollbar">
 
                 <!-- 1. Header Section (Blurred Background) -->
                 <div class="relative w-full min-h-[85vh] md:min-h-[80vh] flex items-center overflow-hidden bg-black">
@@ -768,7 +678,7 @@
 
                     <!-- Content Grid -->
                     <div
-                        class="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 md:p-16 lg:px-24 grid grid-cols-1 md:grid-cols-12 gap-x-4 md:gap-x-6 lg:gap-x-8 gap-y-12 items-center">
+                        class="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 md:p-16 lg:px-24 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
 
                         <!-- Left: Text Header -->
                         <div class="col-span-1 md:col-span-7 flex flex-col justify-center text-white">
@@ -796,27 +706,27 @@
                             <div class="grid grid-cols-2 gap-12 border-t border-white/10 pt-8 mt-4">
                                 <div>
                                     <span data-i18n="modal_tools"
-                                        class="block text-white/50 text-[10px] uppercase font-mono tracking-widest mb-2 font-medium">Tools</span>
+                                        class="block text-white/50 text-[10px] uppercase tracking-widest mb-2 font-medium">Tools</span>
                                     <span id="modalTools"
-                                        class="block text-sm md:text-base font-semibold font-mono text-white">Lorem
-                                        ipsum,
+                                        class="block text-sm md:text-base font-medium text-white">Lorem ipsum,
                                         Lorem</span>
                                 </div>
                                 <div>
                                     <span data-i18n="modal_year"
-                                        class="block text-white/50 text-[10px] uppercase font-mono tracking-widest mb-2 font-medium">Year</span>
+                                        class="block text-white/50 text-[10px] uppercase tracking-widest mb-2 font-medium">Year</span>
                                     <span id="modalYear"
-                                        class="block text-sm md:text-base font-semibold font-mono text-white">2025</span>
+                                        class="block text-sm md:text-base font-medium text-white">2025</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Right: Featured Image (Card) -->
+                        <!-- Right: Featured Image (Card) NOTE maybe get rid of the transform scale? -->
                         <div class="col-span-1 md:col-span-5 relative group perspective-1000">
                             <div class="relative overflow-hidden shadow-2xl border border-white/10 ring-1 ring-white/5 cursor-zoom-in"
+                                style="transform: scale(1.05);"
                                 onclick="openLightbox(document.getElementById('modalHeroImage').src)">
                                 <img id="modalHeroImage" src=""
-                                    class="w-full h-auto object-cover aspect-[4/3] md:aspect-square lg:aspect-[4/3] bg-gray-800"
+                                    class="w-full h-auto object-cover aspect-[4/3] md:aspect-square lg:aspect-[4/3] bg-gray-800 transform"
                                     alt="Hero Featured">
                             </div>
                         </div>
@@ -824,10 +734,9 @@
                 </div>
 
                 <!-- 2. Content Blocks (Injected via JS) spacing top -->
-                <div id="modalBody" class="w-full bg-white pt-12 pb-24">
+                <div id="modalBody" class="w-full bg-gray-50 pt-8">
                     <!-- Blocks will be injected here -->
                 </div>
-
 
                 <!-- Footer / Next Project (Optional placeholder) -->
                 <div class="h-24 bg-white"></div>
@@ -836,10 +745,6 @@
     </div>
 
     <script>
-        // --- Demo Mode Config ---
-        // Switch this to true to enable the development grid overlay and test projects
-        const IS_DEMO_MODE = false;
-
         // Init Icons
         lucide.createIcons();
 
@@ -948,8 +853,7 @@
                 'assets/projects/storii/project_info.json',
                 'assets/projects/projection_mapping/project_info.json',
                 'assets/projects/games/project_info.json',
-                'assets/projects/hackathon_schweiz/project_info.json',
-                'assets/projects/demo/project_info.json'
+                'assets/projects/hackathon_schweiz/project_info.json'
             ];
 
             console.log("Starting to load " + sources.length + " projects...");
@@ -995,18 +899,7 @@
         }
 
         // Initialize loading
-        document.addEventListener('DOMContentLoaded', () => {
-            loadProjectData();
-
-            // Handle Demo Mode visibility
-            if (IS_DEMO_MODE) {
-                const gridBtn = document.getElementById('gridToggleButton');
-                if (gridBtn) gridBtn.classList.remove('hidden');
-
-                const demoBlock = document.getElementById('demoProjectBlock');
-                if (demoBlock) demoBlock.classList.remove('hidden');
-            }
-        });
+        document.addEventListener('DOMContentLoaded', loadProjectData);
 
         // --- 1. Custom Cursor & Interaction Logic ---
         const cursor = document.getElementById('custom-cursor');
@@ -1150,35 +1043,9 @@
 
 
         // --- 5. Language & Content Logic ---
-        // --- Mobile Menu Logic ---
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const iconOpen = document.getElementById('menuIconOpen');
-            const iconClose = document.getElementById('menuIconClose');
-            const isHidden = menu.classList.contains('opacity-0');
-
-            if (isHidden) {
-                // Open menu
-                menu.classList.remove('opacity-0', 'pointer-events-none');
-                menu.classList.add('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = 'hidden';
-                if (iconOpen) iconOpen.classList.add('hidden');
-                if (iconClose) iconClose.classList.remove('hidden');
-            } else {
-                // Close menu
-                menu.classList.add('opacity-0', 'pointer-events-none');
-                menu.classList.remove('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = '';
-                if (iconOpen) iconOpen.classList.remove('hidden');
-                if (iconClose) iconClose.classList.add('hidden');
-            }
-        }
-
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'de' : 'en';
-
-            const langLabel = document.getElementById('langLabel');
-            if (langLabel) langLabel.innerText = currentLang.toUpperCase();
+            document.getElementById('langLabel').innerText = currentLang.toUpperCase();
 
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -1273,7 +1140,7 @@
             // const roleEl = document.getElementById('modalRole'); // Removed
             // if (roleEl) roleEl.innerText = role || ''; // Removed
             document.getElementById('modalYear').innerText = data.year || '';
-            document.getElementById('modalTools').innerText = data.tools ? (Array.isArray(data.tools) ? data.tools.join(', ') : data.tools) : '';
+            document.getElementById('modalTools').innerText = Array.isArray(data.tools) ? data.tools.join(', ') : data.tools;
 
             const modalDescEl = document.getElementById('modalDescription');
             if (modalDescEl) modalDescEl.innerHTML = description || '';
@@ -1307,43 +1174,13 @@
                     if (section.type === 'hero') return;
 
 
-                    const sectionWrapper = document.createElement('div');
-
-                    // Background Color logic
-                    let bgClass = 'bg-white'; // default
-                    let textColorClass = 'text-gray-600'; // default text color
-
-                    if (section.bgColor) {
-                        bgClass = `bg-${section.bgColor}`;
-                        if (section.bgColor === 'gray-900' || section.bgColor === 'black') {
-                            textColorClass = 'text-gray-300';
-                            bgClass += ' text-white';
-                        }
-                    }
-
-                    let baseWrapperClasses = 'w-full reveal-on-scroll';
-                    let baseInnerClasses = 'w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 md:grid md:grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-stretch';
                     const sectionEl = document.createElement('div');
 
-                    if (section.bgWidth === 'grid') {
-                        // Background is restricted to the inner 12-column grid
-                        // We give the outer wrapper external spacing, and the inner box internal padding
-                        sectionWrapper.className = `${baseWrapperClasses} py-2 md:py-4 lg:py-6`;
-                        sectionEl.className = `${baseInnerClasses} py-8 md:py-12 lg:py-16 ${bgClass}`;
-                    } else if (section.bgWidth === 'grid-connected') {
-                        // Background restricted to inner grid, but vertical outside spacing is removed
-                        // This allows adjacent 'grid-connected' blocks of the same color to merge visually
-                        sectionWrapper.className = `${baseWrapperClasses}`;
-                        sectionEl.className = `${baseInnerClasses} py-8 md:py-12 lg:py-16 ${bgClass}`;
-                    } else {
-                        // Default full-bleed background behavior
-                        sectionWrapper.className = `${baseWrapperClasses} py-2 md:py-4 lg:py-6 ${bgClass}`;
-                        sectionEl.className = baseInnerClasses;
-                    }
+                    // Reduced py-6 to py-2 to bring sections closer together
+                    sectionEl.className = 'w-full max-w-7xl mx-auto px-6 py-2 md:grid md:grid-cols-12 gap-x-6 gap-y-4 items-stretch';
 
                     if (section.layout === 'full-bleed') {
-                        sectionWrapper.className = `w-full mb-6 ${bgClass}`; // Zero padding for full-bleed
-                        sectionEl.className = 'w-full';
+                        sectionEl.className = 'w-full mb-6';
                     }
                     if (section.type === 'gallery') {
                         // sectionEl.classList.add('gap-y-6'); // Removed to respect global tight spacing
@@ -1372,10 +1209,10 @@
 
                             // Check for width overrides at the section level
                             if (section.width === 'full') {
-                                gridWrapper.className = 'col-span-12 grid gap-4 md:gap-6 lg:gap-8';
+                                gridWrapper.className = 'col-span-12 grid gap-6';
                             } else {
                                 // Default to xlarge (centered 10 cols) if not full width
-                                gridWrapper.className = 'col-span-12 md:col-start-2 md:col-span-10 grid gap-4 md:gap-6 lg:gap-8';
+                                gridWrapper.className = 'col-span-12 md:col-start-2 md:col-span-10 grid gap-6';
                             }
 
                             // Set columns for the inner grid based on config
@@ -1389,41 +1226,36 @@
                         }
 
                         section.items.forEach(item => {
-                            // Completely ignore manual spacers as requested
-                            if (item.role === 'spacer') return;
-
                             const itemWrapper = document.createElement('div');
                             let colClasses = 'col-span-12'; // Mobile default
 
-                            // Responsive Layout Engine
+                            // If we are NOT in a grid layout, calculate standard responsive widths
                             if (section.layout !== 'grid') {
-                                if (section.layout === 'full-bleed') {
-                                    // Breaks the 10-col grid to absolute edge
+                                if (item.width === 'full') {
+                                    colClasses = 'md:col-span-12';
+                                } else if (section.layout === 'full-bleed') {
                                     colClasses = 'w-full';
                                 } else {
-                                    // 1. Determine Mathematical Span
-                                    let span = item.role === 'text' ? 4 : 10; // Defaults
+                                    if (item.width === 'small') colClasses = 'md:col-span-4';
+                                    else if (item.width === 'medium') colClasses = 'md:col-span-6';
+                                    else if (item.width === 'large') {
+                                        colClasses = (section.layout === 'centered' && item.align === 'center') ? 'md:col-span-8' : 'md:col-span-9';
+                                    }
+                                    else if (item.width === 'xlarge') colClasses = 'md:col-span-10 md:col-start-2';
+                                    else if (item.width === 'full') colClasses = 'md:col-span-12';
 
-                                    if (item.width === 'small') span = 3;
-                                    else if (item.width === 'five-cols' || item.width === '5-cols') span = 5;
-                                    else if (item.width === 'medium') span = 6;
-                                    else if (item.width === 'large') span = 7;
-                                    else if (item.width === 'xlarge') span = 8;
-                                    else if (item.width === 'full') span = 10;
-
-                                    // 2. Resolve Alignment
-                                    let align = item.align || (section.layout === 'centered' ? 'center' : 'left');
-
-                                    if (align === 'right') {
-                                        // Push to the far right of the safe area (ends at col 11)
-                                        colClasses = `md:col-start-${12 - span} md:col-span-${span}`;
-                                    } else if (align === 'center') {
-                                        // Center perfectly within the 10-col safe area
-                                        let offset = Math.floor((10 - span) / 2) + 2;
-                                        colClasses = `md:col-start-${offset} md:col-span-${span}`;
-                                    } else {
-                                        // Default left-aligned
-                                        colClasses = `md:col-start-2 md:col-span-${span}`;
+                                    if (section.layout === 'centered' && item.align === 'center') {
+                                        if (item.width === 'large') colClasses += ' md:col-start-3';
+                                        else if (item.width === 'xlarge') { /* Already centered */ }
+                                        else if (item.width === 'medium') colClasses += ' md:col-start-4';
+                                    } else if (section.layout === 'editorial-split') {
+                                        if (item.align === 'right') {
+                                            colClasses += ' md:col-end-13';
+                                        }
+                                    } else if (section.layout === 'offset') {
+                                        if (item.align === 'right') {
+                                            colClasses += ' md:col-end-13';
+                                        }
                                     }
                                 }
                             } else {
@@ -1451,12 +1283,13 @@
                                     // Otherwise use h-full to fill grid cell
                                     const hasCaption = item.caption || item.text;
                                     if (hasCaption) {
-                                        img.className = 'w-full h-auto object-cover block cursor-zoom-in mb-3';
+                                        img.className = 'w-full h-auto object-cover block shadow-sm cursor-zoom-in mb-3';
                                     } else {
-                                        img.className = 'w-full h-full object-cover block cursor-zoom-in';
+                                        img.className = 'w-full h-full object-cover block shadow-sm cursor-zoom-in';
                                     }
                                 } else {
-                                    img.className = 'w-full h-auto object-cover block cursor-zoom-in';
+                                    img.className = 'w-full h-auto object-cover block shadow-sm cursor-zoom-in';
+                                    // if (section.layout !== 'full-bleed') img.classList.add('rounded-lg'); // Removed rounded corners
                                 }
 
                                 // Allow overrides from JSON
@@ -1476,47 +1309,37 @@
                                     const capDiv = document.createElement('div');
                                     const content = typeof captionText === 'object' ? captionText[currentLang] : captionText;
                                     capDiv.innerHTML = content || '';
-                                    capDiv.className = `${textColorClass} leading-relaxed text-lg md:text-xl font-light mt-2`;
+                                    capDiv.className = 'text-gray-600 leading-relaxed text-lg mt-2'; // Updated to match standard text size
                                     itemWrapper.appendChild(capDiv);
                                 }
                             } else if (item.role === 'text') {
                                 const p = document.createElement('div');
                                 const content = typeof item.content === 'object' ? item.content[currentLang] : item.content;
                                 p.innerHTML = content || '';
-                                // Using standard text-lg font
-                                p.className = `${textColorClass} leading-relaxed text-lg md:text-xl font-light`;
+                                p.className = 'text-gray-600 leading-relaxed text-lg';
+                                if (item.align !== 'center') {
+                                    // p.className += ' border-l-2 border-gray-200 pl-6 ml-1';
+                                }
                                 itemWrapper.appendChild(p);
+                            } else if (item.role === 'spacer') {
+                                const spacer = document.createElement('div');
+                                const heightMap = {
+                                    'small': 'h-4',
+                                    'medium': 'h-12',
+                                    'default': 'h-12',
+                                    'medium-large': 'h-[4.5rem]',
+                                    'large': 'h-24',
+                                    'xlarge': 'h-32'
+                                };
+                                spacer.className = `w-full ${heightMap[item.height || 'medium']}`;
+                                itemWrapper.appendChild(spacer);
                             }
 
                             targetContainer.appendChild(itemWrapper);
                         });
-
-                        // Render Section-Level Caption if present
-                        if (section.caption) {
-                            const sectionCapDiv = document.createElement('div');
-                            const content = typeof section.caption === 'object' ? section.caption[currentLang] : section.caption;
-                            sectionCapDiv.innerHTML = content || '';
-
-                            // Determine span and margin based on layout type
-                            let colSpanClass = 'md:col-start-2 md:col-span-10';
-                            let marginClass = 'mt-2'; // Default margin for non-grid layouts
-
-                            if (section.layout === 'grid') {
-                                colSpanClass = 'col-span-full';
-                                // The grid enforces gap-4 (16px), md:gap-6 (24px), lg:gap-8 (32px).
-                                // Individual non-grid captions have exactly 8px (mt-2) visual spacing.
-                                // We counteract the grid gap perfectly: 8px - gap = margin
-                                // 8-16 = -8px (-mt-2) | 8-24 = -16px (-mt-4) | 8-32 = -24px (-mt-6)
-                                marginClass = '-mt-2 md:-mt-4 lg:-mt-6';
-                            }
-
-                            sectionCapDiv.className = `${colSpanClass} ${textColorClass} leading-relaxed text-lg md:text-xl font-light ${marginClass}`;
-                            targetContainer.appendChild(sectionCapDiv);
-                        }
                     }
 
-                    sectionWrapper.appendChild(sectionEl);
-                    modalBody.appendChild(sectionWrapper);
+                    modalBody.appendChild(sectionEl);
                 });
             } else {
                 modalBody.innerHTML = `<div class="p-16 text-center text-gray-400">More details coming soon.</div>`;
@@ -1526,11 +1349,6 @@
             const modal = document.getElementById('projectModal');
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
-
-            // Re-observe scroll reveal elements inside the modal
-            setTimeout(() => {
-                modal.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-            }, 50);
         }
 
         function closeModal() {

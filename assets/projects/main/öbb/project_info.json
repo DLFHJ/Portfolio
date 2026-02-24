@@ -37,6 +37,10 @@
       "type": "gallery",
       "layout": "grid",
       "columns": 2,
+      "caption": {
+        "en": "Some screenshots from the website I designed for the ÖV Ticketshop. I tried to follow the ÖBB's design language while keeping the design modern and clean.",
+        "de": "Einige Screenshots von der Website, die ich für den ÖV Ticketshop entworfen habe. Ich habe versucht, mich an die Designsprache der ÖBB zu halten und gleichzeitig ein modernes und sauberes Design zu schaffen."
+      },
       "items": [
         {
           "src": "assets/projects/main/öbb/1.png"
@@ -47,27 +51,10 @@
       ]
     },
     {
-      "role": "spacer",
-      "height": "default"
-    },
-    {
       "type": "content",
       "layout": "centered",
-      "items": [
-        {
-          "role": "text",
-          "width": "xlarge",
-          "align": "center",
-          "content": {
-            "en": "Some screenshots from the website I designed for the ÖV Ticketshop. I tried to follow the ÖBB's design language while keeping the design modern and clean.",
-            "de": "Einige Screenshots von der Website, die ich für den ÖV Ticketshop entworfen habe. Ich habe versucht, mich an die Designsprache der ÖBB zu halten und gleichzeitig ein modernes und sauberes Design zu schaffen."
-          }
-        }
-      ]
-    },
-    {
-      "type": "content",
-      "layout": "centered",
+      "bgColor": "gray-100",
+      "bgWidth": "grid",
       "items": [
         {
           "role": "image",
@@ -77,32 +64,13 @@
       ]
     },
     {
-      "role": "spacer",
-      "height": "default"
-    },
-    {
-      "role": "spacer",
-      "height": "default"
-    },
-    {
-      "type": "content",
-      "layout": "centered",
-      "items": [
-        {
-          "role": "text",
-          "width": "xlarge",
-          "align": "center",
-          "content": {
-            "en": "Another project where I was able to contribute was the visual design of the ÖBB Nightjet Premium Tickets. When coming up with the design I made sure that the service itself was reflected in the design and I am glad that I got to work on such a high-profile touchpoint.",
-            "de": "Ein weiteres Projekt, bei dem ich mitwirken durfte, war das visuelle Design des ÖBB Nightjet Premium Tickets. Bei der Entwicklung des Designs habe ich darauf geachtet, dass der Service selbst darin widerspiegelt wird. Es hat mich sehr gefreut, an einem so sichtbaren und wichtigen Touchpoint mitarbeiten zu dürfen."
-          }
-        }
-      ]
-    },
-    {
       "type": "gallery",
       "layout": "grid",
       "columns": 2,
+      "caption": {
+        "en": "Another project where I was able to contribute was the visual design of the ÖBB Nightjet Premium Tickets. When coming up with the design I made sure that the service itself was reflected in the design and I am glad that I got to work on such a high-profile touchpoint.",
+        "de": "Ein weiteres Projekt, bei dem ich mitwirken durfte, war das visuelle Design des ÖBB Nightjet Premium Tickets. Bei der Entwicklung des Designs habe ich darauf geachtet, dass der Service selbst darin widerspiegelt wird. Es hat mich sehr gefreut, an einem so sichtbaren und wichtigen Touchpoint mitarbeiten zu dürfen."
+      },
       "items": [
         {
           "src": "assets/projects/main/öbb/6.png"

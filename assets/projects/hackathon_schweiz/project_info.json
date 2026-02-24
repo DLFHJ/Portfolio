@@ -21,10 +21,18 @@
     "sections": [
         {
             "type": "text",
-            "content": {
-                "en": "During the START Hack in St. Gallen, our team of four took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult. Our solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I then worked on coding the frontend and I also led our final presentation, where we were able to pitch a working prototype that we built from scratch during the hackathon.",
-                "de": "Während des START Hacks in St. Gallen nahm unser vierköpfiges Team an einer Challenge der United Nations G20 Global Land Initiative teil. Wir konzentrierten uns auf die Sahelzone in Afrika, wo die Wüstenbildung das Landmanagement extrem erschwert. Unsere Lösung war ein Dashboard, das jahrelang gesammelte, komplexe Satellitendaten in klare, handlungsorientierte Empfehlungen für lokale Entscheidungsträger übersetzt. Als UX-Designer konzentrierte ich mich auf das Gesamtkonzept und darauf, sicherzustellen, dass die Daten tatsächlich einfach zu verstehen und zu nutzen sind. Anschließend arbeitete ich an der Programmierung des Frontends und leitete unsere Abschlusspräsentation, bei der wir einen funktionierenden Prototypen vorstellen konnten, den wir während des Hackathons von Grund auf neu entwickelt hatten."
-            }
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "align": "",
+                    "content": {
+                        "en": "During the START Hack in St. Gallen, our team of four took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult. Our solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I then worked on coding the frontend and I also led our final presentation, where we were able to pitch a working prototype that we built from scratch during the hackathon.",
+                        "de": "Während des START Hacks in St. Gallen nahm unser vierköpfiges Team an einer Challenge der United Nations G20 Global Land Initiative teil. Wir konzentrierten uns auf die Sahelzone in Afrika, wo die Wüstenbildung das Landmanagement extrem erschwert. Unsere Lösung war ein Dashboard, das jahrelang gesammelte, komplexe Satellitendaten in klare, handlungsorientierte Empfehlungen für lokale Entscheidungsträger übersetzt. Als UX-Designer konzentrierte ich mich auf das Gesamtkonzept und darauf, sicherzustellen, dass die Daten tatsächlich einfach zu verstehen und zu nutzen sind. Anschließend arbeitete ich an der Programmierung des Frontends und leitete unsere Abschlusspräsentation, bei der wir einen funktionierenden Prototypen vorstellen konnten, den wir während des Hackathons von Grund auf neu entwickelt hatten."
+                    }
+                }
+            ]
         },
         {
             "role": "spacer",
@@ -35,6 +43,8 @@
             "layout": "grid",
             "width": "full",
             "columns": 2,
+            "bgColor": "",
+            "bgWidth": "grid-connected",
             "items": [
                 {
                     "src": "assets/projects/hackathon_schweiz/1.png"
@@ -46,10 +56,20 @@
         },
         {
             "type": "text",
-            "content": {
-                "en": "Though the time was limited, we were able to develop a fully functional prototype with a fully working front- and backend. Our tech-stack consisted of JS React for the Frontend, Python FastAPI for the backend, Miro and GitHub for collaboration and Postman for testing. ",
-                "de": "Trotz der begrenzten Zeit gelang es uns, einen voll funktionsfähigen Prototypen mit funktionierendem Front- und Backend zu entwickeln. Unser Tech-Stack bestand aus JS React für das Frontend, Python FastAPI für das Backend, Miro und GitHub für die Zusammenarbeit und Postman für das Testen."
-            }
+            "layout": "centered",
+            "bgColor": "",
+            "bgWidth": "grid-connected",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "align": "",
+                    "content": {
+                        "en": "Though the time was limited, we were able to develop a fully functional prototype with a fully working front- and backend. Our tech-stack consisted of JS React for the Frontend, Python FastAPI for the backend, Miro and GitHub for collaboration and Postman for testing. ",
+                        "de": "Trotz der begrenzten Zeit gelang es uns, einen voll funktionsfähigen Prototypen mit funktionierendem Front- und Backend zu entwickeln. Unser Tech-Stack bestand aus JS React für das Frontend, Python FastAPI für das Backend, Miro und GitHub für die Zusammenarbeit und Postman für das Testen."
+                    }
+                }
+            ]
         },
         {
             "role": "spacer",
@@ -68,10 +88,18 @@
         },
         {
             "type": "text",
-            "content": {
-                "en": "For our efforts in this project we were rewarded with a G20 Global Land Initiative certificate.",
-                "de": "Für unsere Leistungen in diesem Projekt wurden wir mit einem Zertifikat der G20 Global Land Initiative ausgezeichnet."
-            }
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "align": "",
+                    "content": {
+                        "en": "For our efforts in this project we were rewarded with a G20 Global Land Initiative certificate.",
+                        "de": "Für unsere Leistungen in diesem Projekt wurden wir mit einem Zertifikat der G20 Global Land Initiative ausgezeichnet."
+                    }
+                }
+            ]
         }
     ]
 }

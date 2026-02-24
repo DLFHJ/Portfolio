@@ -21,21 +21,17 @@
   },
   "sections": [
     {
-      "type": "content",
+      "type": "text",
       "layout": "centered",
       "items": [
         {
           "role": "text",
           "width": "xlarge",
-          "align": "left",
+          "align": "",
           "content": {
             "en": "Following extensive research and iterative prototyping, I developed a comprehensive ecosystem designed to enhance physical rehabilitation. The system bridges the gap between patients and therapists: patients use a mobile app that utilizes AI body tracking to provide real-time feedback on exercises, while therapists monitor progress and adjust treatments via a dedicated web dashboard. To ensure the solution met real-world needs, I fully immersed myself in the user experience. Following a Design Thinking methodology, I utilized expert interviews, empathy maps, personas, and interaction storyboards to guide the development. This iterative process allowed me to transform complex clinical requirements into a seamless, user-centered exchange between patient and practitioner.",
             "de": "Nach umfangreicher Recherche und iterativem Prototyping entwickelte ich ein umfassendes Ökosystem zur Verbesserung der körperlichen Rehabilitation. Das System schließt die Lücke zwischen Patienten und Therapeuten: Patienten nutzen eine mobile App, die mithilfe von KI Body Tracking Echtzeit-Feedback zu Übungen gibt, während Therapeuten den Fortschritt überwachen und Behandlungen über ein spezielles Web-Dashboard anpassen können. Um sicherzustellen, dass die Lösung den realen Bedürfnissen entsprach, war es mir wichtig das ganze wirklich aus der Sicht der User zu betrachten. Nach einer Design-Thinking-Methodik nutzte ich Experteninterviews, Empathy Maps, Personas und Interaction Storyboards, um das Projekt weiterzuentwickeln. Dieser iterative Prozess ermöglichte es mir, komplexe klinische Anforderungen in einen nahtlosen, nutzerzentrierten Austausch zwischen Patient und Praktiker umzuwandeln."
           }
-        },
-        {
-          "role": "spacer",
-          "height": "default"
         }
       ]
     },
@@ -43,6 +39,12 @@
       "type": "gallery",
       "layout": "grid",
       "columns": 2,
+      "caption": {
+        "en": "I started off creating empathy maps and personas to better empathize with the users and get a feel for their needs and pain points. Additonally, at this stage I also conducted expert interviews with physiotherapists and HCI experts",
+        "de": "Ich begann mit der Erstellung von Empathy Maps und Personas, um mich besser in die Benutzer hineinzuversetzen und ein Gefühl für ihre Bedürfnisse und Pain Points zu bekommen. Zusätzlich führte ich in dieser Phase auch Experteninterviews mit Physiotherapeuten und HCI-Experten durch."
+      },
+      "bgColor": "",
+      "bgWidth": "full",
       "items": [
         {
           "src": "assets/projects/main/master_thesis/1.png"
@@ -53,28 +55,15 @@
       ]
     },
     {
-      "type": "content",
-      "layout": "centered",
-      "items": [
-        {
-          "role": "text",
-          "width": "xlarge",
-          "align": "center",
-          "content": {
-            "en": "I started off creating empathy maps and personas to better empathize with the users and get a feel for their needs and pain points. Additonally, at this stage I also conducted expert interviews with physiotherapists and HCI experts",
-            "de": "Ich begann mit der Erstellung von Empathy Maps und Personas, um mich besser in die Benutzer hineinzuversetzen und ein Gefühl für ihre Bedürfnisse und Pain Points zu bekommen. Zusätzlich führte ich in dieser Phase auch Experteninterviews mit Physiotherapeuten und HCI-Experten durch."
-          }
-        },
-        {
-          "role": "spacer",
-          "height": "default"
-        }
-      ]
-    },
-    {
       "type": "gallery",
       "layout": "grid",
       "columns": 2,
+      "caption": {
+        "en": "Based on this inital research I sketched interaction storyboards and created a user flow to outline the core functionality of the system and how patients and physiotherapists would interact with it.",
+        "de": "Basierend auf dieser ersten Recherche erstellte ich Interaction Storyboards und User Flows, um die Kernfunktionalität des Systems und die Interaktion zwischen Patienten und Therapeuten zu skizzieren."
+      },
+      "bgColor": "",
+      "bgWidth": "grid",
       "items": [
         {
           "src": "assets/projects/main/master_thesis/3.png"
@@ -85,28 +74,15 @@
       ]
     },
     {
-      "type": "content",
-      "layout": "centered",
-      "items": [
-        {
-          "role": "text",
-          "width": "xlarge",
-          "align": "center",
-          "content": {
-            "en": "Based on this inital research I sketched interaction storyboards and created a user flow to outline the core functionality of the system and how patients and physiotherapists would interact with it.",
-            "de": "Basierend auf dieser ersten Recherche erstellte ich Interaction Storyboards und User Flows, um die Kernfunktionalität des Systems und die Interaktion zwischen Patienten und Therapeuten zu skizzieren."
-          }
-        },
-        {
-          "role": "spacer",
-          "height": "default"
-        }
-      ]
-    },
-    {
       "type": "gallery",
       "layout": "grid",
       "columns": 2,
+      "bgColor": "",
+      "bgWidth": "grid",
+      "caption": {
+        "en": "The UI designs for both the desktop and mobile applications were created in Figma, with a strong focus on maintaining a modern and cohesive visual identity. The desktop version is primarily used by physiotherapists to monitor patient progress and adjust treatments. Meanwhile, the mobile version is used by the patients to perform their rehabilitation exercises and receive real-time feedback.",
+        "de": "Die UI-Designs für die Desktop- und Mobilanwendungen wurden in Figma erstellt, wobei ein starker Fokus auf der Beibehaltung einer modernen und kohärenten visuellen Identität lag. Die Desktop-Version wird hauptsächlich von Physiotherapeuten verwendet, um den Fortschritt der Patienten zu überwachen und Behandlungen anzupassen. Währenddessen wird die mobile Version von den Patienten genutzt, um ihre Rehabilitationsübungen durchzuführen und Echtzeit-Feedback zu erhalten."
+      },
       "items": [
         {
           "src": "assets/projects/main/master_thesis/5.png"
@@ -119,25 +95,8 @@
     {
       "type": "content",
       "layout": "centered",
-      "items": [
-        {
-          "role": "text",
-          "width": "xlarge",
-          "align": "center",
-          "content": {
-            "en": "The UI designs for both the desktop and mobile applications were created in Figma, with a strong focus on maintaining a modern and cohesive visual identity. The desktop version is primarily used by physiotherapists to monitor patient progress and adjust treatments. Meanwhile, the mobile version is used by the patients to perform their rehabilitation exercises and receive real-time feedback.",
-            "de": "Die UI-Designs für die Desktop- und Mobilanwendungen wurden in Figma erstellt, wobei ein starker Fokus auf der Beibehaltung einer modernen und kohärenten visuellen Identität lag. Die Desktop-Version wird hauptsächlich von Physiotherapeuten verwendet, um den Fortschritt der Patienten zu überwachen und Behandlungen anzupassen. Währenddessen wird die mobile Version von den Patienten genutzt, um ihre Rehabilitationsübungen durchzuführen und Echtzeit-Feedback zu erhalten."
-          }
-        },
-        {
-          "role": "spacer",
-          "height": "default"
-        }
-      ]
-    },
-    {
-      "type": "content",
-      "layout": "centered",
+      "bgColor": "gray-100",
+      "bgWidth": "grid-connected",
       "items": [
         {
           "role": "image",
@@ -149,6 +108,12 @@
     {
       "type": "content",
       "layout": "centered",
+      "caption": {
+        "en": "Some screenshots of the designs for the mobile application. I focused on a clear and intuitive user experience, with a focus on accessibility and ease of use while still maintaining a modern and cohesive visual design.",
+        "de": "Einige Screenshots der Designs für die mobile Anwendung. Ich konzentrierte mich auf eine klare und intuitive Benutzererfahrung mit Schwerpunkt auf Accessibility und Benutzerfreundlichkeit, während ich gleichzeitig ein modernes und kohärentes visuelles Design beibehielt."
+      },
+      "bgColor": "gray-100",
+      "bgWidth": "grid-connected",
       "items": [
         {
           "role": "image",
@@ -158,67 +123,41 @@
       ]
     },
     {
-      "type": "content",
-      "layout": "centered",
-      "items": [
-        {
-          "role": "text",
-          "width": "xlarge",
-          "align": "left",
-          "content": {
-            "en": "Some screenshots of the designs for the mobile application. I focused on a clear and intuitive user experience, with a focus on accessibility and ease of use while still maintaining a modern and cohesive visual design.",
-            "de": "Einige Screenshots der Designs für die mobile Anwendung. Ich konzentrierte mich auf eine klare und intuitive Benutzererfahrung mit Schwerpunkt auf Accessibility und Benutzerfreundlichkeit, während ich gleichzeitig ein modernes und kohärentes visuelles Design beibehielt."
-          }
-        },
-        {
-          "role": "spacer",
-          "height": "default"
-        }
-      ]
+      "type": "spacer",
+      "height": "large"
     },
     {
       "type": "gallery",
       "layout": "grid",
       "columns": 3,
+      "caption": {
+        "en": "The technical prototype was developed primarily to demonstrate feasibility. By integrating Google MediaPipe, I was able to use a standard smartphone camera to track various exercises and calculate the quality of a user's movements in real-time via AI. To provide this instant feedback, I developed the application as a web app using Visual Studio Code.",
+        "de": "Der technische Prototyp wurde hauptsächlich entwickelt, um die technische Machbarkeit aufzuzeigen. Durch die Integration von Google MediaPipe konnte ich eine standard Smartphone-Kamera verwenden, um verschiedene Übungen zu tracken und die Qualität der Bewegungen des Users in Echtzeit per KI zu berechnen. Ich entwickelte die Anwendung als Web-App mittels Visual Studio Code."
+      },
       "items": [
         {
           "src": "assets/projects/main/master_thesis/9.png"
         },
         {
-          "src": "assets/projects/main/master_thesis/10.png"
-        },
-        {
           "src": "assets/projects/main/master_thesis/11.png"
-        }
-      ]
-    },
-    {
-      "type": "content",
-      "layout": "centered",
-      "items": [
-        {
-          "role": "text",
-          "width": "xlarge",
-          "align": "center",
-          "content": {
-            "en": "The technical prototype was developed primarily to demonstrate feasibility. By integrating Google MediaPipe, I was able to use a standard smartphone camera to track various exercises and calculate the quality of a user's movements in real-time via AI. To provide this instant feedback, I developed the application as a web app using Visual Studio Code.",
-            "de": "Der technische Prototyp wurde hauptsächlich entwickelt, um die technische Machbarkeit aufzuzeigen. Durch die Integration von Google MediaPipe konnte ich eine standard Smartphone-Kamera verwenden, um verschiedene Übungen zu tracken und die Qualität der Bewegungen des Users in Echtzeit per KI zu berechnen. Ich entwickelte die Anwendung als Web-App mittels Visual Studio Code."
-          }
         },
         {
-          "role": "spacer",
-          "height": "default"
+          "src": "assets/projects/main/master_thesis/10.png"
         }
       ]
     },
     {
-      "type": "content",
+      "type": "spacer",
+      "height": "large"
+    },
+    {
+      "type": "text",
       "layout": "centered",
       "items": [
         {
           "role": "text",
-          "width": "xlarge",
-          "align": "center",
+          "width": "large",
+          "align": "left",
           "content": {
             "en": "Reflecting on this journey, I found immense value in deep-diving into a complex, real-world challenge. Engaging directly with experts and immersing myself in the perspective of the users not only refined the project’s direction but also reinforced my passion for research-driven design. This experience taught me how to translate specialized professional needs into intuitive digital tools, and I truly enjoyed the process of turning an intial problem into a meaningful, technical solution.",
             "de": "Rückblickend war es für mich von unschätzbarem Wert, mich intensiv mit einer komplexen, realen Herausforderung auseinanderzusetzen. Der direkte Austausch mit Experten und das Eintauchen in die Perspektive der Nutzer haben nicht nur die Richtung des Projekts verfeinert, sondern auch meine Leidenschaft für forschungsgetriebenes Design gestärkt. Diese Erfahrung lehrte mich, wie man spezialisierte berufliche Bedürfnisse in intuitive digitale Werkzeuge übersetzt, und ich genoss den Prozess, ein anfängliches Problem in eine sinnvolle, technische Lösung zu verwandeln."
