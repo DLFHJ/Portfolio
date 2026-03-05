@@ -11,13 +11,13 @@
         "Blender"
     ],
     "category": {
-        "en": "Concept and Packaging Design",
-        "de": "Konzept und Verpackungsdesign"
+        "en": "Concept & Packaging Design",
+        "de": "Konzept & Verpackungsdesign"
     },
     "heroImage": "assets/projects/uxd/0.png",
     "description": {
-        "en": "Developed as a conceptual study during my Master’s in UX Design, this project challenged us to envision a sustainable smartphone ecosystem—spanning UI/UX, marketing strategy, and physical touchpoints. My part in this 4 person project was to develop the general concept and designing the packaging experience. My goal with the packaging design was to translate our core brand philosophy into a tactile reality, using Blender to create high-fidelity 3D renders that highlight a minimalist, eco-conscious aesthetic.",
-        "de": "Entwickelt als Konzeptstudie während meines Masterstudiums im Kurs UX Design, forderte uns dieses Projekt heraus, ein nachhaltiges Smartphone-Ökosystem zu entwickeln – von UI/UX über Marketingstrategie bis hin zu physischen Touchpoints. Mein Teil in diesem 4-Personen-Projekt war die Entwicklung des Gesamtkonzepts und das Design der Verpackung. Mein Ziel beim Verpackungsdesign war es, unsere Kernphilosophie in eine physische Realität zu übersetzen, indem ich mit Blender High-Fidelity-3D-Renderings erstellte, die eine minimalistische, umweltbewusste Ästhetik unterstreichen."
+        "en": "Developed as a conceptual study during my Master’s in UX Design, this project challenged us to envision a sustainable smartphone ecosystem—spanning UI/UX, marketing strategy, and physical touchpoints. My part in this 4 person project was to develop the general concept and designing the packaging experience. My goal with the design was to translate the core brand philosophy into a tactile reality, that highlights a minimalist, eco-conscious aesthetic.",
+        "de": "Dieses Projekt entstand als konzeptionelle Studie im Rahmen meines Masterstudiums in UX Design. Ziel war es, ein nachhaltiges Smartphone-Ökosystem zu entwerfen – von UI/UX über Marketingstrategie bis hin zu physischen Touchpoints. In dem vierköpfigen Team war ich für die Entwicklung des Gesamtkonzepts sowie für das Design der Packaging-Erfahrung verantwortlich. Mein Ziel war es, die zentrale Markenphilosophie in eine greifbare Gestaltung zu übersetzen, die eine minimalistische und umweltbewusste Ästhetik betont."
     },
     "sections": [
         {
@@ -31,16 +31,22 @@
                 },
                 {
                     "src": "assets/projects/uxd/2.png"
-                },
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
                 {
+                    "role": "image",
+                    "width": "xlarge",
+                    "align": "center",
                     "src": "assets/projects/uxd/0.png",
                     "caption": {
-                        "en": "Some of the renders I created of the packaging using the 3D-software Blender.",
-                        "de": "Einige der Renderings, die ich von der Verpackung mit dem 3D-Programm Blender erstellt habe."
+                        "en": "Some of the renders I created of the packaging using the 3D-software Blender. I tried to push the design to be as minimalist as possible, reducing it to the bare essentials.",
+                        "de": "Einige der Renderings der Verpackung, die ich mit der 3D-Software Blender erstellt habe. Dabei habe ich versucht, das Design so minimalistisch wie möglich zu gestalten und auf das Wesentliche zu reduzieren."
                     }
-                },
-                {
-                    "src": ""
                 }
             ]
         }

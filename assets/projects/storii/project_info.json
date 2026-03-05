@@ -16,35 +16,25 @@
     },
     "heroImage": "assets/projects/storii/0.png",
     "description": {
-        "en": "As part of an assignment during my Master’s studies, our team of three developed a smart bookshelf ecosystem designed to bridge physical and digital reading experiences. My role in this project was to map the user journey through detailed interaction storyboards. By combining characters from the service 'StoryTribe' with custom hand-drawn elements, I created a unique visual narrative that facilitated rapid iteration. This storytelling approach proved invaluable for aligning the team's vision and effectively communicating the concept during peer presentations. The drawings were created using a Huion graphics tablet.",
-        "de": "Im Rahmen einer Projektarbeit während meines Masterstudiums entwickelte unser dreiköpfiges Team ein intelligentes Bücherregal-Ökosystem, das physische und digitale Leseerlebnisse verbinden soll. Meine Rolle in diesem Projekt bestand darin, die User Journey durch detaillierte Interaktions-Storyboards abzubilden. Durch die Kombination von Charakteren, die ich mittels 'StoryTribe' erstellt habe, mit eigenen handgezeichneten Elementen schuf ich eine visuelle Erzählung, die schnelle Iterationen ermöglichte. Dieser Storytelling-Ansatz erwies sich als unschätzbar wertvoll, um die Vision des Teams aufeinander abzustimmen und das Konzept bei Präsentationen effektiv zu kommunizieren. Die Zeichnungen wurden mit einem Huion-Grafiktablett gezeichnet."
+        "en": "As part of a course during my Master’s studies, our three-person team developed a smart bookshelf ecosystem bridging physical and digital reading experiences. My role focused on mapping the user journey through detailed interaction storyboards. By combining characters from the service StoryTribe with custom hand-drawn elements, I created a visual narrative that supported rapid iteration and aligned the team’s vision. This approach proved invaluable for clearly communicating the concept during peer presentations. All drawings were created using a Huion graphics tablet.",
+        "de": "Im Rahmen eines Kurses während meines Masterstudiums entwickelte unser dreiköpfiges Team ein Smart-Bookshelf-Ökosystem, das physisches und digitales Lesen miteinander verbindet. Meine Rolle bestand darin, die User Journey mithilfe detaillierter Interaktions-Storyboards abzubilden. Durch die Kombination von Figuren aus dem Service StoryTribe mit eigenen handgezeichneten Elementen entstand eine visuelle Erzählung, die schnelle Iterationen unterstützte und ein gemeinsames Verständnis im Team förderte. Dieser Ansatz erwies sich als besonders hilfreich, um das Konzept in Peer-Präsentationen klar zu kommunizieren. Alle Zeichnungen wurden mit einem Huion-Grafiktablet erstellt."
     },
     "sections": [
         {
             "type": "gallery",
             "layout": "grid",
+            "width": "full",
             "columns": 2,
+            "caption": {
+                "en": "Interaction storyboards became a key tool for ideation and communication. By visualizing the user journey, they helped align the team’s understanding and made complex interaction concepts easier to discuss and refine.",
+                "de": "Interaktions-Storyboards wurden zu einem zentralen Werkzeug für Ideation und Kommunikation. Durch die Visualisierung der User Journey halfen sie dabei, ein gemeinsames Verständnis im Team zu schaffen und komplexe Interaktionskonzepte leichter zu diskutieren und weiterzuentwickeln."
+            },
             "items": [
                 {
                     "src": "assets/projects/storii/1.jpg"
                 },
                 {
                     "src": "assets/projects/storii/2.jpg"
-                }
-            ]
-        },
-        {
-            "type": "content",
-            "layout": "centered",
-            "items": [
-                {
-                    "role": "text",
-                    "width": "xlarge",
-                    "align": "left",
-                    "content": {
-                        "en": "The interaction storyboards were efficient to ideate and create, providing significant value for unifying the team’s perspective and effectively communicating the concept. I learned how important it is to visualize things, as everyone has different ideas.",
-                        "de": "Die Interaktions-Storyboards waren sehr effizient und ließen sich schnell zeichnen. Sie leisteten einen wesentlichen Beitrag dazu, die Perspektive des Teams zu vereinen und das Konzept effektiv zu kommunizieren. Ich habe dadurch gelernt, wie wichtig es ist, die Dinge aufzuzeichnen und zu visualisieren, da jeder andere Vorstellungen hat."
-                    }
                 }
             ]
         }

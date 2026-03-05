@@ -55,7 +55,7 @@ Items are the individual content pieces (images, text) within a section.
 | Property | Type | Options | Description |
 | :--- | :--- | :--- | :--- |
 | `role` | `string` | `image`, `text`, `spacer` | Defines content type. |
-| `width` | `string` | `small`, `medium`, `five-cols`, `large`, `xlarge`, `full`, `full-bleed` | Item width determining column span. |
+| `width` | `string` | `small`, `medium`, `five-cols`, `6-cols`, `large`, `xlarge`, `full`, `full-bleed` | Item width determining column span. |
 | `align` | `string` | `left`, `center`, `right` | Text/content alignment. |
 
 #### Role: "image"

@@ -15,8 +15,8 @@
   },
   "heroImage": "assets/projects/main/sonolux/0.png",
   "description": {
-    "en": "Sonolux is an audio-reactive installation showcased at Klanglicht Graz and the LUNA Festival in Eindhoven. I, together with my colleague, used TouchDesigner to create generative visuals that were projected onto moving fabrics via projection mapping. The project explores the intersection of technology and nature through an immersive audiovisual journey of Graz's Hilmteich.",
-    "de": "Sonolux ist eine audioreaktive Installation, die bei Klanglicht Graz und dem LUNA Festival in Eindhoven ausgestellt wurde. Ich, zusammen mit meiner Kollegin, entwickelte generative Visuals, die mittels Projektions-Mapping auf bewegte Stoffe projeziert wurden. Das Projekt visualisiert das Spannungsfeld zwischen Technologie und Natur anhand einer audiovisuellen Reise durch den Grazer Hilmteich."
+    "en": "Sonolux is an audio-reactive installation showcased at Klanglicht Graz and the LUNA Festival in Eindhoven. Generative visuals were projected onto moving fabrics through projection mapping. Based on photo and video material from Graz’s Hilmteich, the project explores the intersection of technology and nature through an immersive audiovisual experience.",
+    "de": "Sonolux ist eine audioreaktive Installation, die beim Klanglicht Graz und beim LUNA Festival in Eindhoven präsentiert wurde. Generative Visuals wurden mittels Projection Mapping auf bewegte Stoffbahnen projiziert. Basierend auf Foto- und Videomaterial vom Grazer Hilmteich untersucht das Projekt die Schnittstelle zwischen Technologie und Natur durch ein immersives audiovisuelles Erlebnis."
   },
   "sections": [
     {
@@ -45,8 +45,8 @@
           "width": "xlarge",
           "align": "",
           "content": {
-            "en": "",
-            "de": "Sonolux ist ein audiovisuelles Projection-Mapping-Projekt, das wir als fünfköpfiges Team im Rahmen des Young Masters Programms bei Klanglicht Graz und beim LUNA Festival präsentierten. Drei Sounddesigner und zwei Interaktionsdesigner arbeiteten zusammen; meine Kollegin und ich waren für die visuellen Inhalte verantwortlich. Wir entwickelten generative Visuals in TouchDesigner, basierend auf Foto- und Videoaufnahmen vom Hilmteich in Graz. Das Material reagiert audioreaktiv auf die Musik und verändert sich kontinuierlich Für die Installation projizierten wir das Video auf mehrere Stoffbahnen, die durch Ventilatoren in Bewegung waren - eine einfache Konstruktion, die ein dynamisches und immersives visuelles Erlebnis erzeugte."
+            "en": "This project was created by a five-member team as part of the Young Masters Program held by Klanglicht Graz. Three sound designers and two interaction designers collaborated; my colleague and I produced the visual content. Using TouchDesigner, we created generative visuals from photo and video recordings of the Hilmteich. The visual material reacts to the music and continuously evolves. For the installation, the visuals were projected onto moving fabric panels driven by fans, creating a simple yet dynamic and immersive experience.",
+            "de": "Dieses Projekt wurde von einem fünfköpfigen Team im Rahmen des Young Masters Programms von Klanglicht Graz entwickelt. Drei Sounddesigner und zwei Interaction Designer arbeiteten zusammen; meine Kollegin und ich waren für die visuellen Inhalte verantwortlich. Mit TouchDesigner entwickelten wir generative Visuals auf Basis von Foto- und Videoaufnahmen des Hilmteichs. Das visuelle Material reagiert auf die Musik und verändert sich kontinuierlich. Für die Installation wurden die Visuals auf bewegte Stoffbahnen projiziert, die durch Ventilatoren in Bewegung versetzt wurden – eine einfache Konstruktion, die ein dynamisches und immersives Erlebnis erzeugte."
           }
         }
       ]
@@ -54,7 +54,7 @@
     {
       "type": "content",
       "layout": "centered",
-      "bgColor": "gray-100",
+      "bgColor": "",
       "bgWidth": "grid",
       "items": [
         {
@@ -71,11 +71,10 @@
       "type": "gallery",
       "layout": "grid",
       "bgColor": "",
-      "bgWidth": "full",
       "width": "full",
       "columns": 2,
       "caption": {
-        "en": "As mentioned before the project was also exhibited at LUNA Festival in Eindhoven.",
+        "en": "As previously mentioned, the project was also exhibited at the LUNA Festival in Eindhoven.",
         "de": "Wie bereits erwähnt, wurde das Projekt auch beim LUNA Festival in Eindhoven ausgestellt."
       },
       "items": [
@@ -88,6 +87,10 @@
       ]
     },
     {
+      "role": "spacer",
+      "height": "default"
+    },
+    {
       "type": "content",
       "layout": "offset",
       "bgColor": "",
@@ -96,7 +99,7 @@
       "items": [
         {
           "role": "image",
-          "width": "5-cols",
+          "width": "6-cols",
           "src": "assets/projects/main/sonolux/7.jpg",
           "caption": {
             "en": "Photo taken during the presentation of our project at a artist meet & greet event in Graz.",

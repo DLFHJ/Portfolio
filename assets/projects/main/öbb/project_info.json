@@ -14,21 +14,24 @@
   },
   "heroImage": "assets/projects/main/öbb/0.png",
   "description": {
-    "en": "During my Bachelor’s degree, I completed a UX design internship at ÖV Ticketshop GmbH, a subsidiary of ÖBB. Working within a multidisciplinary team, I contributed to large-scale infrastructure projects, gaining hands-on experience in the full design lifecycle - from user research and testing to design and frontend development.",
-    "de": "Im Rahmen meines Bachelorstudiums absolvierte ich ein UX-Design-Praktikum bei der ÖV Ticketshop GmbH, einem Tochterunternehmen der ÖBB. In einem multidisziplinären Team arbeitete ich an groß angelegten Infrastrukturprojekten und sammelte praktische Erfahrungen im gesamten Designzyklus - von Nutzerbefragungen und Testing bis hin zu Design und Frontend-Entwicklung."
+    "en": "During my Bachelor’s degree, I completed a UX design internship at ÖV Ticketshop GmbH, a subsidiary of ÖBB. Working within a multidisciplinary team, I contributed to large-scale infrastructure projects, gaining hands-on experience in the full design lifecycle - from user research and testing to design and frontend development.<br><br>Shown with client permission.",
+    "de": "Während meines Bachelorstudiums absolvierte ich ein UX-Design-Praktikum bei der ÖV Ticketshop GmbH, einer Tochtergesellschaft der ÖBB. Im Rahmen eines multidisziplinären Teams konnte ich an großangelegten Infrastrukturprojekten mitarbeiten und praktische Erfahrungen im gesamten Designprozess sammeln – von User Research und Testing bis hin zu Design und Frontend-Entwicklung.<br><br>Mit Erlaubnis des Kunden gezeigt."
   },
   "sections": [
     {
       "type": "content",
       "layout": "centered",
+      "bgColor": "gray-100",
+      "bgWidth": "grid-connected",
       "items": [
         {
           "role": "text",
           "width": "xlarge",
           "align": "center",
+          "className": "-mb-14",
           "content": {
-            "en": "One of my primary responsibilities was designing and developing a corporate website for ÖV Ticketshop to establish their external brand presence. I began the process with a competitive analysis and hand-drawn wireframes to ensure a logical information architecture.\n\nWhile the visual language stayed true to the established ÖBB design system, I intentionally integrated a modern, minimalist aesthetic. After the design phase, I developed the site using HTML and CSS, which served as the technical foundation for the final product. Much of the current live site still retains my original layout and copy. This project was a significant learning experience, strengthening both my technical development skills and my ability to communicate design decisions within a professional team.",
-            "de": "Zu meinen Hauptaufgaben gehörte die Gestaltung und Entwicklung einer Unternehmenswebsite für den ÖV Ticketshop, um deren externe Markenpräsenz aufzubauen. Ich begann den Prozess mit einer Wettbewerbsanalyse und handgezeichneten Wireframes, um eine logische Informationsarchitektur sicherzustellen.\n\nWährend die visuelle Sprache dem etablierten ÖBB-Designsystem treu blieb, integrierte ich bewusst eine moderne, minimalistische Ästhetik. Nach der Designphase entwickelte ich die Website mit HTML und CSS, was die technische Grundlage für das Endprodukt bildete. Ein Großteil der aktuellen Live-Website behält immer noch mein ursprüngliches Layout und Text bei. Dieses Projekt war eine bedeutende Lernerfahrung, die sowohl meine technischen Entwicklungsfähigkeiten als auch meine Fähigkeit, Designentscheidungen innerhalb eines professionellen Teams zu kommunizieren, stärkte."
+            "en": "During my internship, I designed and developed a corporate website for ÖV Ticketshop to establish their external brand presence. The process began with a competitive analysis and hand-drawn wireframes to define a clear information architecture. The final design adhered to the ÖBB design system while introducing a clean, modern aesthetic.<br>I implemented the site using HTML and CSS, and much of the current live site still reflects my original layout and content.",
+            "de": "Während meines Praktikums entwarf und entwickelte ich die Corporate Website für den ÖV Ticketshop, um deren externe Markenpräsenz zu stärken. Der Prozess begann mit einer Wettbewerbsanalyse und handgezeichneten Wireframes, um eine klare Informationsarchitektur zu definieren. Das finale Design orientierte sich am ÖBB-Designsystem und integrierte gleichzeitig eine moderne, klare Ästhetik.<br>Ich setzte die Website mit HTML und CSS um, und ein Großteil der aktuellen Live-Seite spiegelt noch immer mein ursprüngliches Layout und die Inhalte wider."
           }
         }
       ]
@@ -36,17 +39,22 @@
     {
       "type": "gallery",
       "layout": "grid",
+      "width": "full",
+      "bgColor": "gray-100",
+      "bgWidth": "grid-connected",
       "columns": 2,
       "caption": {
-        "en": "Some screenshots from the website I designed for the ÖV Ticketshop. I tried to follow the ÖBB's design language while keeping the design modern and clean.",
-        "de": "Einige Screenshots von der Website, die ich für den ÖV Ticketshop entworfen habe. Ich habe versucht, mich an die Designsprache der ÖBB zu halten und gleichzeitig ein modernes und sauberes Design zu schaffen."
+        "en": "Screenshots from the corporate website I designed for ÖV Ticketshop. The design follows the ÖBB design language while introducing a modern, clean aesthetic. The website was developed with a desktop-first approach, though mobile designs were also created and carefully considered.",
+        "de": "Screenshots der Corporate Website, die ich für den ÖV Ticketshop gestaltet habe. Das Design orientiert sich an der ÖBB-Designsprache und integriert gleichzeitig eine moderne, klare Ästhetik. Die Website wurde Desktop-first entwickelt, wobei mobile Designs ebenfalls erstellt und sorgfältig berücksichtigt wurden."
       },
       "items": [
         {
-          "src": "assets/projects/main/öbb/1.png"
+          "src": "assets/projects/main/öbb/1.png",
+          "className": "shadow-xl"
         },
         {
-          "src": "assets/projects/main/öbb/2.png"
+          "src": "assets/projects/main/öbb/2.png",
+          "className": "shadow-xl"
         }
       ]
     },
@@ -54,29 +62,39 @@
       "type": "content",
       "layout": "centered",
       "bgColor": "gray-100",
-      "bgWidth": "grid",
+      "bgWidth": "grid-connected",
       "items": [
         {
           "role": "image",
-          "width": "xlarge",
-          "src": "assets/projects/main/öbb/X.png"
+          "width": "medium",
+          "src": "assets/projects/main/öbb/X.png",
+          "className": "-mt-8"
         }
       ]
+    },
+    {
+      "role": "spacer",
+      "height": "default"
     },
     {
       "type": "gallery",
       "layout": "grid",
       "columns": 2,
+      "bgColor": "gray-100",
+      "bgWidth": "grid",
+      "width": "full",
       "caption": {
-        "en": "Another project where I was able to contribute was the visual design of the ÖBB Nightjet Premium Tickets. When coming up with the design I made sure that the service itself was reflected in the design and I am glad that I got to work on such a high-profile touchpoint.",
-        "de": "Ein weiteres Projekt, bei dem ich mitwirken durfte, war das visuelle Design des ÖBB Nightjet Premium Tickets. Bei der Entwicklung des Designs habe ich darauf geachtet, dass der Service selbst darin widerspiegelt wird. Es hat mich sehr gefreut, an einem so sichtbaren und wichtigen Touchpoint mitarbeiten zu dürfen."
+        "en": "I had the opportunity to contribute to the visual design of the ÖBB Nightjet Premium Tickets. I focused on ensuring the design reflected the service itself and I’m glad to have worked on such a high-profile touchpoint.",
+        "de": "Ich hatte die Gelegenheit, am visuellen Design der ÖBB Nightjet Premium Tickets mitzuwirken. Dabei lag mein Fokus darauf, das Design an der Dienstleistung selbst auszurichten, und ich freue mich, an einem so hochkarätigen Touchpoint gearbeitet zu haben."
       },
       "items": [
         {
-          "src": "assets/projects/main/öbb/6.png"
+          "src": "assets/projects/main/öbb/6.png",
+          "className": "shadow-xl"
         },
         {
-          "src": "assets/projects/main/öbb/7.png"
+          "src": "assets/projects/main/öbb/7.png",
+          "className": "shadow-xl"
         },
         {
           "role": "spacer",
@@ -85,16 +103,23 @@
       ]
     },
     {
+      "role": "spacer",
+      "height": "default"
+    },
+    {
       "type": "content",
       "layout": "centered",
+      "bgColor": "gray-100",
+      "bgWidth": "grid-connected",
       "items": [
         {
           "role": "text",
           "width": "xlarge",
           "align": "center",
+          "className": "-mb-14",
           "content": {
-            "en": "Another project I was heavily involved with was the redesign for the ticket animation in the ÖBB Tickets app. Though outside the realm of UX and more about animation, I also really enjoyed getting to work on this project and coming up with different ideas. The current loading animation in the live app is vaguely resembles the train animation I made.",
-            "de": "Ein weiteres Projekt, an dem ich stark beteiligt war, war die Neugestaltung der Ticket-Animation in der ÖBB Tickets App. Obwohl es außerhalb des Bereichs UX und mehr ein Animationsprojekt war, hat es mir auch sehr viel Spaß gemacht, an diesem Projekt zu arbeiten und verschiedene Ideen auszuprobieren. Die aktuelle Ladeanimation in der Live-App ähnelt vage der Zuganimation, die ich gemacht habe."
+            "en": "Another project I contributed to was the redesign of the ticket animation in the ÖBB Tickets app. While more focused on motion design than UX, I enjoyed exploring different concepts and iterations. The current loading animation in the live app still loosely reflects the train animation I created.",
+            "de": "Ein weiteres Projekt, zu dem ich beitragen konnte, war das Redesign der Ticket-Animation in der ÖBB Tickets App. Obwohl der Fokus hier stärker auf Motion Design als auf UX lag, hat mir das Entwickeln und Ausprobieren verschiedener Konzepte und Iterationen großen Spaß gemacht. Die aktuelle Ladeanimation in der Live-App greift noch lose die von mir entwickelte Zuganimation auf."
           }
         }
       ]
@@ -103,22 +128,17 @@
       "type": "gallery",
       "layout": "grid",
       "columns": 2,
+      "bgColor": "gray-100",
+      "bgWidth": "grid-connected",
+      "width": "medium",
       "items": [
         {
           "src": "assets/projects/main/öbb/8.gif",
-          "style": {
-            "height": "auto",
-            "maxHeight": "60vh",
-            "objectFit": "contain"
-          }
+          "className": "shadow-xl"
         },
         {
           "src": "assets/projects/main/öbb/9.gif",
-          "style": {
-            "height": "auto",
-            "maxHeight": "60vh",
-            "objectFit": "contain"
-          }
+          "className": "shadow-xl"
         }
       ]
     },
@@ -135,8 +155,8 @@
           "width": "xlarge",
           "align": "center",
           "content": {
-            "en": "My internship was a defining experience that provided a holistic view of the UX lifecycle. Working across conceptualization, testing, and development within such a collaborative team sharpened my technical skills and professional communication. I truly enjoyed the versatility of the projects and the opportunity to contribute to complex, real-world systems alongside a great team.",
-            "de": "Mein Praktikum war eine prägende Erfahrung, die mir einen umfassenden Einblick in den gesamten UX-Prozess gegeben hat. Durch die Mitarbeit an Konzeption, Testing und Entwicklung in einem so kollaborativen Team konnte ich sowohl meine fachlichen Fähigkeiten als auch meine professionelle Kommunikation weiterentwickeln. Besonders gefallen haben mir die Vielseitigkeit der Projekte und die Möglichkeit, gemeinsam mit einem tollen Team an komplexen, realen Systemen mitzuwirken."
+            "en": "",
+            "de": ""
           }
         }
       ]

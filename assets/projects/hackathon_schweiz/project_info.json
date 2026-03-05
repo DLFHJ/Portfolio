@@ -35,19 +35,19 @@
             ]
         },
         {
-            "role": "spacer",
-            "height": "default"
-        },
-        {
             "type": "gallery",
             "layout": "grid",
             "width": "full",
             "columns": 2,
             "bgColor": "",
             "bgWidth": "grid-connected",
+            "caption": {
+                "en": "The prototype featured a fully functional front- and backend. The tech stack included React (JavaScript) for the frontend, FastAPI (Python) for the backend, Postman for testing, and Miro and GitHub for team collaboration.",
+                "de": "Der Prototyp verfügte über ein vollständig funktionsfähiges Frontend und Backend. Der Tech-Stack umfasste React (JavaScript) für das Frontend, FastAPI (Python) für das Backend, Postman für Tests sowie Miro und GitHub für die Zusammenarbeit im Team."
+            },
             "items": [
                 {
-                    "src": "assets/projects/hackathon_schweiz/1.png"
+                    "src": "assets/projects/hackathon_schweiz/0.png"
                 },
                 {
                     "src": "assets/projects/hackathon_schweiz/2.png"
@@ -55,46 +55,13 @@
             ]
         },
         {
-            "type": "text",
-            "layout": "centered",
-            "bgColor": "",
-            "bgWidth": "grid-connected",
-            "items": [
-                {
-                    "role": "text",
-                    "width": "xlarge",
-                    "align": "",
-                    "content": {
-                        "en": "Though the time was limited, we were able to develop a fully functional prototype with a fully working front- and backend. Our tech-stack consisted of JS React for the Frontend, Python FastAPI for the backend, Miro and GitHub for collaboration and Postman for testing. ",
-                        "de": "Trotz der begrenzten Zeit gelang es uns, einen voll funktionsfähigen Prototypen mit funktionierendem Front- und Backend zu entwickeln. Unser Tech-Stack bestand aus JS React für das Frontend, Python FastAPI für das Backend, Miro und GitHub für die Zusammenarbeit und Postman für das Testen."
-                    }
-                }
-            ]
-        },
-        {
-            "role": "spacer",
-            "height": "default"
-        },
-        {
             "type": "content",
             "layout": "centered",
             "items": [
                 {
                     "role": "image",
-                    "width": "xlarge",
-                    "src": "assets/projects/hackathon_schweiz/3.png"
-                }
-            ]
-        },
-        {
-            "type": "text",
-            "layout": "centered",
-            "items": [
-                {
-                    "role": "text",
-                    "width": "xlarge",
-                    "align": "",
-                    "content": {
+                    "src": "assets/projects/hackathon_schweiz/3.png",
+                    "caption": {
                         "en": "For our efforts in this project we were rewarded with a G20 Global Land Initiative certificate.",
                         "de": "Für unsere Leistungen in diesem Projekt wurden wir mit einem Zertifikat der G20 Global Land Initiative ausgezeichnet."
                     }

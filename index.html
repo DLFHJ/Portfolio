@@ -836,7 +836,7 @@
     <script>
         // --- Demo Mode Config ---
         // Switch this to true to enable the development grid overlay and test projects
-        const IS_DEMO_MODE = true;
+        const IS_DEMO_MODE = false;
 
         // Init Icons
         lucide.createIcons();
@@ -1408,6 +1408,7 @@
 
                                     if (item.width === 'small') span = 4;
                                     else if (item.width === 'five-cols' || item.width === '5-cols') span = 5;
+                                    else if (item.width === 'six-cols' || item.width === '6-cols') span = 6;
                                     else if (item.width === 'medium') span = 8;
                                     else if (item.width === 'large') span = 10;
                                     else if (item.width === 'xlarge') span = 12;
@@ -1478,7 +1479,7 @@
                                     const capDiv = document.createElement('div');
                                     const content = typeof captionText === 'object' ? captionText[currentLang] : captionText;
                                     capDiv.innerHTML = content || '';
-                                    capDiv.className = `${textColorClass} leading-relaxed text-lg md:text-xl font-light mt-2`;
+                                    capDiv.className = `${textColorClass} leading-relaxed text-lg md:text-xl font-light mt-6`;
                                     itemWrapper.appendChild(capDiv);
                                 }
                             } else if (item.role === 'text') {
@@ -1487,6 +1488,12 @@
                                 p.innerHTML = content || '';
                                 // Using standard text-lg font
                                 p.className = `${textColorClass} leading-relaxed text-lg md:text-xl font-light`;
+
+                                // Allow overrides from JSON
+                                if (item.className) {
+                                    p.className += ` ${item.className}`;
+                                }
+
                                 itemWrapper.appendChild(p);
                             }
 
@@ -1501,15 +1508,15 @@
 
                             // Determine span and margin based on layout type
                             let colSpanClass = 'md:col-start-2 md:col-span-10';
-                            let marginClass = 'mt-2'; // Default margin for non-grid layouts
+                            let marginClass = 'mt-4'; // Default margin for non-grid layouts
 
                             if (section.layout === 'grid') {
                                 colSpanClass = 'col-span-full';
                                 // The grid enforces gap-4 (16px), md:gap-6 (24px), lg:gap-8 (32px).
-                                // Individual non-grid captions have exactly 8px (mt-2) visual spacing.
-                                // We counteract the grid gap perfectly: 8px - gap = margin
-                                // 8-16 = -8px (-mt-2) | 8-24 = -16px (-mt-4) | 8-32 = -24px (-mt-6)
-                                marginClass = '-mt-2 md:-mt-4 lg:-mt-6';
+                                // Individual non-grid captions have exactly 16px (mt-4) visual spacing.
+                                // We counteract the grid gap: 16px - gap = margin
+                                // 16-16 = 0px (mt-0) | 16-24 = -8px (-mt-2) | 16-32 = -16px (-mt-4)
+                                marginClass = 'mt-0 md:-mt-2 lg:-mt-4';
                             }
 
                             sectionCapDiv.className = `${colSpanClass} ${textColorClass} leading-relaxed text-lg md:text-xl font-light ${marginClass}`;
