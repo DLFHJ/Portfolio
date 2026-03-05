@@ -22,6 +22,7 @@
     {
       "type": "gallery",
       "layout": "grid",
+      "width": "full",
       "columns": 3,
       "items": [
         {
@@ -71,6 +72,7 @@
       "layout": "grid",
       "bgColor": "",
       "bgWidth": "full",
+      "width": "full",
       "columns": 2,
       "caption": {
         "en": "As mentioned before the project was also exhibited at LUNA Festival in Eindhoven.",

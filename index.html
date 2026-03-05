@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -287,7 +287,7 @@
                         <button id="langToggle" onclick="toggleLanguage()"
                             class="hover-target flex items-center space-x-2 text-xs uppercase tracking-widest border border-gray-400 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full lg:hover:bg-black lg:hover:text-white active:scale-95 transition-all duration-300 relative z-50">
                             <!-- Green dot removed here -->
-                            <span id="langLabel">DE</span>
+                            <span id="langLabel">EN</span>
                         </button>
 
                         <!-- Mobile Menu Icon -->
@@ -836,13 +836,13 @@
     <script>
         // --- Demo Mode Config ---
         // Switch this to true to enable the development grid overlay and test projects
-        const IS_DEMO_MODE = false;
+        const IS_DEMO_MODE = true;
 
         // Init Icons
         lucide.createIcons();
 
         // Data & Translations
-        let currentLang = 'de';
+        let currentLang = 'en';
         const translations = {
             en: {
                 nav_work: "Work", nav_about: "About", nav_contact: "Contact",
@@ -1404,28 +1404,28 @@
                                     colClasses = 'w-full';
                                 } else {
                                     // 1. Determine Mathematical Span
-                                    let span = item.role === 'text' ? 4 : 10; // Defaults
+                                    let span = item.role === 'text' ? 6 : 12; // Defaults
 
-                                    if (item.width === 'small') span = 3;
+                                    if (item.width === 'small') span = 4;
                                     else if (item.width === 'five-cols' || item.width === '5-cols') span = 5;
-                                    else if (item.width === 'medium') span = 6;
-                                    else if (item.width === 'large') span = 7;
-                                    else if (item.width === 'xlarge') span = 8;
-                                    else if (item.width === 'full') span = 10;
+                                    else if (item.width === 'medium') span = 8;
+                                    else if (item.width === 'large') span = 10;
+                                    else if (item.width === 'xlarge') span = 12;
+                                    else if (item.width === 'full') span = 12;
 
                                     // 2. Resolve Alignment
                                     let align = item.align || (section.layout === 'centered' ? 'center' : 'left');
 
                                     if (align === 'right') {
-                                        // Push to the far right of the safe area (ends at col 11)
-                                        colClasses = `md:col-start-${12 - span} md:col-span-${span}`;
+                                        // Push to the far right of the grid (ends at col 12)
+                                        colClasses = `md:col-start-${13 - span} md:col-span-${span}`;
                                     } else if (align === 'center') {
-                                        // Center perfectly within the 10-col safe area
-                                        let offset = Math.floor((10 - span) / 2) + 2;
+                                        // Center perfectly within the 12-col grid
+                                        let offset = Math.floor((12 - span) / 2) + 1;
                                         colClasses = `md:col-start-${offset} md:col-span-${span}`;
                                     } else {
-                                        // Default left-aligned
-                                        colClasses = `md:col-start-2 md:col-span-${span}`;
+                                        // Default left-aligned (col 1)
+                                        colClasses = `md:col-start-1 md:col-span-${span}`;
                                     }
                                 }
                             } else {
