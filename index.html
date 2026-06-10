@@ -746,8 +746,17 @@
 
         <div class="modal-content relative bg-white w-full max-w-full h-full flex flex-col overflow-hidden">
 
-            <!-- Close Button Grid Aligned -->
-            <div class="absolute top-0 inset-x-0 z-50 pointer-events-none" style="mix-blend-mode: difference;">
+            <!-- Mobile Back Button Bar (sits outside scroll area, always visible) -->
+            <div class="md:hidden flex-none bg-black px-6 py-3 flex items-center">
+                <button onclick="closeModal()"
+                    class="flex items-center gap-2 text-white cursor-pointer active:opacity-70 transition-opacity">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span data-i18n="modal_back" class="text-xs font-mono uppercase tracking-widest">Back</span>
+                </button>
+            </div>
+
+            <!-- Desktop Back Button (absolute overlay, difference blend) -->
+            <div class="hidden md:block absolute top-0 inset-x-0 z-50 pointer-events-none" style="mix-blend-mode: difference;">
                 <div class="max-w-7xl mx-auto py-7">
                     <button onclick="closeModal()"
                         class="pointer-events-auto hover-target flex items-center gap-2 text-white cursor-pointer">
