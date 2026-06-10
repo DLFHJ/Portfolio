@@ -1007,6 +1007,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             applyLanguage();
             loadProjectData();
+            lucide.createIcons();
 
             // Handle Demo Mode visibility
             if (IS_DEMO_MODE) {
@@ -1610,13 +1611,13 @@
             const nextBtn = document.getElementById('lightbox-next');
             if (total > 1) {
                 counter.textContent = `${lightboxIndex + 1} / ${total}`;
-                counter.classList.remove('hidden');
-                prevBtn.classList.remove('hidden');
-                nextBtn.classList.remove('hidden');
+                counter.style.display = 'block';
+                prevBtn.style.display = 'flex';
+                nextBtn.style.display = 'flex';
             } else {
-                counter.classList.add('hidden');
-                prevBtn.classList.add('hidden');
-                nextBtn.classList.add('hidden');
+                counter.style.display = 'none';
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
             }
         }
 
@@ -1654,13 +1655,13 @@
 
         <!-- Close Button -->
         <button onclick="event.stopPropagation(); closeLightbox()"
-            class="absolute top-5 right-5 w-11 h-11 flex items-center justify-center bg-white/10 hover:bg-white/25 rounded-full text-white hover:scale-105 transition-all cursor-pointer z-10 border border-white/20">
+            class="absolute top-5 right-5 w-11 h-11 flex items-center justify-center bg-white/20 hover:bg-white/40 rounded-full text-white transition-colors cursor-pointer z-10 border border-white/30">
             <i data-lucide="x" class="w-5 h-5"></i>
         </button>
 
         <!-- Prev Arrow -->
         <button id="lightbox-prev" onclick="event.stopPropagation(); lightboxPrev()"
-            class="hidden absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/25 rounded-full text-white hover:scale-105 transition-all cursor-pointer z-10 border border-white/20">
+            style="display:none" class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-white/20 hover:bg-white/40 rounded-full text-white transition-colors cursor-pointer z-10 border border-white/30">
             <i data-lucide="chevron-left" class="w-6 h-6"></i>
         </button>
 
@@ -1671,13 +1672,13 @@
 
         <!-- Next Arrow -->
         <button id="lightbox-next" onclick="event.stopPropagation(); lightboxNext()"
-            class="hidden absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/25 rounded-full text-white hover:scale-105 transition-all cursor-pointer z-10 border border-white/20">
+            style="display:none" class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-white/20 hover:bg-white/40 rounded-full text-white transition-colors cursor-pointer z-10 border border-white/30">
             <i data-lucide="chevron-right" class="w-6 h-6"></i>
         </button>
 
         <!-- Counter -->
-        <div id="lightbox-counter"
-            class="hidden absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-xs font-mono tracking-widest uppercase select-none">
+        <div id="lightbox-counter" style="display:none"
+            class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-xs font-mono tracking-widest uppercase select-none">
         </div>
 
     </div>
