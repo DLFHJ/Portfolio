@@ -14,8 +14,8 @@
   },
   "heroImage": "assets/projects/main/öbb/0.png",
   "description": {
-    "en": "During my Bachelor’s degree, I completed a UX design internship at ÖV Ticketshop GmbH, a subsidiary of ÖBB. Working within a multidisciplinary team, I contributed to large-scale infrastructure projects, gaining hands-on experience in the full design lifecycle - from user research and testing to design and frontend development.<br><br>Shown with client permission.",
-    "de": "Während meines Bachelorstudiums absolvierte ich ein UX-Design-Praktikum bei der ÖV Ticketshop GmbH, einer Tochtergesellschaft der ÖBB. Im Rahmen eines multidisziplinären Teams konnte ich an großangelegten Infrastrukturprojekten mitarbeiten und praktische Erfahrungen im gesamten Designprozess sammeln – von User Research und Testing bis hin zu Design und Frontend-Entwicklung.<br><br>Mit Erlaubnis des Kunden gezeigt."
+    "en": "During my Bachelor's degree, I completed a <b>UX design internship</b> at <b>ÖV Ticketshop GmbH</b>, a subsidiary of <b>ÖBB</b>. Working within a <b>multidisciplinary team</b>, I contributed to <b>large-scale infrastructure projects</b>, gaining hands-on experience in the <b>full design lifecycle</b> — from <b>user research and testing</b> to <b>design and frontend development</b>.<br><br>Shown with client permission.",
+    "de": "Während meines Bachelorstudiums absolvierte ich ein <b>UX-Design-Praktikum</b> bei der <b>ÖV Ticketshop GmbH</b>, einer Tochtergesellschaft der <b>ÖBB</b>. Im Rahmen eines <b>multidisziplinären Teams</b> konnte ich an <b>großangelegten Infrastrukturprojekten</b> mitarbeiten und praktische Erfahrungen im <b>gesamten Designprozess</b> sammeln – von <b>User Research und Testing</b> bis hin zu <b>Design und Frontend-Entwicklung</b>.<br><br>Mit Erlaubnis des Kunden gezeigt."
   },
   "sections": [
     {
@@ -30,8 +30,8 @@
           "align": "center",
           "className": "-mb-14",
           "content": {
-            "en": "During my internship, I designed and developed a corporate website for ÖV Ticketshop to establish their external brand presence. The process began with a competitive analysis and hand-drawn wireframes to define a clear information architecture. The final design adhered to the ÖBB design system while introducing a clean, modern aesthetic.<br>I implemented the site using HTML and CSS, and much of the current live site still reflects my original layout and content.",
-            "de": "Während meines Praktikums entwarf und entwickelte ich die Corporate Website für den ÖV Ticketshop, um deren externe Markenpräsenz zu stärken. Der Prozess begann mit einer Wettbewerbsanalyse und handgezeichneten Wireframes, um eine klare Informationsarchitektur zu definieren. Das finale Design orientierte sich am ÖBB-Designsystem und integrierte gleichzeitig eine moderne, klare Ästhetik.<br>Ich setzte die Website mit HTML und CSS um, und ein Großteil der aktuellen Live-Seite spiegelt noch immer mein ursprüngliches Layout und die Inhalte wider."
+            "en": "During my internship, I designed and developed a <b>corporate website</b> for ÖV Ticketshop to establish their <b>external brand presence</b>. The process began with a <b>competitive analysis</b> and <b>hand-drawn wireframes</b> to define a clear <b>information architecture</b>. The final design adhered to the <b>ÖBB design system</b> while introducing a <b>clean, modern aesthetic</b>.<br>I implemented the site using <b>HTML and CSS</b>, and much of the current live site still reflects my original layout and content.",
+            "de": "Während meines Praktikums entwarf und entwickelte ich die <b>Corporate Website</b> für den ÖV Ticketshop, um deren <b>externe Markenpräsenz</b> zu stärken. Der Prozess begann mit einer <b>Wettbewerbsanalyse</b> und <b>handgezeichneten Wireframes</b>, um eine klare <b>Informationsarchitektur</b> zu definieren. Das finale Design orientierte sich am <b>ÖBB-Designsystem</b> und integrierte gleichzeitig eine <b>moderne, klare Ästhetik</b>.<br>Ich setzte die Website mit <b>HTML und CSS</b> um, und ein Großteil der aktuellen Live-Seite spiegelt noch immer mein ursprüngliches Layout und die Inhalte wider."
           }
         }
       ]
@@ -44,8 +44,8 @@
       "bgWidth": "grid-connected",
       "columns": 2,
       "caption": {
-        "en": "Screenshots from the corporate website I designed for ÖV Ticketshop. The design follows the ÖBB design language while introducing a modern, clean aesthetic. The website was developed with a desktop-first approach, though mobile designs were also created and carefully considered.",
-        "de": "Screenshots der Corporate Website, die ich für den ÖV Ticketshop gestaltet habe. Das Design orientiert sich an der ÖBB-Designsprache und integriert gleichzeitig eine moderne, klare Ästhetik. Die Website wurde Desktop-first entwickelt, wobei mobile Designs ebenfalls erstellt und sorgfältig berücksichtigt wurden."
+        "en": "Screenshots from the corporate website I designed for ÖV Ticketshop. The design follows the <b>ÖBB design language</b> while introducing a <b>modern, clean aesthetic</b>. The website was developed with a <b>desktop-first approach</b>, though mobile designs were also created and carefully considered.",
+        "de": "Screenshots der Corporate Website, die ich für den ÖV Ticketshop gestaltet habe. Das Design orientiert sich an der <b>ÖBB-Designsprache</b> und integriert gleichzeitig eine <b>moderne, klare Ästhetik</b>. Die Website wurde <b>Desktop-first</b> entwickelt, wobei mobile Designs ebenfalls erstellt und sorgfältig berücksichtigt wurden."
       },
       "items": [
         {
@@ -84,8 +84,8 @@
       "bgWidth": "grid",
       "width": "full",
       "caption": {
-        "en": "I had the opportunity to contribute to the visual design of the ÖBB Nightjet Premium Tickets. I focused on ensuring the design reflected the service itself and I’m glad to have worked on such a high-profile touchpoint.",
-        "de": "Ich hatte die Gelegenheit, am visuellen Design der ÖBB Nightjet Premium Tickets mitzuwirken. Dabei lag mein Fokus darauf, das Design an der Dienstleistung selbst auszurichten, und ich freue mich, an einem so hochkarätigen Touchpoint gearbeitet zu haben."
+        "en": "I had the opportunity to contribute to the <b>visual design of the ÖBB Nightjet Premium Tickets</b>. I focused on ensuring the design reflected the service itself and I'm glad to have worked on such a <b>high-profile touchpoint</b>.",
+        "de": "Ich hatte die Gelegenheit, am <b>visuellen Design der ÖBB Nightjet Premium Tickets</b> mitzuwirken. Dabei lag mein Fokus darauf, das Design an der Dienstleistung selbst auszurichten, und ich freue mich, an einem so <b>hochkarätigen Touchpoint</b> gearbeitet zu haben."
       },
       "items": [
         {
@@ -118,8 +118,8 @@
           "align": "center",
           "className": "-mb-14",
           "content": {
-            "en": "Another project I contributed to was the redesign of the ticket animation in the ÖBB Tickets app. While more focused on motion design than UX, I enjoyed exploring different concepts and iterations. The current loading animation in the live app still loosely reflects the train animation I created.",
-            "de": "Ein weiteres Projekt, zu dem ich beitragen konnte, war das Redesign der Ticket-Animation in der ÖBB Tickets App. Obwohl der Fokus hier stärker auf Motion Design als auf UX lag, hat mir das Entwickeln und Ausprobieren verschiedener Konzepte und Iterationen großen Spaß gemacht. Die aktuelle Ladeanimation in der Live-App greift noch lose die von mir entwickelte Zuganimation auf."
+            "en": "Another project I contributed to was the <b>redesign of the ticket animation</b> in the <b>ÖBB Tickets app</b>. While more focused on <b>motion design</b> than UX, I enjoyed exploring different concepts and iterations. The current <b>loading animation in the live app</b> still loosely reflects the train animation I created.",
+            "de": "Ein weiteres Projekt, zu dem ich beitragen konnte, war das <b>Redesign der Ticket-Animation</b> in der <b>ÖBB Tickets App</b>. Obwohl der Fokus hier stärker auf <b>Motion Design</b> als auf UX lag, hat mir das Entwickeln und Ausprobieren verschiedener Konzepte und Iterationen großen Spaß gemacht. Die aktuelle <b>Ladeanimation in der Live-App</b> greift noch lose die von mir entwickelte Zuganimation auf."
           }
         }
       ]
