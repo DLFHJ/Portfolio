@@ -747,15 +747,12 @@
         <div class="modal-content relative bg-white w-full max-w-full h-full flex flex-col overflow-hidden">
 
             <!-- Close Button Grid Aligned -->
-            <div class="absolute top-6 inset-x-0 z-50 pointer-events-none flex justify-center w-full">
-                <!-- Matches the body content grid bounds -->
-                <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex justify-end">
-                    <button onclick="closeModal()"
-                        class="pointer-events-auto hover-target w-10 h-10 flex items-center justify-center p-0 bg-white backdrop-blur-md border border-gray-400 rounded-full text-black hover:bg-gray-100 hover:scale-110 transition-all shadow-sm mt-[5px] mr-[5px]">
-                        <i data-lucide="x" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
+            <button onclick="closeModal()"
+                class="hover-target absolute top-7 left-4 md:left-8 lg:left-12 z-50 flex items-center gap-2 text-white cursor-pointer"
+                style="mix-blend-mode: difference;">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span class="text-xs font-mono uppercase tracking-widest">Back</span>
+            </button>
 
             <!-- Scrollable Content -->
             <div class="flex-1 w-full overflow-y-auto bg-gray-50 no-scrollbar">
