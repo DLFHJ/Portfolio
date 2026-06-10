@@ -1347,10 +1347,30 @@
             modalBody.innerHTML = '';
 
             if (data.sections) {
+                // Track consecutive grid-connected sections with the same bgColor so they
+                // share a single reveal-on-scroll wrapper and animate in as one block.
+                let currentGroupWrapper = null;
+                let currentGroupBg = null;
+
                 data.sections.forEach(section => {
                     // Skip 'hero' type sections as they are now handled in the header
                     if (section.type === 'hero') return;
 
+                    // Group management: consecutive grid-connected sections with the same
+                    // bgColor are wrapped in one reveal-on-scroll container so they animate
+                    // together, preventing a white gap between adjacent colored blocks.
+                    const isGroupable = section.bgWidth === 'grid-connected' && section.bgColor;
+                    if (!isGroupable || section.bgColor !== currentGroupBg) {
+                        if (isGroupable) {
+                            currentGroupWrapper = document.createElement('div');
+                            currentGroupWrapper.className = 'w-full reveal-on-scroll';
+                            modalBody.appendChild(currentGroupWrapper);
+                            currentGroupBg = section.bgColor;
+                        } else {
+                            currentGroupWrapper = null;
+                            currentGroupBg = null;
+                        }
+                    }
 
                     const sectionWrapper = document.createElement('div');
 
@@ -1366,7 +1386,7 @@
                         }
                     }
 
-                    let baseWrapperClasses = 'w-full reveal-on-scroll';
+                    let baseWrapperClasses = currentGroupWrapper ? 'w-full' : 'w-full reveal-on-scroll';
                     let baseInnerClasses = 'w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 md:grid md:grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-stretch';
                     const sectionEl = document.createElement('div');
 
@@ -1569,7 +1589,7 @@
                     }
 
                     sectionWrapper.appendChild(sectionEl);
-                    modalBody.appendChild(sectionWrapper);
+                    (currentGroupWrapper || modalBody).appendChild(sectionWrapper);
                 });
             } else {
                 modalBody.innerHTML = `<div class="p-16 text-center text-gray-400">More details coming soon.</div>`;
