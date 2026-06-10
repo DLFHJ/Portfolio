@@ -747,12 +747,15 @@
         <div class="modal-content relative bg-white w-full max-w-full h-full flex flex-col overflow-hidden">
 
             <!-- Close Button Grid Aligned -->
-            <button onclick="closeModal()"
-                class="hover-target absolute top-7 left-4 md:left-8 lg:left-12 z-50 flex items-center gap-2 text-white cursor-pointer"
-                style="mix-blend-mode: difference;">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                <span class="text-xs font-mono uppercase tracking-widest">Back</span>
-            </button>
+            <div class="absolute top-0 inset-x-0 z-50 pointer-events-none" style="mix-blend-mode: difference;">
+                <div class="max-w-7xl mx-auto py-7">
+                    <button onclick="closeModal()"
+                        class="pointer-events-auto hover-target flex items-center gap-2 text-white cursor-pointer">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        <span class="text-xs font-mono uppercase tracking-widest">Back</span>
+                    </button>
+                </div>
+            </div>
 
             <!-- Scrollable Content -->
             <div class="flex-1 w-full overflow-y-auto bg-gray-50 no-scrollbar">
