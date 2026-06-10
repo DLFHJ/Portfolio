@@ -26,7 +26,7 @@
             "items": [
                 {
                     "role": "text",
-                    "width": "full",
+                    "width": "xlarge",
                     "align": "",
                     "content": {
                         "en": "As part of the <b>Grazer Springfestival</b> — a festival dedicated to <b>electronic art and music</b> — our team of three developed an <b>interactive projection mapping installation</b> at the <b>Helmut List Halle</b>. The project introduced an immersive <b>\"Digital Graffiti\"</b> experience that allowed visitors to interact with the building's facade using a <b>physical spray can interface</b>. My primary responsibility focused on the <b>technical implementation</b> and the creation of <b>AI-generated animated visuals</b>. I engineered a <b>wireless system using Arduino</b> that triggered <b>real-time audiovisual responses</b>: when a user pressed the spray can, a corresponding sound effect was activated and a new layer of <b>animated, AI-generated graffiti</b> was projected onto the architecture. This project was particularly valuable because it allowed me to explore the <b>intersection between physical interaction and generative digital art</b>. Additionally, I particularly enjoyed the <b>collaborative nature</b> of the project, as the concept and implementation were developed collectively by the team from the initial idea through to the final installation.",
@@ -34,6 +34,24 @@
                     }
                 }
             ]
+        },
+        {
+      "type": "content",
+      "layout": "offset",
+      "bgColor": "",
+      "bgWidth": "full",
+      "items": [
+        {
+          "role": "image",
+          "width": "6-cols",
+          "src": "assets/projects/projection_mapping/1.jpg",
+          "caption": {
+            "en": "The view from outside the Helmut List Halle - visitors could press the spray can to paint the building's facade.",
+            "de": "Der Blick von außen auf die Helmut List Halle – Besucher:innen konnten die Spraydose drücken, um die Fassade des Gebäudes zu bemalen."
+          }
         }
+      ]
+    }
+
     ]
 }
