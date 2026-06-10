@@ -14,8 +14,8 @@
     },
     "heroImage": "assets/projects/portfolio_machine/0.png",
     "description": {
-        "en": "An interactive installation for our Master’s exhibition that bridges the gap between tactile hardware and digital storytelling. Using NFC-embedded spheres and custom-built frontend software, we created a unique way to 'physically scroll' through a collective archive of student work.",
-        "de": "Eine interaktive Installation für unsere Masterausstellung, die die Verbindung zwischen haptischer Hardware und digitalem Storytelling herstellt. Mithilfe von NFC-embedded Kugeln und einer eigens entwickelten Frontend-Software entstand eine einzigartige Möglichkeit, physisch durch ein kollektives Archiv studentischer Arbeiten zu ‚scrollen‘."
+        "en": "An <b>interactive installation</b> for our Master's exhibition that bridges the gap between <b>tactile hardware</b> and <b>digital storytelling</b>. Using <b>NFC-embedded spheres</b> and <b>custom-built frontend software</b>, we created a unique way to 'physically scroll' through a <b>collective archive of student work</b>.",
+        "de": "Eine <b>interaktive Installation</b> für unsere Masterausstellung, die die Verbindung zwischen <b>haptischer Hardware</b> und <b>digitalem Storytelling</b> herstellt. Mithilfe von <b>NFC-embedded Kugeln</b> und einer eigens entwickelten <b>Frontend-Software</b> entstand eine einzigartige Möglichkeit, physisch durch ein <b>kollektives Archiv studentischer Arbeiten</b> zu ‚scrollen'."
     },
     "sections": [
         {
@@ -27,8 +27,8 @@
                     "width": "xlarge",
                     "align": "center",
                     "content": {
-                        "en": "The Portfolio Machine was part of our final Master’s exhibition - an interactive installation showcasing the collective work of our class. It uses NFC-embedded spheres as physical controllers to navigate a digital archive of student projects. Visitors place a student’s illuminated sphere on a central console to identify the creator and load their specific work.<br><br>As Frontend Developer, I built the interface using HTML and CSS, implementing parallax scrolling to create an immersive effect where users “scroll into” projects, generating a 3D sense of depth. Beyond visuals, I tackled technical challenges such as resolution mapping, synchronized video autoplay, and performance optimization. The installation blended tactile hardware and custom software, creating a one-of-a-kind physical-digital showcase.",
-                        "de": "Die Portfolio Machine war Teil unserer Abschlussausstellung im Master – eine interaktive Installation, die die gesammelten Arbeiten unserer Klasse präsentiert. Sie nutzt NFC-embedded Kugeln als physische Controller, um in einem digitalen Archiv von Studentenprojekten zu navigieren. Besucher:innen platzieren die beleuchtete Kugel eines Studierenden auf einer zentralen Konsole, um die Person zu identifizieren und deren Arbeiten zu laden.<br><br>Als Frontend-Entwickler habe ich die Oberfläche mit HTML und CSS umgesetzt und Parallax-Scrolling implementiert, um einen immersiven Effekt zu erzeugen, bei dem Nutzer:innen „in“ die Projekte scrollen und ein 3D-Gefühl entsteht. Über die visuellen Elemente hinaus habe ich technische Herausforderungen wie Auflösungs-Mapping, synchronisiertes Video-Autoplay und Performance-Optimierung gelöst. Die Installation vereinte haptische Hardware und individuelle Software und schuf so ein einzigartiges physisch-digitales Erlebnis."
+                        "en": "The Portfolio Machine was part of our <b>final Master's exhibition</b> — an interactive installation showcasing the collective work of our class. It uses <b>NFC-embedded spheres</b> as <b>physical controllers</b> to navigate a <b>digital archive</b> of student projects. Visitors place a student's illuminated sphere on a central console to identify the creator and load their specific work.<br><br>As <b>Frontend Developer</b>, I built the interface using <b>HTML and CSS</b>, implementing <b>parallax scrolling</b> to create an immersive effect where users scroll into projects, generating a <b>3D sense of depth</b>. Beyond visuals, I tackled technical challenges such as <b>resolution mapping</b>, <b>synchronized video autoplay</b>, and <b>performance optimization</b>. The installation blended <b>tactile hardware and custom software</b>, creating a one-of-a-kind <b>physical-digital showcase</b>.",
+                        "de": "Die Portfolio Machine war Teil unserer <b>Abschlussausstellung im Master</b> – eine interaktive Installation, die die gesammelten Arbeiten unserer Klasse präsentiert. Sie nutzt <b>NFC-embedded Kugeln</b> als <b>physische Controller</b>, um in einem <b>digitalen Archiv</b> von Studentenprojekten zu navigieren. Besucher:innen platzieren die beleuchtete Kugel eines Studierenden auf einer zentralen Konsole, um die Person zu identifizieren und deren Arbeiten zu laden.<br><br>Als <b>Frontend-Entwickler</b> habe ich die Oberfläche mit <b>HTML und CSS</b> umgesetzt und <b>Parallax-Scrolling</b> implementiert, um einen immersiven Effekt zu erzeugen, bei dem Nutzer:innen in die Projekte scrollen und ein <b>3D-Gefühl</b> entsteht. Über die visuellen Elemente hinaus habe ich technische Herausforderungen wie <b>Auflösungs-Mapping</b>, <b>synchronisiertes Video-Autoplay</b> und <b>Performance-Optimierung</b> gelöst. Die Installation vereinte <b>haptische Hardware und individuelle Software</b> und schuf so ein einzigartiges <b>physisch-digitales Erlebnis</b>."
                     }
                 }
             ]
@@ -53,8 +53,8 @@
                     "width": "xlarge",
                     "align": "center",
                     "content": {
-                        "en": "The physical installation of the Portfolio Machine as showcased during the final exhibition.",
-                        "de": "Die physische Installation der Portfolio Machine, wie sie während der Abschlussausstellung präsentiert wurde."
+                        "en": "The physical installation of the Portfolio Machine as showcased during the <b>final exhibition</b>.",
+                        "de": "Die physische Installation der Portfolio Machine, wie sie während der <b>Abschlussausstellung</b> präsentiert wurde."
                     }
                 },
                 {
@@ -83,8 +83,8 @@
                     "width": "xlarge",
                     "align": "center",
                     "content": {
-                        "en": "Each student had a colorful, illuminated sphere embedded with an NFC chip. These acted as both a personal ID and a tactile controller; placing a sphere on the console identified the student and loaded their specific portfolio.",
-                        "de": "Jeder Studierende hatte eine farbige, beleuchtete Kugel mit eingebettetem NFC-Chip. Diese diente sowohl als persönliche ID als auch als haptischer Controller: Wird die Kugel auf die Konsole gelegt, wird der Student identifiziert und sein individuelles Portfolio geladen."
+                        "en": "Each student had a <b>colorful, illuminated sphere</b> embedded with an <b>NFC chip</b>. These acted as both a <b>personal ID</b> and a <b>tactile controller</b>; placing a sphere on the console identified the student and loaded their specific portfolio.",
+                        "de": "Jeder Studierende hatte eine <b>farbige, beleuchtete Kugel</b> mit eingebettetem <b>NFC-Chip</b>. Diese diente sowohl als <b>persönliche ID</b> als auch als <b>haptischer Controller</b>: Wird die Kugel auf die Konsole gelegt, wird der Student identifiziert und sein individuelles Portfolio geladen."
                     }
                 },
                 {
@@ -113,8 +113,8 @@
                     "width": "xlarge",
                     "align": "center",
                     "content": {
-                        "en": "The portfolio machine was part of a larger exhibition of our stuying programme showcased at esc medien kunstlabor Graz.",
-                        "de": "Die Portfolio Machine war Teil einer größeren Ausstellung unseres Studiengangs gezeigt im esc medien kunstlabor Graz."
+                        "en": "The portfolio machine was part of a larger exhibition of our studying programme showcased at <b>esc medien kunstlabor Graz</b>.",
+                        "de": "Die Portfolio Machine war Teil einer größeren Ausstellung unseres Studiengangs gezeigt im <b>esc medien kunstlabor Graz</b>."
                     }
                 }
             ]
