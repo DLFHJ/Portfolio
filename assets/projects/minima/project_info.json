@@ -1,0 +1,54 @@
+{
+    "id": "minima",
+    "title": {
+        "en": "Minima",
+        "de": "Minima"
+    },
+    "year": 2023,
+    "tools": [
+        "Figma",
+        "Miro",
+        "Blender"
+    ],
+    "category": {
+        "en": "Concept & Packaging Design",
+        "de": "Konzept & Verpackungsdesign"
+    },
+    "heroImage": "assets/projects/minima/0.png",
+    "description": {
+        "en": "Developed as a conceptual study during my Master's in UX Design, this project challenged us to envision a <b>sustainable smartphone ecosystem</b> — spanning <b>UI/UX, marketing strategy, and physical touchpoints</b>. My part in this 4 person project was to develop the <b>general concept</b> and design the <b>packaging experience</b>. My goal was to translate the <b>core brand philosophy</b> into a tactile reality that highlights a <b>minimalist, eco-conscious aesthetic</b>.",
+        "de": "Dieses Projekt entstand als konzeptionelle Studie im Rahmen meines Masterstudiums in UX Design. Ziel war es, ein <b>nachhaltiges Smartphone-Ökosystem</b> zu entwerfen – von <b>UI/UX über Marketingstrategie bis hin zu physischen Touchpoints</b>. In dem vierköpfigen Team war ich für die Entwicklung des <b>Gesamtkonzepts</b> sowie für das Design der <b>Packaging-Erfahrung</b> verantwortlich. Mein Ziel war es, die <b>zentrale Markenphilosophie</b> in eine greifbare Gestaltung zu übersetzen, die eine <b>minimalistische und umweltbewusste Ästhetik</b> betont."
+    },
+    "sections": [
+        {
+            "type": "gallery",
+            "layout": "grid",
+            "width": "full",
+            "columns": 2,
+            "items": [
+                {
+                    "src": "assets/projects/minima/1.png"
+                },
+                {
+                    "src": "assets/projects/minima/2.png"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "image",
+                    "width": "xlarge",
+                    "align": "center",
+                    "src": "assets/projects/minima/0.png",
+                    "caption": {
+                        "en": "Some of the <b>renders</b> I created of the packaging using the <b>3D-software Blender</b>. I tried to push the design to be as <b>minimalist as possible</b>, reducing it to the <b>bare essentials</b>.",
+                        "de": "Einige der <b>Renderings</b> der Verpackung, die ich mit der <b>3D-Software Blender</b> erstellt habe. Dabei habe ich versucht, das Design so <b>minimalistisch wie möglich</b> zu gestalten und auf das <b>Wesentliche zu reduzieren</b>."
+                    }
+                }
+            ]
+        }
+    ]
+}
