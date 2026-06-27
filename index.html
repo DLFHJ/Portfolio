@@ -131,35 +131,6 @@
             }
         }
 
-        /* Modal Transitions */
-        .modal {
-            transition: opacity 0.4s ease, visibility 0.4s ease;
-        }
-
-        .modal-content {
-            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        .modal.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .modal.hidden .modal-content {
-            transform: scale(0.95) translateY(20px);
-        }
-
-        .modal:not(.hidden) {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
-
-        .modal:not(.hidden) .modal-content {
-            transform: scale(1) translateY(0);
-        }
-
         /* Highlight text effect */
         .highlight-word {
             position: relative;
@@ -382,7 +353,7 @@
 
                 <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Master Thesis -->
-                    <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('master_thesis')"
+                    <div class="reveal-on-scroll group"
                         data-project-id="master_thesis">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                             <img src="assets/projects/main/master_thesis/0.png"
@@ -402,7 +373,7 @@
                     </div>
 
                     <!-- Sonolux -->
-                    <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('sonolux')"
+                    <div class="reveal-on-scroll group"
                         data-project-id="sonolux">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                             <img src="assets/projects/main/sonolux/0.png"
@@ -422,7 +393,7 @@
                     </div>
 
                     <!-- ÖBB Internship -->
-                    <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('obb')" data-project-id="obb">
+                    <div class="reveal-on-scroll group" data-project-id="obb">
                         <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                             <img src="assets/projects/main/öbb/0.png"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -444,7 +415,7 @@
                     <div id="moreProjects" class="hidden contents">
 
                         <!-- Portfolio Machine -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('portfolio_machine')"
+                        <div class="reveal-on-scroll group"
                             data-project-id="portfolio_machine">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/portfolio_machine/0.png"
@@ -464,7 +435,7 @@
                         </div>
 
                         <!-- Project 5: Minima -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('minima')"
+                        <div class="reveal-on-scroll group"
                             data-project-id="minima">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/minima/0.png"
@@ -484,7 +455,7 @@
                         </div>
 
                         <!-- Project 6: Storii -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('storii')"
+                        <div class="reveal-on-scroll group"
                             data-project-id="storii">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/storii/0.png"
@@ -504,7 +475,7 @@
                         </div>
 
                         <!-- Project 7: Projection Mapping -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('projection_mapping')"
+                        <div class="reveal-on-scroll group"
                             data-project-id="projection_mapping">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/projection_mapping/0.jpg"
@@ -524,7 +495,7 @@
                         </div>
 
                         <!-- Project 8: Games -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('games')"
+                        <div class="reveal-on-scroll group"
                             data-project-id="games">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/games/0.png"
@@ -544,7 +515,7 @@
                         </div>
 
                         <!-- Project 9: Hackathon Schweiz -->
-                        <div class="reveal-on-scroll group cursor-pointer" onclick="openModal('hackathon_schweiz')"
+                        <div class="reveal-on-scroll group"
                             data-project-id="hackathon_schweiz">
                             <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
                                 <img src="assets/projects/hackathon_schweiz/0.png"
@@ -564,8 +535,8 @@
                         </div>
 
                         <!-- Project 10: Layout Grid Demo -->
-                        <div id="demoProjectBlock" class="reveal-on-scroll group cursor-pointer hidden"
-                            onclick="openModal('grid_demo')" data-project-id="grid_demo">
+                        <div id="demoProjectBlock" class="reveal-on-scroll group hidden"
+                            data-project-id="grid_demo">
                             <div
                                 class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4 outline outline-2 outline-green-500/50">
                                 <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&h=600"
@@ -740,114 +711,6 @@
         </footer>
     </main>
 
-    <!-- Project Modal -->
-    <div id="projectModal" class="modal hidden fixed inset-0 z-40 flex items-center justify-center p-0">
-        <div class="absolute inset-0 bg-white/100" onclick="closeModal()"></div>
-
-        <div class="modal-content relative bg-white w-full max-w-full h-full flex flex-col overflow-hidden">
-
-            <!-- Mobile Back Button Bar (sits outside scroll area, always visible) -->
-            <div class="md:hidden flex-none bg-black px-6 py-3 flex items-center">
-                <button onclick="closeModal()"
-                    class="flex items-center gap-2 text-white cursor-pointer active:opacity-70 transition-opacity">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                    <span data-i18n="modal_back" class="text-xs font-mono uppercase tracking-widest">Back</span>
-                </button>
-            </div>
-
-            <!-- Desktop Back Button (absolute overlay, difference blend) -->
-            <div class="hidden md:block absolute top-0 inset-x-0 z-50 pointer-events-none" style="mix-blend-mode: difference;">
-                <div class="max-w-7xl mx-auto py-7">
-                    <button onclick="closeModal()"
-                        class="pointer-events-auto hover-target flex items-center gap-2 text-white cursor-pointer ml-[4px]">
-                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                        <span data-i18n="modal_back" class="text-sm font-mono uppercase tracking-widest">Back</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Scrollable Content -->
-            <div class="flex-1 w-full overflow-y-auto bg-gray-50 no-scrollbar">
-
-                <!-- 1. Header Section (Blurred Background) -->
-                <div class="relative w-full min-h-[85vh] md:min-h-[80vh] flex items-center overflow-hidden bg-black">
-
-                    <!-- Background Image (Blurred) -->
-                    <img id="modalHeroBg" src=""
-                        class="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60 transition-opacity duration-700"
-                        alt="Background">
-                    <div class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black/80 via-black/20 to-black/60">
-                    </div>
-
-                    <!-- Content Grid -->
-                    <div
-                        class="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 md:p-16 lg:px-24 grid grid-cols-1 md:grid-cols-12 gap-x-4 md:gap-x-6 lg:gap-x-8 gap-y-12 items-center">
-
-                        <!-- Left: Text Header -->
-                        <div class="col-span-1 md:col-span-7 flex flex-col justify-center text-white">
-
-                            <!-- Category Pill -->
-                            <div class="mb-8">
-                                <span id="modalCategory"
-                                    class="inline-block text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/80 border border-white/20 px-3 py-1 rounded-full backdrop-blur-md">
-                                    Interaction Design
-                                </span>
-                            </div>
-
-                            <!-- Title -->
-                            <h2 id="modalTitle"
-                                class="text-5xl sm:text-6xl md:text-8xl font-bold mb-8 leading-[0.9] tracking-tight text-white drop-shadow-sm">
-                                Interactive Installation
-                            </h2>
-
-                            <!-- Description -->
-                            <p id="modalDescription"
-                                class="text-lg md:text-xl text-white/80 leading-relaxed font-light mb-12 max-w-2xl drop-shadow-sm">
-                            </p>
-
-                            <!-- Metadata Grid -->
-                            <div class="grid grid-cols-2 gap-12 border-t border-white/10 pt-8 mt-4">
-                                <div>
-                                    <span data-i18n="modal_tools"
-                                        class="block text-white/50 text-[10px] uppercase font-light tracking-widest mb-2 font-medium">Tools</span>
-                                    <span id="modalTools"
-                                        class="block text-sm md:text-base font-semibold font-light text-white">Lorem
-                                        ipsum,
-                                        Lorem</span>
-                                </div>
-                                <div>
-                                    <span data-i18n="modal_year"
-                                        class="block text-white/50 text-[10px] uppercase font-light tracking-widest mb-2 font-medium">Year</span>
-                                    <span id="modalYear"
-                                        class="block text-sm md:text-base font-semibold font-light text-white">2025</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Right: Featured Image (Card) -->
-                        <div class="col-span-1 md:col-span-5 relative group perspective-1000">
-                            <div class="relative overflow-hidden shadow-2xl border border-white/10 ring-1 ring-white/5 cursor-zoom-in"
-                                onclick="openLightbox(currentProjectImages, 0)">
-                                <img id="modalHeroImage" src=""
-                                    class="w-full h-auto object-cover aspect-[4/3] md:aspect-square lg:aspect-[4/3] bg-gray-800"
-                                    alt="Hero Featured">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Content Blocks (Injected via JS) spacing top -->
-                <div id="modalBody" class="w-full bg-white pt-12 pb-24">
-                    <!-- Blocks will be injected here -->
-                </div>
-
-
-                <!-- Footer / Next Project (Optional placeholder) -->
-                <div class="h-24 bg-white"></div>
-            </div>
-        </div>
-    </div>
-
     <script>
         // --- Demo Mode Config ---
         // Switch this to true to enable the development grid overlay and test projects
@@ -881,7 +744,6 @@
                 btn_cv: "Download CV",
                 btn_linkedin: "View LinkedIn",
                 footer_create: "LET'S CREATE <br> TOGETHER",
-                modal_role: "Role", modal_year: "Year", modal_tools: "Tools", modal_back: "Back",
                 hero_subtext: "Bridging the gap between <br class='hidden sm:block'> design & technology",
                 hero_available: "Available for work",
                 footer_hosted: "Website hosted via GitHub",
@@ -905,7 +767,6 @@
                 btn_cv: "Lebenslauf herunterladen",
                 btn_linkedin: "LinkedIn",
                 footer_create: "LET'S CREATE <br> TOGETHER",
-                modal_role: "Rolle", modal_year: "Jahr", modal_tools: "Tools", modal_back: "Zurück",
                 hero_subtext: "An der Schnittstelle zwischen <br class='hidden sm:block'> Design & Technologie",
                 hero_available: "Verfügbar für Arbeit",
                 footer_hosted: "Website gehostet über GitHub",
@@ -913,48 +774,10 @@
             }
         };
 
-        function toggleProjects() {
-            const container = document.getElementById('moreProjects');
-            const btnSpan = document.querySelector('#toggleProjectsBtn span');
-            const icon = document.querySelector('#toggleProjectsBtn i'); // Lucide replaces with svg, check both if needed but index_OLD logic used simple i/svg check
-
-            const isHidden = container.classList.contains('hidden');
-
-            if (isHidden) {
-                // Expanding
-                container.classList.remove('hidden');
-                // Trigger scroll reveal for new items
-                setTimeout(() => {
-                    container.querySelectorAll('div').forEach(el => el.classList.add('reveal-on-scroll', 'is-visible'));
-                }, 10);
-
-                if (btnSpan) btnSpan.innerText = translations[currentLang].btn_show_less;
-
-                if (icon) {
-                    icon.classList.add('rotate-45');
-                    icon.classList.remove('group-hover:rotate-90');
-                    icon.classList.add('group-hover:rotate-[135deg]');
-                }
-            } else {
-                // Collapsing
-                container.classList.add('hidden');
-                if (btnSpan) btnSpan.innerText = translations[currentLang].btn_view_all;
-
-                if (icon) {
-                    icon.classList.remove('rotate-45');
-                    icon.classList.remove('group-hover:rotate-[135deg]');
-                    icon.classList.add('group-hover:rotate-90');
-                }
-
-                document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
         /* PROJECTS START HERE */
         // Projects Data
         // Projects Data - Dynamically Loaded
         const projects = {};
-        let currentProjectImages = [];
 
         async function loadProjectData() {
             const sources = [
@@ -1296,421 +1119,7 @@
             }
         }
 
-        // --- 6. Modal Logic ---
-        function openModal(id) {
-            const data = projects[id];
-            if (!data) {
-                console.error(`Project data for ID "${id}" not found.`);
-                console.log("Currently loaded projects:", Object.keys(projects));
-
-                // Check if likely CORS issue
-                if (window.location.protocol === 'file:') {
-                    alert(`Project data for "${id}" cannot be loaded because you are opening the HTML file directly. detailed JSON data cannot be fetched via file:// protocol due to browser security.\n\nPlease run this project using a local web server (e.g., "Live Server" extension in VS Code).`);
-                } else {
-                    alert(`Project data for "${id}" failed to load.\n\nCheck the console (F12) for error details.\n\nLoaded projects: ${Object.keys(projects).join(', ')}`);
-                }
-                return;
-            }
-
-            // 1. Setup Header
-            const title = typeof data.title === 'object' ? data.title[currentLang] : data.title;
-            const category = typeof data.category === 'object' ? data.category[currentLang] : data.category;
-            // Role is now merged into category, so we don't display it separately or we use category in its place if needed.
-            // const role = typeof data.role === 'object' ? data.role[currentLang] : data.role; // Removed
-            const description = typeof data.description === 'object' ? data.description[currentLang] : data.description;
-
-            document.getElementById('modalTitle').innerText = title || '';
-            document.getElementById('modalCategory').innerText = category || '';
-            // const roleEl = document.getElementById('modalRole'); // Removed
-            // if (roleEl) roleEl.innerText = role || ''; // Removed
-            document.getElementById('modalYear').innerText = data.year || '';
-            document.getElementById('modalTools').innerText = data.tools ? (Array.isArray(data.tools) ? data.tools.join(', ') : data.tools) : '';
-
-            const modalDescEl = document.getElementById('modalDescription');
-            if (modalDescEl) modalDescEl.innerHTML = description || '';
-
-            // Restore Hero Image in Header
-            const heroImg = document.getElementById('modalHeroImage');
-            const heroBg = document.getElementById('modalHeroBg');
-
-            currentProjectImages = [];
-
-            if (data.heroImage) {
-                // Set main image
-                heroImg.src = data.heroImage;
-                heroImg.style.display = 'block';
-                currentProjectImages.push(data.heroImage);
-
-                // Set background image (same source)
-                if (heroBg) {
-                    heroBg.src = data.heroImage;
-                    heroBg.style.display = 'block';
-                }
-            } else {
-                if (heroImg) heroImg.style.display = 'none';
-                if (heroBg) heroBg.style.display = 'none';
-            }
-
-            // 2. Build Sections (Body)
-            const modalBody = document.getElementById('modalBody');
-            modalBody.innerHTML = '';
-
-            if (data.sections) {
-                // Track consecutive grid-connected sections with the same bgColor so they
-                // share a single reveal-on-scroll wrapper and animate in as one block.
-                let currentGroupWrapper = null;
-                let currentGroupBg = null;
-
-                data.sections.forEach(section => {
-                    // Skip 'hero' type sections as they are now handled in the header
-                    if (section.type === 'hero') return;
-
-                    // Group management: consecutive grid-connected sections with the same
-                    // bgColor are wrapped in one reveal-on-scroll container so they animate
-                    // together, preventing a white gap between adjacent colored blocks.
-                    const isGroupable = section.bgWidth === 'grid-connected' && section.bgColor;
-                    if (!isGroupable || section.bgColor !== currentGroupBg) {
-                        if (isGroupable) {
-                            currentGroupWrapper = document.createElement('div');
-                            currentGroupWrapper.className = 'w-full reveal-on-scroll';
-                            modalBody.appendChild(currentGroupWrapper);
-                            currentGroupBg = section.bgColor;
-                        } else {
-                            currentGroupWrapper = null;
-                            currentGroupBg = null;
-                        }
-                    }
-
-                    const sectionWrapper = document.createElement('div');
-
-                    // Background Color logic
-                    let bgClass = 'bg-white'; // default
-                    let textColorClass = 'text-gray-600'; // default text color
-
-                    if (section.bgColor) {
-                        bgClass = `bg-${section.bgColor}`;
-                        if (section.bgColor === 'gray-900' || section.bgColor === 'black') {
-                            textColorClass = 'text-gray-300';
-                            bgClass += ' text-white';
-                        }
-                    }
-
-                    let baseWrapperClasses = currentGroupWrapper ? 'w-full' : 'w-full reveal-on-scroll';
-                    let baseInnerClasses = 'w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 md:grid md:grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-stretch';
-                    const sectionEl = document.createElement('div');
-
-                    if (section.bgWidth === 'grid') {
-                        // Background is restricted to the inner 12-column grid
-                        // We give the outer wrapper external spacing, and the inner box internal padding
-                        sectionWrapper.className = `${baseWrapperClasses} py-2 md:py-4 lg:py-6`;
-                        sectionEl.className = `${baseInnerClasses} py-8 md:py-12 lg:py-16 ${bgClass}`;
-                    } else if (section.bgWidth === 'grid-connected') {
-                        // Background restricted to inner grid, but vertical outside spacing is removed
-                        // This allows adjacent 'grid-connected' blocks of the same color to merge visually
-                        sectionWrapper.className = `${baseWrapperClasses}`;
-                        sectionEl.className = `${baseInnerClasses} py-8 md:py-12 lg:py-16 ${bgClass}`;
-                    } else {
-                        // Default full-bleed background behavior
-                        sectionWrapper.className = `${baseWrapperClasses} py-2 md:py-4 lg:py-6 ${bgClass}`;
-                        sectionEl.className = baseInnerClasses;
-                    }
-
-                    if (section.layout === 'full-bleed') {
-                        sectionWrapper.className = `w-full mb-6 ${bgClass}`; // Zero padding for full-bleed
-                        sectionEl.className = 'w-full';
-                    }
-                    if (section.type === 'gallery') {
-                        // sectionEl.classList.add('gap-y-6'); // Removed to respect global tight spacing
-                    }
-
-                    // Normalize legacy/simplified 'text' type sections that lack 'items'
-                    if (section.type === 'text' && !section.items && section.content) {
-                        section.items = [{
-                            role: 'text',
-                            content: section.content,
-                            width: 'xlarge', // Consistent with other text blocks
-                            align: 'left'
-                        }];
-                        // Override layout to ensure it renders nicely
-                        section.layout = 'centered';
-                    }
-
-                    // Process Items
-                    if (section.items) {
-                        let targetContainer = sectionEl;
-
-
-                        // Special handling for Gallery Grid to align with xlarge text
-                        if (section.layout === 'grid') {
-                            const gridWrapper = document.createElement('div');
-
-                            // Check for width overrides at the section level
-                            if (section.width === 'full') {
-                                gridWrapper.className = 'col-span-12 grid gap-4 md:gap-6 lg:gap-8';
-                            } else {
-                                // Default to xlarge (centered 10 cols) if not full width
-                                gridWrapper.className = 'col-span-12 md:col-start-2 md:col-span-10 grid gap-4 md:gap-6 lg:gap-8';
-                            }
-
-                            // Set columns for the inner grid based on config
-                            const cols = section.columns || 3;
-                            if (cols === 2) gridWrapper.classList.add('grid-cols-1', 'md:grid-cols-2');
-                            else if (cols === 3) gridWrapper.classList.add('grid-cols-1', 'md:grid-cols-3');
-                            else gridWrapper.classList.add('grid-cols-1', 'md:grid-cols-3');
-
-                            sectionEl.appendChild(gridWrapper);
-                            targetContainer = gridWrapper;
-                        }
-
-                        section.items.forEach(item => {
-                            // Completely ignore manual spacers as requested
-                            if (item.role === 'spacer') return;
-
-                            const itemWrapper = document.createElement('div');
-                            let colClasses = 'col-span-12'; // Mobile default
-
-                            // Responsive Layout Engine
-                            if (section.layout !== 'grid') {
-                                if (section.layout === 'full-bleed') {
-                                    // Breaks the 10-col grid to absolute edge
-                                    colClasses = 'w-full';
-                                } else {
-                                    // 1. Determine Mathematical Span
-                                    let span = item.role === 'text' ? 6 : 12; // Defaults
-
-                                    if (item.width === 'small') span = 4;
-                                    else if (item.width === 'five-cols' || item.width === '5-cols') span = 5;
-                                    else if (item.width === 'six-cols' || item.width === '6-cols') span = 6;
-                                    else if (item.width === 'medium') span = 8;
-                                    else if (item.width === 'large') span = 10;
-                                    else if (item.width === 'xlarge') span = 12;
-                                    else if (item.width === 'full') span = 12;
-
-                                    // 2. Resolve Alignment
-                                    let align = item.align || (section.layout === 'centered' ? 'center' : 'left');
-
-                                    if (align === 'right') {
-                                        // Push to the far right of the grid (ends at col 12)
-                                        colClasses = `md:col-start-${13 - span} md:col-span-${span}`;
-                                    } else if (align === 'center') {
-                                        // Center perfectly within the 12-col grid
-                                        let offset = Math.floor((12 - span) / 2) + 1;
-                                        colClasses = `md:col-start-${offset} md:col-span-${span}`;
-                                    } else {
-                                        // Default left-aligned (col 1)
-                                        colClasses = `md:col-start-1 md:col-span-${span}`;
-                                    }
-                                }
-                            } else {
-                                // Inside grid wrapper, items just fill their cell unless specified
-                                if (['large', 'xlarge', 'full'].includes(item.width)) {
-                                    colClasses = 'w-full col-span-full';
-                                } else {
-                                    colClasses = 'w-full';
-                                }
-                            }
-
-                            itemWrapper.className = `relative ${colClasses}`;
-
-                            // Render Content based on Role
-                            if (item.role === 'image' || (!item.role && item.src)) {
-                                const imgSrc = item.src;
-                                const img = document.createElement('img');
-                                img.src = imgSrc;
-                                const imgIndex = currentProjectImages.length;
-                                currentProjectImages.push(imgSrc);
-                                img.onclick = () => openLightbox(currentProjectImages, imgIndex);
-
-                                // Use h-full and object-cover to match heights in grid
-                                if (section.layout === 'grid') {
-                                    // If caption is present, use h-auto to avoid stretching image over caption space
-                                    // Otherwise use h-full to fill grid cell
-                                    const hasCaption = item.caption || item.text;
-                                    if (hasCaption) {
-                                        img.className = 'w-full h-auto object-cover block cursor-zoom-in mb-3';
-                                    } else {
-                                        img.className = 'w-full h-full object-cover block cursor-zoom-in';
-                                    }
-                                } else {
-                                    img.className = 'w-full h-auto object-cover block cursor-zoom-in';
-                                }
-
-                                // Allow overrides from JSON
-                                if (item.className) {
-                                    // Append custom classes
-                                    img.className += ` ${item.className}`;
-                                }
-                                if (item.style) {
-                                    Object.assign(img.style, item.style);
-                                }
-
-                                itemWrapper.appendChild(img);
-
-                                // Append Caption if present
-                                const captionText = item.caption || item.text;
-                                if (captionText) {
-                                    const capDiv = document.createElement('div');
-                                    const content = typeof captionText === 'object' ? captionText[currentLang] : captionText;
-                                    capDiv.innerHTML = content || '';
-                                    capDiv.className = `${textColorClass} leading-relaxed text-lg md:text-xl font-light mt-6`;
-                                    itemWrapper.appendChild(capDiv);
-                                }
-                            } else if (item.role === 'text') {
-                                const p = document.createElement('div');
-                                const content = typeof item.content === 'object' ? item.content[currentLang] : item.content;
-                                p.innerHTML = content || '';
-                                // Using standard text-lg font
-                                p.className = `${textColorClass} leading-relaxed text-lg md:text-xl font-light`;
-
-                                // Allow overrides from JSON
-                                if (item.className) {
-                                    p.className += ` ${item.className}`;
-                                }
-
-                                itemWrapper.appendChild(p);
-                            }
-
-                            targetContainer.appendChild(itemWrapper);
-                        });
-
-                        // Render Section-Level Caption if present
-                        if (section.caption) {
-                            const sectionCapDiv = document.createElement('div');
-                            const content = typeof section.caption === 'object' ? section.caption[currentLang] : section.caption;
-                            sectionCapDiv.innerHTML = content || '';
-
-                            // Determine span and margin based on layout type
-                            let colSpanClass = 'md:col-start-2 md:col-span-10';
-                            let marginClass = 'mt-4'; // Default margin for non-grid layouts
-
-                            if (section.layout === 'grid') {
-                                colSpanClass = 'col-span-full';
-                                // The grid enforces gap-4 (16px), md:gap-6 (24px), lg:gap-8 (32px).
-                                // Individual non-grid captions have exactly 16px (mt-4) visual spacing.
-                                // We counteract the grid gap: 16px - gap = margin
-                                // 16-16 = 0px (mt-0) | 16-24 = -8px (-mt-2) | 16-32 = -16px (-mt-4)
-                                marginClass = 'mt-0 md:-mt-2 lg:-mt-4';
-                            }
-
-                            sectionCapDiv.className = `${colSpanClass} ${textColorClass} leading-relaxed text-lg md:text-xl font-light ${marginClass}`;
-                            targetContainer.appendChild(sectionCapDiv);
-                        }
-                    }
-
-                    sectionWrapper.appendChild(sectionEl);
-                    (currentGroupWrapper || modalBody).appendChild(sectionWrapper);
-                });
-            } else {
-                modalBody.innerHTML = `<div class="p-16 text-center text-gray-400">More details coming soon.</div>`;
-            }
-
-            // Show Modal
-            const modal = document.getElementById('projectModal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-
-            // Re-observe scroll reveal elements inside the modal
-            setTimeout(() => {
-                modal.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-            }, 50);
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('projectModal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = ''; // Unlock scroll
-        }
-
-        // --- 7. Lightbox Logic ---
-        let lightboxImages = [];
-        let lightboxIndex = 0;
-
-        function openLightbox(images, index) {
-            lightboxImages = Array.isArray(images) ? images : [images];
-            lightboxIndex = typeof index === 'number' ? index : 0;
-            updateLightboxDisplay();
-            document.getElementById('lightbox').classList.remove('hidden');
-        }
-
-        function updateLightboxDisplay() {
-            document.getElementById('lightbox-img').src = lightboxImages[lightboxIndex];
-            const total = lightboxImages.length;
-            const counter = document.getElementById('lightbox-counter');
-            const prevBtn = document.getElementById('lightbox-prev');
-            const nextBtn = document.getElementById('lightbox-next');
-            if (total > 1) {
-                counter.textContent = `${lightboxIndex + 1} / ${total}`;
-                counter.style.display = 'block';
-                prevBtn.style.display = 'flex';
-                nextBtn.style.display = 'flex';
-            } else {
-                counter.style.display = 'none';
-                prevBtn.style.display = 'none';
-                nextBtn.style.display = 'none';
-            }
-        }
-
-        function lightboxPrev() {
-            lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
-            updateLightboxDisplay();
-        }
-
-        function lightboxNext() {
-            lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
-            updateLightboxDisplay();
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.add('hidden');
-        }
-
-        document.addEventListener('keydown', (e) => {
-            const lightbox = document.getElementById('lightbox');
-            if (!lightbox.classList.contains('hidden')) {
-                if (e.key === 'ArrowLeft') lightboxPrev();
-                else if (e.key === 'ArrowRight') lightboxNext();
-                else if (e.key === 'Escape') closeLightbox();
-            } else if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
     </script>
-
-    <!-- Lightbox Overlay -->
-    <div id="lightbox"
-        class="hidden fixed inset-0 z-[60] bg-black/95 backdrop-blur-md flex items-center justify-center"
-        onclick="closeLightbox()">
-
-        <!-- Close Button -->
-        <button onclick="event.stopPropagation(); closeLightbox()"
-            class="absolute top-5 right-5 w-11 h-11 flex items-center justify-center bg-white/20 hover:bg-white/40 rounded-full text-white transition-colors cursor-pointer z-10 border border-white/30">
-            <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-
-        <!-- Prev Arrow -->
-        <button id="lightbox-prev" onclick="event.stopPropagation(); lightboxPrev()"
-            style="display:none" class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-white/20 hover:bg-white/40 rounded-full text-white transition-colors cursor-pointer z-10 border border-white/30">
-            <i data-lucide="chevron-left" class="w-6 h-6"></i>
-        </button>
-
-        <!-- Main Image -->
-        <img id="lightbox-img" src=""
-            class="max-w-[calc(100%-7rem)] md:max-w-[calc(100%-10rem)] max-h-[85vh] object-contain shadow-2xl select-none"
-            onclick="event.stopPropagation()" draggable="false">
-
-        <!-- Next Arrow -->
-        <button id="lightbox-next" onclick="event.stopPropagation(); lightboxNext()"
-            style="display:none" class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-white/20 hover:bg-white/40 rounded-full text-white transition-colors cursor-pointer z-10 border border-white/30">
-            <i data-lucide="chevron-right" class="w-6 h-6"></i>
-        </button>
-
-        <!-- Counter -->
-        <div id="lightbox-counter" style="display:none"
-            class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-xs font-mono tracking-widest uppercase select-none">
-        </div>
-
-    </div>
 </body>
 
 </html>
