@@ -241,7 +241,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="#"
-                        class="block font-bold text-sm tracking-tight uppercase hover-target p-2 text-black md:text-black">
+                        class="block font-bold text-sm tracking-tight uppercase hover-target text-black md:text-black">
                         David Laßlberger, MA
                     </a>
                 </div>
@@ -1072,6 +1072,15 @@
             currentLang = currentLang === 'en' ? 'de' : 'en';
             applyLanguage();
         }
+
+        // Project card navigation — clicking any card opens project.html?id=X
+        document.getElementById('projectGrid').addEventListener('click', e => {
+            const card = e.target.closest('[data-project-id]');
+            if (card) window.location.href = `project.html?id=${card.dataset.projectId}`;
+        });
+        document.querySelectorAll('[data-project-id]').forEach(card => {
+            card.classList.add('cursor-pointer');
+        });
 
         function toggleProjects() {
             const container = document.getElementById('moreProjects');

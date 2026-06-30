@@ -1,0 +1,229 @@
+{
+  "projects": [
+    {
+      "id": "urban_interface",
+      "title": "Urban Interface",
+      "year": "2025",
+      "category": "Interaction Design",
+      "role": "UX Research & UI Design",
+      "tools": "Figma, Arduino, P5.js",
+      "hero": "https://picsum.photos/seed/urbaninterface/1400/700",
+      "sections": [
+        {
+          "type": "section",
+          "number": "01",
+          "heading": "The Challenge",
+          "body": [
+            "Public spaces are increasingly mediated by digital systems — yet most of those systems are designed for efficiency rather than experience. Wayfinding is utilitarian. Information is generic. The <strong class=\"text-black font-medium\">emotional and social dimensions of moving through a city</strong> are almost entirely ignored.",
+            "This project asked a different question: what if public interfaces could respond to the <strong class=\"text-black font-medium\">rhythms, moods, and needs</strong> of the people around them — rather than simply broadcasting static information?"
+          ]
+        },
+        {
+          "type": "section",
+          "number": "02",
+          "heading": "Research",
+          "body": [
+            "Field research at three urban locations combined observation with structured interviews. Over three weeks, we mapped pedestrian flows, dwell times, and moments of hesitation — building a detailed picture of how people actually navigate shared space versus how designers assume they do."
+          ]
+        },
+        {
+          "type": "images-2col",
+          "images": [
+            "https://picsum.photos/seed/urbang1/800/600",
+            "https://picsum.photos/seed/urbang2/800/600"
+          ],
+          "caption": "Left: annotated observation maps from the Hauptplatz site visit. Right: interview session with a long-term resident documenting habitual navigation patterns."
+        },
+        {
+          "type": "section",
+          "number": "03",
+          "heading": "Design",
+          "body": [
+            "Three rounds of prototyping explored different interaction models. The first used proximity sensing to adjust ambient sound; the second introduced visual feedback through floor projection; the third combined both with <strong class=\"text-black font-medium\">real-time crowd density data</strong> pulled from transport APIs.",
+            "Each prototype was tested in-situ with 8–12 participants using a think-aloud protocol. Iterations were rapid — a one-week cycle from concept sketch to deployed test."
+          ]
+        },
+        {
+          "type": "image-wide",
+          "src": "https://picsum.photos/seed/urbanwide2/1400/650",
+          "caption": "Prototype 3 installed in the Hauptplatz underpass. Ambient light intensity adapts in real time to crowd density, creating a subtle but legible spatial signal."
+        },
+        {
+          "type": "images-3col",
+          "images": [
+            "https://picsum.photos/seed/urbansq1/600/600",
+            "https://picsum.photos/seed/urbansq2/600/600",
+            "https://picsum.photos/seed/urbansq3/600/600"
+          ]
+        },
+        {
+          "type": "image-highlight",
+          "src": "https://picsum.photos/seed/mosaic3/1400/650",
+          "caption": "Detail of the floor projection system during the Hauptplatz pilot."
+        },
+        {
+          "type": "section",
+          "number": "04",
+          "heading": "Outcome",
+          "body": [
+            "Post-pilot surveys across 87 respondents showed a measurable increase in <strong class=\"text-black font-medium\">perceived safety and comfort</strong> in the tested locations. Navigation errors dropped by 34%. More significantly, dwell time in the underpass — previously avoided by most pedestrians after 20:00 — increased by over 60%.",
+            "The project demonstrated that ambient, behaviour-responsive interfaces can shift how people experience urban space — without requiring explicit attention or interaction. The work has been submitted for inclusion in the 2025 Urban Design Austria programme."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "master_thesis",
+      "title": "Master Thesis",
+      "year": "2025",
+      "category": "Interaction Design",
+      "role": "UX Research & UI Design",
+      "tools": "Figma, Miro",
+      "hero": "assets/projects/main/master_thesis/0.png",
+      "sections": [
+        {
+          "type": "section",
+          "number": "01",
+          "heading": "Overview",
+          "body": ["Content coming soon."]
+        }
+      ]
+    },
+    {
+      "id": "sonolux",
+      "title": "Sonolux",
+      "year": "2024",
+      "category": "Interaction Design",
+      "role": "Concept & Design",
+      "tools": "Figma, After Effects",
+      "hero": "assets/projects/main/sonolux/0.png",
+      "sections": [
+        {
+          "type": "section",
+          "number": "01",
+          "heading": "Overview",
+          "body": ["Content coming soon."]
+        }
+      ]
+    },
+    {
+      "id": "obb",
+      "title": "ÖBB Internship",
+      "year": "2023",
+      "category": "UX Design",
+      "role": "UX Designer",
+      "tools": "Figma",
+      "hero": "assets/projects/main/öbb/0.png",
+      "sections": [
+        {
+          "type": "section",
+          "number": "01",
+          "heading": "Overview",
+          "body": ["Content coming soon."]
+        }
+      ]
+    },
+    {
+      "id": "portfolio_machine",
+      "title": "Portfolio Machine",
+      "year": "2024",
+      "category": "Creative Coding",
+      "role": "Developer & Designer",
+      "tools": "HTML, CSS, JavaScript",
+      "hero": "assets/projects/portfolio_machine/0.png",
+      "sections": [
+        {
+          "type": "section",
+          "number": "01",
+          "heading": "Overview",
+          "body": ["Content coming soon."]
+        }
+      ]
+    },
+    {
+      "id": "minima",
+      "title": "UXD",
+      "year": "2023",
+      "category": "UX Design",
+      "role": "UX Designer",
+      "tools": "Figma",
+      "hero": "assets/projects/minima/0.png",
+      "sections": [
+        {
+          "type": "section",
+          "number": "01",
+          "heading": "Overview",
+          "body": ["Content coming soon."]
+        }
+      ]
+    },
+    {
+      "id": "storii",
+      "title": "Storii",
+      "year": "2023",
+      "category": "UX Design",
+      "role": "UX Designer",
+      "tools": "Figma",
+      "hero": "assets/projects/storii/0.png",
+      "sections": [
+        {
+          "type": "section",
+          "number": "01",
+          "heading": "Overview",
+          "body": ["Content coming soon."]
+        }
+      ]
+    },
+    {
+      "id": "projection_mapping",
+      "title": "Projection Mapping",
+      "year": "2022",
+      "category": "Creative Coding",
+      "role": "Developer",
+      "tools": "Processing, Arduino",
+      "hero": "assets/projects/projection_mapping/0.jpg",
+      "sections": [
+        {
+          "type": "section",
+          "number": "01",
+          "heading": "Overview",
+          "body": ["Content coming soon."]
+        }
+      ]
+    },
+    {
+      "id": "games",
+      "title": "Game Design Portfolio",
+      "year": "2022",
+      "category": "Game Design",
+      "role": "Game Designer & Developer",
+      "tools": "Unity, C#",
+      "hero": "assets/projects/games/0.png",
+      "sections": [
+        {
+          "type": "section",
+          "number": "01",
+          "heading": "Overview",
+          "body": ["Content coming soon."]
+        }
+      ]
+    },
+    {
+      "id": "hackathon_schweiz",
+      "title": "Hackathon Schweiz",
+      "year": "2023",
+      "category": "UX Design",
+      "role": "UX Designer",
+      "tools": "Figma",
+      "hero": "assets/projects/hackathon_schweiz/0.png",
+      "sections": [
+        {
+          "type": "section",
+          "number": "01",
+          "heading": "Overview",
+          "body": ["Content coming soon."]
+        }
+      ]
+    }
+  ]
+}

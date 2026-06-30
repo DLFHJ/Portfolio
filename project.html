@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project — David Laßlberger</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Aspekta';
+            src: url('assets/fonts/Aspekta-700.woff2') format('woff2');
+            font-weight: 700;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-bold {
+            font-family: 'Aspekta', sans-serif;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s cubic-bezier(0.5, 0, 0, 1), transform 0.7s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="text-gray-900 antialiased selection:bg-black selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/0 z-40 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-50">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex-shrink-0">
+                    <a href="index.html"
+                        class="block font-bold text-sm tracking-tight uppercase text-black">David Laßlberger, MA</a>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:flex items-center space-x-8 mr-8">
+                        <a href="index.html#work"
+                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
+                        <a href="index.html#about"
+                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
+                        <a href="index.html#contact"
+                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
+                    </div>
+                    <div class="flex items-center space-x-3 md:space-x-8">
+                        <button id="langToggle"
+                            class="flex items-center text-xs uppercase tracking-widest border border-gray-400 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full lg:hover:bg-black lg:hover:text-white active:scale-95 transition-all duration-300 relative z-50">
+                            <span id="langLabel">EN</span>
+                        </button>
+                        <div class="md:hidden relative z-50">
+                            <button class="p-2 -mr-2" onclick="toggleMobileMenu()">
+                                <i id="menuIconOpen" data-lucide="menu" class="w-6 h-6"></i>
+                                <i id="menuIconClose" data-lucide="x" class="w-6 h-6 hidden"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-white z-[39] flex flex-col justify-center items-center space-y-8 pt-20 transition-opacity duration-300 opacity-0 pointer-events-none md:hidden">
+        <a href="index.html#work" onclick="toggleMobileMenu()"
+            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Work</a>
+        <a href="index.html#about" onclick="toggleMobileMenu()"
+            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">About</a>
+        <a href="index.html#contact" onclick="toggleMobileMenu()"
+            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Contact</a>
+    </div>
+
+    <!-- Header (fields populated by JS) -->
+    <header class="pt-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-8 pb-8">
+            <div class="grid grid-cols-12">
+                <div class="col-span-12 md:col-span-10">
+                    <h1 id="proj-title"
+                        class="font-bold leading-none tracking-tighter"
+                        style="font-size:clamp(3rem,7vw,6.5rem);opacity:0;transform:translateY(14px)"></h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="hdr-hero" class="max-w-7xl mx-auto px-6 lg:px-8" style="opacity:0;transform:translateY(14px)">
+            <img id="proj-hero" src="" alt="" class="w-full object-cover aspect-[16/9]">
+        </div>
+
+        <div id="hdr-meta" class="max-w-7xl mx-auto px-6 lg:px-8 border-b border-gray-100 mt-0"
+            style="opacity:0;transform:translateY(14px)">
+            <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100 py-7">
+                <div class="pr-8 py-1">
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Year</p>
+                    <p id="proj-year" class="text-sm text-gray-700"></p>
+                </div>
+                <div class="px-8 py-1">
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Category</p>
+                    <p id="proj-category" class="text-sm text-gray-700"></p>
+                </div>
+                <div class="px-8 py-1 col-span-1 mt-4 md:mt-0">
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Role</p>
+                    <p id="proj-role" class="text-sm text-gray-700"></p>
+                </div>
+                <div class="px-8 py-1 mt-4 md:mt-0">
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Tools</p>
+                    <p id="proj-tools" class="text-sm text-gray-700"></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dynamic content sections -->
+    <main id="proj-content" class="pb-28"></main>
+
+    <!-- Prev / Next footer (hidden until project loads) -->
+    <section id="proj-nav" class="border-t border-gray-100 hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-2">
+                <a id="prev-link" href="#"
+                    class="group py-14 pr-8 border-r border-gray-100 hover:bg-gray-50 transition-colors -mx-6 px-6 lg:-mx-8 lg:px-8">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">← Previous</p>
+                    <h3 id="prev-title" class="font-bold text-xl group-hover:text-gray-400 transition-colors"></h3>
+                    <p id="prev-category" class="text-xs text-gray-400 mt-1 uppercase tracking-wider"></p>
+                </a>
+                <a id="next-link" href="#"
+                    class="group py-14 pl-8 text-right hover:bg-gray-50 transition-colors">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">Next →</p>
+                    <h3 id="next-title" class="font-bold text-xl group-hover:text-gray-400 transition-colors"></h3>
+                    <p id="next-category" class="text-xs text-gray-400 mt-1 uppercase tracking-wider"></p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm');
+                navbar.classList.remove('bg-white/0');
+            } else {
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm');
+                navbar.classList.add('bg-white/0');
+            }
+        }, { passive: true });
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('menuIconOpen');
+            const iconClose = document.getElementById('menuIconClose');
+            const isHidden = menu.classList.contains('opacity-0');
+            if (isHidden) {
+                menu.classList.remove('opacity-0', 'pointer-events-none');
+                menu.classList.add('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = 'hidden';
+                if (iconOpen) iconOpen.classList.add('hidden');
+                if (iconClose) iconClose.classList.remove('hidden');
+            } else {
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                menu.classList.remove('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = '';
+                if (iconOpen) iconOpen.classList.remove('hidden');
+                if (iconClose) iconClose.classList.add('hidden');
+            }
+        }
+
+        // Scroll reveal — called after sections are injected
+        function initScrollReveal() {
+            const observer = new IntersectionObserver(
+                entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }),
+                { threshold: 0.08 }
+            );
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+        }
+
+        // Fade-in with translate — used for header fields after content is set
+        function animateIn(el, delay) {
+            if (!el) return;
+            requestAnimationFrame(() => {
+                el.style.transition = `opacity 0.8s ${delay}s cubic-bezier(0.5,0,0,1), transform 0.8s ${delay}s cubic-bezier(0.5,0,0,1)`;
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            });
+        }
+
+        // ── Section renderers ──────────────────────────────────────────────
+
+        function renderSection(block, isFirst) {
+            const topPad = isFirst ? 'pt-20' : 'pt-16';
+            const paragraphs = (block.body || [])
+                .map(p => `<p class="text-gray-600 leading-relaxed mb-4">${p}</p>`)
+                .join('');
+            return `
+                <section class="max-w-7xl mx-auto px-6 lg:px-8 ${topPad} pb-16">
+                    <div class="reveal-on-scroll flex items-center gap-5 mb-10">
+                        <span class="text-[10px] text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">${block.number}</span>
+                        <div class="flex-1 h-px bg-gray-200"></div>
+                    </div>
+                    <div class="grid grid-cols-12 gap-x-8">
+                        <div class="col-span-12 md:col-span-4 reveal-on-scroll">
+                            <h2 class="font-bold text-2xl tracking-tight mb-4">${block.heading}</h2>
+                        </div>
+                        <div class="col-span-12 md:col-span-7 md:col-start-6 reveal-on-scroll">
+                            ${paragraphs}
+                        </div>
+                    </div>
+                </section>`;
+        }
+
+        function renderImages2col(block) {
+            const imgs = (block.images || [])
+                .map(src => `<div class="col-span-12 md:col-span-6"><img src="${src}" alt="" class="w-full object-cover aspect-[4/3]"></div>`)
+                .join('');
+            const caption = block.caption
+                ? `<div class="grid grid-cols-12 mt-5"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${block.caption}</p></div>`
+                : '';
+            return `
+                <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
+                    <div class="grid grid-cols-12 gap-3 reveal-on-scroll mb-5">${imgs}</div>
+                    ${caption}
+                </section>`;
+        }
+
+        function renderImages3col(block) {
+            const imgs = (block.images || [])
+                .map(src => `<div class="col-span-4"><img src="${src}" alt="" class="w-full object-cover aspect-square"></div>`)
+                .join('');
+            return `
+                <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
+                    <div class="grid grid-cols-12 gap-3 reveal-on-scroll">${imgs}</div>
+                </section>`;
+        }
+
+        function renderImageWide(block) {
+            const caption = block.caption
+                ? `<div class="grid grid-cols-12 mt-4 mb-10"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${block.caption}</p></div>`
+                : '';
+            return `
+                <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-4">
+                    <div class="reveal-on-scroll mb-3">
+                        <img src="${block.src}" alt="${block.alt || ''}" class="w-full object-cover">
+                    </div>
+                    ${caption}
+                </section>`;
+        }
+
+        function renderImageHighlight(block) {
+            const caption = block.caption
+                ? `<p class="text-sm text-gray-400 mt-4 leading-relaxed">${block.caption}</p>`
+                : '';
+            return `
+                <section class="bg-gray-50 py-16 reveal-on-scroll">
+                    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                        <img src="${block.src}" alt="${block.alt || ''}" class="w-full object-cover">
+                        ${caption}
+                    </div>
+                </section>`;
+        }
+
+        function renderBlock(block, isFirst) {
+            switch (block.type) {
+                case 'section':        return renderSection(block, isFirst);
+                case 'images-2col':    return renderImages2col(block);
+                case 'images-3col':    return renderImages3col(block);
+                case 'image-wide':     return renderImageWide(block);
+                case 'image-highlight':return renderImageHighlight(block);
+                default:               return '';
+            }
+        }
+
+        // ── Project loader ─────────────────────────────────────────────────
+
+        async function loadProject() {
+            const id = new URLSearchParams(window.location.search).get('id');
+
+            if (!id) {
+                document.getElementById('proj-content').innerHTML =
+                    '<div class="max-w-7xl mx-auto px-6 lg:px-8 py-32 text-center"><p class="text-gray-400 font-mono text-sm">No project specified.</p></div>';
+                return;
+            }
+
+            let data;
+            try {
+                const res = await fetch('projects.json');
+                data = await res.json();
+            } catch (e) {
+                document.getElementById('proj-content').innerHTML =
+                    '<div class="max-w-7xl mx-auto px-6 lg:px-8 py-32 text-center"><p class="text-gray-400 font-mono text-sm">Could not load project data.</p></div>';
+                return;
+            }
+
+            const projects = data.projects;
+            const index = projects.findIndex(p => p.id === id);
+
+            if (index === -1) {
+                document.getElementById('proj-content').innerHTML =
+                    '<div class="max-w-7xl mx-auto px-6 lg:px-8 py-32 text-center"><p class="text-gray-400 font-mono text-sm">Project not found.</p></div>';
+                return;
+            }
+
+            const project = projects[index];
+            // Wrap-around prev/next
+            const prev = projects[(index - 1 + projects.length) % projects.length];
+            const next = projects[(index + 1) % projects.length];
+
+            // Page title
+            document.title = `${project.title} — David Laßlberger`;
+
+            // Header fields
+            document.getElementById('proj-title').textContent = project.title;
+            document.getElementById('proj-year').textContent = project.year;
+            document.getElementById('proj-category').textContent = project.category;
+            document.getElementById('proj-role').textContent = project.role;
+            document.getElementById('proj-tools').textContent = project.tools;
+
+            const hero = document.getElementById('proj-hero');
+            hero.src = project.hero;
+            hero.alt = project.title;
+
+            // Render content sections
+            document.getElementById('proj-content').innerHTML =
+                (project.sections || []).map((block, i) => renderBlock(block, i === 0)).join('');
+
+            // Prev / Next footer
+            if (projects.length > 1) {
+                document.getElementById('prev-link').href = `project.html?id=${prev.id}`;
+                document.getElementById('prev-title').textContent = prev.title;
+                document.getElementById('prev-category').textContent = prev.category;
+                document.getElementById('next-link').href = `project.html?id=${next.id}`;
+                document.getElementById('next-title').textContent = next.title;
+                document.getElementById('next-category').textContent = next.category;
+                document.getElementById('proj-nav').classList.remove('hidden');
+            }
+
+            // Animate header in (content is already set, so elements won't flash empty)
+            animateIn(document.getElementById('proj-title'), 0.05);
+            animateIn(document.getElementById('hdr-hero'), 0.32);
+            animateIn(document.getElementById('hdr-meta'), 0.44);
+
+            // Wire up scroll reveal for injected sections
+            initScrollReveal();
+        }
+
+        loadProject();
+    </script>
+
+</body>
+</html>
