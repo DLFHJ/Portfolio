@@ -724,7 +724,7 @@
         lucide.createIcons();
 
         // Data & Translations
-        let currentLang = 'en';
+        let currentLang = localStorage.getItem('lang') || 'en';
         const translations = {
             en: {
                 nav_work: "Work", nav_about: "About", nav_contact: "Contact",
@@ -1070,6 +1070,7 @@
 
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'de' : 'en';
+            localStorage.setItem('lang', currentLang);
             applyLanguage();
         }
 

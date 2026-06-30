@@ -63,7 +63,7 @@
                             class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
                     </div>
                     <div class="flex items-center space-x-3 md:space-x-8">
-                        <button id="langToggle"
+                        <button id="langToggle" onclick="toggleLanguage()"
                             class="flex items-center text-xs uppercase tracking-widest border border-gray-400 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full lg:hover:bg-black lg:hover:text-white active:scale-95 transition-all duration-300 relative z-50">
                             <span id="langLabel">EN</span>
                         </button>
@@ -155,6 +155,37 @@
     <script>
         lucide.createIcons();
 
+        // Language persistence
+        let currentLang = localStorage.getItem('lang') || 'en';
+        let loadedProject = null;
+
+        function getLang(field) {
+            if (!field) return '';
+            if (typeof field === 'string') return field;
+            return field[currentLang] || field.en || '';
+        }
+
+        function applyLanguage() {
+            const label = document.getElementById('langLabel');
+            if (label) label.textContent = currentLang.toUpperCase();
+            if (loadedProject) {
+                document.getElementById('proj-category').textContent = getLang(loadedProject.category);
+                document.getElementById('proj-role').textContent = getLang(loadedProject.role);
+                document.getElementById('proj-tools').textContent = getLang(loadedProject.tools);
+                document.getElementById('proj-content').innerHTML =
+                    (loadedProject.sections || []).map((block, i) => renderBlock(block, i === 0)).join('');
+                initScrollReveal();
+            }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'de' : 'en';
+            localStorage.setItem('lang', currentLang);
+            applyLanguage();
+        }
+
+        applyLanguage();
+
         // Navbar scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -211,7 +242,9 @@
 
         function renderSection(block, isFirst) {
             const topPad = isFirst ? 'pt-20' : 'pt-16';
-            const paragraphs = (block.body || [])
+            const heading = getLang(block.heading);
+            const bodyArr = Array.isArray(block.body) ? block.body : (block.body ? (block.body[currentLang] || block.body.en || []) : []);
+            const paragraphs = bodyArr
                 .map(p => `<p class="text-gray-600 leading-relaxed mb-4">${p}</p>`)
                 .join('');
             return `
@@ -222,7 +255,7 @@
                     </div>
                     <div class="grid grid-cols-12 gap-x-8">
                         <div class="col-span-12 md:col-span-4 reveal-on-scroll">
-                            <h2 class="font-bold text-2xl tracking-tight mb-4">${block.heading}</h2>
+                            <h2 class="font-bold text-2xl tracking-tight mb-4">${heading}</h2>
                         </div>
                         <div class="col-span-12 md:col-span-7 md:col-start-6 reveal-on-scroll">
                             ${paragraphs}
@@ -235,8 +268,9 @@
             const imgs = (block.images || [])
                 .map(src => `<div class="col-span-12 md:col-span-6"><img src="${src}" alt="" class="w-full object-cover aspect-[4/3]"></div>`)
                 .join('');
-            const caption = block.caption
-                ? `<div class="grid grid-cols-12 mt-5"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${block.caption}</p></div>`
+            const captionText = getLang(block.caption);
+            const caption = captionText
+                ? `<div class="grid grid-cols-12 mt-5"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${captionText}</p></div>`
                 : '';
             return `
                 <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
@@ -256,8 +290,9 @@
         }
 
         function renderImageWide(block) {
-            const caption = block.caption
-                ? `<div class="grid grid-cols-12 mt-4 mb-10"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${block.caption}</p></div>`
+            const captionText = getLang(block.caption);
+            const caption = captionText
+                ? `<div class="grid grid-cols-12 mt-4 mb-10"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${captionText}</p></div>`
                 : '';
             return `
                 <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-4">
@@ -269,8 +304,9 @@
         }
 
         function renderImageHighlight(block) {
-            const caption = block.caption
-                ? `<p class="text-sm text-gray-400 mt-4 leading-relaxed">${block.caption}</p>`
+            const captionText = getLang(block.caption);
+            const caption = captionText
+                ? `<p class="text-sm text-gray-400 mt-4 leading-relaxed">${captionText}</p>`
                 : '';
             return `
                 <section class="bg-gray-50 py-16 reveal-on-scroll">
@@ -323,6 +359,7 @@
             }
 
             const project = projects[index];
+            loadedProject = project;
             // Wrap-around prev/next
             const prev = projects[(index - 1 + projects.length) % projects.length];
             const next = projects[(index + 1) % projects.length];
@@ -333,9 +370,9 @@
             // Header fields
             document.getElementById('proj-title').textContent = project.title;
             document.getElementById('proj-year').textContent = project.year;
-            document.getElementById('proj-category').textContent = project.category;
-            document.getElementById('proj-role').textContent = project.role;
-            document.getElementById('proj-tools').textContent = project.tools;
+            document.getElementById('proj-category').textContent = getLang(project.category);
+            document.getElementById('proj-role').textContent = getLang(project.role);
+            document.getElementById('proj-tools').textContent = getLang(project.tools);
 
             const hero = document.getElementById('proj-hero');
             hero.src = project.hero;

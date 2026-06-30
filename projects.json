@@ -128,15 +128,61 @@
       "title": "Portfolio Machine",
       "year": "2024",
       "category": "Creative Coding",
-      "role": "Developer & Designer",
+      "role": { "en": "Frontend Developer", "de": "Frontend-Entwickler" },
       "tools": "HTML, CSS, JavaScript",
       "hero": "assets/projects/portfolio_machine/0.png",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": "Overview",
-          "body": ["Content coming soon."]
+          "heading": { "en": "The Concept", "de": "Das Konzept" },
+          "body": {
+            "en": [
+              "The Portfolio Machine was part of our <strong class=\"text-black font-medium\">final Master's exhibition</strong> — an interactive installation showcasing the collective work of our class. It uses <strong class=\"text-black font-medium\">NFC-embedded spheres</strong> as physical controllers to navigate a digital archive of student projects. Visitors place a student's illuminated sphere on a central console to identify the creator and load their specific work.",
+              "As <strong class=\"text-black font-medium\">Frontend Developer</strong>, I built the interface using HTML and CSS, implementing <strong class=\"text-black font-medium\">parallax scrolling</strong> to create an immersive effect where users scroll into projects, generating a 3D sense of depth. Beyond visuals, I tackled technical challenges such as <strong class=\"text-black font-medium\">resolution mapping</strong>, synchronized video autoplay, and performance optimization — blending tactile hardware with custom software into a one-of-a-kind physical-digital showcase."
+            ],
+            "de": [
+              "Die Portfolio Machine war Teil unserer <strong class=\"text-black font-medium\">Abschlussausstellung im Master</strong> — eine interaktive Installation, die die gesammelten Arbeiten unserer Klasse präsentierte. Mithilfe von <strong class=\"text-black font-medium\">NFC-embedded Kugeln</strong> als physischen Controllern navigierten Besucher:innen durch ein digitales Archiv der Studentenprojekte: Die beleuchtete Kugel einer Person auf der Konsole zu platzieren identifizierte sie und lud ihr spezifisches Portfolio.",
+              "Als <strong class=\"text-black font-medium\">Frontend-Entwickler</strong> baute ich die Oberfläche mit HTML und CSS und implementierte <strong class=\"text-black font-medium\">Parallax-Scrolling</strong>, das einen immersiven Effekt erzeugt, bei dem man in Projekte hineinscrollt und ein 3D-Tiefengefühl entsteht. Darüber hinaus löste ich technische Herausforderungen wie <strong class=\"text-black font-medium\">Auflösungs-Mapping</strong>, synchronisiertes Video-Autoplay und Performance-Optimierung — und verband haptische Hardware mit individueller Software zu einem einzigartigen physisch-digitalen Erlebnis."
+            ]
+          }
+        },
+        {
+          "type": "image-wide",
+          "src": "assets/projects/portfolio_machine/1.jpg",
+          "caption": {
+            "en": "The physical installation of the Portfolio Machine as showcased during the final exhibition.",
+            "de": "Die physische Installation der Portfolio Machine, wie sie während der Abschlussausstellung präsentiert wurde."
+          }
+        },
+        {
+          "type": "section",
+          "number": "02",
+          "heading": { "en": "The Spheres", "de": "Die Kugeln" },
+          "body": {
+            "en": [
+              "Each student had a <strong class=\"text-black font-medium\">colorful, illuminated sphere</strong> embedded with an NFC chip. These acted as both a <strong class=\"text-black font-medium\">personal ID</strong> and a tactile controller — placing a sphere on the console identified the student and loaded their specific portfolio."
+            ],
+            "de": [
+              "Jede:r Studierende hatte eine <strong class=\"text-black font-medium\">farbige, beleuchtete Kugel</strong> mit eingebettetem NFC-Chip. Diese diente sowohl als <strong class=\"text-black font-medium\">persönliche ID</strong> als auch als haptischer Controller — wird die Kugel auf die Konsole gelegt, wird die Person identifiziert und ihr individuelles Portfolio geladen."
+            ]
+          }
+        },
+        {
+          "type": "image-wide",
+          "src": "assets/projects/portfolio_machine/2.jpg",
+          "caption": {
+            "en": "Each student's unique sphere doubles as identity and input device.",
+            "de": "Die einzigartige Kugel jedes Studierenden dient gleichzeitig als Identität und Eingabegerät."
+          }
+        },
+        {
+          "type": "image-highlight",
+          "src": "assets/projects/portfolio_machine/3.jpg",
+          "caption": {
+            "en": "The Portfolio Machine was part of a larger exhibition of our study programme, showcased at esc medien kunstlabor Graz.",
+            "de": "Die Portfolio Machine war Teil einer größeren Ausstellung unseres Studiengangs, präsentiert im esc medien kunstlabor Graz."
+          }
         }
       ]
     },
