@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option E — Sticky Sidebar</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Aspekta';
+            src: url('assets/fonts/Aspekta-700.woff2') format('woff2');
+            font-weight: 700;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-bold {
+            font-family: 'Aspekta', sans-serif;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.75s cubic-bezier(0.5, 0, 0, 1), transform 0.75s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sidebar-item { opacity: 0; transform: translateY(12px); animation: sreveal 0.8s cubic-bezier(0.5,0,0,1) forwards; }
+        .sidebar-item:nth-child(1) { animation-delay: 0.08s; }
+        .sidebar-item:nth-child(2) { animation-delay: 0.18s; }
+        .sidebar-item:nth-child(3) { animation-delay: 0.28s; }
+        .sidebar-item:nth-child(4) { animation-delay: 0.36s; }
+        .sidebar-item:nth-child(5) { animation-delay: 0.44s; }
+        .sidebar-item:nth-child(6) { animation-delay: 0.50s; }
+        @keyframes sreveal { to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+
+<body class="text-gray-900 antialiased selection:bg-black selection:text-white">
+
+    <!-- ─── Navigation ─── -->
+    <nav class="fixed top-0 w-full bg-white border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="block font-bold text-sm tracking-tight uppercase p-2">
+                        David Laßlberger, MA
+                    </a>
+                </div>
+
+                <!-- Nav links + toggles -->
+                <div class="flex items-center">
+                    <!-- Desktop links -->
+                    <div class="hidden md:flex items-center space-x-8 mr-8">
+                        <a href="index.html#work"
+                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
+                        <a href="index.html#about"
+                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
+                        <a href="index.html#contact"
+                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
+                    </div>
+
+                    <!-- Lang toggle + mobile hamburger -->
+                    <div class="flex items-center space-x-3 md:space-x-8">
+                        <button class="flex items-center text-xs uppercase tracking-widest border border-gray-400 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full hover:bg-black hover:text-white active:scale-95 transition-all duration-300">
+                            EN
+                        </button>
+                        <div class="md:hidden">
+                            <button onclick="document.getElementById('mobileMenu').classList.toggle('opacity-0'); document.getElementById('mobileMenu').classList.toggle('pointer-events-none');">
+                                <i data-lucide="menu" class="w-6 h-6"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu overlay -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-white z-[49] flex flex-col justify-center items-center space-y-8 pt-20 transition-opacity duration-300 opacity-0 pointer-events-none md:hidden">
+        <a href="index.html#work"
+            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Work</a>
+        <a href="index.html#about"
+            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">About</a>
+        <a href="index.html#contact"
+            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Contact</a>
+    </div>
+
+    <!-- ─── Page body: sidebar + content ─── -->
+    <div class="flex min-h-screen pt-24">
+
+        <!-- ─── Sticky Sidebar ─── -->
+        <aside class="hidden md:flex flex-col w-64 lg:w-72 xl:w-80 shrink-0 border-r border-gray-100
+                      sticky top-24 h-[calc(100vh-6rem)] overflow-y-auto
+                      px-8 lg:px-10 py-12">
+
+            <!-- Project number -->
+            <div class="sidebar-item mb-8">
+                <p class="font-bold text-gray-200 leading-none select-none"
+                   style="font-size: clamp(4rem, 6vw, 5rem)">01</p>
+            </div>
+
+            <!-- Title -->
+            <div class="sidebar-item mb-8">
+                <h1 class="font-bold tracking-tight leading-tight"
+                    style="font-size: clamp(1.4rem, 2vw, 1.75rem)">
+                    Urban Interface
+                </h1>
+            </div>
+
+            <!-- Meta: Year -->
+            <div class="sidebar-item border-t border-gray-100 pt-5 mb-5">
+                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Year</p>
+                <p class="text-sm text-gray-700">2025</p>
+            </div>
+
+            <!-- Meta: Category -->
+            <div class="sidebar-item border-t border-gray-100 pt-5 mb-5">
+                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Category</p>
+                <p class="text-sm text-gray-700 leading-relaxed">Interaction Design, Urban Research</p>
+            </div>
+
+            <!-- Meta: Tools -->
+            <div class="sidebar-item border-t border-gray-100 pt-5 mb-auto">
+                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-2">Tools</p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="text-[10px] uppercase tracking-wider border border-gray-200 text-gray-500 px-2.5 py-1 rounded-full">Figma</span>
+                    <span class="text-[10px] uppercase tracking-wider border border-gray-200 text-gray-500 px-2.5 py-1 rounded-full">Arduino</span>
+                    <span class="text-[10px] uppercase tracking-wider border border-gray-200 text-gray-500 px-2.5 py-1 rounded-full">P5.js</span>
+                    <span class="text-[10px] uppercase tracking-wider border border-gray-200 text-gray-500 px-2.5 py-1 rounded-full">After Effects</span>
+                </div>
+            </div>
+
+            <!-- Back link at the bottom -->
+            <div class="sidebar-item border-t border-gray-100 pt-6 mt-8">
+                <a href="index.html#work"
+                    class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-500 hover:text-black transition-colors">
+                    ← Back to Work
+                </a>
+            </div>
+        </aside>
+
+        <!-- ─── Main content area ─── -->
+        <div class="flex-1 min-w-0">
+
+            <!-- Hero image: fills the full content column width 
+            <div class="px-10 lg:px-14 xl:px-16 py-14">
+                <img src="https://picsum.photos/seed/urbaninterface/1000/500"
+                    alt="Urban Interface"
+                    class="object-cover aspect-[16/9]">
+            </div>
+            -->
+
+            <!-- Description -->
+            <section class="px-10 lg:px-14 xl:px-16 py-16 reveal-on-scroll">
+                <p class="text-xl md:text-2xl text-gray-600 leading-relaxed font-light max-w-3xl">
+                    This project explores how <strong class="text-black font-semibold">public digital
+                    interfaces</strong> can reshape the way people move through and experience urban space.
+                    Through participatory research and iterative prototyping, a series of
+                    <strong class="text-black font-semibold">location-aware installations</strong> were
+                    developed that adapt to the rhythms of the city.
+                </p>
+            </section>
+
+            <!-- 2-col gallery -->
+            <section class="px-10 lg:px-14 xl:px-16 py-14">
+                <div class="grid grid-cols-2 gap-3 reveal-on-scroll">
+                    <img src="https://picsum.photos/seed/urbang1/800/600"
+                        alt="" class="w-full object-cover aspect-[4/3]">
+                    <img src="https://picsum.photos/seed/urbang2/800/600"
+                        alt="" class="w-full object-cover aspect-[4/3]">
+                </div>
+                <p class="text-sm text-gray-400 mt-4 max-w-2xl leading-relaxed">
+                    Early-stage research: field observations at three city intersections were used to map pedestrian
+                    flows and identify key moments of disorientation or hesitation.
+                </p>
+            </section>
+
+            <!-- Text block -->
+            <section class="px-10 lg:px-14 xl:px-16 pb-14">
+                <div class="reveal-on-scroll max-w-xl">
+                    <p class="text-gray-500 leading-relaxed">
+                        The prototyping phase consisted of three rapid iteration cycles. Each cycle introduced
+                        physical and digital components — from pressure-sensitive flooring to ambient audio cues —
+                        tested directly in a simulated urban context. Participants navigated the environment while
+                        thinking aloud, providing rich qualitative data that directly shaped subsequent design decisions.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Gray bg wide image -->
+            <section class="bg-gray-50 px-10 lg:px-14 xl:px-16 py-14 reveal-on-scroll">
+                <img src="https://picsum.photos/seed/urbanwide2/1200/600"
+                    alt="" class="w-full object-cover">
+                <p class="text-sm text-gray-400 mt-4 leading-relaxed">
+                    Final prototype installed during a two-week public pilot. Visitor interactions were logged
+                    and analyzed to measure usability and emotional response.
+                </p>
+            </section>
+
+            <!-- 3-col gallery -->
+            <section class="px-10 lg:px-14 xl:px-16 py-14">
+                <div class="grid grid-cols-3 gap-3 reveal-on-scroll">
+                    <img src="https://picsum.photos/seed/urbansq1/600/600"
+                        alt="" class="w-full object-cover aspect-square">
+                    <img src="https://picsum.photos/seed/urbansq2/600/600"
+                        alt="" class="w-full object-cover aspect-square">
+                    <img src="https://picsum.photos/seed/urbansq3/600/600"
+                        alt="" class="w-full object-cover aspect-square">
+                </div>
+            </section>
+
+            <!-- Closing text -->
+            <section class="px-10 lg:px-14 xl:px-16 pb-24">
+                <div class="reveal-on-scroll max-w-xl">
+                    <p class="text-gray-500 leading-relaxed">
+                        This project demonstrated that small, context-aware interventions can meaningfully shift
+                        how people perceive and interact with public space — a finding that directly informs future
+                        smart city design strategies.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Prev / Next -->
+            <section class="border-t border-gray-100">
+                <div class="grid grid-cols-2">
+                    <a href="#" class="group px-10 lg:px-14 xl:px-16 py-14 border-r border-gray-100 hover:bg-gray-50 transition-colors">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">← Previous</p>
+                        <h3 class="font-bold text-xl group-hover:text-gray-400 transition-colors">Sonolux</h3>
+                        <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Visual Design</p>
+                    </a>
+                    <a href="#" class="group px-10 lg:px-14 xl:px-16 py-14 text-right hover:bg-gray-50 transition-colors">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">Next →</p>
+                        <h3 class="font-bold text-xl group-hover:text-gray-400 transition-colors">ÖBB Internship</h3>
+                        <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">UX Design</p>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver(
+            (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }),
+            { threshold: 0.08 }
+        );
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

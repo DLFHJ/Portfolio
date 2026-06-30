@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option G — Case Study (miagalloro-inspired)</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Aspekta';
+            src: url('assets/fonts/Aspekta-700.woff2') format('woff2');
+            font-weight: 700;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-bold {
+            font-family: 'Aspekta', sans-serif;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s cubic-bezier(0.5, 0, 0, 1), transform 0.7s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header stagger */
+        .hdr { opacity: 0; transform: translateY(14px); animation: hIn 0.8s cubic-bezier(0.5,0,0,1) forwards; }
+        .hdr-1 { animation-delay: 0.05s; }
+        .hdr-2 { animation-delay: 0.18s; }
+        .hdr-3 { animation-delay: 0.32s; }
+        .hdr-4 { animation-delay: 0.44s; }
+        @keyframes hIn { to { opacity: 1; transform: translateY(0); } }
+
+        /* Next project hover */
+        .next-project-img { transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1); }
+        .next-project-link:hover .next-project-img { transform: scale(1.04); }
+    </style>
+</head>
+
+<body class="text-gray-900 antialiased selection:bg-black selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/0 z-40 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-50">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex-shrink-0">
+                    <a href="index.html"
+                        class="block font-bold text-sm tracking-tight uppercase p-2 text-black">
+                        David Laßlberger, MA
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:flex items-center space-x-8 mr-8">
+                        <a href="index.html#work"
+                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
+                        <a href="index.html#about"
+                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
+                        <a href="index.html#contact"
+                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
+                    </div>
+                    <div class="flex items-center space-x-3 md:space-x-8">
+                        <button id="langToggle"
+                            class="flex items-center text-xs uppercase tracking-widest border border-gray-400 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full lg:hover:bg-black lg:hover:text-white active:scale-95 transition-all duration-300 relative z-50">
+                            <span id="langLabel">EN</span>
+                        </button>
+                        <div class="md:hidden relative z-50">
+                            <button class="p-2 -mr-2" onclick="toggleMobileMenu()">
+                                <i id="menuIconOpen" data-lucide="menu" class="w-6 h-6"></i>
+                                <i id="menuIconClose" data-lucide="x" class="w-6 h-6 hidden"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-white z-[39] flex flex-col justify-center items-center space-y-8 pt-20 transition-opacity duration-300 opacity-0 pointer-events-none md:hidden">
+        <a href="index.html#work" onclick="toggleMobileMenu()"
+            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Work</a>
+        <a href="index.html#about" onclick="toggleMobileMenu()"
+            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">About</a>
+        <a href="index.html#contact" onclick="toggleMobileMenu()"
+            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Contact</a>
+    </div>
+
+    <!-- ─── Header: category + title ─── -->
+    <header class="pt-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-4 pb-8">
+            <div class="grid grid-cols-12">
+                <div class="col-span-12 md:col-span-10">
+                    <h1 class="hdr hdr-1 font-bold leading-none tracking-tighter"
+                        style="font-size: clamp(3rem, 7vw, 6.5rem)">
+                        Urban Interface
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero image: full container width, contained by grid padding -->
+        <div class="hdr hdr-3 max-w-7xl mx-auto px-6 lg:px-8">
+            <img src="https://picsum.photos/seed/urbaninterface/1400/700"
+                alt="Urban Interface"
+                class="w-full object-cover aspect-[16/9]">
+        </div>
+
+        <!-- Meta strip: Year | Category | Role | Tools -->
+        <div class="hdr hdr-4 max-w-7xl mx-auto px-6 lg:px-8 border-b border-gray-100 mt-0">
+            <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100 py-7">
+                <div class="pr-8 py-1">
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Year</p>
+                    <p class="text-sm text-gray-700">2025</p>
+                </div>
+                <div class="px-8 py-1">
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Category</p>
+                    <p class="text-sm text-gray-700">Interaction Design</p>
+                </div>
+                <div class="px-8 py-1 col-span-1 mt-4 md:mt-0">
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Role</p>
+                    <p class="text-sm text-gray-700">UX Research & UI Design</p>
+                </div>
+                <div class="px-8 py-1 mt-4 md:mt-0">
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Tools</p>
+                    <p class="text-sm text-gray-700">Figma, Arduino, P5.js</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── Content ─── -->
+    <main>
+
+        <!-- ══ 01 THE CHALLENGE ══════════════════════════════ -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-16">
+
+            <!-- Section divider -->
+            <div class="reveal-on-scroll flex items-center gap-5 mb-10">
+                <span class="text-[10px] text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">01</span>
+                <div class="flex-1 h-px bg-gray-200"></div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-x-8">
+                <!-- Section heading: left 4/12 -->
+                <div class="col-span-12 md:col-span-4 reveal-on-scroll">
+                    <h2 class="font-bold text-2xl tracking-tight mb-4">The Challenge</h2>
+                </div>
+                <!-- Body text: right 7/12 -->
+                <div class="col-span-12 md:col-span-7 md:col-start-6 reveal-on-scroll">
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Public spaces are increasingly mediated by digital systems — yet most of those systems are
+                        designed for efficiency rather than experience. Wayfinding is utilitarian. Information is
+                        generic. The <strong class="text-black font-medium">emotional and social dimensions of
+                        moving through a city</strong> are almost entirely ignored.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        This project asked a different question: what if public interfaces could respond to the
+                        <strong class="text-black font-medium">rhythms, moods, and needs</strong> of the people
+                        around them — rather than simply broadcasting static information?
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ 02 RESEARCH ══════════════════════════════════ -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+
+            <div class="reveal-on-scroll flex items-center gap-5 mb-10">
+                <span class="text-[10px] text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">02</span>
+                <div class="flex-1 h-px bg-gray-200"></div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-x-8 mb-12">
+                <div class="col-span-12 md:col-span-4 reveal-on-scroll">
+                    <h2 class="font-bold text-2xl tracking-tight mb-4">Research</h2>
+                </div>
+                <div class="col-span-12 md:col-span-7 md:col-start-6 reveal-on-scroll">
+                    <p class="text-gray-600 leading-relaxed">
+                        Field research at three urban locations combined observation with structured interviews.
+                        Over three weeks, we mapped pedestrian flows, dwell times, and moments of hesitation —
+                        building a detailed picture of how people actually navigate shared space versus
+                        how designers assume they do.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2-col images -->
+            <div class="grid grid-cols-12 gap-3 reveal-on-scroll mb-5">
+                <div class="col-span-12 md:col-span-6">
+                    <img src="https://picsum.photos/seed/urbang1/800/600"
+                        alt="" class="w-full object-cover aspect-[4/3]">
+                </div>
+                <div class="col-span-12 md:col-span-6">
+                    <img src="https://picsum.photos/seed/urbang2/800/600"
+                        alt="" class="w-full object-cover aspect-[4/3]">
+                </div>
+            </div>
+            <div class="grid grid-cols-12">
+                <p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">
+                    Left: annotated observation maps from the Hauptplatz site visit. Right: interview
+                    session with a long-term resident documenting habitual navigation patterns.
+                </p>
+            </div>
+        </section>
+
+        <!-- ══ 03 DESIGN ════════════════════════════════════ -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+
+            <div class="reveal-on-scroll flex items-center gap-5 mb-10">
+                <span class="text-[10px] text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">03</span>
+                <div class="flex-1 h-px bg-gray-200"></div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-x-8 mb-14">
+                <div class="col-span-12 md:col-span-4 reveal-on-scroll">
+                    <h2 class="font-bold text-2xl tracking-tight mb-4">Design</h2>
+                </div>
+                <div class="col-span-12 md:col-span-7 md:col-start-6 reveal-on-scroll">
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Three rounds of prototyping explored different interaction models. The first used
+                        proximity sensing to adjust ambient sound; the second introduced visual feedback
+                        through floor projection; the third combined both with <strong class="text-black font-medium">
+                        real-time crowd density data</strong> pulled from transport APIs.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Each prototype was tested in-situ with 8–12 participants using a think-aloud protocol.
+                        Iterations were rapid — a one-week cycle from concept sketch to deployed test.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Wide image with caption -->
+            <div class="grid grid-cols-12 reveal-on-scroll mb-3">
+                <div class="col-span-12">
+                    <img src="https://picsum.photos/seed/urbanwide2/1400/650"
+                        alt="" class="w-full object-cover">
+                </div>
+            </div>
+            <div class="grid grid-cols-12 mb-14">
+                <p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">
+                    Prototype 3 installed in the Hauptplatz underpass. Ambient light intensity adapts in
+                    real time to crowd density, creating a subtle but legible spatial signal.
+                </p>
+            </div>
+
+            <!-- 3-col gallery -->
+            <div class="grid grid-cols-12 gap-3 reveal-on-scroll">
+                <div class="col-span-4">
+                    <img src="https://picsum.photos/seed/urbansq1/600/600"
+                        alt="" class="w-full object-cover aspect-square">
+                </div>
+                <div class="col-span-4">
+                    <img src="https://picsum.photos/seed/urbansq2/600/600"
+                        alt="" class="w-full object-cover aspect-square">
+                </div>
+                <div class="col-span-4">
+                    <img src="https://picsum.photos/seed/urbansq3/600/600"
+                        alt="" class="w-full object-cover aspect-square">
+                </div>
+            </div>
+        </section>
+
+        <!-- Gray bg section -->
+        <section class="bg-gray-50 py-16 reveal-on-scroll">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+                        <img src="https://picsum.photos/seed/mosaic3/1400/650"
+                            alt="" class="w-full object-cover">
+                        <p class="text-sm text-gray-400 mt-4 leading-relaxed">
+                            Detail of the floor projection system during the Hauptplatz pilot.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ 04 OUTCOME ═══════════════════════════════════ -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16 pb-28">
+
+            <div class="reveal-on-scroll flex items-center gap-5 mb-10">
+                <span class="text-[10px] text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">04</span>
+                <div class="flex-1 h-px bg-gray-200"></div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-12 md:col-span-4 reveal-on-scroll">
+                    <h2 class="font-bold text-2xl tracking-tight mb-4">Outcome</h2>
+                </div>
+                <div class="col-span-12 md:col-span-7 md:col-start-6 reveal-on-scroll">
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Post-pilot surveys across 87 respondents showed a measurable increase in
+                        <strong class="text-black font-medium">perceived safety and comfort</strong> in
+                        the tested locations. Navigation errors dropped by 34%. More significantly,
+                        dwell time in the underpass — previously avoided by most pedestrians after 20:00
+                        — increased by over 60%.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        The project demonstrated that ambient, behaviour-responsive interfaces can shift how
+                        people experience urban space — without requiring explicit attention or interaction.
+                        The work has been submitted for inclusion in the 2025 Urban Design Austria programme.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Prev / Next ─── -->
+        <section class="border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-2">
+                    <a href="#" class="group py-14 pr-8 border-r border-gray-100 hover:bg-gray-50 transition-colors -mx-6 px-6 lg:-mx-8 lg:px-8">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">← Previous</p>
+                        <h3 class="font-bold text-xl group-hover:text-gray-400 transition-colors">Sonolux</h3>
+                        <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Visual Design</p>
+                    </a>
+                    <a href="#" class="group py-14 pl-8 text-right hover:bg-gray-50 transition-colors">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">Next →</p>
+                        <h3 class="font-bold text-xl group-hover:text-gray-400 transition-colors">ÖBB Internship</h3>
+                        <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">UX Design</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // Navbar scroll — matches index.html behaviour
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm');
+                navbar.classList.remove('bg-white/0');
+            } else {
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm');
+                navbar.classList.add('bg-white/0');
+            }
+        }, { passive: true });
+
+        // Mobile menu — matches index.html behaviour
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('menuIconOpen');
+            const iconClose = document.getElementById('menuIconClose');
+            const isHidden = menu.classList.contains('opacity-0');
+            if (isHidden) {
+                menu.classList.remove('opacity-0', 'pointer-events-none');
+                menu.classList.add('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = 'hidden';
+                if (iconOpen) iconOpen.classList.add('hidden');
+                if (iconClose) iconClose.classList.remove('hidden');
+            } else {
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                menu.classList.remove('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = '';
+                if (iconOpen) iconOpen.classList.remove('hidden');
+                if (iconClose) iconClose.classList.add('hidden');
+            }
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }),
+            { threshold: 0.08 }
+        );
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
