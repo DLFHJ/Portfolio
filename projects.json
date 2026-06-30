@@ -1,78 +1,6 @@
 {
   "projects": [
     {
-      "id": "urban_interface",
-      "title": "Urban Interface",
-      "year": "2025",
-      "category": "Interaction Design",
-      "role": "UX Research & UI Design",
-      "tools": "Figma, Arduino, P5.js",
-      "hero": "https://picsum.photos/seed/urbaninterface/1400/700",
-      "sections": [
-        {
-          "type": "section",
-          "number": "01",
-          "heading": "The Challenge",
-          "body": [
-            "Public spaces are increasingly mediated by digital systems — yet most of those systems are designed for efficiency rather than experience. Wayfinding is utilitarian. Information is generic. The <strong class=\"text-black font-medium\">emotional and social dimensions of moving through a city</strong> are almost entirely ignored.",
-            "This project asked a different question: what if public interfaces could respond to the <strong class=\"text-black font-medium\">rhythms, moods, and needs</strong> of the people around them — rather than simply broadcasting static information?"
-          ]
-        },
-        {
-          "type": "section",
-          "number": "02",
-          "heading": "Research",
-          "body": [
-            "Field research at three urban locations combined observation with structured interviews. Over three weeks, we mapped pedestrian flows, dwell times, and moments of hesitation — building a detailed picture of how people actually navigate shared space versus how designers assume they do."
-          ]
-        },
-        {
-          "type": "images-2col",
-          "images": [
-            "https://picsum.photos/seed/urbang1/800/600",
-            "https://picsum.photos/seed/urbang2/800/600"
-          ],
-          "caption": "Left: annotated observation maps from the Hauptplatz site visit. Right: interview session with a long-term resident documenting habitual navigation patterns."
-        },
-        {
-          "type": "section",
-          "number": "03",
-          "heading": "Design",
-          "body": [
-            "Three rounds of prototyping explored different interaction models. The first used proximity sensing to adjust ambient sound; the second introduced visual feedback through floor projection; the third combined both with <strong class=\"text-black font-medium\">real-time crowd density data</strong> pulled from transport APIs.",
-            "Each prototype was tested in-situ with 8–12 participants using a think-aloud protocol. Iterations were rapid — a one-week cycle from concept sketch to deployed test."
-          ]
-        },
-        {
-          "type": "image-wide",
-          "src": "https://picsum.photos/seed/urbanwide2/1400/650",
-          "caption": "Prototype 3 installed in the Hauptplatz underpass. Ambient light intensity adapts in real time to crowd density, creating a subtle but legible spatial signal."
-        },
-        {
-          "type": "images-3col",
-          "images": [
-            "https://picsum.photos/seed/urbansq1/600/600",
-            "https://picsum.photos/seed/urbansq2/600/600",
-            "https://picsum.photos/seed/urbansq3/600/600"
-          ]
-        },
-        {
-          "type": "image-highlight",
-          "src": "https://picsum.photos/seed/mosaic3/1400/650",
-          "caption": "Detail of the floor projection system during the Hauptplatz pilot."
-        },
-        {
-          "type": "section",
-          "number": "04",
-          "heading": "Outcome",
-          "body": [
-            "Post-pilot surveys across 87 respondents showed a measurable increase in <strong class=\"text-black font-medium\">perceived safety and comfort</strong> in the tested locations. Navigation errors dropped by 34%. More significantly, dwell time in the underpass — previously avoided by most pedestrians after 20:00 — increased by over 60%.",
-            "The project demonstrated that ambient, behaviour-responsive interfaces can shift how people experience urban space — without requiring explicit attention or interaction. The work has been submitted for inclusion in the 2025 Urban Design Austria programme."
-          ]
-        }
-      ]
-    },
-    {
       "id": "master_thesis",
       "title": "Master Thesis",
       "year": "2025",
@@ -256,18 +184,46 @@
     },
     {
       "id": "hackathon_schweiz",
-      "title": "Hackathon Schweiz",
-      "year": "2023",
-      "category": "UX Design",
-      "role": "UX Designer",
-      "tools": "Figma",
+      "title": "START Hack",
+      "year": "2025",
+      "category": "Hackathon",
+      "role": { "en": "UX Designer & Frontend Developer", "de": "UX-Designer & Frontend-Entwickler" },
+      "tools": "Figma, React, FastAPI",
       "hero": "assets/projects/hackathon_schweiz/0.png",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": "Overview",
-          "body": ["Content coming soon."]
+          "heading": { "en": "The Hackathon", "de": "Der Hackathon" },
+          "body": {
+            "en": [
+              "During the <strong class=\"text-black font-medium\">START Hack in St. Gallen</strong>, our team of four took on a challenge for the <strong class=\"text-black font-medium\">United Nations G20 Global Land Initiative</strong>. We focused on the <strong class=\"text-black font-medium\">Sahel region in Africa</strong>, where desertification makes land management incredibly difficult. Our solution was a <strong class=\"text-black font-medium\">live dashboard</strong> that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers.",
+              "As <strong class=\"text-black font-medium\">UX Designer</strong>, I led the overall concept and information design — ensuring complex satellite data translated into something genuinely usable. I then worked on <strong class=\"text-black font-medium\">coding the frontend</strong> and led our <strong class=\"text-black font-medium\">final presentation</strong>, where we pitched a working prototype built entirely from scratch over the course of the hackathon."
+            ],
+            "de": [
+              "Während des <strong class=\"text-black font-medium\">START Hacks in St. Gallen</strong> nahm unser vierköpfiges Team an einer Challenge der <strong class=\"text-black font-medium\">United Nations G20 Global Land Initiative</strong> teil. Wir konzentrierten uns auf die <strong class=\"text-black font-medium\">Sahelzone in Afrika</strong>, wo Wüstenbildung das Landmanagement extrem erschwert. Unsere Lösung war ein <strong class=\"text-black font-medium\">Live-Dashboard</strong>, das jahrelang gesammelte, komplexe Satellitendaten in klare, handlungsorientierte Empfehlungen für lokale Entscheidungsträger übersetzt.",
+              "Als <strong class=\"text-black font-medium\">UX-Designer</strong> leitete ich das Gesamtkonzept und das Informationsdesign — und stellte sicher, dass komplexe Satellitendaten tatsächlich nutzbar wurden. Anschließend arbeitete ich an der <strong class=\"text-black font-medium\">Programmierung des Frontends</strong> und leitete unsere <strong class=\"text-black font-medium\">Abschlusspräsentation</strong>, bei der wir einen funktionierenden Prototypen vorstellten, der während des Hackathons von Grund auf entstanden ist."
+            ]
+          }
+        },
+        {
+          "type": "images-2col",
+          "images": [
+            "assets/projects/hackathon_schweiz/1.png",
+            "assets/projects/hackathon_schweiz/2.png"
+          ],
+          "caption": {
+            "en": "The prototype featured a fully functional front- and backend. The tech stack included React (JavaScript) for the frontend, FastAPI (Python) for the backend, with Postman for testing and GitHub for team collaboration.",
+            "de": "Der Prototyp verfügte über ein vollständig funktionsfähiges Frontend und Backend. Der Tech-Stack umfasste React (JavaScript) für das Frontend, FastAPI (Python) für das Backend, Postman für Tests sowie GitHub für die Teamzusammenarbeit."
+          }
+        },
+        {
+          "type": "image-highlight",
+          "src": "assets/projects/hackathon_schweiz/3.png",
+          "caption": {
+            "en": "For our efforts in this project we were rewarded with a G20 Global Land Initiative certificate.",
+            "de": "Für unsere Leistungen in diesem Projekt wurden wir mit einem Zertifikat der G20 Global Land Initiative ausgezeichnet."
+          }
         }
       ]
     }
