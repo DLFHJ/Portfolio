@@ -55,11 +55,11 @@
                 </div>
                 <div class="flex items-center">
                     <div class="hidden md:flex items-center space-x-8 mr-8">
-                        <a href="index.html#work"
+                        <a href="index.html#work" data-i18n="nav_work"
                             class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
-                        <a href="index.html#about"
+                        <a href="index.html#about" data-i18n="nav_about"
                             class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
-                        <a href="index.html#contact"
+                        <a href="index.html#contact" data-i18n="nav_contact"
                             class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
                     </div>
                     <div class="flex items-center space-x-3 md:space-x-8">
@@ -82,11 +82,11 @@
     <!-- Mobile Menu Overlay -->
     <div id="mobileMenu"
         class="fixed inset-0 bg-white z-[39] flex flex-col justify-center items-center space-y-8 pt-20 transition-opacity duration-300 opacity-0 pointer-events-none md:hidden">
-        <a href="index.html#work" onclick="toggleMobileMenu()"
+        <a href="index.html#work" data-i18n="nav_work" onclick="toggleMobileMenu()"
             class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Work</a>
-        <a href="index.html#about" onclick="toggleMobileMenu()"
+        <a href="index.html#about" data-i18n="nav_about" onclick="toggleMobileMenu()"
             class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">About</a>
-        <a href="index.html#contact" onclick="toggleMobileMenu()"
+        <a href="index.html#contact" data-i18n="nav_contact" onclick="toggleMobileMenu()"
             class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Contact</a>
     </div>
 
@@ -159,6 +159,11 @@
         let currentLang = localStorage.getItem('lang') || 'en';
         let loadedProject = null;
 
+        const translations = {
+            en: { nav_work: 'Work', nav_about: 'About', nav_contact: 'Contact' },
+            de: { nav_work: 'Projekte', nav_about: 'Über mich', nav_contact: 'Kontakt' }
+        };
+
         function getLang(field) {
             if (!field) return '';
             if (typeof field === 'string') return field;
@@ -168,6 +173,10 @@
         function applyLanguage() {
             const label = document.getElementById('langLabel');
             if (label) label.textContent = currentLang.toUpperCase();
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang]?.[key]) el.textContent = translations[currentLang][key];
+            });
             if (loadedProject) {
                 document.getElementById('proj-category').textContent = getLang(loadedProject.category);
                 document.getElementById('proj-role').textContent = getLang(loadedProject.role);
