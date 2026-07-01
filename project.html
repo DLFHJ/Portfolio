@@ -110,19 +110,19 @@
             style="opacity:0;transform:translateY(14px)">
             <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100 py-7">
                 <div class="pr-8 py-1">
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Year</p>
+                    <p data-i18n="meta_year" class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Year</p>
                     <p id="proj-year" class="text-sm text-gray-700"></p>
                 </div>
                 <div class="px-8 py-1">
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Category</p>
+                    <p data-i18n="meta_category" class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Category</p>
                     <p id="proj-category" class="text-sm text-gray-700"></p>
                 </div>
                 <div class="px-8 py-1 col-span-1 mt-4 md:mt-0">
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Role</p>
+                    <p data-i18n="meta_role" class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Role</p>
                     <p id="proj-role" class="text-sm text-gray-700"></p>
                 </div>
                 <div class="px-8 py-1 mt-4 md:mt-0">
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Tools</p>
+                    <p data-i18n="meta_tools" class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Tools</p>
                     <p id="proj-tools" class="text-sm text-gray-700"></p>
                 </div>
             </div>
@@ -160,8 +160,8 @@
         let loadedProject = null;
 
         const translations = {
-            en: { nav_work: 'Work', nav_about: 'About', nav_contact: 'Contact' },
-            de: { nav_work: 'Projekte', nav_about: 'Über mich', nav_contact: 'Kontakt' }
+            en: { nav_work: 'Work', nav_about: 'About', nav_contact: 'Contact', meta_year: 'Year', meta_category: 'Category', meta_role: 'Role', meta_tools: 'Tools' },
+            de: { nav_work: 'Projekte', nav_about: 'Über mich', nav_contact: 'Kontakt', meta_year: 'Jahr', meta_category: 'Kategorie', meta_role: 'Rolle', meta_tools: 'Tools' }
         };
 
         function getLang(field) {
