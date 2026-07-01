@@ -55,11 +55,6 @@
         /* Smart Custom Cursor Logic          */
         /* ---------------------------------- */
         @media (pointer: fine) {
-            body.custom-cursor-enabled {
-                cursor: none;
-                /* Only hide default cursor on mouse devices */
-            }
-
             #custom-cursor {
                 position: fixed;
                 top: 0;
@@ -67,16 +62,13 @@
                 width: var(--cursor-size);
                 height: var(--cursor-size);
                 background-color: white;
-                /* Changed to white for difference mode */
                 border-radius: 50%;
                 pointer-events: none;
                 z-index: 9999;
                 transform: translate(-50%, -50%);
                 transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1),
-                    height 0.3s cubic-bezier(0.19, 1, 0.22, 1),
-                    transform 0.1s linear;
+                    height 0.3s cubic-bezier(0.19, 1, 0.22, 1);
                 mix-blend-mode: difference;
-                /* Critical: Visible on black and white */
             }
 
             /* Enlarge state */
@@ -881,15 +873,22 @@
         }
 
         let mouseX = -100, mouseY = -100;
+        let dotX = -100, dotY = -100;
+        const LERP = 0.07;
 
         document.addEventListener('mousemove', (e) => {
-            if (!customCursorState) return;
             mouseX = e.clientX;
             mouseY = e.clientY;
-
-            // Move cursor directly via transform for performance
-            if (cursor) cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
         });
+
+        (function animateDot() {
+            if (customCursorState && cursor) {
+                dotX += (mouseX - dotX) * LERP;
+                dotY += (mouseY - dotY) * LERP;
+                cursor.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+            }
+            requestAnimationFrame(animateDot);
+        })();
 
         // Hover States (Enlarge cursor)
         const hoverTargets = document.querySelectorAll('.hover-target');
