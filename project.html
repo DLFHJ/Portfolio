@@ -138,13 +138,13 @@
             <div class="grid grid-cols-2">
                 <a id="prev-link" href="#"
                     class="group py-14 pr-8 border-r border-gray-100 hover:bg-gray-50 transition-colors -mx-6 px-6 lg:-mx-8 lg:px-8">
-                    <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">← Previous</p>
+                    <p data-i18n="nav_prev" class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">← Previous</p>
                     <h3 id="prev-title" class="font-bold text-xl group-hover:text-gray-400 transition-colors"></h3>
                     <p id="prev-category" class="text-xs text-gray-400 mt-1 uppercase tracking-wider"></p>
                 </a>
                 <a id="next-link" href="#"
                     class="group py-14 pl-8 text-right hover:bg-gray-50 transition-colors">
-                    <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">Next →</p>
+                    <p data-i18n="nav_next" class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">Next →</p>
                     <h3 id="next-title" class="font-bold text-xl group-hover:text-gray-400 transition-colors"></h3>
                     <p id="next-category" class="text-xs text-gray-400 mt-1 uppercase tracking-wider"></p>
                 </a>
@@ -158,10 +158,12 @@
         // Language persistence
         let currentLang = localStorage.getItem('lang') || 'en';
         let loadedProject = null;
+        let loadedPrev = null;
+        let loadedNext = null;
 
         const translations = {
-            en: { nav_work: 'Work', nav_about: 'About', nav_contact: 'Contact', meta_year: 'Year', meta_category: 'Category', meta_role: 'Role', meta_tools: 'Tools' },
-            de: { nav_work: 'Projekte', nav_about: 'Über mich', nav_contact: 'Kontakt', meta_year: 'Jahr', meta_category: 'Kategorie', meta_role: 'Rolle', meta_tools: 'Tools' }
+            en: { nav_work: 'Work', nav_about: 'About', nav_contact: 'Contact', meta_year: 'Year', meta_category: 'Category', meta_role: 'Role', meta_tools: 'Tools', nav_prev: '← Previous', nav_next: 'Next →' },
+            de: { nav_work: 'Projekte', nav_about: 'Über mich', nav_contact: 'Kontakt', meta_year: 'Jahr', meta_category: 'Kategorie', meta_role: 'Rolle', meta_tools: 'Tools', nav_prev: '← Vorheriges', nav_next: 'Nächstes →' }
         };
 
         function getLang(field) {
@@ -184,6 +186,12 @@
                 document.getElementById('proj-content').innerHTML =
                     (loadedProject.sections || []).map((block, i) => renderBlock(block, i === 0)).join('');
                 initScrollReveal();
+            }
+            if (loadedPrev && loadedNext) {
+                document.getElementById('prev-title').textContent = getLang(loadedPrev.title);
+                document.getElementById('prev-category').textContent = getLang(loadedPrev.category);
+                document.getElementById('next-title').textContent = getLang(loadedNext.title);
+                document.getElementById('next-category').textContent = getLang(loadedNext.category);
             }
         }
 
@@ -384,8 +392,10 @@
             const project = projects[index];
             loadedProject = project;
             // Wrap-around prev/next
-            const prev = projects[(index - 1 + projects.length) % projects.length];
-            const next = projects[(index + 1) % projects.length];
+            loadedPrev = projects[(index - 1 + projects.length) % projects.length];
+            loadedNext = projects[(index + 1) % projects.length];
+            const prev = loadedPrev;
+            const next = loadedNext;
 
             // Page title
             document.title = `${project.title} — David Laßlberger`;
@@ -408,11 +418,11 @@
             // Prev / Next footer
             if (projects.length > 1) {
                 document.getElementById('prev-link').href = `project.html?id=${prev.id}`;
-                document.getElementById('prev-title').textContent = prev.title;
-                document.getElementById('prev-category').textContent = prev.category;
+                document.getElementById('prev-title').textContent = getLang(prev.title);
+                document.getElementById('prev-category').textContent = getLang(prev.category);
                 document.getElementById('next-link').href = `project.html?id=${next.id}`;
-                document.getElementById('next-title').textContent = next.title;
-                document.getElementById('next-category').textContent = next.category;
+                document.getElementById('next-title').textContent = getLang(next.title);
+                document.getElementById('next-category').textContent = getLang(next.category);
                 document.getElementById('proj-nav').classList.remove('hidden');
             }
 

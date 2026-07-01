@@ -416,8 +416,8 @@
       ]
     },
     {
-      "id": "projection_mapping",
-      "title": "Projection Mapping",
+      "id": "digital_graffiti",
+      "title": "Digital Graffiti",
       "year": "2024",
       "category": { "en": "Concept Design, Technical Implementation", "de": "Konzeptdesign, Technische Umsetzung" },
       "role": { "en": "Concept & Technical Lead", "de": "Konzept & Technische Umsetzung" },
@@ -451,7 +451,7 @@
     },
     {
       "id": "games",
-      "title": "Game Design Portfolio",
+      "title": "Game Works",
       "year": "2025",
       "category": { "en": "Game Design, Programming", "de": "Game Design, Programmierung" },
       "role": { "en": "Game Designer & Developer", "de": "Game Designer & Entwickler" },
