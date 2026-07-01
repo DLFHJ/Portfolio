@@ -348,6 +348,91 @@
                 </section>`;
         }
 
+        // Image + text pair. block.layout: "contained" (default, image stays in
+        // its own half) or "bleed" (image spans past the center into the text's
+        // half). block.side: "left" (default) or "right" picks which half the
+        // image sits in.
+        function renderImageText(block, isFirst) {
+            const topPad = isFirst ? 'pt-20' : 'pt-16';
+            const label = getLang(block.label);
+            const heading = getLang(block.heading);
+            const bodyArr = Array.isArray(block.body) ? block.body : (block.body ? (block.body[currentLang] || block.body.en || []) : []);
+            const paragraphs = bodyArr.map(p => `<p class="text-gray-600 leading-relaxed mb-4">${p}</p>`).join('');
+
+            const bleed = block.layout === 'bleed';
+            const imageRight = block.side === 'right';
+            const imgFit = block.fit === 'contain' ? 'object-contain' : 'object-cover';
+
+            const imgClasses = bleed
+                ? (imageRight ? 'md:col-span-7 md:col-start-6 order-1 md:order-2' : 'md:col-span-7')
+                : (imageRight ? 'md:col-span-6 order-1 md:order-2' : 'md:col-span-6');
+            const textClasses = bleed
+                ? (imageRight ? 'md:col-span-4 order-2 md:order-1' : 'md:col-span-4 md:col-start-9')
+                : (imageRight ? 'md:col-span-6 order-2 md:order-1' : 'md:col-span-6');
+
+            const numberDivider = block.number ? `
+                <div class="reveal-on-scroll flex items-center gap-5 mb-10">
+                    <span class="text-[10px] text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">${block.number}</span>
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                </div>` : '';
+
+            return `
+                <section class="max-w-7xl mx-auto px-6 lg:px-8 ${topPad} pb-16">
+                    ${numberDivider}
+                    <div class="grid grid-cols-12 gap-x-8 gap-y-8 items-center">
+                        <div class="col-span-12 ${imgClasses} reveal-on-scroll">
+                            <img src="${block.image}" alt="${block.alt || ''}" class="w-full ${imgFit} aspect-[4/3]">
+                        </div>
+                        <div class="col-span-12 ${textClasses} reveal-on-scroll">
+                            ${label ? `<span class="block text-xs text-gray-400 uppercase tracking-widest font-mono mb-3">${label}</span>` : ''}
+                            ${heading ? `<h3 class="text-xl md:text-2xl font-semibold mb-3">${heading}</h3>` : ''}
+                            ${paragraphs}
+                        </div>
+                    </div>
+                </section>`;
+        }
+
+        // Single image centered on the page axis, with an optional caption
+        // centered directly beneath it.
+        function renderImageCentered(block) {
+            const label = getLang(block.label);
+            const heading = getLang(block.heading);
+            const bodyArr = Array.isArray(block.body) ? block.body : (block.body ? (block.body[currentLang] || block.body.en || []) : []);
+            const paragraphs = bodyArr.map(p => `<p class="text-gray-600 leading-relaxed mb-4">${p}</p>`).join('');
+            const hasCaption = Boolean(label || heading || paragraphs);
+            const imgFit = block.fit === 'contain' ? 'object-contain' : 'object-cover';
+
+            return `
+                <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
+                    <div class="max-w-3xl mx-auto reveal-on-scroll">
+                        <div class="aspect-[16/9] bg-gray-100 overflow-hidden ${hasCaption ? 'mb-8' : ''}">
+                            <img src="${block.image}" alt="${block.alt || ''}" class="w-full h-full ${imgFit}">
+                        </div>
+                        ${hasCaption ? `
+                        <div class="text-center max-w-xl mx-auto">
+                            ${label ? `<span class="block text-xs text-gray-400 uppercase tracking-widest font-mono mb-3">${label}</span>` : ''}
+                            ${heading ? `<h3 class="text-xl md:text-2xl font-semibold mb-3">${heading}</h3>` : ''}
+                            ${paragraphs}
+                        </div>` : ''}
+                    </div>
+                </section>`;
+        }
+
+        // Large centered statement, no image — bounded by rules above and below.
+        function renderStatement(block) {
+            const label = getLang(block.label);
+            const text = getLang(block.text);
+            return `
+                <section class="reveal-on-scroll">
+                    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                        <div class="${block.noRules ? '' : 'border-t border-b border-gray-200'} py-20 md:py-28 text-center">
+                            ${label ? `<span class="block text-xs uppercase tracking-widest text-gray-400 font-mono mb-6">${label}</span>` : ''}
+                            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-4xl mx-auto leading-tight">${text}</h2>
+                        </div>
+                    </div>
+                </section>`;
+        }
+
         function renderBlock(block, isFirst) {
             switch (block.type) {
                 case 'section':        return renderSection(block, isFirst);
@@ -355,6 +440,9 @@
                 case 'images-3col':    return renderImages3col(block);
                 case 'image-wide':     return renderImageWide(block);
                 case 'image-highlight':return renderImageHighlight(block);
+                case 'image-text':     return renderImageText(block, isFirst);
+                case 'image-centered': return renderImageCentered(block);
+                case 'statement':      return renderStatement(block);
                 default:               return '';
             }
         }

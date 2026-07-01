@@ -4,41 +4,94 @@
       "id": "master_thesis",
       "title": "Master Thesis",
       "year": "2025",
-      "category": { "en": "UX Design, Academic Research", "de": "UX Design, Wissenschaftliche Forschung" },
-      "role": { "en": "UX Researcher & Designer", "de": "UX-Forscher & Designer" },
+      "category": {
+        "en": "UX Design, Academic Research",
+        "de": "UX Design, Wissenschaftliche Forschung"
+      },
+      "role": {
+        "en": "UX Researcher & Designer",
+        "de": "UX-Forscher & Designer"
+      },
       "tools": "Figma, Google MediaPipe, Visual Studio",
       "hero": "assets/projects/master_thesis/0.png",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": { "en": "The Thesis", "de": "Die Masterarbeit" },
+          "heading": {
+            "en": "The Thesis",
+            "de": "Die Masterarbeit"
+          },
           "body": {
             "en": [
-              "<em>User Experience Design for a Digital Physical Therapy Application</em> — my Master's thesis explores how <strong class=\"text-black font-medium\">digital interaction design</strong> can improve the experience of <strong class=\"text-black font-medium\">physical rehabilitation</strong>. Motivated by the challenges patients face when practising exercises independently, the project investigates how <strong class=\"text-black font-medium\">real-time feedback</strong> and <strong class=\"text-black font-medium\">remote communication</strong> can strengthen the connection between patients and therapists.",
-              "The research phase began with <strong class=\"text-black font-medium\">empathy maps</strong> and <strong class=\"text-black font-medium\">personas</strong> to understand users' needs and pain points — complemented by <strong class=\"text-black font-medium\">expert interviews</strong> with physiotherapists and HCI specialists."
+              "<em>User Experience Design for a Digital Physical Therapy Application</em> — my Master's thesis explores how <strong class=\"text-black font-medium\">digital interaction design</strong> can improve the experience of <strong class=\"text-black font-medium\">physical rehabilitation</strong>. Motivated by the challenges patients face when practising exercises independently, the project investigates how <strong class=\"text-black font-medium\">real-time feedback</strong> and <strong class=\"text-black font-medium\">remote communication</strong> can strengthen the connection between patients and therapists."
             ],
             "de": [
-              "<em>User Experience Design for a Digital Physical Therapy Application</em> — meine Masterarbeit untersucht, wie <strong class=\"text-black font-medium\">digitales Interaction Design</strong> die Erfahrung der <strong class=\"text-black font-medium\">physischen Rehabilitation</strong> verbessern kann. Motiviert durch die Herausforderungen, denen Patienten beim eigenständigen Üben begegnen, erforscht das Projekt, wie <strong class=\"text-black font-medium\">Echtzeit-Feedback</strong> und <strong class=\"text-black font-medium\">Fernkommunikation</strong> die Verbindung zwischen Patienten und Therapeuten stärken können.",
-              "Die Forschungsphase begann mit <strong class=\"text-black font-medium\">Empathy Maps</strong> und <strong class=\"text-black font-medium\">Personas</strong>, um die Bedürfnisse und Pain Points der Nutzer:innen zu verstehen — ergänzt durch <strong class=\"text-black font-medium\">Experteninterviews</strong> mit Physiotherapeuten und HCI-Spezialist:innen."
+              "<em>User Experience Design for a Digital Physical Therapy Application</em> — meine Masterarbeit untersucht, wie <strong class=\"text-black font-medium\">digitales Interaction Design</strong> die Erfahrung der <strong class=\"text-black font-medium\">physischen Rehabilitation</strong> verbessern kann. Motiviert durch die Herausforderungen, denen Patienten beim eigenständigen Üben begegnen, erforscht das Projekt, wie <strong class=\"text-black font-medium\">Echtzeit-Feedback</strong> und <strong class=\"text-black font-medium\">Fernkommunikation</strong> die Verbindung zwischen Patienten und Therapeuten stärken können."
             ]
           }
         },
         {
-          "type": "images-2col",
-          "images": [
-            "assets/projects/master_thesis/1.png",
-            "assets/projects/master_thesis/2.png"
-          ],
-          "caption": {
-            "en": "Empathy maps and personas built from initial user research and expert interviews with physiotherapists.",
-            "de": "Empathy Maps und Personas, entwickelt aus der ersten Nutzerforschung und Experteninterviews mit Physiotherapeuten."
+          "type": "statement",
+          "noRules": true,
+          "text": {
+            "en": "Rehabilitation shouldn't stop working the moment patients leave the clinic.",
+            "de": "Rehabilitation sollte nicht aufhören zu wirken, sobald Patienten die Klinik verlassen."
           }
         },
         {
           "type": "section",
           "number": "02",
-          "heading": { "en": "Design", "de": "Design" },
+          "heading": {
+            "en": "The Research",
+            "de": "Die Forschung"
+          },
+          "body": {
+            "en": [
+              "The research phase began with <strong class=\"text-black font-medium\">empathy maps</strong> and <strong class=\"text-black font-medium\">personas</strong> to understand users' needs and pain points — complemented by <strong class=\"text-black font-medium\">expert interviews</strong> with physiotherapists and HCI specialists."
+            ],
+            "de": [
+              "Die Forschungsphase begann mit <strong class=\"text-black font-medium\">Empathy Maps</strong> und <strong class=\"text-black font-medium\">Personas</strong>, um die Bedürfnisse und Pain Points der Nutzer:innen zu verstehen — ergänzt durch <strong class=\"text-black font-medium\">Experteninterviews</strong> mit Physiotherapeuten und HCI-Spezialist:innen."
+            ]
+          }
+        },
+        {
+          "type": "image-text",
+          "layout": "contained",
+          "side": "left",
+          "fit": "contain",
+          "image": "assets/projects/master_thesis/1.png",
+          "body": {
+            "en": [
+              "Empathy maps for both <strong class=\"text-black font-medium\">patients</strong> and <strong class=\"text-black font-medium\">physiotherapists</strong>, built to surface their needs, motivations, and pain points."
+            ],
+            "de": [
+              "Empathy Maps für <strong class=\"text-black font-medium\">Patienten</strong> und <strong class=\"text-black font-medium\">Physiotherapeuten</strong>, um deren Bedürfnisse, Motivationen und Pain Points sichtbar zu machen."
+            ]
+          }
+        },
+        {
+          "type": "image-text",
+          "layout": "contained",
+          "side": "right",
+          "fit": "contain",
+          "image": "assets/projects/master_thesis/2.png",
+          "body": {
+            "en": [
+              "Personas covering a diverse range of <strong class=\"text-black font-medium\">patients</strong> and <strong class=\"text-black font-medium\">physiotherapists</strong>, spanning different ages, backgrounds, and levels of comfort with technology."
+            ],
+            "de": [
+              "Personas für eine vielfältige Auswahl an <strong class=\"text-black font-medium\">Patienten</strong> und <strong class=\"text-black font-medium\">Physiotherapeuten</strong>, die unterschiedliche Altersgruppen, Hintergründe und den Umgang mit Technik abdecken."
+            ]
+          }
+        },
+        {
+          "type": "section",
+          "number": "03",
+          "heading": {
+            "en": "The Concept",
+            "de": "Das Konzept"
+          },
           "body": {
             "en": [
               "Based on the initial research, <strong class=\"text-black font-medium\">interaction storyboards</strong> and <strong class=\"text-black font-medium\">user flows</strong> outlined how patients and physiotherapists would move through the system. UI designs for both the <strong class=\"text-black font-medium\">desktop and mobile applications</strong> were then created in Figma, with a strong focus on a <strong class=\"text-black font-medium\">modern and cohesive visual identity</strong>.",
@@ -51,26 +104,56 @@
           }
         },
         {
-          "type": "images-2col",
-          "images": [
-            "assets/projects/master_thesis/3.png",
-            "assets/projects/master_thesis/4.png"
-          ],
-          "caption": {
-            "en": "Interaction storyboards and user flows defining the core system interactions.",
-            "de": "Interaction-Storyboards und User Flows, die die Kerninteraktionen des Systems definieren."
+          "type": "image-centered",
+          "image": "assets/projects/master_thesis/3.png",
+          "body": {
+            "en": [],
+            "de": []
+          }
+        },
+        {
+          "type": "image-centered",
+          "image": "assets/projects/master_thesis/4.png",
+          "body": {
+            "en": [],
+            "de": []
+          },
+          "fit": "contain"
+        },
+        {
+          "type": "section",
+          "number": "04",
+          "heading": {
+            "en": "The Design",
+            "de": ""
+          },
+          "body": {
+            "en": [
+              "With the structure in place, I moved into the visual design phase, shaping how each experience would look and feel across both platforms.",
+              "The <strong class=\"text-black font-medium\">desktop application</strong> was designed for <strong class=\"text-black font-medium\">physiotherapists</strong> to monitor patient progress and adjust treatment plans, while the <strong class=\"text-black font-medium\">mobile application</strong> was designed for <strong class=\"text-black font-medium\">patients</strong> to perform their exercises and receive <strong class=\"text-black font-medium\">real-time feedback</strong>.",
+              "Across both applications, I aimed for a <strong class=\"text-black font-medium\">clean, modern look</strong> — a deliberate contrast to the often outdated interfaces of medical software — while keeping all information <strong class=\"text-black font-medium\">easy to read</strong> and <strong class=\"text-black font-medium\">quick to scan</strong>."
+            ],
+            "de": [
+              "Nachdem die Struktur feststand, begann die visuelle Gestaltung — es ging darum, wie sich jede Anwendung auf beiden Plattformen anfühlen und aussehen sollte.",
+              "Die <strong class=\"text-black font-medium\">Desktop-Anwendung</strong> wurde für <strong class=\"text-black font-medium\">Physiotherapeuten</strong> entwickelt, um den Fortschritt der Patienten zu überwachen und Behandlungen anzupassen, während die <strong class=\"text-black font-medium\">Mobile-Anwendung</strong> für <strong class=\"text-black font-medium\">Patienten</strong> gedacht war, um ihre Übungen durchzuführen und <strong class=\"text-black font-medium\">Echtzeit-Feedback</strong> zu erhalten.",
+              "Bei beiden Anwendungen war mir ein <strong class=\"text-black font-medium\">klares, modernes Erscheinungsbild</strong> wichtig — ein bewusster Kontrast zu oft veraltet wirkender Medizinsoftware — während alle Informationen <strong class=\"text-black font-medium\">gut lesbar</strong> und <strong class=\"text-black font-medium\">schnell erfassbar</strong> bleiben sollten."
+            ]
           }
         },
         {
           "type": "image-wide",
-          "src": "assets/projects/master_thesis/5.png"
+          "src": "assets/projects/master_thesis/5.png",
+           "caption": {
+            "en": " ",
+            "de": " "
+          }
         },
         {
           "type": "image-wide",
           "src": "assets/projects/master_thesis/6.png",
           "caption": {
-            "en": "The desktop application used by physiotherapists to monitor patient progress. The focus was on information architecture — surfacing the right data at a glance.",
-            "de": "Die Desktop-Anwendung für Physiotherapeuten zur Überwachung des Patientenfortschritts. Der Fokus lag auf der Informationsarchitektur — die richtigen Daten auf einen Blick."
+            "en": " ",
+            "de": " "
           }
         },
         {
@@ -89,8 +172,11 @@
         },
         {
           "type": "section",
-          "number": "03",
-          "heading": { "en": "Technical Prototype", "de": "Technischer Prototyp" },
+          "number": "05",
+          "heading": {
+            "en": "The Technical Prototype",
+            "de": "Der Technische Prototyp"
+          },
           "body": {
             "en": [
               "To validate the concept, a <strong class=\"text-black font-medium\">technical prototype</strong> was built as a web app. By integrating <strong class=\"text-black font-medium\">Google MediaPipe</strong>, a standard smartphone camera could track exercises and calculate <strong class=\"text-black font-medium\">movement quality in real time via AI</strong> — providing instant, visual feedback without any additional hardware."
@@ -101,11 +187,10 @@
           }
         },
         {
-          "type": "images-3col",
+          "type": "images-2col",
           "images": [
             "assets/projects/master_thesis/9.png",
-            "assets/projects/master_thesis/11.png",
-            "assets/projects/master_thesis/10.png"
+            "assets/projects/master_thesis/11.png"
           ],
           "caption": {
             "en": "The working prototype using Google MediaPipe to track exercises via smartphone camera and score movement quality in real time.",
@@ -114,8 +199,11 @@
         },
         {
           "type": "section",
-          "number": "04",
-          "heading": { "en": "Outcome", "de": "Ergebnis" },
+          "number": "06",
+          "heading": {
+            "en": "The Outcome",
+            "de": "Das Ergebnis"
+          },
           "body": {
             "en": [
               "The thesis explores a complex real-world challenge through <strong class=\"text-black font-medium\">research-driven design</strong>. By collaborating with medical experts and focusing on the needs of both patients and therapists, the project translates <strong class=\"text-black font-medium\">clinical requirements</strong> into <strong class=\"text-black font-medium\">intuitive digital interactions</strong> — and validated that the concept works not only in theory but as a practical, user-friendly solution."
@@ -131,15 +219,24 @@
       "id": "sonolux",
       "title": "Sonolux",
       "year": "2024",
-      "category": { "en": "Visual Concept & Graphic Design", "de": "Visuelles Konzept & Grafikdesign" },
-      "role": { "en": "Visual Designer", "de": "Visual Designer" },
+      "category": {
+        "en": "Visual Concept & Graphic Design",
+        "de": "Visuelles Konzept & Grafikdesign"
+      },
+      "role": {
+        "en": "Visual Designer",
+        "de": "Visual Designer"
+      },
       "tools": "TouchDesigner, Adobe Suite",
       "hero": "assets/projects/sonolux/0.png",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": { "en": "The Installation", "de": "Die Installation" },
+          "heading": {
+            "en": "The Installation",
+            "de": "Die Installation"
+          },
           "body": {
             "en": [
               "Sonolux is an <strong class=\"text-black font-medium\">audio-reactive installation</strong> showcased at <strong class=\"text-black font-medium\">Klanglicht Graz</strong> and the <strong class=\"text-black font-medium\">LUNA Festival in Eindhoven</strong>. Generative visuals were projected onto moving fabric panels through projection mapping — based on photo and video material from Graz's Hilmteich, exploring the intersection of <strong class=\"text-black font-medium\">technology and nature</strong>.",
@@ -192,15 +289,24 @@
       "id": "obb",
       "title": "ÖBB Internship",
       "year": "2023",
-      "category": { "en": "User Experience Design", "de": "User Experience Design" },
-      "role": { "en": "UX Designer (Intern)", "de": "UX Designer (Praktikant)" },
+      "category": {
+        "en": "User Experience Design",
+        "de": "User Experience Design"
+      },
+      "role": {
+        "en": "UX Designer (Intern)",
+        "de": "UX Designer (Praktikant)"
+      },
       "tools": "Sketch, Marvel App, Adobe Creative Suite",
       "hero": "assets/projects/öbb/0.png",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": { "en": "The Internship", "de": "Das Praktikum" },
+          "heading": {
+            "en": "The Internship",
+            "de": "Das Praktikum"
+          },
           "body": {
             "en": [
               "During my Bachelor's degree, I completed a <strong class=\"text-black font-medium\">UX design internship</strong> at <strong class=\"text-black font-medium\">ÖV Ticketshop GmbH</strong>, a subsidiary of <strong class=\"text-black font-medium\">ÖBB</strong>. Working within a multidisciplinary team, I contributed to large-scale infrastructure projects, gaining hands-on experience in the <strong class=\"text-black font-medium\">full design lifecycle</strong> — from user research and testing to design and frontend development.",
@@ -231,7 +337,10 @@
         {
           "type": "section",
           "number": "02",
-          "heading": { "en": "Nightjet Premium Tickets", "de": "Nightjet Premium Tickets" },
+          "heading": {
+            "en": "Nightjet Premium Tickets",
+            "de": "Nightjet Premium Tickets"
+          },
           "body": {
             "en": [
               "I had the opportunity to contribute to the <strong class=\"text-black font-medium\">visual design of the ÖBB Nightjet Premium Tickets</strong>. I focused on ensuring the design reflected the service's premium character, and I'm glad to have worked on such a <strong class=\"text-black font-medium\">high-profile touchpoint</strong> in the ÖBB passenger experience."
@@ -255,7 +364,10 @@
         {
           "type": "section",
           "number": "03",
-          "heading": { "en": "Ticket Animation", "de": "Ticket-Animation" },
+          "heading": {
+            "en": "Ticket Animation",
+            "de": "Ticket-Animation"
+          },
           "body": {
             "en": [
               "Another project I contributed to was the <strong class=\"text-black font-medium\">redesign of the ticket animation</strong> in the <strong class=\"text-black font-medium\">ÖBB Tickets app</strong>. While more focused on motion design than UX, I enjoyed exploring different concepts and iterations. The current <strong class=\"text-black font-medium\">loading animation in the live app</strong> still loosely reflects the train animation I created."
@@ -279,14 +391,20 @@
       "title": "Portfolio Machine",
       "year": "2024",
       "category": "Creative Coding",
-      "role": { "en": "Frontend Developer", "de": "Frontend-Entwickler" },
+      "role": {
+        "en": "Frontend Developer",
+        "de": "Frontend-Entwickler"
+      },
       "tools": "HTML, CSS, JavaScript",
       "hero": "assets/projects/portfolio_machine/0.png",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": { "en": "The Concept", "de": "Das Konzept" },
+          "heading": {
+            "en": "The Concept",
+            "de": "Das Konzept"
+          },
           "body": {
             "en": [
               "The Portfolio Machine was part of our <strong class=\"text-black font-medium\">final Master's exhibition</strong> — an interactive installation showcasing the collective work of our class. It uses <strong class=\"text-black font-medium\">NFC-embedded spheres</strong> as physical controllers to navigate a digital archive of student projects. Visitors place a student's illuminated sphere on a central console to identify the creator and load their specific work.",
@@ -309,7 +427,10 @@
         {
           "type": "section",
           "number": "02",
-          "heading": { "en": "The Spheres", "de": "Die Kugeln" },
+          "heading": {
+            "en": "The Spheres",
+            "de": "Die Kugeln"
+          },
           "body": {
             "en": [
               "Each student had a <strong class=\"text-black font-medium\">colorful, illuminated sphere</strong> embedded with an NFC chip. These acted as both a <strong class=\"text-black font-medium\">personal ID</strong> and a tactile controller — placing a sphere on the console identified the student and loaded their specific portfolio."
@@ -341,15 +462,24 @@
       "id": "minima",
       "title": "Minima",
       "year": "2023",
-      "category": { "en": "Concept & Packaging Design", "de": "Konzept & Verpackungsdesign" },
-      "role": { "en": "Concept & Packaging Designer", "de": "Konzept & Verpackungsdesigner" },
+      "category": {
+        "en": "Concept & Packaging Design",
+        "de": "Konzept & Verpackungsdesign"
+      },
+      "role": {
+        "en": "Concept & Packaging Designer",
+        "de": "Konzept & Verpackungsdesigner"
+      },
       "tools": "Figma, Miro, Blender",
       "hero": "assets/projects/minima/0.png",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": { "en": "The Concept", "de": "Das Konzept" },
+          "heading": {
+            "en": "The Concept",
+            "de": "Das Konzept"
+          },
           "body": {
             "en": [
               "Developed as a conceptual study during my Master's in UX Design, this project challenged our team of four to envision a <strong class=\"text-black font-medium\">sustainable smartphone ecosystem</strong> — spanning <strong class=\"text-black font-medium\">UI/UX, marketing strategy, and physical touchpoints</strong>. My role was to develop the <strong class=\"text-black font-medium\">overall concept</strong> and design the <strong class=\"text-black font-medium\">packaging experience</strong>.",
@@ -382,15 +512,24 @@
       "id": "storii",
       "title": "Storii",
       "year": "2024",
-      "category": { "en": "Concept Design, Art", "de": "Konzeptdesign, Kunst" },
-      "role": { "en": "UX Designer & Illustrator", "de": "UX-Designer & Illustrator" },
+      "category": {
+        "en": "Concept Design, Art",
+        "de": "Konzeptdesign, Kunst"
+      },
+      "role": {
+        "en": "UX Designer & Illustrator",
+        "de": "UX-Designer & Illustrator"
+      },
       "tools": "Figma, Photoshop, StoryTribe",
       "hero": "assets/projects/storii/0.png",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": { "en": "The Project", "de": "Das Projekt" },
+          "heading": {
+            "en": "The Project",
+            "de": "Das Projekt"
+          },
           "body": {
             "en": [
               "As part of a course during my Master's studies, our three-person team developed a <strong class=\"text-black font-medium\">smart bookshelf ecosystem</strong> bridging <strong class=\"text-black font-medium\">physical and digital reading experiences</strong>. My role focused on mapping the <strong class=\"text-black font-medium\">user journey</strong> through detailed interaction storyboards.",
@@ -419,15 +558,24 @@
       "id": "digital_graffiti",
       "title": "Digital Graffiti",
       "year": "2024",
-      "category": { "en": "Concept Design, Technical Implementation", "de": "Konzeptdesign, Technische Umsetzung" },
-      "role": { "en": "Concept & Technical Lead", "de": "Konzept & Technische Umsetzung" },
+      "category": {
+        "en": "Concept Design, Technical Implementation",
+        "de": "Konzeptdesign, Technische Umsetzung"
+      },
+      "role": {
+        "en": "Concept & Technical Lead",
+        "de": "Konzept & Technische Umsetzung"
+      },
       "tools": "Arduino, Photoshop, Miro",
       "hero": "assets/projects/projection_mapping/0.jpg",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": { "en": "The Installation", "de": "Die Installation" },
+          "heading": {
+            "en": "The Installation",
+            "de": "Die Installation"
+          },
           "body": {
             "en": [
               "As part of the <strong class=\"text-black font-medium\">Grazer Springfestival</strong> — a festival dedicated to electronic art and music — our team of three developed an <strong class=\"text-black font-medium\">interactive projection mapping installation</strong> at the Helmut List Halle. The concept was a <strong class=\"text-black font-medium\">\"Digital Graffiti\"</strong> experience: visitors could interact with the building's facade using a <strong class=\"text-black font-medium\">physical spray can interface</strong>, painting the architecture in real time.",
@@ -453,15 +601,24 @@
       "id": "games",
       "title": "Game Works",
       "year": "2025",
-      "category": { "en": "Game Design, Programming", "de": "Game Design, Programmierung" },
-      "role": { "en": "Game Designer & Developer", "de": "Game Designer & Entwickler" },
+      "category": {
+        "en": "Game Design, Programming",
+        "de": "Game Design, Programmierung"
+      },
+      "role": {
+        "en": "Game Designer & Developer",
+        "de": "Game Designer & Entwickler"
+      },
       "tools": "Unity, Kinect, Photoshop",
       "hero": "assets/projects/games/0.png",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": { "en": "Overview", "de": "Überblick" },
+          "heading": {
+            "en": "Overview",
+            "de": "Überblick"
+          },
           "body": {
             "en": [
               "An overview of some of the games I've created during my studies — across both the bachelor and master programme. Although I don't aim to pursue a career in the gaming industry, these projects highlight my broader <strong class=\"text-black font-medium\">technical and design skills</strong>, demonstrating experience across the <strong class=\"text-black font-medium\">full pipeline</strong>: from initial concept and UI design to 3D art and programming.",
@@ -530,14 +687,20 @@
       "title": "START Hack",
       "year": "2025",
       "category": "Hackathon",
-      "role": { "en": "UX Designer & Frontend Developer", "de": "UX-Designer & Frontend-Entwickler" },
+      "role": {
+        "en": "UX Designer & Frontend Developer",
+        "de": "UX-Designer & Frontend-Entwickler"
+      },
       "tools": "Figma, React, FastAPI",
       "hero": "assets/projects/hackathon_schweiz/0.png",
       "sections": [
         {
           "type": "section",
           "number": "01",
-          "heading": { "en": "The Hackathon", "de": "Der Hackathon" },
+          "heading": {
+            "en": "The Hackathon",
+            "de": "Der Hackathon"
+          },
           "body": {
             "en": [
               "During the <strong class=\"text-black font-medium\">START Hack in St. Gallen</strong>, our team of four took on a challenge for the <strong class=\"text-black font-medium\">United Nations G20 Global Land Initiative</strong>. We focused on the <strong class=\"text-black font-medium\">Sahel region in Africa</strong>, where desertification makes land management incredibly difficult. Our solution was a <strong class=\"text-black font-medium\">live dashboard</strong> that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers.",
