@@ -64,7 +64,7 @@
                     </div>
                     <div class="flex items-center space-x-3 md:space-x-8">
                         <button id="langToggle" onclick="toggleLanguage()"
-                            class="flex items-center text-xs uppercase tracking-widest border border-gray-400 bg-white/50 backdrop-blur-sm px-3 py-1.5 rounded-full lg:hover:bg-black lg:hover:text-white active:scale-95 transition-all duration-300 relative z-50">
+                            class="flex items-center text-xs uppercase tracking-widest border border-gray-400 px-3 py-1.5 rounded-full lg:hover:bg-black lg:hover:text-white active:scale-95 transition-all duration-300 relative z-50">
                             <span id="langLabel">EN</span>
                         </button>
                         <div class="md:hidden relative z-50">
@@ -292,17 +292,31 @@
             const imgs = (block.images || [])
                 .map(src => `<div class="col-span-4"><img src="${src}" alt="" class="w-full object-cover aspect-square"></div>`)
                 .join('');
+            const captionText = getLang(block.caption);
+            const caption = captionText
+                ? `<div class="grid grid-cols-12 mt-5"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${captionText}</p></div>`
+                : '';
             return `
                 <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
                     <div class="grid grid-cols-12 gap-3 reveal-on-scroll">${imgs}</div>
+                    ${caption}
                 </section>`;
         }
 
         function renderImageWide(block) {
             const captionText = getLang(block.caption);
             const caption = captionText
-                ? `<div class="grid grid-cols-12 mt-4 mb-10"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${captionText}</p></div>`
+                ? `<div class="grid grid-cols-12 mt-4 mb-4"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${captionText}</p></div>`
                 : '';
+            if (block.bg) {
+                return `
+                <section style="background-color:${block.bg}" class="reveal-on-scroll py-6">
+                    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                        <img src="${block.src}" alt="${block.alt || ''}" class="w-full object-cover">
+                        ${caption}
+                    </div>
+                </section>`;
+            }
             return `
                 <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-4">
                     <div class="reveal-on-scroll mb-3">
