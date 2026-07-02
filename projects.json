@@ -567,7 +567,7 @@
         "de": "Konzept & Technische Umsetzung"
       },
       "tools": "Arduino, Photoshop, Miro",
-      "hero": "assets/projects/projection_mapping/0_h.jpg",
+      "hero": "assets/projects/digital_graffiti/0_h.png",
       "sections": [
         {
           "type": "section",
@@ -589,7 +589,7 @@
         },
         {
           "type": "image-wide",
-          "src": "assets/projects/projection_mapping/1.jpg",
+          "src": "assets/projects/digital_graffiti/1.jpg",
           "caption": {
             "en": "The view from outside the Helmut List Halle — visitors could press the spray can to paint the building's facade.",
             "de": "Der Blick von außen auf die Helmut List Halle — Besucher:innen konnten die Spraydose drücken, um die Fassade des Gebäudes zu bemalen."
