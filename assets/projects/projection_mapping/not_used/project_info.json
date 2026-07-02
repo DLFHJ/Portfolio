@@ -14,7 +14,7 @@
         "en": "Concept Design, Technical Implementation",
         "de": "Konzeptdesign, Technische Umsetzung"
     },
-    "heroImage": "assets/projects/projection_mapping/0.jpg",
+    "heroImage": "assets/projects/projection_mapping/0_h.jpg",
     "description": {
         "en": "An <b>interactive projection mapping installation</b> for the <b>Grazer Springfestival</b> using <b>Arduino</b> and <b>generative AI</b>.",
         "de": "Eine <b>interaktive Projection Mapping Installation</b> für das <b>Grazer Springfestival</b> unter Verwendung von <b>Arduino</b> und <b>generativer KI</b>."

@@ -13,7 +13,7 @@
         "en": "Frontend Programming, Webdesign, Hackathon",
         "de": "Frontend Programming, Webdesign, Hackathon"
     },
-    "heroImage": "assets/projects/hackathon_schweiz/0.png",
+    "heroImage": "assets/projects/hackathon_schweiz/0_h.png",
     "description": {
         "en": "A hackathon project for the <b>United Nations G20 Global Land Initiative</b> featuring a <b>live dashboard</b> with <b>satellite data</b> from the <b>Sahel region</b> in Africa.",
         "de": "Ein Hackathon-Projekt für die <b>United Nations G20 Global Land Initiative</b>, mit einem <b>Live-Dashboard</b> und <b>Satellitendaten</b> aus der <b>Sahelzone</b> in Afrika."

@@ -12,7 +12,7 @@
         "en": "Frontend Programming, Webdesign",
         "de": "Frontend Programming, Webdesign"
     },
-    "heroImage": "assets/projects/portfolio_machine/0.png",
+    "heroImage": "assets/projects/portfolio_machine/0_h.png",
     "description": {
         "en": "An <b>interactive installation</b> for our Master's exhibition that bridges the gap between <b>tactile hardware</b> and <b>digital storytelling</b>. Using <b>NFC-embedded spheres</b> and <b>custom-built frontend software</b>, we created a unique way to 'physically scroll' through a <b>collective archive of student work</b>.",
         "de": "Eine <b>interaktive Installation</b> für unsere Masterausstellung, die die Verbindung zwischen <b>haptischer Hardware</b> und <b>digitalem Storytelling</b> herstellt. Mithilfe von <b>NFC-embedded Kugeln</b> und einer eigens entwickelten <b>Frontend-Software</b> entstand eine einzigartige Möglichkeit, physisch durch ein <b>kollektives Archiv studentischer Arbeiten</b> zu ‚scrollen'."

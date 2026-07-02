@@ -13,7 +13,7 @@
         "de": "UX-Forscher & Designer"
       },
       "tools": "Figma, Google MediaPipe, Visual Studio",
-      "hero": "assets/projects/master_thesis/0.png",
+      "hero": "assets/projects/master_thesis/0_h.png",
       "sections": [
         {
           "type": "section",
@@ -228,7 +228,7 @@
         "de": "Visual Designer"
       },
       "tools": "TouchDesigner, Adobe Suite",
-      "hero": "assets/projects/sonolux/0.png",
+      "hero": "assets/projects/sonolux/0_h.png",
       "sections": [
         {
           "type": "section",
@@ -298,7 +298,7 @@
         "de": "UX Designer (Praktikant)"
       },
       "tools": "Sketch, Marvel App, Adobe Creative Suite",
-      "hero": "assets/projects/öbb/0.png",
+      "hero": "assets/projects/öbb/0_h.png",
       "sections": [
         {
           "type": "section",
@@ -396,7 +396,7 @@
         "de": "Frontend-Entwickler"
       },
       "tools": "HTML, CSS, JavaScript",
-      "hero": "assets/projects/portfolio_machine/0.png",
+      "hero": "assets/projects/portfolio_machine/0_h.png",
       "sections": [
         {
           "type": "section",
@@ -471,7 +471,7 @@
         "de": "Konzept & Verpackungsdesigner"
       },
       "tools": "Figma, Miro, Blender",
-      "hero": "assets/projects/minima/0.png",
+      "hero": "assets/projects/minima/0_h.png",
       "sections": [
         {
           "type": "section",
@@ -521,7 +521,7 @@
         "de": "UX-Designer & Illustrator"
       },
       "tools": "Figma, Photoshop, StoryTribe",
-      "hero": "assets/projects/storii/0.png",
+      "hero": "assets/projects/storii/0_h.png",
       "sections": [
         {
           "type": "section",
@@ -567,7 +567,7 @@
         "de": "Konzept & Technische Umsetzung"
       },
       "tools": "Arduino, Photoshop, Miro",
-      "hero": "assets/projects/projection_mapping/0.jpg",
+      "hero": "assets/projects/projection_mapping/0_h.jpg",
       "sections": [
         {
           "type": "section",
@@ -610,7 +610,7 @@
         "de": "Game Designer & Entwickler"
       },
       "tools": "Unity, Kinect, Photoshop",
-      "hero": "assets/projects/games/0.png",
+      "hero": "assets/projects/games/0_h.png",
       "sections": [
         {
           "type": "section",
@@ -692,7 +692,7 @@
         "de": "UX-Designer & Frontend-Entwickler"
       },
       "tools": "Figma, React, FastAPI",
-      "hero": "assets/projects/hackathon_schweiz/0.png",
+      "hero": "assets/projects/hackathon_schweiz/0_h.png",
       "sections": [
         {
           "type": "section",
