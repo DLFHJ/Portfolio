@@ -772,41 +772,18 @@
         const projects = {};
 
         async function loadProjectData() {
-            const sources = [
-                'assets/projects/portfolio_machine/project_info.json',
-                'assets/projects/master_thesis/project_info.json',
-                'assets/projects/sonolux/project_info.json',
-                'assets/projects/öbb/project_info.json',
-                'assets/projects/minima/project_info.json',
-                'assets/projects/storii/project_info.json',
-                'assets/projects/digital_graffiti/project_info.json',
-                'assets/projects/games/project_info.json',
-                'assets/projects/start_hack_st_gallen/project_info.json',
-                'assets/projects/demo/project_info.json'
-            ];
-
-            console.log("Starting to load " + sources.length + " projects...");
-
-            const promises = sources.map(async src => {
-                try {
-                    // Add timestamp to prevent caching during development
-                    const response = await fetch(`${src}?t=${new Date().getTime()}`);
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    const data = await response.json();
-                    if (data.id) {
-                        projects[data.id] = data;
-                        console.log(`Loaded: ${data.id}`);
-                    } else {
-                        console.warn(`File ${src} parsed but missed 'id' field.`);
-                    }
-                } catch (e) {
-                    console.error("Failed to load project data from " + src, e);
-                }
-            });
-
-            await Promise.allSettled(promises);
-            console.log("All project data loading attempts finished.");
-            console.log("Loaded IDs:", Object.keys(projects));
+            try {
+                // Add timestamp to prevent caching during development
+                const response = await fetch(`projects.json?t=${new Date().getTime()}`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+                (data.projects || []).forEach(project => {
+                    if (project.id) projects[project.id] = project;
+                });
+                console.log("Loaded IDs:", Object.keys(projects));
+            } catch (e) {
+                console.error("Failed to load project data from projects.json", e);
+            }
             updateProjectGrid();
         }
 
