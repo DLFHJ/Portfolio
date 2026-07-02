@@ -683,8 +683,8 @@
       ]
     },
     {
-      "id": "hackathon_schweiz",
-      "title": "START Hack",
+      "id": "start_hack_st_gallen",
+      "title": "START Hack St. Gallen",
       "year": "2025",
       "category": "Hackathon",
       "role": {
@@ -692,7 +692,7 @@
         "de": "UX-Designer & Frontend-Entwickler"
       },
       "tools": "Figma, React, FastAPI",
-      "hero": "assets/projects/hackathon_schweiz/0_h.png",
+      "hero": "assets/projects/start_hack_st_gallen/0_h.png",
       "sections": [
         {
           "type": "section",
@@ -715,8 +715,8 @@
         {
           "type": "images-2col",
           "images": [
-            "assets/projects/hackathon_schweiz/1.png",
-            "assets/projects/hackathon_schweiz/2.png"
+            "assets/projects/start_hack_st_gallen/1.png",
+            "assets/projects/start_hack_st_gallen/2.png"
           ],
           "caption": {
             "en": "The prototype featured a fully functional front- and backend. The tech stack included React (JavaScript) for the frontend, FastAPI (Python) for the backend, with Postman for testing and GitHub for team collaboration.",
@@ -725,7 +725,7 @@
         },
         {
           "type": "image-highlight",
-          "src": "assets/projects/hackathon_schweiz/3.png",
+          "src": "assets/projects/start_hack_st_gallen/3.png",
           "caption": {
             "en": "For our efforts in this project we were rewarded with a G20 Global Land Initiative certificate.",
             "de": "Für unsere Leistungen in diesem Projekt wurden wir mit einem Zertifikat der G20 Global Land Initiative ausgezeichnet."
