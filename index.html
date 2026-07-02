@@ -219,7 +219,7 @@
 
     <!-- Cursor Toggle Button -->
     <button id="cursorToggleButton" onclick="toggleCustomCursor()"
-        class="fixed bottom-6 right-6 z-[9999] px-3 py-1.5 bg-gray-900 border border-gray-700 text-white text-[10px] font-mono uppercase tracking-[0.2em] rounded-full shadow-2xl hover:bg-black hover:scale-105 transition-all focus:outline-none hover-target">
+        class="hidden fixed bottom-6 right-6 z-[9999] px-3 py-1.5 bg-gray-900 border border-gray-700 text-white text-[10px] font-mono uppercase tracking-[0.2em] rounded-full shadow-2xl hover:bg-black hover:scale-105 transition-all focus:outline-none hover-target">
         Cursor: ON
     </button>
 
@@ -710,7 +710,7 @@
 
         // --- Custom Cursor Config ---
         // Switch this to true to enable the custom dot cursor and its interactions
-        const ENABLE_CUSTOM_CURSOR = false;
+        const ENABLE_CUSTOM_CURSOR = true;
 
         // Init Icons
         lucide.createIcons();

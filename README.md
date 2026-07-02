@@ -18,7 +18,7 @@ Each project also gets a small `assets/projects/<slug>/project_info.json` file â
 
 ## Quick Configuration
 
-Both flags live at the top of the main `<script>` block in [index.html](index.html) (around line 709):
+`IS_DEMO_MODE` and `ENABLE_CUSTOM_CURSOR` live at the top of the main `<script>` block in [index.html](index.html) (around line 709):
 
 ```js
 // index.html ~line 709
@@ -32,6 +32,8 @@ const ENABLE_CUSTOM_CURSOR = false; // Replace system cursor with dot cursor
 | `ENABLE_CUSTOM_CURSOR` | System cursor used | Custom white dot cursor with mix-blend-mode:difference and hover-expand effect |
 
 > The custom cursor is automatically hidden on touch devices regardless of this flag.
+
+[project.html](project.html) has its own separate `ENABLE_CUSTOM_CURSOR` flag (near the top of its `<script>` block) that controls the same cursor effect on case-study pages â€” the two are independent, so enabling it on the homepage doesn't carry over to project pages and vice versa.
 
 ---
 

@@ -20,6 +20,11 @@
             font-weight: 700;
         }
 
+        :root {
+            --cursor-size: 12px;
+            --cursor-hover-size: 60px;
+        }
+
         body {
             font-family: 'IBM Plex Sans', sans-serif;
             background: #fff;
@@ -40,10 +45,44 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Smart Custom Cursor Logic */
+        @media (pointer: fine) {
+            #custom-cursor {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: var(--cursor-size);
+                height: var(--cursor-size);
+                background-color: white;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transform: translate(-50%, -50%);
+                transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+                    height 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+                mix-blend-mode: difference;
+            }
+
+            body.hovering #custom-cursor {
+                width: var(--cursor-hover-size);
+                height: var(--cursor-hover-size);
+                background-color: white;
+            }
+        }
+
+        @media (pointer: coarse) {
+            #custom-cursor {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body class="text-gray-900 antialiased selection:bg-black selection:text-white">
+
+    <!-- Custom Cursor Element -->
+    <div id="custom-cursor"></div>
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/0 z-40 transition-all duration-300" id="navbar">
@@ -51,24 +90,24 @@
             <div class="flex justify-between items-center h-24">
                 <div class="flex-shrink-0">
                     <a href="index.html"
-                        class="block font-bold text-sm tracking-tight uppercase text-black">David Laßlberger, MA</a>
+                        class="hover-target block font-bold text-sm tracking-tight uppercase text-black">David Laßlberger, MA</a>
                 </div>
                 <div class="flex items-center">
                     <div class="hidden md:flex items-center space-x-8 mr-8">
                         <a href="index.html#work" data-i18n="nav_work"
-                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
+                            class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Work</a>
                         <a href="index.html#about" data-i18n="nav_about"
-                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
+                            class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">About</a>
                         <a href="index.html#contact" data-i18n="nav_contact"
-                            class="text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
+                            class="hover-target text-xs uppercase tracking-widest hover:text-gray-500 transition-colors py-2">Contact</a>
                     </div>
                     <div class="flex items-center space-x-3 md:space-x-8">
                         <button id="langToggle" onclick="toggleLanguage()"
-                            class="flex items-center text-xs uppercase tracking-widest border border-gray-400 px-3 py-1.5 rounded-full lg:hover:bg-black lg:hover:text-white active:scale-95 transition-all duration-300 relative z-50">
+                            class="hover-target flex items-center text-xs uppercase tracking-widest border border-gray-400 px-3 py-1.5 rounded-full lg:hover:bg-black lg:hover:text-white active:scale-95 transition-all duration-300 relative z-50">
                             <span id="langLabel">EN</span>
                         </button>
                         <div class="md:hidden relative z-50">
-                            <button class="p-2 -mr-2" onclick="toggleMobileMenu()">
+                            <button class="hover-target p-2 -mr-2" onclick="toggleMobileMenu()">
                                 <i id="menuIconOpen" data-lucide="menu" class="w-6 h-6"></i>
                                 <i id="menuIconClose" data-lucide="x" class="w-6 h-6 hidden"></i>
                             </button>
@@ -83,11 +122,11 @@
     <div id="mobileMenu"
         class="fixed inset-0 bg-white z-[39] flex flex-col justify-center items-center space-y-8 pt-20 transition-opacity duration-300 opacity-0 pointer-events-none md:hidden">
         <a href="index.html#work" data-i18n="nav_work" onclick="toggleMobileMenu()"
-            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Work</a>
+            class="hover-target text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Work</a>
         <a href="index.html#about" data-i18n="nav_about" onclick="toggleMobileMenu()"
-            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">About</a>
+            class="hover-target text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">About</a>
         <a href="index.html#contact" data-i18n="nav_contact" onclick="toggleMobileMenu()"
-            class="text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Contact</a>
+            class="hover-target text-3xl font-bold uppercase tracking-widest text-black hover:text-gray-500 transition-colors">Contact</a>
     </div>
 
     <!-- Header (fields populated by JS) -->
@@ -137,13 +176,13 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-2">
                 <a id="prev-link" href="#"
-                    class="group py-14 pr-8 border-r border-gray-100 hover:bg-gray-50 transition-colors -mx-6 px-6 lg:-mx-8 lg:px-8">
+                    class="hover-target group py-14 pr-8 border-r border-gray-100 hover:bg-gray-50 transition-colors -mx-6 px-6 lg:-mx-8 lg:px-8">
                     <p data-i18n="nav_prev" class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">← Previous</p>
                     <h3 id="prev-title" class="font-bold text-xl group-hover:text-gray-400 transition-colors"></h3>
                     <p id="prev-category" class="text-xs text-gray-400 mt-1 uppercase tracking-wider"></p>
                 </a>
                 <a id="next-link" href="#"
-                    class="group py-14 pl-8 text-right hover:bg-gray-50 transition-colors">
+                    class="hover-target group py-14 pl-8 text-right hover:bg-gray-50 transition-colors">
                     <p data-i18n="nav_next" class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">Next →</p>
                     <h3 id="next-title" class="font-bold text-xl group-hover:text-gray-400 transition-colors"></h3>
                     <p id="next-category" class="text-xs text-gray-400 mt-1 uppercase tracking-wider"></p>
@@ -154,6 +193,10 @@
 
     <script>
         lucide.createIcons();
+
+        // --- Custom Cursor Config ---
+        // Switch this to true to enable the custom dot cursor and its interactions
+        const ENABLE_CUSTOM_CURSOR = true;
 
         // Language persistence
         let currentLang = localStorage.getItem('lang') || 'en';
@@ -234,6 +277,35 @@
                 if (iconOpen) iconOpen.classList.remove('hidden');
                 if (iconClose) iconClose.classList.add('hidden');
             }
+        }
+
+        // Custom Cursor & Interaction Logic
+        const cursor = document.getElementById('custom-cursor');
+        if (ENABLE_CUSTOM_CURSOR && cursor) {
+            document.body.classList.add('custom-cursor-enabled');
+
+            let mouseX = -100, mouseY = -100;
+            let dotX = -100, dotY = -100;
+            const LERP = 0.07;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            (function animateDot() {
+                dotX += (mouseX - dotX) * LERP;
+                dotY += (mouseY - dotY) * LERP;
+                cursor.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+                requestAnimationFrame(animateDot);
+            })();
+
+            document.querySelectorAll('.hover-target').forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+            });
+        } else if (cursor) {
+            cursor.style.display = 'none';
         }
 
         // Scroll reveal — called after sections are injected
