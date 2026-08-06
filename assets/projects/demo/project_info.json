@@ -1,0 +1,319 @@
+{
+    "id": "grid_demo",
+    "title": {
+        "en": "Layout Grid Demo",
+        "de": "Layout Grid Demo"
+    },
+    "category": {
+        "en": "System Test",
+        "de": "Systemtest"
+    },
+    "heroImage": "https://images.unsplash.com/photo-1506744626753-eda8151a7471?auto=format&fit=crop&w=1200&h=800",
+    "description": {
+        "en": "This is a demonstration project used to exhaustively test the 10-column asymmetrical grid system. It shows how different block widths (small, medium, large, xlarge, full) and layouts (centered, editorial-split) behave within the active safe area.",
+        "de": "Dies ist ein Demonstrationsprojekt."
+    },
+    "metadata": [
+        {
+            "label": {
+                "en": "Tools",
+                "de": "Tools"
+            },
+            "value": {
+                "en": "JSON, Tailwind CSS",
+                "de": "JSON, Tailwind CSS"
+            }
+        },
+        {
+            "label": {
+                "en": "Year",
+                "de": "Jahr"
+            },
+            "value": {
+                "en": "2025",
+                "de": "2025"
+            }
+        }
+    ],
+    "sections": [
+        {
+            "type": "text",
+            "layout": "centered",
+            "bgColor": "gray-50",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "content": {
+                        "en": "Below are text blocks demonstrating the available <b>widths</b>. The default text width is <b>xlarge</b> (spanning 8 columns, indented).",
+                        "de": "Below are text blocks..."
+                    }
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "layout": "default",
+            "items": [
+                {
+                    "role": "spacer",
+                    "height": "medium"
+                },
+                {
+                    "role": "text",
+                    "width": "small",
+                    "content": {
+                        "en": "<b>width: 'small'</b><br>Spans 3 columns aligned left."
+                    }
+                },
+                {
+                    "role": "spacer",
+                    "height": "small"
+                },
+                {
+                    "role": "text",
+                    "width": "medium",
+                    "content": {
+                        "en": "<b>width: 'medium'</b><br>Spans 4 columns aligned left."
+                    }
+                },
+                {
+                    "role": "spacer",
+                    "height": "small"
+                },
+                {
+                    "role": "text",
+                    "width": "large",
+                    "content": {
+                        "en": "<b>width: 'large'</b><br>Spans 8 columns aligned left (touches left edge of safe area)."
+                    }
+                },
+                {
+                    "role": "spacer",
+                    "height": "small"
+                },
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "content": {
+                        "en": "<b>width: 'xlarge'</b><br>Spans 8 columns perfectly indented inside the safe area. This is the optimal reading measure used for standard body text across the portfolio."
+                    }
+                },
+                {
+                    "role": "spacer",
+                    "height": "small"
+                },
+                {
+                    "role": "text",
+                    "width": "full",
+                    "content": {
+                        "en": "<b>width: 'full'</b><br>Spans all 10 columns of the safe area."
+                    }
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "spacer",
+                    "height": "large"
+                },
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "content": {
+                        "en": "Next, let's look at <b>Layout</b> overrides. The following block uses <code>layout: 'editorial-split'</code>.",
+                        "de": "Next..."
+                    }
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "layout": "editorial-split",
+            "bgColor": "gray-900",
+            "items": [
+                {
+                    "role": "text",
+                    "align": "left",
+                    "width": "medium",
+                    "content": {
+                        "en": "<b>align: 'left' / width: 'medium'</b><br>Pushed to the left."
+                    }
+                },
+                {
+                    "role": "text",
+                    "align": "right",
+                    "content": {
+                        "en": "<b>align: 'right'</b><br>Pushed to the far right edge of the 10-column safe area, spanning 5 columns to create a strong vertical asymmetrical split."
+                    }
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "spacer",
+                    "height": "large"
+                },
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "content": {
+                        "en": "Now let's verify <b>Images</b> across all widths.",
+                        "de": "Now..."
+                    }
+                }
+            ]
+        },
+        {
+            "type": "image",
+            "layout": "default",
+            "items": [
+                {
+                    "role": "image",
+                    "width": "small",
+                    "src": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&h=400",
+                    "caption": "width: 'small'"
+                },
+                {
+                    "role": "image",
+                    "width": "five-cols",
+                    "src": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&h=400",
+                    "caption": "width: 'five-cols' (Spans 5 cols)"
+                },
+                {
+                    "role": "image",
+                    "width": "medium",
+                    "src": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&h=400",
+                    "caption": "width: 'medium'"
+                },
+                {
+                    "role": "image",
+                    "width": "large",
+                    "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&h=500",
+                    "caption": "width: 'large'"
+                },
+                {
+                    "role": "image",
+                    "width": "xlarge",
+                    "src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&h=600",
+                    "caption": "width: 'xlarge' (Indented beautifully)"
+                },
+                {
+                    "role": "image",
+                    "width": "full",
+                    "src": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1600&h=800",
+                    "caption": "width: 'full' (Spans 10 cols)"
+                }
+            ]
+        },
+        {
+            "type": "image",
+            "layout": "full-bleed",
+            "bgColor": "black",
+            "items": [
+                {
+                    "role": "text",
+                    "layout": "centered",
+                    "width": "xlarge",
+                    "content": {
+                        "en": "<b>layout: 'full-bleed'</b> breaks the grid and spans edge-to-edge of the modal container."
+                    }
+                },
+                {
+                    "role": "spacer",
+                    "height": "small"
+                },
+                {
+                    "role": "image",
+                    "width": "full-bleed",
+                    "src": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=2000&h=600",
+                    "caption": "Edge to Edge ignoring the 12 columns."
+                }
+            ]
+        },
+        {
+            "type": "gallery",
+            "layout": "grid",
+            "bgColor": "gray-50",
+            "width": "full",
+            "columns": 3,
+            "items": [
+                {
+                    "role": "text",
+                    "layout": "centered",
+                    "align": "left",
+                    "width": "large",
+                    "content": {
+                        "en": "<b>layout: 'grid', columns: 3</b>"
+                    }
+                },
+                {
+                    "role": "image",
+                    "src": "https://images.unsplash.com/photo-1470071131384-001b85755b36?auto=format&fit=crop&w=600&h=600"
+                },
+                {
+                    "role": "image",
+                    "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&h=600"
+                },
+                {
+                    "role": "image",
+                    "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a5d?auto=format&fit=crop&w=600&h=600"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "items": [
+                {
+                    "role": "text",
+                    "content": {
+                        "en": "<b>Default Background</b><br>Sections with no <code>bgColor</code> defined default to a clean white background."
+                    }
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "bgColor": "gray-50",
+            "items": [
+                {
+                    "role": "text",
+                    "content": {
+                        "en": "<b>Light Gray Background</b><br>Using <code>bgColor: 'gray-50'</code> creates a subtle off-white section, perfect for breaking up content visually."
+                    }
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "bgColor": "black",
+            "items": [
+                {
+                    "role": "text",
+                    "content": {
+                        "en": "<b>Black Background</b><br>Using <code>bgColor: 'black'</code> creates a high-contrast dark section. Text color automatically inverts to white for readability."
+                    }
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "bgColor": "gray-50",
+            "bgWidth": "grid",
+            "items": [
+                {
+                    "role": "text",
+                    "content": {
+                        "en": "<b>Constrained Background Width</b><br>Using <code>bgWidth: 'grid'</code> with a <code>bgColor</code> confines the shaded background purely to the 12-column layout grid inside the edge-to-edge wrapper."
+                    }
+                }
+            ]
+        }
+    ]
+}

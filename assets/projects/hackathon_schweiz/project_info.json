@@ -1,0 +1,72 @@
+{
+    "id": "hackathon_schweiz",
+    "title": {
+        "en": "START Hack Switzerland",
+        "de": "START Hack Schweiz"
+    },
+    "year": 2025,
+    "tools": [
+        "Visual Studio Code",
+        "Figma"
+    ],
+    "category": {
+        "en": "Frontend Programming, Webdesign, Hackathon",
+        "de": "Frontend Programming, Webdesign, Hackathon"
+    },
+    "heroImage": "assets/projects/hackathon_schweiz/0.png",
+    "description": {
+        "en": "A hackathon project for the United Nations G20 Global Land Initiative featuring a live dashboard with satellite data from the Sahel region in Africa.",
+        "de": "Ein Hackathon-Projekt für die United Nations G20 Global Land Initiative, mit einem Live-Dashboard und Satellitendaten aus der Sahelzone in Afrika."
+    },
+    "sections": [
+        {
+            "type": "text",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "text",
+                    "width": "xlarge",
+                    "align": "",
+                    "content": {
+                        "en": "During the START Hack in St. Gallen, our team of four took on a challenge for the United Nations G20 Global Land Initiative. We focused on the Sahel region in Africa, where desertification makes land management incredibly difficult. Our solution was a dashboard that simplifies years of complex satellite data into clear, actionable guidance for local decision-makers. As the UX designer, I focused on the overall concept and making sure the data was actually easy to understand and use. I then worked on coding the frontend and I also led our final presentation, where we were able to pitch a working prototype that we built from scratch during the hackathon.",
+                        "de": "Während des START Hacks in St. Gallen nahm unser vierköpfiges Team an einer Challenge der United Nations G20 Global Land Initiative teil. Wir konzentrierten uns auf die Sahelzone in Afrika, wo die Wüstenbildung das Landmanagement extrem erschwert. Unsere Lösung war ein Dashboard, das jahrelang gesammelte, komplexe Satellitendaten in klare, handlungsorientierte Empfehlungen für lokale Entscheidungsträger übersetzt. Als UX-Designer konzentrierte ich mich auf das Gesamtkonzept und darauf, sicherzustellen, dass die Daten tatsächlich einfach zu verstehen und zu nutzen sind. Anschließend arbeitete ich an der Programmierung des Frontends und leitete unsere Abschlusspräsentation, bei der wir einen funktionierenden Prototypen vorstellen konnten, den wir während des Hackathons von Grund auf neu entwickelt hatten."
+                    }
+                }
+            ]
+        },
+        {
+            "type": "gallery",
+            "layout": "grid",
+            "width": "full",
+            "columns": 2,
+            "bgColor": "",
+            "bgWidth": "grid-connected",
+            "caption": {
+                "en": "The prototype featured a fully functional front- and backend. The tech stack included React (JavaScript) for the frontend, FastAPI (Python) for the backend, Postman for testing, and Miro and GitHub for team collaboration.",
+                "de": "Der Prototyp verfügte über ein vollständig funktionsfähiges Frontend und Backend. Der Tech-Stack umfasste React (JavaScript) für das Frontend, FastAPI (Python) für das Backend, Postman für Tests sowie Miro und GitHub für die Zusammenarbeit im Team."
+            },
+            "items": [
+                {
+                    "src": "assets/projects/hackathon_schweiz/0.png"
+                },
+                {
+                    "src": "assets/projects/hackathon_schweiz/2.png"
+                }
+            ]
+        },
+        {
+            "type": "content",
+            "layout": "centered",
+            "items": [
+                {
+                    "role": "image",
+                    "src": "assets/projects/hackathon_schweiz/3.png",
+                    "caption": {
+                        "en": "For our efforts in this project we were rewarded with a G20 Global Land Initiative certificate.",
+                        "de": "Für unsere Leistungen in diesem Projekt wurden wir mit einem Zertifikat der G20 Global Land Initiative ausgezeichnet."
+                    }
+                }
+            ]
+        }
+    ]
+}

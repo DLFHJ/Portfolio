@@ -9,7 +9,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -31,7 +32,13 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6, .font-bold {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-bold {
             font-family: 'Aspekta', sans-serif;
         }
 
@@ -90,7 +97,8 @@
             <div class="flex justify-between items-center h-24">
                 <div class="flex-shrink-0">
                     <a href="index.html"
-                        class="hover-target block font-bold text-sm tracking-tight uppercase text-black">David Laßlberger, MA</a>
+                        class="hover-target block font-bold text-sm tracking-tight uppercase text-black">David
+                        Laßlberger, MA</a>
                 </div>
                 <div class="flex items-center">
                     <div class="hidden md:flex items-center space-x-8 mr-8">
@@ -134,8 +142,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-8 pb-8">
             <div class="grid grid-cols-12">
                 <div class="col-span-12 md:col-span-10">
-                    <h1 id="proj-title"
-                        class="font-bold leading-none tracking-tighter"
+                    <h1 id="proj-title" class="font-bold leading-none tracking-tighter"
                         style="font-size:clamp(3rem,7vw,6.5rem);opacity:0;transform:translateY(14px)"></h1>
                 </div>
             </div>
@@ -145,23 +152,26 @@
             <img id="proj-hero" src="" alt="" class="w-full object-cover aspect-[16/9]">
         </div>
 
-        <div id="hdr-meta" class="max-w-7xl mx-auto px-6 lg:px-8 mt-0"
-            style="opacity:0;transform:translateY(14px)">
-            <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100 py-7">
-                <div class="pr-8 py-1">
-                    <p data-i18n="meta_year" class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Year</p>
+        <div id="hdr-meta" class="max-w-7xl mx-auto px-6 lg:px-8 mt-0" style="opacity:0;transform:translateY(14px)">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-5 md:gap-y-0 md:divide-x divide-gray-100 py-7">
+                <div class="pr-4 pb-4 border-b border-r border-gray-100 md:border-0 md:pr-8 md:pb-1">
+                    <p data-i18n="meta_year"
+                        class="text-xs uppercase tracking-widest text-gray-400 font-mono mb-1.5">Year</p>
                     <p id="proj-year" class="text-sm text-gray-700"></p>
                 </div>
-                <div class="px-8 py-1">
-                    <p data-i18n="meta_category" class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Category</p>
+                <div class="pl-4 pb-4 border-b border-gray-100 md:border-0 md:px-8 md:pb-1">
+                    <p data-i18n="meta_category"
+                        class="text-xs uppercase tracking-widest text-gray-400 font-mono mb-1.5">Category</p>
                     <p id="proj-category" class="text-sm text-gray-700"></p>
                 </div>
-                <div class="px-8 py-1 col-span-1 mt-4 md:mt-0">
-                    <p data-i18n="meta_role" class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Role</p>
+                <div class="pr-4 border-r border-gray-100 md:border-0 md:px-8">
+                    <p data-i18n="meta_role"
+                        class="text-xs uppercase tracking-widest text-gray-400 font-mono mb-1.5">Role</p>
                     <p id="proj-role" class="text-sm text-gray-700"></p>
                 </div>
-                <div class="px-8 py-1 mt-4 md:mt-0">
-                    <p data-i18n="meta_tools" class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-1.5">Tools</p>
+                <div class="pl-4 md:px-8">
+                    <p data-i18n="meta_tools"
+                        class="text-xs uppercase tracking-widest text-gray-400 font-mono mb-1.5">Tools</p>
                     <p id="proj-tools" class="text-sm text-gray-700"></p>
                 </div>
             </div>
@@ -173,19 +183,35 @@
 
     <!-- Prev / Next footer (hidden until project loads) -->
     <section id="proj-nav" class="border-t border-gray-100 hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-2">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2">
                 <a id="prev-link" href="#"
-                    class="hover-target group py-14 pr-8 border-r border-gray-100 hover:bg-gray-50 transition-colors -mx-6 px-6 lg:-mx-8 lg:px-8">
-                    <p data-i18n="nav_prev" class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">← Previous</p>
-                    <h3 id="prev-title" class="font-bold text-xl group-hover:text-gray-400 transition-colors"></h3>
-                    <p id="prev-category" class="text-xs text-gray-400 mt-1 uppercase tracking-wider"></p>
+                    class="hover-target group min-w-0 hidden md:flex items-center justify-start gap-4 md:gap-6 pl-6 lg:pl-8 pr-6 py-14 md:py-20 border-r border-gray-100 hover:bg-gray-50 transition-colors">
+                    <div class="aspect-[4/3] w-24 sm:w-28 md:w-40 flex-shrink-0 overflow-hidden bg-gray-100">
+                        <img id="prev-image" src="" alt=""
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="min-w-0">
+                        <p data-i18n="nav_prev"
+                            class="text-xs text-gray-400 uppercase tracking-widest font-mono mb-3">← Previous</p>
+                        <h3 id="prev-title"
+                            class="font-bold text-xl md:text-2xl group-hover:text-gray-400 transition-colors truncate"></h3>
+                        <p id="prev-category" class="text-xs text-gray-400 mt-1 uppercase tracking-wider"></p>
+                    </div>
                 </a>
                 <a id="next-link" href="#"
-                    class="hover-target group py-14 pl-8 text-right hover:bg-gray-50 transition-colors">
-                    <p data-i18n="nav_next" class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-3">Next →</p>
-                    <h3 id="next-title" class="font-bold text-xl group-hover:text-gray-400 transition-colors"></h3>
-                    <p id="next-category" class="text-xs text-gray-400 mt-1 uppercase tracking-wider"></p>
+                    class="hover-target group min-w-0 flex items-center justify-end gap-4 md:gap-6 pl-6 pr-6 lg:pr-8 py-14 md:py-20 hover:bg-gray-50 transition-colors">
+                    <div class="min-w-0 text-right">
+                        <p data-i18n="nav_next"
+                            class="text-xs text-gray-400 uppercase tracking-widest font-mono mb-3">Next →</p>
+                        <h3 id="next-title"
+                            class="font-bold text-xl md:text-2xl group-hover:text-gray-400 transition-colors truncate"></h3>
+                        <p id="next-category" class="text-xs text-gray-400 mt-1 uppercase tracking-wider"></p>
+                    </div>
+                    <div class="aspect-[4/3] w-24 sm:w-28 md:w-40 flex-shrink-0 overflow-hidden bg-gray-100">
+                        <img id="next-image" src="" alt=""
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
                 </a>
             </div>
         </div>
@@ -205,14 +231,25 @@
         let loadedNext = null;
 
         const translations = {
-            en: { nav_work: 'Work', nav_about: 'About', nav_contact: 'Contact', meta_year: 'Year', meta_category: 'Category', meta_role: 'Role', meta_tools: 'Tools', nav_prev: '← Previous', nav_next: 'Next →' },
-            de: { nav_work: 'Projekte', nav_about: 'Über mich', nav_contact: 'Kontakt', meta_year: 'Jahr', meta_category: 'Kategorie', meta_role: 'Rolle', meta_tools: 'Tools', nav_prev: '← Vorheriges', nav_next: 'Nächstes →' }
+            en: { nav_work: 'Work', nav_about: 'About', nav_contact: 'Contact', meta_year: 'Year', meta_category: 'Category', meta_role: 'Role', meta_tools: 'Tools', nav_prev: '← Previous', nav_next: 'Next →', nav_back: '← Back to Work' },
+            de: { nav_work: 'Projekte', nav_about: 'Über mich', nav_contact: 'Kontakt', meta_year: 'Jahr', meta_category: 'Kategorie', meta_role: 'Rolle', meta_tools: 'Tools', nav_prev: '← Vorheriges Projekt', nav_next: 'Nächstes Projekt →', nav_back: '← Zurück zu Projekte' }
         };
 
         function getLang(field) {
             if (!field) return '';
             if (typeof field === 'string') return field;
             return field[currentLang] || field.en || '';
+        }
+
+        // block.shadow: true → default "drop-shadow", or a Tailwind shadow
+        // scale value ("sm", "md", "lg", "xl", "2xl") → "drop-shadow-{value}".
+        // Uses the drop-shadow filter (not box-shadow) so the shadow hugs the
+        // visible image content — box-shadow would instead outline the full
+        // aspect-ratio box, including any letterboxed empty space from
+        // fit: "contain".
+        function shadowClass(block) {
+            if (!block.shadow) return '';
+            return block.shadow === true ? 'drop-shadow' : `drop-shadow-${block.shadow}`;
         }
 
         function applyLanguage() {
@@ -223,6 +260,9 @@
                 if (translations[currentLang]?.[key]) el.textContent = translations[currentLang][key];
             });
             if (loadedProject) {
+                document.title = `${getLang(loadedProject.title)} — David Laßlberger`;
+                document.getElementById('proj-title').textContent = getLang(loadedProject.title);
+                document.getElementById('proj-hero').alt = getLang(loadedProject.title);
                 document.getElementById('proj-category').textContent = getLang(loadedProject.category);
                 document.getElementById('proj-role').textContent = getLang(loadedProject.role);
                 document.getElementById('proj-tools').textContent = getLang(loadedProject.tools);
@@ -339,7 +379,7 @@
             return `
                 <section class="max-w-7xl mx-auto px-6 lg:px-8 ${topPad} pb-16">
                     <div class="reveal-on-scroll flex items-center gap-5 mb-10">
-                        <span class="text-[10px] text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">${block.number}</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">${block.number}</span>
                         <div class="flex-1 h-px bg-gray-200"></div>
                     </div>
                     <div class="grid grid-cols-12 gap-x-8">
@@ -354,23 +394,34 @@
         }
 
         function renderImages2col(block) {
+            const imgFit = block.fit === 'contain' ? 'object-contain' : 'object-cover';
+            const imgSizing = block.fit === 'auto' ? 'h-auto' : `${imgFit} aspect-[4/3]`;
+            const shadow = shadowClass(block);
+            const mobileGap = block.mobileGap ? 'pb-6 md:pb-0' : '';
             const imgs = (block.images || [])
-                .map(src => `<div class="col-span-12 md:col-span-6"><img src="${src}" alt="" class="w-full object-cover aspect-[4/3]"></div>`)
+                .map(src => `<div class="col-span-12 md:col-span-6 ${mobileGap}"><img src="${src}" alt="" class="w-full ${imgSizing} ${shadow}"></div>`)
                 .join('');
             const captionText = getLang(block.caption);
             const caption = captionText
                 ? `<div class="grid grid-cols-12 mt-5"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${captionText}</p></div>`
                 : '';
+            const styleParts = [];
+            if (block.maxWidth) styleParts.push(`max-width:${block.maxWidth};margin-left:auto;margin-right:auto`);
+            if (block.gap) styleParts.push(`gap:${block.gap}`);
+            const wrapStyle = styleParts.length ? ` style="${styleParts.join(';')}"` : '';
             return `
                 <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
-                    <div class="grid grid-cols-12 gap-3 reveal-on-scroll mb-5">${imgs}</div>
+                    <div class="grid grid-cols-12 gap-3 reveal-on-scroll mb-5"${wrapStyle}>${imgs}</div>
                     ${caption}
                 </section>`;
         }
 
         function renderImages3col(block) {
+            const imgFit = block.fit === 'contain' ? 'object-contain' : 'object-cover';
+            const imgSizing = block.fit === 'auto' ? 'h-auto' : `${imgFit} aspect-square`;
+            const shadow = shadowClass(block);
             const imgs = (block.images || [])
-                .map(src => `<div class="col-span-4"><img src="${src}" alt="" class="w-full object-cover aspect-square"></div>`)
+                .map((src, i) => `<div class="${i === 2 ? 'col-span-12' : 'col-span-6'} md:col-span-4"><img src="${src}" alt="" class="w-full ${imgSizing} ${shadow}"></div>`)
                 .join('');
             const captionText = getLang(block.caption);
             const caption = captionText
@@ -388,11 +439,12 @@
             const caption = captionText
                 ? `<div class="grid grid-cols-12 mt-4 mb-4"><p class="col-span-12 md:col-span-8 text-sm text-gray-400 leading-relaxed">${captionText}</p></div>`
                 : '';
+            const shadow = shadowClass(block);
             if (block.bg) {
                 return `
                 <section style="background-color:${block.bg}" class="reveal-on-scroll py-6">
                     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                        <img src="${block.src}" alt="${block.alt || ''}" class="w-full object-cover">
+                        <img src="${block.src}" alt="${block.alt || ''}" class="w-full object-cover ${shadow}">
                         ${caption}
                     </div>
                 </section>`;
@@ -400,7 +452,7 @@
             return `
                 <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-4">
                     <div class="reveal-on-scroll mb-3">
-                        <img src="${block.src}" alt="${block.alt || ''}" class="w-full object-cover">
+                        <img src="${block.src}" alt="${block.alt || ''}" class="w-full object-cover ${shadow}">
                     </div>
                     ${caption}
                 </section>`;
@@ -411,10 +463,11 @@
             const caption = captionText
                 ? `<p class="text-sm text-gray-400 mt-4 leading-relaxed">${captionText}</p>`
                 : '';
+            const shadow = shadowClass(block);
             return `
                 <section class="bg-gray-50 py-16 reveal-on-scroll">
                     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                        <img src="${block.src}" alt="${block.alt || ''}" class="w-full object-cover">
+                        <img src="${block.src}" alt="${block.alt || ''}" class="w-full object-cover ${shadow}">
                         ${caption}
                     </div>
                 </section>`;
@@ -425,7 +478,7 @@
         // half). block.side: "left" (default) or "right" picks which half the
         // image sits in.
         function renderImageText(block, isFirst) {
-            const topPad = isFirst ? 'pt-20' : 'pt-16';
+            const topPad = isFirst ? 'pt-20' : (block.number ? 'pt-16' : '');
             const label = getLang(block.label);
             const heading = getLang(block.heading);
             const bodyArr = Array.isArray(block.body) ? block.body : (block.body ? (block.body[currentLang] || block.body.en || []) : []);
@@ -434,6 +487,8 @@
             const bleed = block.layout === 'bleed';
             const imageRight = block.side === 'right';
             const imgFit = block.fit === 'contain' ? 'object-contain' : 'object-cover';
+            const imgSizing = block.fit === 'auto' ? 'h-auto' : `${imgFit} aspect-[4/3]`;
+            const shadow = shadowClass(block);
 
             const imgClasses = bleed
                 ? (imageRight ? 'md:col-span-7 md:col-start-6 order-1 md:order-2' : 'md:col-span-7')
@@ -444,7 +499,7 @@
 
             const numberDivider = block.number ? `
                 <div class="reveal-on-scroll flex items-center gap-5 mb-10">
-                    <span class="text-[10px] text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">${block.number}</span>
+                    <span class="text-xs text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">${block.number}</span>
                     <div class="flex-1 h-px bg-gray-200"></div>
                 </div>` : '';
 
@@ -453,7 +508,7 @@
                     ${numberDivider}
                     <div class="grid grid-cols-12 gap-x-8 gap-y-8 items-center">
                         <div class="col-span-12 ${imgClasses} reveal-on-scroll">
-                            <img src="${block.image}" alt="${block.alt || ''}" class="w-full ${imgFit} aspect-[4/3]">
+                            <img src="${block.image}" alt="${block.alt || ''}" class="w-full ${imgSizing} ${shadow}">
                         </div>
                         <div class="col-span-12 ${textClasses} reveal-on-scroll">
                             ${label ? `<span class="block text-xs text-gray-400 uppercase tracking-widest font-mono mb-3">${label}</span>` : ''}
@@ -473,13 +528,17 @@
             const paragraphs = bodyArr.map(p => `<p class="text-gray-600 leading-relaxed mb-4">${p}</p>`).join('');
             const hasCaption = Boolean(label || heading || paragraphs);
             const imgFit = block.fit === 'contain' ? 'object-contain' : 'object-cover';
+            const shadow = shadowClass(block);
+            const imageMarkup = block.fit === 'auto'
+                ? `<img src="${block.image}" alt="${block.alt || ''}" class="w-full h-auto ${shadow} ${hasCaption ? 'mb-8' : ''}">`
+                : `<div class="aspect-[16/9] bg-gray-100 overflow-hidden ${hasCaption ? 'mb-8' : ''}">
+                            <img src="${block.image}" alt="${block.alt || ''}" class="w-full h-full ${imgFit} ${shadow}">
+                        </div>`;
 
             return `
                 <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
                     <div class="max-w-3xl mx-auto reveal-on-scroll">
-                        <div class="aspect-[16/9] bg-gray-100 overflow-hidden ${hasCaption ? 'mb-8' : ''}">
-                            <img src="${block.image}" alt="${block.alt || ''}" class="w-full h-full ${imgFit}">
-                        </div>
+                        ${imageMarkup}
                         ${hasCaption ? `
                         <div class="text-center max-w-xl mx-auto">
                             ${label ? `<span class="block text-xs text-gray-400 uppercase tracking-widest font-mono mb-3">${label}</span>` : ''}
@@ -507,15 +566,15 @@
 
         function renderBlock(block, isFirst) {
             switch (block.type) {
-                case 'section':        return renderSection(block, isFirst);
-                case 'images-2col':    return renderImages2col(block);
-                case 'images-3col':    return renderImages3col(block);
-                case 'image-wide':     return renderImageWide(block);
-                case 'image-highlight':return renderImageHighlight(block);
-                case 'image-text':     return renderImageText(block, isFirst);
+                case 'section': return renderSection(block, isFirst);
+                case 'images-2col': return renderImages2col(block);
+                case 'images-3col': return renderImages3col(block);
+                case 'image-wide': return renderImageWide(block);
+                case 'image-highlight': return renderImageHighlight(block);
+                case 'image-text': return renderImageText(block, isFirst);
                 case 'image-centered': return renderImageCentered(block);
-                case 'statement':      return renderStatement(block);
-                default:               return '';
+                case 'statement': return renderStatement(block);
+                default: return '';
             }
         }
 
@@ -558,10 +617,10 @@
             const next = loadedNext;
 
             // Page title
-            document.title = `${project.title} — David Laßlberger`;
+            document.title = `${getLang(project.title)} — David Laßlberger`;
 
             // Header fields
-            document.getElementById('proj-title').textContent = project.title;
+            document.getElementById('proj-title').textContent = getLang(project.title);
             document.getElementById('proj-year').textContent = project.year;
             document.getElementById('proj-category').textContent = getLang(project.category);
             document.getElementById('proj-role').textContent = getLang(project.role);
@@ -569,7 +628,7 @@
 
             const hero = document.getElementById('proj-hero');
             hero.src = project.hero;
-            hero.alt = project.title;
+            hero.alt = getLang(project.title);
 
             // Render content sections
             document.getElementById('proj-content').innerHTML =
@@ -577,12 +636,17 @@
 
             // Prev / Next footer
             if (projects.length > 1) {
+                const thumbOf = (p) => (p.thumb || (p.hero || '').replace(/_h(\.\w+)$/, '_t$1'));
                 document.getElementById('prev-link').href = `project.html?id=${prev.id}`;
                 document.getElementById('prev-title').textContent = getLang(prev.title);
                 document.getElementById('prev-category').textContent = getLang(prev.category);
+                document.getElementById('prev-image').src = thumbOf(prev);
+                document.getElementById('prev-image').alt = getLang(prev.title);
                 document.getElementById('next-link').href = `project.html?id=${next.id}`;
                 document.getElementById('next-title').textContent = getLang(next.title);
                 document.getElementById('next-category').textContent = getLang(next.category);
+                document.getElementById('next-image').src = thumbOf(next);
+                document.getElementById('next-image').alt = getLang(next.title);
                 document.getElementById('proj-nav').classList.remove('hidden');
             }
 
@@ -599,4 +663,5 @@
     </script>
 
 </body>
+
 </html>

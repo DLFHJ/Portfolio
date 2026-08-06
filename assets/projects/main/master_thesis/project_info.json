@@ -1,0 +1,212 @@
+{
+  "id": "master_thesis",
+  "title": {
+    "en": "Master Thesis",
+    "de": "Masterarbeit"
+  },
+  "year": 2025,
+  "tools": [
+    "Visual Studio",
+    "Figma",
+    "Google MediaPipe"
+  ],
+  "category": {
+    "en": "User Experience Design, Academic Research",
+    "de": "User Experience Design, Wissenschaftliche Forschung"
+  },
+  "heroImage": "assets/projects/main/master_thesis/0.png",
+  "description": {
+    "en": "'User Experience Design for a Digital Physical Therapy Application' - that is the title of my masters thesis. During this project I delved deep into the uses of modern technology for physiotherapy through the lens of an UX designer and created a concept as well as a prototype for a physiotherapy application.",
+    "de": "„User Experience Design for a Digital Physical Therapy Application“ – so lautet der Titel meiner Masterarbeit. Im Rahmen dieses Projekts habe ich mich intensiv mit den Einsatzmöglichkeiten moderner Technologien in der Physiotherapie aus der Perspektive eines UX-Designers beschäftigt und ein Konzept sowie einen Prototyp für eine Physiotherapie-App entwickelt."
+  },
+  "sections": [
+    {
+      "type": "text",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "",
+          "content": {
+            "en": "This thesis explores how digital interaction design can improve the experience of physical rehabilitation. Motivated by the challenges patients face when practicing exercises on their own, the project investigates how real-time feedback and remote communication can strengthen the connection between patients and therapists.",
+            "de": "Diese Arbeit untersucht, wie digitales Interaction Design die Erfahrung der physischen Rehabilitation verbessern kann. Motiviert durch die Herausforderungen, denen Patienten beim eigenständigen Üben von Übungen begegnen, erforscht das Projekt, wie Echtzeit-Feedback und Fernkommunikation die Verbindung zwischen Patienten und Therapeuten stärken können."
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "width": "full",
+      "bgColor": "gray-100",
+      "bgWidth": "grid-connected",
+      "columns": 2,
+      "caption": {
+        "en": "I started off creating empathy maps and personas to better empathize with the users and get a feel for their needs and pain points. Additonally, at this stage I also conducted expert interviews with physiotherapists and HCI experts.",
+        "de": "Ich begann mit der Erstellung von Empathy Maps und Personas, um mich besser in die Benutzer hineinzuversetzen und ein Gefühl für ihre Bedürfnisse und Pain Points zu bekommen. Zusätzlich führte ich in dieser Phase auch Experteninterviews mit Physiotherapeuten und HCI-Experten durch."
+      },
+      "items": [
+        {
+          "src": "assets/projects/main/master_thesis/1.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/2.png"
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "height": "1rem"
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "width": "full",
+      "bgColor": "gray-100",
+      "bgWidth": "grid-connected",
+      "columns": 2,
+      "caption": {
+        "en": "Based on this initial research I created interaction storyboards and user flows to outline the core functionality of the system and how patients and physiotherapists would interact with it.",
+        "de": "Auf Basis dieser ersten Recherche habe ich Interaction-Storyboards und User Flows erstellt, um die Kernfunktionen des Systems sowie die Interaktionen zwischen Patienten und Physiotherapeuten zu skizzieren."
+      },
+      "items": [
+        {
+          "src": "assets/projects/main/master_thesis/3.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/4.png"
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "height": "1rem"
+    },
+    {
+      "type": "text",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "xlarge",
+          "align": "",
+          "content": {
+            "en": "The UI designs for both the desktop and mobile applications were created in Figma, with a strong focus on maintaining a modern and cohesive visual identity. The desktop version is primarily used by physiotherapists to monitor patient progress and adjust treatments. Meanwhile, the mobile version is used by the patients to perform their rehabilitation exercises and receive real-time feedback.",
+            "de": "Die UI-Designs für die Desktop- und Mobile-Anwendungen wurden in Figma erstellt, wobei ein starker Fokus auf einer modernen und einheitlichen visuellen Identität lag. Die Desktop-Version wird hauptsächlich von Physiotherapeuten genutzt, um den Fortschritt der Patienten zu überwachen und Behandlungen anzupassen. Die Mobile-Version hingegen wird von den Patienten verwendet, um ihre Rehabilitationsübungen durchzuführen und Echtzeit-Feedback zu erhalten."
+          }
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "image",
+          "width": "xlarge",
+          "src": "assets/projects/main/master_thesis/5.png",
+          "className": "shadow-xl"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "image",
+          "width": "xlarge",
+          "src": "assets/projects/main/master_thesis/6.png",
+          "className": "shadow-xl",
+          "caption": {
+            "en": "The desktop application is used by physiotherapists to monitor patient progress and adjust treatments. I really focused on the information architecture and what data needs to be visible.",
+            "de": "Die Desktop-Anwendung wird von Physiotherapeuten genutzt, um den Fortschritt der Patienten zu überwachen und Behandlungen anzupassen. Mein Fokus lag dabei besonders auf der Informationsarchitektur und darauf, welche Daten sichtbar sein müssen."
+          }
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "height": "1rem"
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "bgColor": "gray-100",
+      "bgWidth": "grid-connected",
+      "items": [
+        {
+          "role": "image",
+          "width": "xlarge",
+          "src": "assets/projects/main/master_thesis/7.png"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "layout": "centered",
+      "caption": {
+        "en": "Some screenshots of the designs for the mobile application. I  wanted the app to feel modern and intuitive to use for users of any background.",
+        "de": "Einige Screenshots der Designs für die Mobile-Anwendung. Die App sollte modern wirken und für Nutzer:innen jeglicher Erfahrung intuitiv bedienbar sein."
+      },
+      "bgColor": "gray-100",
+      "bgWidth": "grid-connected",
+      "items": [
+        {
+          "role": "image",
+          "width": "xlarge",
+          "src": "assets/projects/main/master_thesis/8.png"
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "height": "1rem"
+    },
+    {
+      "type": "spacer",
+      "height": "1rem"
+    },
+    {
+      "type": "gallery",
+      "layout": "grid",
+      "columns": 3,
+      "width": "full",
+      "caption": {
+        "en": "The technical prototype was developed primarily to demonstrate feasibility. By integrating Google MediaPipe, I was able to use a standard smartphone camera to track various exercises and calculate the quality of a user's movements in real-time via AI. To provide this instant feedback, I developed the application as a web app using Visual Studio Code. The prototype validated that the concept can work not only in theory but also as a practical, user-friendly solution.",
+        "de": "Der technische Prototyp wurde in erster Linie entwickelt, um die Machbarkeit zu demonstrieren. Durch die Integration von Google MediaPipe konnte ich eine Standard-Smartphone-Kamera nutzen, um verschiedene Übungen zu verfolgen und die Qualität der Bewegungen eines Nutzers in Echtzeit mittels KI zu berechnen. Um dieses sofortige Feedback zu ermöglichen, entwickelte ich die Anwendung als Web-App in Visual Studio Code. Der Prototyp bestätigte, dass das Konzept nicht nur in der Theorie, sondern auch in der Praxis und als benutzerfreundliche Lösung funktioniert."
+      },
+      "items": [
+        {
+          "src": "assets/projects/main/master_thesis/9.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/11.png"
+        },
+        {
+          "src": "assets/projects/main/master_thesis/10.png"
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "height": "1rem"
+    },
+    {
+      "type": "text",
+      "layout": "centered",
+      "items": [
+        {
+          "role": "text",
+          "width": "full",
+          "align": "left",
+          "content": {
+            "en": "This thesis project explores a complex real-world challenge through research-driven design. By collaborating with medical experts and focusing on the needs of both patients and therapists, I developed a system that translates clinical requirements into intuitive digital interactions. The project strengthened my ability to turn complex problems into practical, user-centered solutions.",
+            "de": "Dieses Masterarbeit untersucht eine komplexe, reale Herausforderung durch forschungsbasiertes Design. Durch die Zusammenarbeit mit medizinischen Expert:innen und die Fokussierung auf die Bedürfnisse von Patienten und Therapeut:innen entwickelte ich ein System, das klinische Anforderungen in intuitive digitale Interaktionen übersetzt. Das Projekt stärkte meine Fähigkeit, komplexe Probleme in praxisnahe, nutzerzentrierte Lösungen zu überführen."
+          }
+        }
+      ]
+    }
+  ]
+}

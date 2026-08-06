@@ -141,6 +141,8 @@ Every entry in `sections` has a `type`. Blocks stack top to bottom.
 | `image-centered` | Single image centered on the page axis, with an optional centered caption. |
 | `statement` | Large bold centered text, no image, bounded by top/bottom rules. |
 
+Every image-displaying block type above (all except `section` and `statement`) accepts an optional `"shadow"` property: `true` for a default `drop-shadow`, or a Tailwind shadow scale value (`"sm"`, `"md"`, `"lg"`, `"xl"`, `"2xl"`) for `drop-shadow-{value}`. Uses the `drop-shadow` filter rather than `box-shadow`, so with `fit: "contain"` the shadow hugs the visible image instead of outlining the full letterboxed box.
+
 #### `section`
 
 ```json
@@ -162,10 +164,19 @@ Every entry in `sections` has a `type`. Blocks stack top to bottom.
 {
     "type": "images-2col",
     "images": ["assets/projects/slug/1.png", "assets/projects/slug/2.png"],
-    "caption": { "en": "Optional caption below both images." }
+    "caption": { "en": "Optional caption below both images." },
+    "fit": "auto",
+    "maxWidth": "900px",
+    "gap": "32px"
 }
 ```
 `images-3col` is identical, just with 3 paths and square crops instead of 2 with 4:3 crops.
+
+| Property | Values | Description |
+| :--- | :--- | :--- |
+| `fit` | `"cover"` (default), `"contain"`, or `"auto"` | `cover`/`contain` crop or letterbox images into a fixed box (4:3 for `images-2col`, square for `images-3col`). `auto` skips the box entirely and renders each image at its natural aspect ratio — use it for tall screenshots or gifs that shouldn't be cropped. |
+| `maxWidth` | CSS length, e.g. `"900px"` | Optional — caps and centers the width of the whole image row. Useful with `fit: "auto"` to keep naturally tall/narrow images from spanning the full column width. |
+| `gap` | CSS length, e.g. `"32px"` | Optional — overrides the default spacing between images. |
 
 #### `image-wide`
 
