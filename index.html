@@ -108,6 +108,11 @@
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
 
+        /* Fades sooner so the visible ticker text lines up with the content grid instead of the full viewport edge */
+        .marquee-container-tight {
+            mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent);
+        }
+
         .marquee-content {
             display: inline-block;
             animation: marquee 30s linear infinite;
@@ -147,18 +152,6 @@
         .highlight-word:hover::after {
             transform: scaleX(1);
             transform-origin: left;
-        }
-
-        /* Footer Outline Text Interaction */
-        .footer-outline-text {
-            color: white;
-            -webkit-text-stroke: 1px transparent;
-            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        .group:hover .footer-outline-text {
-            color: transparent;
-            -webkit-text-stroke: 1px white;
         }
 
         /* Chevron Scroll Indicator */
@@ -314,9 +307,9 @@
 
                     <!-- Main Headline -->
                     <h1 class="font-bold tracking-tighter leading-none text-black mb-6 mix-blend-darken">
-                        <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-2 sm:mb-4">INTERACTION &
-                            UX</span>
-                        <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-black">DESIGNER</span>
+                        <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-2 sm:mb-4">UX DESIGNER &
+                           </span>
+                        <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-black">FRONTEND DEVELOPER</span>
                     </h1>
 
                     <!-- Subtext -->
@@ -642,7 +635,7 @@
 
                         <!-- Links -->
                         <div class="flex flex-wrap gap-4 mt-12">
-                            <a href="assets\misc\David_Lasslberger_CV.pdf" download="David_Lasslberger_CV.pdf"
+                            <a href="assets\misc\David_Laßlberger_Lebenslauf.pdf" download="David_Laßlberger_Lebenslauf.pdf"
                                 class="hover-target inline-flex items-center space-x-2 border-b border-black pb-1 hover:opacity-60 transition-opacity">
                                 <span data-i18n="btn_cv" class="text-sm font-bold uppercase tracking-wide">Download
                                     CV</span>
@@ -662,59 +655,71 @@
         </section>
 
         <!-- Footer -->
-        <footer id="contact" class="bg-black text-white pt-40 pb-0 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-2 relative z-10">
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-10 pb-4">
-                    <a href="mailto:david.lasslberger@gmail.com" class="hover-target group block">
-                        <!-- Changed tracking-tighter to tracking-normal to fix the R and A overlap -->
+        <footer id="contact" class="bg-black text-white pt-16 pb-3 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full">
+
+                <!-- Eyebrow row -->
+                <div
+                    class="flex items-center justify-between pb-6 md:pb-8 text-xs font-mono uppercase tracking-[0.3em] text-white/50">
+                    <p>003 / <span data-i18n="nav_contact">Contact</span></p>
+                </div>
+
+                <!-- Main grid -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-12 lg:gap-x-16 items-start pb-16 md:pb-20">
+                    <div class="md:col-span-7">
                         <h2 class="text-5xl md:text-7xl font-bold tracking-normal leading-none">
-                            <!-- Applied footer-outline-text class here -->
-                            <span data-i18n="footer_create" class="footer-outline-text">LET'S CREATE <br>
+                            <span data-i18n="footer_create">LET'S CREATE <br>
                                 TOGETHER</span>
-                            <!-- Moved Arrow Inline -->
-                            <span
-                                class="inline-flex w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/30 items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all duration-300 ml-3 align-middle">
-                                <i data-lucide="arrow-right" class="w-6 h-6"></i>
-                            </span>
                         </h2>
-                    </a>
-                    <div class="flex flex-wrap items-center gap-x-10 gap-y-4 md:pb-2">
-                        <!-- Changed text-gray-400 to text-white -->
-                        <p class="text-lg text-white hover:text-gray-300 transition-colors font-mono">
-                            <a href="mailto:david.lasslberger@gmail.com" class="hover-target">david.lasslberger@gmail.com</a>
-                        </p>
-                        <div class="flex gap-6 text-sm font-bold uppercase tracking-widest">
-                            <a href="https://www.linkedin.com/in/david-la%C3%9Flberger-a5b39922b/"
-                                class="hover-target hover:text-gray-400 transition-colors">LinkedIn</a>
-                            <a href="https://github.com/DLFHJ"
-                                class="hover-target hover:text-gray-400 transition-colors">GitHub</a>
+                    </div>
+
+                    <div class="md:col-span-4 md:col-start-9">
+                        <p data-i18n="footer_say_hello"
+                            class="text-xs font-mono uppercase tracking-[0.3em] text-white/50 mb-1">Say Hello</p>
+
+                        <a href="mailto:david.lasslberger@gmail.com"
+                            class="hover-target inline-flex items-center gap-1.5 text-lg font-bold hover:text-white/60 transition-colors mb-8">
+                            david.lasslberger@gmail.com <span aria-hidden="true">&#8599;</span>
+                        </a>
+
+                        <p data-i18n="footer_elsewhere"
+                            class="text-xs font-mono uppercase tracking-[0.3em] text-white/50 mb-1">Elsewhere</p>
+
+                        <div class="flex flex-col items-start gap-4 text-lg font-mono">
+                            <a href="https://www.linkedin.com/in/david-la%C3%9Flberger-a5b39922b/" target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover-target inline-flex items-center gap-1.5 font-bold hover:text-white/60 transition-colors">
+                                LinkedIn <span aria-hidden="true">&#8599;</span>
+                            </a>
+                            <a href="https://github.com/DLFHJ" target="_blank" rel="noopener noreferrer"
+                                class="hover-target inline-flex items-center gap-1.5 font-bold hover:text-white/60 transition-colors">
+                                GitHub <span aria-hidden="true">&#8599;</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Bottom bar -->
+                <div class="h-px w-full bg-white/10"></div>
             </div>
 
             <!-- Ticker -->
-            <div class="pb-6 bg-black">
-                <div class="h-px w-full"
-                    style="background: linear-gradient(to right, transparent, #6B7280 10%, #6B7280 90%, transparent);">
+            <div class="marquee-container marquee-container-tight pt-6">
+                <div class="marquee-content text-xs text-white/50 font-mono tracking-widest uppercase">
+                    2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                    &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
+                    2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                    &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
+                    2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                    &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
                 </div>
-                <div class="marquee-container pt-6">
-                    <div class="marquee-content text-xs text-gray-500 font-mono tracking-widest uppercase">
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
-                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
-                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
-                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
-                    </div>
-                    <div class="marquee-content text-xs text-gray-500 font-mono tracking-widest uppercase">
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
-                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
-                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
-                        2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
-                        &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
-                    </div>
+                <div class="marquee-content text-xs text-white/50 font-mono tracking-widest uppercase">
+                    2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                    &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
+                    2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                    &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
+                    2026 © David Lasslberger &nbsp;•&nbsp; Interaction Design &nbsp;•&nbsp; User Experience
+                    &nbsp;•&nbsp; Creative Coding &nbsp;•&nbsp; Website Hosted via GitHub &nbsp;•&nbsp;
                 </div>
             </div>
         </footer>
@@ -753,10 +758,11 @@
                 btn_cv: "Download CV",
                 btn_linkedin: "View LinkedIn",
                 footer_create: "LET'S CREATE <br> TOGETHER",
+                footer_say_hello: "Say Hello",
+                footer_elsewhere: "Elsewhere",
                 hero_subtext: "Bridging the gap between <br class='hidden sm:block'> design & technology",
                 hero_available: "Available for work",
                 hero_scroll: "Scroll",
-                footer_hosted: "Website hosted via GitHub",
                 projects_timeframe: "2020 — Present"
             },
             de: {
@@ -777,10 +783,11 @@
                 btn_cv: "Lebenslauf herunterladen",
                 btn_linkedin: "LinkedIn",
                 footer_create: "LET'S CREATE <br> TOGETHER",
+                footer_say_hello: "Sag Hallo",
+                footer_elsewhere: "Weitere Links",
                 hero_subtext: "An der Schnittstelle zwischen <br class='hidden sm:block'> Design & Technologie",
                 hero_available: "Offen für neue Herausforderungen",
                 hero_scroll: "Scrollen",
-                footer_hosted: "Website gehostet über GitHub",
                 projects_timeframe: "2020 — Heute"
             }
         };
