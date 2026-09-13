@@ -22,13 +22,13 @@ Each project also gets a small `assets/projects/<slug>/project_info.json` file â
 
 ```js
 // index.html ~line 709
-const IS_DEMO_MODE = false;         // Show grid overlay + test project card
+const IS_DEMO_MODE = false;         // Show grid overlay button
 const ENABLE_CUSTOM_CURSOR = false; // Replace system cursor with dot cursor
 ```
 
 | Flag | `false` (default) | `true` |
 | :--- | :--- | :--- |
-| `IS_DEMO_MODE` | Only real projects shown; no grid overlay button | Reveals the grid toggle button and an extra "Layout Grid Demo" project card |
+| `IS_DEMO_MODE` | No grid overlay button | Reveals the grid toggle button |
 | `ENABLE_CUSTOM_CURSOR` | System cursor used | Custom white dot cursor with mix-blend-mode:difference and hover-expand effect |
 
 > The custom cursor is automatically hidden on touch devices regardless of this flag.
