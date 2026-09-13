@@ -10,20 +10,20 @@ Static site, no build step. Three files do the work:
 | [project.html](project.html) | Case-study template. Renders one project's full page from `projects.json`. |
 | [projects.json](projects.json) | Content for every case-study page (the `sections` you build each project from). |
 
-Each project also gets a small `assets/projects/<slug>/project_info.json` file — that one only feeds the **title/category text on the homepage card**, it has no effect on the case-study page itself.
-
-> **Layout reference:** [demos/demo-layouts.html](demos/demo-layouts.html) is a live, visual reference for the four `image-text` / `image-centered` / `statement` patterns described below — open it in a browser (served, not `file://`) before writing a new section to see what each option actually looks like.
+`projects.json` is the single source of truth — both the homepage card (title/category) and the case-study page are rendered from it. There's no separate per-project metadata file anymore.
 
 ---
 
 ## Quick Configuration
 
-`IS_DEMO_MODE` and `ENABLE_CUSTOM_CURSOR` live at the top of the main `<script>` block in [index.html](index.html) (around line 709):
+`IS_DEMO_MODE` and `ENABLE_CUSTOM_CURSOR` live at the top of the main `<script>` block in [index.html](index.html) (around lines 709 and 713):
 
 ```js
 // index.html ~line 709
-const IS_DEMO_MODE = false;         // Show grid overlay button
-const ENABLE_CUSTOM_CURSOR = false; // Replace system cursor with dot cursor
+const IS_DEMO_MODE = false;        // Show grid overlay button
+
+// index.html ~line 713
+const ENABLE_CUSTOM_CURSOR = true; // Replace system cursor with dot cursor
 ```
 
 | Flag | `false` (default) | `true` |
@@ -39,44 +39,24 @@ const ENABLE_CUSTOM_CURSOR = false; // Replace system cursor with dot cursor
 
 ## Adding a New Project
 
-A project needs two things: a homepage card, and a case-study page.
+A project needs two things: a homepage card, and a case-study page. Both are driven by a single entry in `projects.json`.
 
 **1. Add the project's images**
 
 ```
 assets/projects/<your-project-slug>/
     0.png, 1.png, 2.png, ...
-    project_info.json
 ```
 
-**2. Create `project_info.json`** — only used to label the homepage card:
-
-```json
-{
-    "id": "your-project-slug",
-    "title": { "en": "Project Title", "de": "Projekttitel" },
-    "category": { "en": "Interaction Design", "de": "Interaktionsdesign" }
-}
-```
-
-**3. Register that path in [index.html](index.html)**, inside `loadProjectData`'s `sources` array (around line 775):
-
-```js
-const sources = [
-    'assets/projects/portfolio_machine/project_info.json',
-    // ... existing projects ...
-    'assets/projects/<your-project-slug>/project_info.json', // ← add here
-];
-```
-
-**4. Add the card markup** to `#projectGrid` (first 3 cards, always visible) or `#moreProjects` (revealed by "View All Projects") in [index.html](index.html):
+**2. Add the card markup** to `#projectGrid` (first 3 cards, always visible) or `#moreProjects` (revealed by "View All Projects") in [index.html](index.html):
 
 ```html
 <div class="reveal-on-scroll group" data-project-id="your-project-slug">
-    <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4">
+    <div class="hover-target relative aspect-[4/3] bg-gray-100 overflow-hidden mb-4 rounded-none transition-[border-radius] duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:rounded-[3rem]">
         <img src="assets/projects/your-project-slug/0.png"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            alt="Project Title">
+            class="w-full h-full object-cover"
+            alt="Project Title"
+            onerror="this.src='https://via.placeholder.com/800x600?text=Image+Unavailable'">
         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
     </div>
     <div class="flex justify-between items-start">
@@ -88,9 +68,9 @@ const sources = [
 </div>
 ```
 
-`data-project-id` must match `id` in both `project_info.json` and the entry you add to `projects.json` next — that's what links the card to `project.html?id=your-project-slug`.
+`data-project-id` must match the `id` you give the entry in `projects.json` next — `loadProjectData()` fills in the `<h3>` title and `.project-role` category text from that entry at runtime, and the id is what links the card to `project.html?id=your-project-slug`.
 
-**5. Add the full case-study content** to `projects.json` (see below) — this is what actually renders on `project.html?id=your-project-slug`.
+**3. Add the full case-study content** to `projects.json` (see below) — this feeds both the card text above and everything that renders on `project.html?id=your-project-slug`.
 
 ---
 
@@ -137,7 +117,7 @@ Every entry in `sections` has a `type`. Blocks stack top to bottom.
 | `images-3col` | Three images in a row, with an optional caption. |
 | `image-wide` | One full-width image, with an optional caption and background color. |
 | `image-highlight` | One image on a full-bleed gray-50 band, with an optional caption. |
-| `image-text` | Image + text pair — the four layouts from `demos/demo-layouts.html`. |
+| `image-text` | Image + text pair — layouts A & B below. |
 | `image-centered` | Single image centered on the page axis, with an optional centered caption. |
 | `statement` | Large bold centered text, no image, bounded by top/bottom rules. |
 
@@ -175,8 +155,9 @@ Every image-displaying block type above (all except `section` and `statement`) a
 | Property | Values | Description |
 | :--- | :--- | :--- |
 | `fit` | `"cover"` (default), `"contain"`, or `"auto"` | `cover`/`contain` crop or letterbox images into a fixed box (4:3 for `images-2col`, square for `images-3col`). `auto` skips the box entirely and renders each image at its natural aspect ratio — use it for tall screenshots or gifs that shouldn't be cropped. |
-| `maxWidth` | CSS length, e.g. `"900px"` | Optional — caps and centers the width of the whole image row. Useful with `fit: "auto"` to keep naturally tall/narrow images from spanning the full column width. |
-| `gap` | CSS length, e.g. `"32px"` | Optional — overrides the default spacing between images. |
+| `maxWidth` | CSS length, e.g. `"900px"` | `images-2col` only. Optional — caps and centers the width of the whole image row. Useful with `fit: "auto"` to keep naturally tall/narrow images from spanning the full column width. |
+| `gap` | CSS length, e.g. `"32px"` | `images-2col` only. Optional — overrides the default spacing between images. |
+| `mobileGap` | `boolean` | `images-2col` only. Optional — set `true` to add breathing room between the two images when they stack on mobile. |
 
 #### `image-wide`
 
@@ -188,14 +169,14 @@ Every image-displaying block type above (all except `section` and `statement`) a
     "caption": { "en": "Optional caption." }
 }
 ```
-`bg` is optional — set it to pad the image on a colored band (used for screenshots that need breathing room).
+`bg` is optional — set it to pad the image on a colored band (used for screenshots that need breathing room). `alt` is also optional (empty by default).
 
 #### `image-highlight`
 
 ```json
 { "type": "image-highlight", "src": "assets/projects/slug/6.png", "caption": { "en": "..." } }
 ```
-Same as `image-wide`, but always full-bleed on a gray-50 band — use it to punctuate a section with one standout shot.
+Same as `image-wide` (including optional `alt`), but always full-bleed on a gray-50 band — use it to punctuate a section with one standout shot.
 
 #### `image-text` — Patterns A & B (image + text pair)
 
@@ -217,10 +198,11 @@ Same as `image-wide`, but always full-bleed on a gray-50 band — use it to punc
 | :--- | :--- | :--- |
 | `layout` | `"contained"` (default) or `"bleed"` | `contained` keeps the image inside its own half. `bleed` widens the image past the center so it overlaps into the text's half. |
 | `side` | `"left"` (default) or `"right"` | Which half the image sits in. |
-| `fit` | `"cover"` (default) or `"contain"` | The image sits in a fixed 4:3 box. `cover` crops to fill it; `contain` letterboxes instead, for images that aren't already 4:3. |
+| `fit` | `"cover"` (default), `"contain"`, or `"auto"` | The image sits in a fixed 4:3 box. `cover` crops to fill it; `contain` letterboxes instead, for images that aren't already 4:3. `auto` skips the box and renders the image at its natural aspect ratio. |
 | `number` | `string` | Optional — draws the numbered divider rule, same as `section`. |
 | `image` | `string` | **Required.** |
 | `label`, `heading`, `body` | `string \| object` | All optional. |
+| `alt` | `string` | Optional — overrides the image `alt` text (empty by default). |
 
 #### `image-centered` — Pattern C
 
@@ -234,7 +216,7 @@ Same as `image-wide`, but always full-bleed on a gray-50 band — use it to punc
     "body": { "en": ["Optional caption paragraph."] }
 }
 ```
-`label`/`heading`/`body` are all optional — omit all three for a bare centered image with no caption. `fit` is optional (`"cover"` default, or `"contain"`), same meaning as on `image-text`: the image sits in a fixed 16:9 box, and `contain` letterboxes instead of cropping.
+`label`/`heading`/`body` are all optional — omit all three for a bare centered image with no caption. `fit` is optional (`"cover"` default, `"contain"`, or `"auto"`), same meaning as on `image-text`: the image sits in a fixed 16:9 box, `contain` letterboxes instead of cropping, and `auto` skips the box for the image's natural aspect ratio.
 
 #### `statement` — Pattern D
 
@@ -242,10 +224,11 @@ Same as `image-wide`, but always full-bleed on a gray-50 band — use it to punc
 {
     "type": "statement",
     "label": { "en": "Statement" },
-    "text": { "en": "Great design is <strong>invisible</strong> — it simply feels right." }
+    "text": { "en": "Great design is <strong>invisible</strong> — it simply feels right." },
+    "noRules": false
 }
 ```
-Use sparingly, as a pull-quote or a transition between denser sections. `text` supports inline HTML.
+Use sparingly, as a pull-quote or a transition between denser sections. `text` supports inline HTML. `noRules` is optional — set `true` to drop the top/bottom divider rules.
 
 ---
 
@@ -263,5 +246,5 @@ Use sparingly, as a pull-quote or a transition between denser sections. `text` s
 
 ## Other Folders
 
-- `demos/` — standalone reference/prototype pages, not linked from the live site. `demo-layouts.html` documents the `image-text` / `image-centered` / `statement` patterns above.
-- `backups/` — old/unused files (a prior `index.html`, notes from an earlier data model). Not part of the live site.
+- `assets/images/`, `assets/misc/` — site chrome (favicon, profile photo) and downloadable files (CV, diploma). Not part of the project-content workflow above.
+- `styles/main.css` — currently empty and unreferenced by either page; all styling is Tailwind utility classes inline in the HTML.

@@ -382,7 +382,7 @@
                         <span class="text-xs text-gray-400 uppercase tracking-[0.25em] font-mono shrink-0">${block.number}</span>
                         <div class="flex-1 h-px bg-gray-200"></div>
                     </div>
-                    <div class="grid grid-cols-12 gap-x-8">
+                    <div class="grid grid-cols-12 gap-x-0 md:gap-x-8">
                         <div class="col-span-12 md:col-span-4 reveal-on-scroll">
                             <h2 class="font-bold text-2xl tracking-tight mb-4">${heading}</h2>
                         </div>
@@ -506,7 +506,7 @@
             return `
                 <section class="max-w-7xl mx-auto px-6 lg:px-8 ${topPad} pb-16">
                     ${numberDivider}
-                    <div class="grid grid-cols-12 gap-x-8 gap-y-8 items-center">
+                    <div class="grid grid-cols-12 gap-x-0 md:gap-x-8 gap-y-8 items-center">
                         <div class="col-span-12 ${imgClasses} reveal-on-scroll">
                             <img src="${block.image}" alt="${block.alt || ''}" class="w-full ${imgSizing} ${shadow}">
                         </div>
